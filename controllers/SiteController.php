@@ -3,7 +3,8 @@
 namespace app\controllers;
 
 use Yii;
-use yii\filters\AccessControl;
+use app\models\Page;
+use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
@@ -16,17 +17,6 @@ class SiteController extends Controller
     public function behaviors()
     {
         return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['logout'],
-                'rules' => [
-                    [
-                        'actions' => ['logout'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -41,56 +31,36 @@ class SiteController extends Controller
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
-            ],
-            'captcha' => [
-                'class' => 'yii\captcha\CaptchaAction',
-                'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
-            ],
+            ]
         ];
     }
 
     public function actionIndex()
     {
-        return $this->render('index');
-    }
+        $pages = Page::find()->all();
 
-    public function actionLogin()
-    {
-        if (!\Yii::$app->user->isGuest) {
-            return $this->goHome();
-        }
-
-        $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
-        }
-        return $this->render('login', [
-            'model' => $model,
+        return $this->render('index',[
+            'pages'=>$pages
         ]);
     }
 
-    public function actionLogout()
-    {
-        Yii::$app->user->logout();
+    public function actionPage($slug)
+    {   
+        $page = Page::find()->where(['slug'=>$slug])->one();
 
-        return $this->goHome();
-    }
-
-    public function actionContact()
-    {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
-
-            return $this->refresh();
+        if($slug == 'home'){
+            $this->goHome();
         }
-        return $this->render('contact', [
-            'model' => $model,
+        $page_id = $page->id;
+        if($page->parent_id != 0){
+            $page_id = $page->parent_id;
+        }
+        $menu = Page::find()->where(['parent_id'=>$page_id])->all();
+
+        return $this->render('page',[
+            'page'=>$page,
+            'menu'=>$menu
         ]);
     }
 
-    public function actionAbout()
-    {
-        return $this->render('about');
-    }
 }

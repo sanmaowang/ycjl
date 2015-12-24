@@ -18,15 +18,8 @@ use yii\widgets\ActiveForm;
           'labelOptions' => ['class' => 'col-md-2 control-label'],
       ],
   ]); ?>
-  <?php if(isset($parent_id)){?>
-  <div class="form-group field-page-parent_id has-success">
-    <label class="col-md-2 control-label" for="page-parent_id">上级栏目</label>
-    <div class="col-md-6"><input type="text" id="page-parent_id" class="form-control" name="Page[parent_id]"></div>
-    <div class="col-lg-8"><div class="help-block"></div></div>
-  </div>
-  <?php }else{?>
-  <input type="hidden" id="page-parent_id" class="form-control" name="Page[parent_id]" value="0"/>
-  <?php }?>
+  
+  <input type="hidden" id="page-parent_id" class="form-control" name="Page[parent_id]" value="<?php echo $parent_id;?>"/>
   <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
   <?= $form->field($model, 'slug')->textInput(['maxlength' => true]) ?>
@@ -35,10 +28,10 @@ use yii\widgets\ActiveForm;
     <label class="col-md-2 control-label" for="page-type">类型</label>
     <div class="col-md-6">
       <select name="Page[type]" class="form-control" id="page-type">
-        <option value="0">页面</option>
+        <option value="0">单页</option>
         <option value="1">站内链接</option>
         <option value="2">站外链接</option>
-        <option value="3">新闻中心</option>
+        <option value="3">新闻频道</option>
       </select>
     </div>
     <div class="col-lg-8"><div class="help-block"></div></div>
@@ -47,9 +40,13 @@ use yii\widgets\ActiveForm;
   <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
   </div>
   <div id="page" style="display:none;">
-  <?= $form->field($model, 'excerpt')->textarea(['rows' => 6]) ?>
-
-  <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
+  <div class="form-group field-page-content">
+    <label class="col-md-2 control-label" for="page-content">内容</label>
+    <div class="col-md-8">
+      <script id="page-content" name="Page[content]" type="text/plain"></script>
+    </div>
+    <div class="col-lg-8"><div class="help-block"></div></div>
+  </div>
   </div>
 
   <?= $form->field($model, 'display_order')->textInput() ?>
@@ -65,8 +62,14 @@ use yii\widgets\ActiveForm;
 </div>
 
 <?php 
+
+$this->registerJsFile('@web/js/ueditor/ueditor.config.js');//注册自定义js
+$this->registerJsFile('@web/js/ueditor/ueditor.all.min.js');
+$this->registerJsFile('@web/js/ueditor/lang/zh-cn/zh-cn.js');
+
 $this->registerJs("
 $(function () {
+  var editor = UE.getEditor('page-content');
   $('#page-type').on('change',function(e){
     var _val = parseInt($(this).val());
     if(_val == 0){

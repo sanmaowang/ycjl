@@ -36,8 +36,9 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-left'],
         'items' => [
-            ['label' => '后台首页', 'url' => ['/admin/index']],
-            ['label' => '网站栏目管理', 'url' => ['/page/index']],
+            ['label' => '内容管理', 'url' => ['/page/index']],
+            ['label' => '资源管理', 'url' => ['/source/index']],
+            ['label' => '用户管理', 'url' => ['/user/index']],
         ],
     ]);
     echo Nav::widget([

@@ -36,6 +36,13 @@ class Page extends \yii\db\ActiveRecord
 
     public $leaf;
     public $sub;
+
+
+    public function getTypeLabel()
+    {
+        $types = ['页面','外部链接','内部链接','新闻频道'];
+        return $types[$this->type];
+    }
     /**
      * @inheritdoc
      */
@@ -93,4 +100,6 @@ class Page extends \yii\db\ActiveRecord
             ],
         ];
     }
+
+
 }
