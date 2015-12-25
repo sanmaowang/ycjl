@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = '宜昌交旅 | 首页';
 ?>
 <div class="banner">
   <div class="container">

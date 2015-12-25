@@ -63,6 +63,9 @@ class SiteController extends Controller
         if($page->type == 3){
             $template = 'news';
         }
+        if($page->id == 7){
+            $template = 'sub-page';
+        }
         return $this->render($template,[
             'page'=>$page,
             'menu'=>$menu

@@ -43,7 +43,7 @@ use yii\widgets\ActiveForm;
   <div class="form-group field-page-content">
     <label class="col-md-2 control-label" for="page-content">内容</label>
     <div class="col-md-8">
-      <script id="page-content" name="Page[content]" type="text/plain"></script>
+      <script id="page-content" name="Page[content]" type="text/plain"><?php echo $model->content;?></script>
     </div>
     <div class="col-lg-8"><div class="help-block"></div></div>
   </div>
