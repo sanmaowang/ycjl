@@ -51,13 +51,19 @@ class SiteController extends Controller
         if($slug == 'home'){
             $this->goHome();
         }
-        $page_id = $page->id;
-        if($page->parent_id != 0){
-            $page_id = $page->parent_id;
+        if($page->parent_id == 0){
+            $menu = Page::find()->where(['parent_id'=>$page->id])->all();
+            $s = $menu[0]->slug;
+            $this->redirect(['page','slug'=>$s]);
+        }else{
+            $menu = Page::find()->where(['parent_id'=>$page->parent_id])->all();
         }
-        $menu = Page::find()->where(['parent_id'=>$page_id])->all();
+        $template = 'page';
 
-        return $this->render('page',[
+        if($page->type == 3){
+            $template = 'news';
+        }
+        return $this->render($template,[
             'page'=>$page,
             'menu'=>$menu
         ]);

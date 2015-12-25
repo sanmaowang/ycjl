@@ -1116,3 +1116,98 @@ a{
     width: 1504px;
   }
 }
+
+
+.column-chairman{
+  display: none;
+}
+
+.column-tabs{
+  margin: 0 auto;
+  text-align: center;
+  ul{
+    margin: 0 auto;
+    padding:0;
+    li{
+      list-style: none;
+      display: inline-block;
+      margin-right: 35px;
+      &:last-child{
+        margin-right: 0;
+      }
+      a{
+        text-decoration: none;
+        text-indent: -9999px;
+        display: block;
+        width: 160px;
+        height: 80px;
+      }
+    }
+  }
+  .group-news{
+    background: url(../img/column/group_news.png) no-repeat 0 0;
+    background-size: 100% 100%;
+    &:hover,.current{
+      background: url(../img/column/group_news_cur.png) no-repeat 0 0;
+    }
+  }
+  .industry-news{
+    background: url(../img/column/industry_news.png) no-repeat 0 0;
+    background-size: 100% 100%;
+    &:hover,.current{
+      background: url(../img/column/industry_news_cur.png) no-repeat 0 0;
+    }
+  }
+  .media-focus{
+    background: url(../img/column/media_focus.png) no-repeat 0 0;
+    background-size: 100% 100%;
+    &:hover,.current{
+      background: url(../img/column/media_focus_cur.png) no-repeat 0 0;
+    }
+  }
+}
+
+.column-content-news{
+  margin: 0 auto;
+  margin-top: 40px;
+  box-sizing: border-box;
+  width: 940px;
+  ul{
+    margin: 0;
+    padding: 0;
+    li{
+      text-align: left;
+      line-height: 1.25;
+      display: inline-block;
+      width: 410px;
+      height: 126px;
+      position: relative;
+      margin: 0 24px 25px 0;
+      float: left;
+      padding: 18px;
+      background: url(../img/news_bg.png) no-repeat 0 0;
+      cursor: pointer;
+      &:hover{
+        background: url(../img/news_bg_cur.png) no-repeat 0 0;
+      }
+    }
+    h1{
+      font-size: 20px;
+      margin: 0 0 15px;
+    }
+    p{
+      line-height: 1.5;
+      color: #999;
+    }
+    .meta{
+      text-align: right;
+      font-size: 12px;
+    }
+  }
+}
+
+.home-bg-news{
+  background: url(../img/banner-news.jpg) no-repeat 0 0;
+  background-size: cover;
+  background-position: fixed;
+}
