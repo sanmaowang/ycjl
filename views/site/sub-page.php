@@ -31,7 +31,7 @@ $url = Yii::$app->request->getUrl();
           <div class="sub-items">
             <ul>
               <li>
-                <a class="sub-item-link clearfix" href="#">
+                <a class="sub-item-link clearfix" href="<?php echo Url::to(['site/page','slug'=>'ycjyjt'])?>">
                   <img src="<?php echo Yii::$app->request->baseUrl;?>/img/column/sub-jy.png" alt="" class="pull-left">
                   <div class="sub-item-content">
                     <h4 class="sub-item-title">宜昌交运集团</h4>

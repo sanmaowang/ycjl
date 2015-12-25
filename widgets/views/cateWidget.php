@@ -2,14 +2,14 @@
 use yii\web\View;
 use yii\helpers\Url;
 
-
-function display_pages($pages){
+function display_pages($pages,$level){
+  $level++;
   foreach ($pages as $key => $page) {
     if(isset($page)){
       echo '<li><a href="'.Url::to(['site/page','slug'=>$page->slug]).'">'.$page['name'].'</a>';
-      if($page['sub']){
+      if($page['sub'] && $level == 1){
         echo "<ul class='sub-column dropdown'>";
-        display_pages($page['sub']);
+        display_pages($page['sub'],$level);
         echo "</ul>";
       }
       echo "</li>";
@@ -21,7 +21,7 @@ function display_pages($pages){
 ?>
 <div class="nav">
   <ul>
-    <?php display_pages($pages)
+    <?php display_pages($pages,0)
     ?>
   </ul>
 </div>
