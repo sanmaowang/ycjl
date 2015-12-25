@@ -23,6 +23,7 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
+<div class="wrap">
 <div class="top-nav">
   <div class="container">
     <div class="row">
@@ -52,10 +53,9 @@ AppAsset::register($this);
     <?= Menu::widget();?>
   </div>
 </div>
-<div class="wrap">
-  <?= $content ?>
-  <div class="bottom-links">
-    <div class="container">
+<?= $content ?>
+<div class="footer">
+  <div class="container">
     <ul class="clearfix">
       <li class="li_1"><a href="">实业投资</a></li>
       <li class="li_2"><a href="">交运集团</a></li>
@@ -65,16 +65,13 @@ AppAsset::register($this);
       <li class="li_6"><a href="">宜昌酒店</a></li>
       <li class="li_7"><a href="">旅行社</a></li>
     </ul>
+    <div class="links">
+      <p class="pull-left">&copy; 宜昌交通旅游集团 2015 ALL RIGHTS RESERVED</p>
+      <p class="pull-right">联系电话：0717-7899889  地址：宜昌市云集路**号</p>
     </div>
   </div>
 </div>
-<div class="footer">
-  <div class="container">
-    <p class="pull-left">&copy; 宜昌交通旅游集团 2015 ALL RIGHTS RESERVED</p>
-    <p class="pull-right">联系电话：0717-7899889  地址：宜昌市云集路**号</p>
-  </div>
 </div>
-
 <?php $this->endBody() ?>
 </body>
 </html>

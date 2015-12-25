@@ -105,6 +105,7 @@ class PageController extends Controller
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'parent_id'=>$model->parent_id
             ]);
         }
     }
