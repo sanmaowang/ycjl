@@ -11,20 +11,20 @@ $url = Yii::$app->request->getUrl();
 <div class="banner">
   <div class="container">
     <div class="main clearfix">
-      <div class="main-left pull-left">
-        <div class="column-img">
-          <img src="img/column/column-<?php echo $page->slug?>.png" alt="">
-        </div>
-        <?php if(isset($menu) && count($menu)>0){?>
-        <ul>
-          <?php foreach ($menu as $key => $m) {
-            $current = strpos($url,$m->slug)?"class='current'":'';
-          ?>
-            <li><a href="<?php echo Url::to(['site/page','slug'=>$m->slug])?>" <?php echo $current?>><?php echo $m->name;?></a></li>
-          <?php }?>
-        </ul>
-        <?php }?>
+    <div class="main-left pull-left">
+      <div class="column-img">
+        <img src="img/column/column-<?php echo $page->slug?>.png" alt="">
       </div>
+      <?php if(isset($menu) && count($menu)>0){?>
+      <ul>
+        <?php foreach ($menu as $key => $m) {
+          $current = strpos($url,$m->slug)?"class='current'":'';
+        ?>
+          <li><a href="<?php echo Url::to(['site/page','slug'=>$m->slug])?>" <?php echo $current?>><?php echo $m->name;?></a></li>
+        <?php }?>
+      </ul>
+      <?php }?>
+    </div>
     <div class="main-right pull-right">
       <div class="page-header">
         <div class="page-title">

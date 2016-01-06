@@ -21,6 +21,7 @@ use Yii;
  * @property integer $type
  * @property integer $status
  * @property integer $display_order
+ * @property string $template
  * @property integer $create_date
  * @property integer $update_date
  */
@@ -59,7 +60,7 @@ class Page extends \yii\db\ActiveRecord
     {
         return [
             [['parent_id', 'user_id', 'type', 'status', 'display_order', 'create_date', 'update_date'], 'integer'],
-            [['excerpt', 'content'], 'string'],
+            [['excerpt', 'content','english_name','template'], 'string'],
             [['name'], 'string', 'max' => 128],
             [['slug'], 'string', 'max' => 64],
             [['url'], 'string', 'max' => 255]
@@ -76,12 +77,14 @@ class Page extends \yii\db\ActiveRecord
             'parent_id' => Yii::t('app', '上级栏目'),
             'user_id' => Yii::t('app', 'User ID'),
             'name' => Yii::t('app', '名称'),
-            'slug' => Yii::t('app', '英文简称'),
+            'english_name' => Yii::t('app', '英文名称'),
+            'slug' => Yii::t('app', 'Seo简称'),
             'url' => Yii::t('app', '链接地址'),
             'excerpt' => Yii::t('app', '摘要'),
             'content' => Yii::t('app', '内容'),
             'type' => Yii::t('app', '类型'),
             'status' => Yii::t('app', '状态'),
+            'template' => Yii::t('app', '模板'),
             'display_order' => Yii::t('app', '显示顺序'),
             'create_date' => Yii::t('app', 'Create Date'),
             'update_date' => Yii::t('app', 'Update Date'),
