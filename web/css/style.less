@@ -619,6 +619,7 @@ a{
 .top-nav{
   height: 30px;
   background: #333;
+  font-size: .85em;
 }
 .top-nav-link{
   background: url(../img/nav-search-bg.png) no-repeat 0 0;
@@ -646,9 +647,9 @@ a{
   float: left;
 }
 .top-search{
-  margin: 2px 5px 4px 8px;
+  margin: 1px 1px 4px 8px;
   border: none;
-  padding: 4px 10px;
+  padding: 4px 6px;
   float: left;
   border-radius:4px;
 }
@@ -878,7 +879,7 @@ a{
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 110px;
+  height: 110/800*100%;
   background: url(../img/bottom-bg.png) no-repeat 0 0;
   background-size: cover;
   a{
@@ -1286,6 +1287,14 @@ a{
 @media (min-width: 1600px) {
   .container {
     width: 1400px;
+  }
+  .footer{
+    ul{
+      bottom: 28px;
+    }
+  }
+  .columns{
+    bottom: 88px;
   }
 }
 
