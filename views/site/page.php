@@ -35,7 +35,7 @@ $url = Yii::$app->request->getUrl();
           <p>当前位置：<a href="#">首页</a> > <a href="#">集团概况</a><span></span></p>
         </div>
       </div>
-      <div class="content">
+      <div class="content <?php echo $page->slug;?>">
         <?php echo $page->content;?>
       </div><!-- about_info end -->
     </div>
