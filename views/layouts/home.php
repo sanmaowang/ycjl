@@ -66,8 +66,8 @@ AppAsset::register($this);
       <li class="li_7"><a href="">旅行社</a></li>
     </ul>
     <div class="links">
-      <p class="pull-left">&copy; 宜昌交通旅游集团 2015 ALL RIGHTS RESERVED</p>
-      <p class="pull-right">联系电话：0717-7899889  地址：宜昌市云集路**号</p>
+      <p class="pull-left" style="margin-left:3em;">&copy; 宜昌交通旅游集团 2015 ALL RIGHTS RESERVED</p>
+      <p class="pull-right" style="margin-right:3em;"><a href="">联系方式</a> | <a href="">隐私声明</a> | <a href="">使用条款</a> | <a href="">网站地图</a>  </p>
     </div>
   </div>
 </div>
