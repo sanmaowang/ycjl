@@ -19,7 +19,7 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
-    <link rel="stylesheet" href="<?= Yii::$app->request->baseUrl."/css/style.css"?>">
+    <link rel="stylesheet" href="<?= Yii::$app->request->baseUrl."/css/style.min.css"?>">
 </head>
 <body>
 <?php $this->beginBody() ?>

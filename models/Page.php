@@ -13,6 +13,7 @@ use Yii;
  * @property integer $parent_id
  * @property integer $user_id
  * @property string $name
+ * @property string $english_name
  * @property string $slug
  * @property string $url
  * @property string $excerpt

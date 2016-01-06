@@ -12,6 +12,9 @@ $url = Yii::$app->request->getUrl();
   <div class="container">
     <div class="main clearfix">
       <div class="main-left pull-left">
+        <div class="column-img">
+          <img src="img/column/column-<?php echo $page->slug?>.png" alt="">
+        </div>
         <?php if(isset($menu) && count($menu)>0){?>
         <ul>
           <?php foreach ($menu as $key => $m) {
@@ -23,14 +26,19 @@ $url = Yii::$app->request->getUrl();
         <?php }?>
       </div>
     <div class="main-right pull-right">
-      <div class="postit">
-        <p>当前位置：<a href="#">首页</a> > <a href="#">集团概况</a><span></span></p>
-      </div><!-- postit end -->
-        <div class="content">
-        <h1 class="column-<?php echo $page->slug;?>"><?php echo $page->name;?></h1>
-        <?php echo $page->content;?>
-        </div><!-- about_info end -->
+      <div class="page-header">
+        <div class="page-title">
+          <h1><?php echo $page->name;?></h1>
+          <h2><?php echo $page->english_name;?></h2>
+        </div>
+        <div class="postit">
+          <p>当前位置：<a href="#">首页</a> > <a href="#">集团概况</a><span></span></p>
+        </div>
       </div>
+      <div class="content">
+        <?php echo $page->content;?>
+      </div><!-- about_info end -->
+    </div>
     </div>
   </div>
 </div>

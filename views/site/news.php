@@ -8,60 +8,35 @@ use yii\helpers\Url;
 $this->title = $page->name;
 $url = Yii::$app->request->getUrl();
 ?>
-<div class="banner home-bg-news">
+<div class="banner">
   <div class="container">
     <div class="main clearfix">
-      <div class="column-tabs">
-        <ul>
-          <?php if(isset($menu) && count($menu)>0){?>
-        <ul>
-          <?php foreach ($menu as $key => $m) {
-            $current = strpos($url,$m->slug)?"class='current'":'';
-          ?>
-            <li class="<?php echo $m->slug;?>"><a href="<?php echo Url::to(['site/page','slug'=>$m->slug])?>" <?php echo $current?>><?php echo $m->name;?></a></li>
-          <?php }?>
-        </ul>
-        <?php }?>
-        </ul>
+      <div class="page-header">
+        <div class="page-title">
+          <h1><?php echo $page->name;?></h1>
+          <h2><?php echo $page->english_name;?></h2>
+        </div>
+        <div class="postit">
+          <p>当前位置：<a href="#">首页</a> > <a href="#">集团概况</a><span></span></p>
+        </div>
       </div>
-      <div class="column-content-news clearfix">
-        <ul>
-          <li>
-            <h1>国务院三峡办调研组视察万州大瀑布旅游区</h1>
-            <p>2015年4月11日下午，国务院三峡办副主任王伟一行调研组前往万州大瀑布景区考察， 万州区区长白文农等领导陪同，浙江国际旅游集团董事长江焰陪同并汇报工作。 此... <a href="">[查看详情]</a></p>
-            <p class="meta">2016-04-30</p>
-          </li>
-          <li>
-            <h1>国务院三峡办调研组视察万州大瀑布旅游区</h1>
-            <p>2015年4月11日下午，国务院三峡办副主任王伟一行调研组前往万州大瀑布景区考察， 万州区区长白文农等领导陪同，浙江国际旅游集团董事长江焰陪同并汇报工作。 此... <a href="">[查看详情]</a></p>
-            <p class="meta">2016-04-30</p>
-          </li>
-          <li>
-            <h1>国务院三峡办调研组视察万州大瀑布旅游区</h1>
-            <p>2015年4月11日下午，国务院三峡办副主任王伟一行调研组前往万州大瀑布景区考察， 万州区区长白文农等领导陪同，浙江国际旅游集团董事长江焰陪同并汇报工作。 此... <a href="">[查看详情]</a></p>
-            <p class="meta">2016-04-30</p>
-          </li>
-          <li>
-            <h1>国务院三峡办调研组视察万州大瀑布旅游区</h1>
-            <p>2015年4月11日下午，国务院三峡办副主任王伟一行调研组前往万州大瀑布景区考察， 万州区区长白文农等领导陪同，浙江国际旅游集团董事长江焰陪同并汇报工作。 此... <a href="">[查看详情]</a></p>
-            <p class="meta">2016-04-30</p>
-          </li>
-          <li>
-            <h1>国务院三峡办调研组视察万州大瀑布旅游区</h1>
-            <p>2015年4月11日下午，国务院三峡办副主任王伟一行调研组前往万州大瀑布景区考察， 万州区区长白文农等领导陪同，浙江国际旅游集团董事长江焰陪同并汇报工作。 此... <a href="">[查看详情]</a></p>
-            <p class="meta">2016-04-30</p>
-          </li>
-          <li>
-            <h1>国务院三峡办调研组视察万州大瀑布旅游区</h1>
-            <p>2015年4月11日下午，国务院三峡办副主任王伟一行调研组前往万州大瀑布景区考察， 万州区区长白文农等领导陪同，浙江国际旅游集团董事长江焰陪同并汇报工作。 此... <a href="">[查看详情]</a></p>
-            <p class="meta">2016-04-30</p>
-          </li>
-          <li>
-            <h1>国务院三峡办调研组视察万州大瀑布旅游区</h1>
-            <p>2015年4月11日下午，国务院三峡办副主任王伟一行调研组前往万州大瀑布景区考察， 万州区区长白文农等领导陪同，浙江国际旅游集团董事长江焰陪同并汇报工作。 此... <a href="">[查看详情]</a></p>
-            <p class="meta">2016-04-30</p>
-          </li>
-        </ul>
+      <div class="news-left">
+        <div class="news-header">
+          <h2>最新资讯 <span>LATEST NEWS</span></h2>
+        </div>
+        <div class="news-list">
+          <ul>
+            <li class="first"><a href="#">国务院深圳滑坡事故调查组:要生动还原事故经过...</a> <span class="time">01-01</span></li>
+            <li><a href="#">国务院深圳滑坡事故调查组:要生动还原事故经过...</a> <span class="time">01-01</span></li>
+            <li><a href="#">国务院深圳滑坡事故调查组:要生动还原事故经过...</a> <span class="time">01-01</span></li>
+            <li><a href="#">国务院深圳滑坡事故调查组:要生动还原事故经过...</a> <span class="time">01-01</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="news-right">
+        <div class="news-header">
+          <h2>图片新闻 <span>PHOTO NEWS</span></h2>
+        </div>
       </div>
     </div>
   </div>

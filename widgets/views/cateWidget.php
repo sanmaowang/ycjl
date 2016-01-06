@@ -30,7 +30,7 @@ function display_pages($pages,$level){
 $this->registerJs('
 
 $(document).ready(function(){
-  $(".nav li").on("mousemove",function(){
+  $(".nav li").on("mouseenter",function(){
     $(this).find(".dropdown").slideDown();
   });
   $(".nav li").on("mouseleave",function(){
