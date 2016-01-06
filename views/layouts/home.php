@@ -21,7 +21,7 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <link rel="stylesheet" href="<?= Yii::$app->request->baseUrl."/css/style.min.css"?>">
 </head>
-<body <?php if(Yii::$app->request->url == '/' || Yii::$app->request->url == '/index.php'){echo "";}else{ echo 'class="inner"';}?>>
+<body <?php if(\Yii::$app->controller->id == 'site' && \Yii::$app->controller->action->id == 'index'){ echo 'class="home"';}?>>
 <?php $this->beginBody() ?>
 <div class="wrap">
 <div class="top-nav">
