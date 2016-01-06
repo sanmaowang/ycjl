@@ -49,7 +49,7 @@ class SiteController extends Controller
         $page = Page::find()->where(['slug'=>$slug])->one();
 
         if($slug == 'home'){
-            return $this->redirect(['site/index']);
+            return $this->goHome();
         }
         if($page->parent_id == 0){
             $menu = Page::find()->where(['parent_id'=>$page->id])->all();
