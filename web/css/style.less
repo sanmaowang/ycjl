@@ -801,8 +801,8 @@ a{
   width: 338*1.2px;
   height: 89*1.2px;
   background-size: 100% 100%;
-  top: 80px;
-  right: 240px;
+  top: 30%;
+  right: 24%;
   position: absolute;
 }
 
@@ -815,13 +815,15 @@ a{
   left: 0;
   position: absolute;
   color: #fff;
-  font-size: .9em;
+  font-size: 12px;
   h3{
-    font-size: 1.2em;
+    font-size: 14px;
+    font-weight: normal;
     .clearfix();
     span{
       color:#9B9B9B;
-      margin-left: 3px;
+      margin-left: 5px;
+      font-size: 12px;
     }
   }
   .more{
@@ -913,7 +915,18 @@ a{
       display: inline-block;
       width: 12.5%;
       padding-left: 16px;
-      // background: url(../img/footer-list-item.png) no-repeat 0 3px;
+    }
+    .icon-footer-symbol{
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      margin-top: 1px;
+      margin-right: 5px;
+      line-height: 14px;
+      vertical-align: text-top;
+      background-image: url(../img/footer-list-item.png);
+      background-position: 0px 3px;
+      background-repeat: no-repeat;
     }
     .li_1{
       position: relative;
@@ -1006,7 +1019,7 @@ a{
       }
       .current{
         color:#1E246F;
-        font-weight: 500;
+        font-weight: 800;
       }
     }
   }
@@ -1275,7 +1288,7 @@ a{
   color: #254282;
   background: #fff;
 }
-.news-header{
+.news-header,.type-header{
   border-top: 2px solid #AFACAC;
   border-bottom: 1px solid #ddd;
   position: relative;
@@ -1299,6 +1312,15 @@ a{
     font-size: 14/16em;
     font-family: Arial;
     font-weight: 300;
+  }
+}
+.type-header{
+  border-top: none;
+  h2{
+    margin-top: 0;
+    &:before{
+      display: none;
+    }
   }
 }
 .news-topic-header{
@@ -1347,6 +1369,40 @@ a{
       font-weight: 600;
       margin-bottom: 14px;
     }
+  }
+  .thumbnail{
+    display: block;
+    height: 140px;
+    overflow: hidden;
+    padding-left: 0;
+    background: none;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #ddd;
+    margin-bottom: 20px;
+    line-height: 1.85;
+    color: #9b9b9b;
+    font-size: 14px;
+    h3{
+      font-size: 18px;
+      color: #222;
+      margin: 0 0 10px;
+      padding: 0;
+    }
+    .time{
+      margin-top: 10px;
+      float: left !important;
+    }
+    img{
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+  .thumb{
+    width: 200px;
+    height: 140px;
+    overflow: hidden;
+    float: right;
+    margin-left: 18px;
   }
   .time{
     float: right;
@@ -1622,4 +1678,4 @@ a{
   background-position: left -265px;
 }
 
-
+@import "responsive.less";
