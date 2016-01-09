@@ -5,11 +5,11 @@
 
 use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
-use app\assets\AppAsset;
+use app\assets\HomeAsset;
 use app\widgets\Menu;
 use yii\helpers\Url;
 
-AppAsset::register($this);
+HomeAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -19,7 +19,7 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
-    <link rel="stylesheet" href="<?= Yii::$app->request->baseUrl."/css/style.min.css"?>">
+    <?php $this->head() ?>
 </head>
 <?php 
 $url = \Yii::$app->request->url;

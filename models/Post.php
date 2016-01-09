@@ -3,6 +3,7 @@
 namespace app\models;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
+use app\models\Page;
 
 use Yii;
 
@@ -15,7 +16,7 @@ use Yii;
  * @property string $name
  * @property string $content
  * @property integer $create_date
- * @property integer $update_time
+ * @property integer $update_date
  */
 class Post extends \yii\db\ActiveRecord
 {
@@ -67,4 +68,11 @@ class Post extends \yii\db\ActiveRecord
             ],
         ];
     }
+
+    public function getPage()
+    {
+        return $this->hasOne(Page::className(), ['id' => 'page_id']);
+    }
+    
+
 }

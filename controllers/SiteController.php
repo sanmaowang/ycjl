@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Page;
+use app\models\Post;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -52,11 +53,11 @@ class SiteController extends Controller
             return $this->goHome();
         }
         if($page->parent_id == 0){
-            // if($page->id == 13){
-            //     return $this->render($page->template,[
-            //         'page'=>$page,
-            //     ]);
-            // }
+            if($page->id == 13){
+                return $this->render($page->template,[
+                    'page'=>$page,
+                ]);
+            }
             $menu = Page::find()->where(['parent_id'=>$page->id])->all();
             $s = $menu[0]->slug;
             return $this->redirect(['page','slug'=>$s]);
@@ -68,6 +69,22 @@ class SiteController extends Controller
             'page'=>$page,
             'menu'=>$menu
         ]);
+    }
+
+    public function actionViewPost($id)
+    {
+        return $this->render('post', [
+            'post' => $this->findPostModel($id),
+        ]);
+    }
+
+    protected function findPostModel($id)
+    {
+        if (($model = Post::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
     }
 
 }

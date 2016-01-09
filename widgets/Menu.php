@@ -7,6 +7,7 @@
  */
 namespace app\widgets;
 use app\models\Page;
+use app\models\Post;
 
 
 class Menu extends \yii\bootstrap\Widget
@@ -33,8 +34,16 @@ class Menu extends \yii\bootstrap\Widget
     {
         $model = Page::find()->all();
         $pages =  $this->tree($model,0);
+        if(strpos(\Yii::$app->request->url,"view-post")){
+          $post = Post::findOne(\Yii::$app->request->get('id'));
+          $current_page = $post->page;
+        }else{
+          $slug = \Yii::$app->request->get('slug');
+          $current_page = Page::find()->where(['slug'=>$slug])->one();
+        }
         return $this->render('cateWidget', [
             'pages' => $pages,
+            'current_page'=>$current_page
         ]);
         
     }

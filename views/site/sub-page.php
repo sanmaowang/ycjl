@@ -4,6 +4,7 @@
 
 use yii\helpers\Html;
 use yii\helpers\Url;
+use app\widgets\Breadcrumb;
 
 $this->title = $page->name;
 $url = Yii::$app->request->getUrl();
@@ -31,9 +32,7 @@ $url = Yii::$app->request->getUrl();
           <h1><?php echo $page->name;?></h1>
           <h2><?php echo $page->english_name;?></h2>
         </div>
-        <div class="postit">
-          <p>当前位置：<a href="#">首页</a> > <a href="#">集团概况</a><span></span></p>
-        </div>
+        <?= Breadcrumb::widget();?>
       </div>
         <div class="content">
           <div class="sub-items">

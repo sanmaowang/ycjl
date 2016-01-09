@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Page;
+use app\models\Post;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -69,6 +70,7 @@ class PageController extends Controller
             'model' => $this->findModel($id),
         ]);
     }
+
 
     /**
      * Creates a new Page model.
@@ -138,4 +140,6 @@ class PageController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
+    
 }

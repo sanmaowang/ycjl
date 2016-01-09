@@ -3,7 +3,7 @@
 namespace app\models;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
-
+use app\models\Post;
 use Yii;
 
 /**
@@ -105,5 +105,10 @@ class Page extends \yii\db\ActiveRecord
         ];
     }
 
+
+    public function getPosts()
+    {
+        return $this->hasMany( Post::className(), ['page_id' => 'id']);
+    }
 
 }

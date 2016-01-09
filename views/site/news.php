@@ -4,6 +4,7 @@
 
 use yii\helpers\Html;
 use yii\helpers\Url;
+use app\widgets\Breadcrumb;
 
 $this->title = $page->name;
 $url = Yii::$app->request->getUrl();
@@ -16,9 +17,7 @@ $url = Yii::$app->request->getUrl();
           <h1><?php echo $page->name;?></h1>
           <h2><?php echo $page->english_name;?></h2>
         </div>
-        <div class="postit">
-          <p>当前位置：<a href="#">首页</a> > <a href="#">集团概况</a><span></span></p>
-        </div>
+        <?= Breadcrumb::widget();?>
       </div>
       <div class="news-left">
         <div class="news-header">
@@ -26,10 +25,9 @@ $url = Yii::$app->request->getUrl();
         </div>
         <div class="news-list">
           <ul>
-            <li class="first"><a href="#">国务院深圳滑坡事故调查组:要生动还原事故经过...</a> <span class="time">01-01</span></li>
-            <li><a href="#">国务院深圳滑坡事故调查组:要生动还原事故经过...</a> <span class="time">01-01</span></li>
-            <li><a href="#">国务院深圳滑坡事故调查组:要生动还原事故经过...</a> <span class="time">01-01</span></li>
-            <li><a href="#">国务院深圳滑坡事故调查组:要生动还原事故经过...</a> <span class="time">01-01</span></li>
+            <?php foreach ($page->posts as $key => $post) {?>
+              <li <?php if($key==0){echo 'class="first"';}?>><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"><?php echo $post->name;?></a> <span class="time"><?php echo $post->update_date;?></span></li>
+            <?php }?>
           </ul>
         </div>
       </div>
