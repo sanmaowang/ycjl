@@ -77,6 +77,7 @@ class SiteController extends Controller
 
     public function actionViewPost($id)
     {
+        $this->layout = "//inner";
         return $this->render('post', [
             'post' => $this->findPostModel($id),
         ]);
