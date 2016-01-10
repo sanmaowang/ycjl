@@ -24,14 +24,13 @@ HomeAsset::register($this);
 <body class="home">
   <div id="home_slider" class="bg-slider">
     <ul class="imgList">
-      <li class="imgOn">
-        <img src="<?php echo \Yii::$app->request->baseUrl;?>/img/home-slider-1.jpg" alt="">
+      <li class="imgOn home-slider-1">
         <div class="slogan-1"></div>
       </li>
-      <li><img src="<?php echo \Yii::$app->request->baseUrl;?>/img/home-slider-2.jpg" alt="">
+      <li class="home-slider-2">
         <div class="slogan-2"></div>
       </li>
-      <li><img src="<?php echo \Yii::$app->request->baseUrl;?>/img/home-slider-3.jpg" alt="">
+      <li class="home-slider-3">
         <div class="slogan-3"></div>
       </li>
     </ul>
