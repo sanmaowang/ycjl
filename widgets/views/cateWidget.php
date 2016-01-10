@@ -52,8 +52,8 @@ function display_pages($pages,$current_id,$level){
 $this->registerJs('
 $(document).ready(function () {
     var divHoverLeft = 0;
-    var aWidth = 96;
     var obj = $("#hover_bg");
+    var aWidth = obj.css("width") > 72?96:72;
     var _index = $(".active").parent().data("index")
     var _left = _index*aWidth;
     
@@ -69,13 +69,14 @@ $(document).ready(function () {
             }else{
               obj.removeClass("active-left").removeClass("active-right");
             }
-            obj.animate({ width: aWidth, left: divHoverLeft }, 200);
+            obj.show().stop(true,true).animate({ width: aWidth, left: divHoverLeft }, 200);
         }
     });
 
     $("#navbar").on({
         "mouseleave": function (event) {
-          obj.animate({ width: aWidth, left: _left }, 200);
+          obj.hide();
+          // obj.animate({ width: aWidth, left: _left }, 200);
         }
     });
 });

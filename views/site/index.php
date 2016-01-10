@@ -46,3 +46,7 @@ $this->title = '宜昌交旅 | 首页';
     </div>
   </div>
 </div>
+
+<?php 
+$this->registerJsFile('@web/js/home-slider.js',['depends' => [\yii\web\JqueryAsset::className()]]);
+?>

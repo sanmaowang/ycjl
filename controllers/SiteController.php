@@ -38,6 +38,7 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
+        $this->layout = "//home";
         $pages = Page::find()->all();
 
         return $this->render('index',[
@@ -52,6 +53,9 @@ class SiteController extends Controller
         if($slug == 'home'){
             return $this->goHome();
         }
+        
+        $this->layout = "//inner";
+
         if($page->parent_id == 0){
             if($page->id == 13){
                 return $this->render($page->template,[

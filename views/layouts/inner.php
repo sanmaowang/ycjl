@@ -21,21 +21,36 @@ HomeAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<body class="home">
-  <div id="home_slider" class="bg-slider">
-    <ul class="imgList">
-      <li class="imgOn">
-        <img src="<?php echo \Yii::$app->request->baseUrl;?>/img/home-slider-1.jpg" alt="">
-        <div class="slogan-1"></div>
-      </li>
-      <li><img src="<?php echo \Yii::$app->request->baseUrl;?>/img/home-slider-2.jpg" alt="">
-        <div class="slogan-2"></div>
-      </li>
-      <li><img src="<?php echo \Yii::$app->request->baseUrl;?>/img/home-slider-3.jpg" alt="">
-        <div class="slogan-3"></div>
-      </li>
-    </ul>
-  </div>
+<?php 
+$url = \Yii::$app->request->url;
+$g1_slug = array('introduction','about','chairman','struction','develop','subsidiary','ycjyjt','ycgjjt','ycsxlydjq','ycqczl');
+$g2_slug = array('culture','idea','group-vi','activity','staff');
+$g3_slug=array('news','group-news','industry-news','media-focus');
+$g4_slug=array('business','trafic','travel');
+$g4_slug = array('party','party-construction','qunzhong','board');
+$g5_slug= array('theme','sanyansanshi');
+$g6_slug = array('hr','about-human-resource','job');
+$g_slug = array('home','introduction','about','chairman','struction','develop','subsidiary','culture','idea','group-vi','activity','staff','news','group-news','industry-news','media-focus','business','trafic','travel','party','party-construction','qunzhong','board','theme','sanyansanshi','hr','about-human-resource','job','ycjyjt','ycgjjt','ycsxlydjq','ycqczl');
+$inner = '';
+for ($i = 0;$i < count($g_slug);$i++){
+  if(strpos($url,$g_slug[$i])){
+    if($i <= 6 || $i >= count($g_slug)-4){
+      $inner = '';
+    }else if($i <= 11){
+      $inner = 'inner-1';
+    }else if($i <= 15){
+      $inner = 'inner-2';
+    }else if($i <= 18){
+      $inner = 'inner-3';
+    }else if($i <= 22){
+      $inner = 'inner-2';
+    }else if($i <= 24){
+      $inner = 'inner-1';
+    }
+  }
+}
+?>
+<body <?php echo 'class="'.$inner.'"';?>>
 <?php $this->beginBody() ?>
 <div class="wrap">
 <div class="top-nav">
@@ -90,7 +105,6 @@ HomeAsset::register($this);
   </div>
 </div>
 </div>
-
 <?php $this->endBody() ?>
 </body>
 </html>
