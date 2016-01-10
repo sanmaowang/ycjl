@@ -12,7 +12,7 @@ $url = Yii::$app->request->getUrl();
 <div class="banner">
   <div class="container">
     <div class="main clearfix">
-    <div class="main-left pull-left">
+    <div class="main-left">
       <div class="column-img">
         <img src="img/column/column-<?php echo $page->slug?>.png" alt="">
       </div>
@@ -26,7 +26,7 @@ $url = Yii::$app->request->getUrl();
       </ul>
       <?php }?>
     </div>
-    <div class="main-right pull-right">
+    <div class="main-right">
       <div class="page-header">
         <div class="page-title">
           <h1><?php echo $page->name;?></h1>
