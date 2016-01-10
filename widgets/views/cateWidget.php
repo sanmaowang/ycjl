@@ -53,7 +53,7 @@ $this->registerJs('
 $(document).ready(function () {
     var divHoverLeft = 0;
     var obj = $("#hover_bg");
-    var aWidth = obj.css("width") > 72?96:72;
+    var aWidth = $(".main-link").css("width");
     var _index = $(".active").parent().data("index")
     var _left = _index*aWidth;
     

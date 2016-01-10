@@ -27,20 +27,20 @@ $url = Yii::$app->request->getUrl();
                 <a href="#">
                   <img src="img/slide1.jpg" alt="">
                   <div class="slide-title">
-                    <h4>我知道我们都没有错</h4>
-                    <p>只是放手会比较好过</p>
+                    <h4>新闻1</h4>
+                    <p>测试内容1</p>
                   </div>
                 </a>
               </li>
               <li><a href="#"><img src="img/slide2.jpg" alt="">
                 <div class="slide-title">
-                    <h4>只是防守会比较好过</h4>
-                    <p>信誓旦旦给了承诺</p>
+                    <h4>新闻2</h4>
+                    <p>测试内容2</p>
                   </div></a></li>
               <li><a href="#"><img src="img/slide3.jpg" alt="">
               <div class="slide-title">
-                    <h4>却被时间补了空</h4>
-                    <p>只是放手会比较好过</p>
+                    <h4>新闻3</h4>
+                    <p>测试内容3</p>
                   </div></a></li>
             </ul>
           </div>
