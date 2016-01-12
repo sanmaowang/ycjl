@@ -2,6 +2,7 @@
 
 /* @var $this yii\web\View */
 
+use yii\web\View;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use app\widgets\Breadcrumb;
@@ -39,22 +40,31 @@ $url = Yii::$app->request->getUrl();
         <div id="develop_hype_container" style="position:relative;width:680px;height:600px;overflow:hidden;" aria-live="polite">
           <script type="text/javascript" charset="utf-8" src="<?php echo \Yii::$app->request->baseUrl?>/js/develop.hyperesources/develop_hype_generated_script.js"></script>
         </div>
+        <?php }elseif($page->id == 10){?>
+        <ul id="myGallery">
+          <?php 
+           $path = \Yii::getAlias('@webroot').DIRECTORY_SEPARATOR.'vi-source'.DIRECTORY_SEPARATOR;
+           $filesnames = scandir($path);
+           foreach ($filesnames as $key => $img) {
+            if(strpos($img,'jpg')){
+              echo '<li><img src="'.\Yii::$app->request->baseUrl."/vi-source/".$img.'" alt="VI" />';
+            }
+           }
+          ?>
+        </ul>
+        <?php 
+          $this->registerCssFile('@web/js/gallery/css/jquery.galleryview-3.0-dev.css');//注册自定义js
+          $this->registerJsFile('@web/js/gallery/js/jquery.timers-1.2.js',['depends' => [\yii\web\JqueryAsset::className()]]);
+          $this->registerJsFile('@web/js/gallery/js/jquery.easing.1.3.js',['depends' => [\yii\web\JqueryAsset::className()]]);
+          $this->registerJsFile('@web/js/gallery/js/jquery.galleryview-3.0-dev.js',['depends' => [\yii\web\JqueryAsset::className()]]);
+          $this->registerJs("
+          $(function(){
+            $('#myGallery').galleryView();
+          })",View::POS_END,'show');
+        ?>
         <?php }else{?>
         <?php echo $page->content;?>
         <?php }?>
-      </div>
-      <div class="share">
-        <!-- JiaThis Button BEGIN -->
-          <div class="jiathis_style">
-            <a class="jiathis_button_qzone"></a>
-            <a class="jiathis_button_tsina"></a>
-            <a class="jiathis_button_tqq"></a>
-            <a class="jiathis_button_weixin"></a>
-            <a class="jiathis_button_renren"></a>
-            <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-            <a class="jiathis_counter_style"></a>
-          </div>
-        <!-- JiaThis Button END -->
       </div>
       <div class="relate-post">
         <div class="row">
@@ -86,7 +96,4 @@ $url = Yii::$app->request->getUrl();
     </div>
   </div>
 </div>
-<?php 
-  $this->registerJsFile('http://v3.jiathis.com/code/jia.js');
-?>
 
