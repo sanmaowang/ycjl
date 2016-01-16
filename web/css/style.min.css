@@ -711,130 +711,6 @@ a:hover {
   width: 100%;
   background: #EDF5FA;
 }
-.slogan-1 {
-  text-indent: 99999px;
-  background: url(../img/slogan.png) no-repeat 0 0;
-  width: 405.6px;
-  height: 106.8px;
-  background-size: 100% 100%;
-  top: 30%;
-  right: 24%;
-  position: absolute;
-}
-.slogan-2 {
-  text-indent: 99999px;
-  background: url(../img/slogan-2.png) no-repeat 0 0;
-  width: 562.1px;
-  height: 108.9px;
-  background-size: 100% 100%;
-  top: 30%;
-  left: 50%;
-  position: absolute;
-}
-.slogan-3 {
-  text-indent: 99999px;
-  background: url(../img/slogan-3.png) no-repeat 0 0;
-  width: 756px;
-  height: 86px;
-  background-size: 100% 100%;
-  top: 30%;
-  left: 30%;
-  position: absolute;
-}
-.bg-slider {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 0;
-}
-.bg-slider ul {
-  margin: 0;
-  padding: 0;
-}
-.bg-slider li {
-  display: none;
-  list-style: none;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.bg-slider .home-slider-1 {
-  background: url(../img/home-slider-1.jpg) no-repeat 0 0;
-  background-size: cover;
-}
-.bg-slider .home-slider-2 {
-  background: url(../img/home-slider-2.jpg) no-repeat 0 0;
-  background-size: cover;
-}
-.bg-slider .home-slider-3 {
-  background: url(../img/home-slider-3.jpg) no-repeat 0 0;
-  background-size: cover;
-}
-.bg-slider img {
-  width: 100%;
-  max-width: 100%;
-  height: 100%;
-}
-.bg-slider .imgOn {
-  display: inline;
-}
-.bg-slider .imgOn .slogan-1 {
-  -webkit-animation: fadeInRight 0.8s 0s ease both normal;
-  /* Saf5, Chrome */
-  -moz-animation: fadeInRight 0.8s 0s eases both normal;
-  /* FF5+ */
-  -o-animation: fadeInRight 0.8s 0s ease both normal;
-  /* Opera 12+ */
-}
-.bg-slider .imgOn .slogan-2 {
-  -webkit-animation: fadeInLeft 0.8s 0.8s ease both normal;
-  /* Saf5, Chrome */
-  -moz-animation: fadeInLeft 0.8s 0.8s eases both normal;
-  /* FF5+ */
-  -o-animation: fadeInLeft 0.8s 0.8s ease both normal;
-  /* Opera 12+ */
-}
-.bg-slider .imgOn .slogan-3 {
-  -webkit-animation: slideInUp 0.8s 0.8s ease both normal;
-  /* Saf5, Chrome */
-  -moz-animation: slideInUp 0.8s 0.8s eases both normal;
-  /* FF5+ */
-  -o-animation: slideInUp 0.8s 0.8s ease both normal;
-  /* Opera 12+ */
-}
-.bg-slider .cloud {
-  position: absolute;
-  top: 30%;
-  left: 20%;
-  z-index: 10;
-}
-.change .slogan-1 {
-  -webkit-animation: fadeOutLeft 0.8s 0s ease both normal;
-  /* Saf5, Chrome */
-  -moz-animation: fadeOutLeft 0.8s 0s eases both normal;
-  /* FF5+ */
-  -o-animation: fadeOutLeft 0.8s 0s ease both normal;
-  /* Opera 12+ */
-}
-.change .slogan-2 {
-  -webkit-animation: fadeOutRight 0.8s 0s ease both normal;
-  /* Saf5, Chrome */
-  -moz-animation: fadeOutRight 0.8s 0s eases both normal;
-  /* FF5+ */
-  -o-animation: fadeOutRight 0.8s 0s ease both normal;
-  /* Opera 12+ */
-}
-.change .slogan-3 {
-  -webkit-animation: slideOutDown 0.8s 0s ease both normal;
-  /* Saf5, Chrome */
-  -moz-animation: slideOutDown 0.8s 0s eases both normal;
-  /* FF5+ */
-  -o-animation: slideOutDown 0.8s 0s ease both normal;
-  /* Opera 12+ */
-}
 .home .wrap {
   z-index: 2;
 }
@@ -909,29 +785,51 @@ a:hover {
   border: none;
   padding: 4px 6px;
   float: left;
+  background: #fff;
   border-radius: 4px;
 }
-.links-level-two {
-  display: none;
+.search-btn {
   position: absolute;
-  width: 120px;
+  right: 34px;
+  top: 5px;
+  text-indent: -9999px;
+  border: none;
+  width: 20px;
+  height: 17px;
+  background: url(../img/icon-search.png) no-repeat 0 0;
+}
+.search-btn:focus {
+  border: none;
+}
+.links-level-two {
+  position: absolute;
+  overflow: hidden;
+  width: 116px;
   background: #fff;
-  border: 1px solid #0071bb;
+  border: 1px solid #828384;
   z-index: 100;
   top: 30px;
   left: 5px;
-  padding-top: 3px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
 }
 .links-level-two dl {
   margin: 0;
   padding: 0;
 }
 .links-level-two dl dd {
-  padding: 5px;
-  margin: 5px 0;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #e7e7e7;
 }
 .links-level-two dl a {
+  display: block;
+  padding: 10px;
   color: #4a4a4a;
+  line-height: 1.45;
+}
+.links-level-two dl a:hover {
+  background: #e6e6e6;
 }
 .header {
   height: 64px;
@@ -1009,12 +907,12 @@ a:hover {
   background: none;
 }
 .nav ul .active {
-  color: #FFE4B7;
+  color: #FFFBD9;
   font-weight: 800;
 }
 .nav ul a {
   display: block;
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
   line-height: 48px;
 }
@@ -1080,21 +978,188 @@ a:hover {
 .banner {
   width: 100%;
   margin: 0 auto;
-  padding-bottom: 110px;
+}
+.slogan-1-left {
+  width: 249.6px;
+  height: 40.8px;
+  position: absolute;
+  top: 90px;
+  right: 300px;
+}
+.slogan-1-right {
+  width: 298.8px;
+  height: 48px;
+  position: absolute;
+  top: 162px;
+  right: 200px;
+}
+.slogan-2-left {
+  width: 442px;
+  height: 40px;
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  margin-left: -221px;
+}
+.slogan-2-right {
+  width: 444px;
+  height: 40px;
+  position: absolute;
+  top: 175px;
+  left: 50%;
+  margin-left: -222px;
+}
+.slogan-3-left {
+  width: 651px;
+  height: 34px;
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  margin-left: -325.5px;
+}
+.slogan-3-right {
+  width: 742px;
+  height: 40px;
+  position: absolute;
+  top: 170px;
+  left: 50%;
+  margin-left: -371px;
+}
+.slogan {
+  width: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+.slogan ul {
+  margin: 0;
+  padding: 0;
+}
+.slogan li {
+  display: none;
+  list-style: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.slogan img {
+  max-width: 100%;
+  width: 100%;
+}
+.slogan .imgOn {
+  display: inline;
+}
+.slogan .imgOn .slogan-1-left {
+  -webkit-animation: fadeInLeft 0.8s 0s ease both normal;
+  /* Saf5, Chrome */
+  -moz-animation: fadeInLeft 0.8s 0s eases both normal;
+  /* FF5+ */
+  -o-animation: fadeInLeft 0.8s 0s ease both normal;
+  /* Opera 12+ */
+}
+.slogan .imgOn .slogan-1-right {
+  -webkit-animation: fadeInRight 0.8s 0.2s ease both normal;
+  /* Saf5, Chrome */
+  -moz-animation: fadeInRight 0.8s 0.2s eases both normal;
+  /* FF5+ */
+  -o-animation: fadeInRight 0.8s 0.2s ease both normal;
+  /* Opera 12+ */
+}
+.slogan .imgOn .slogan-2-left {
+  -webkit-animation: fadeInLeft 0.8s 0s ease both normal;
+  /* Saf5, Chrome */
+  -moz-animation: fadeInLeft 0.8s 0s eases both normal;
+  /* FF5+ */
+  -o-animation: fadeInLeft 0.8s 0s ease both normal;
+  /* Opera 12+ */
+}
+.slogan .imgOn .slogan-2-right {
+  -webkit-animation: fadeInRight 0.8s 0.2s ease both normal;
+  /* Saf5, Chrome */
+  -moz-animation: fadeInRight 0.8s 0.2s eases both normal;
+  /* FF5+ */
+  -o-animation: fadeInRight 0.8s 0.2s ease both normal;
+  /* Opera 12+ */
+}
+.slogan .imgOn .slogan-3-left {
+  -webkit-animation: fadeInLeft 0.8s 0s ease both normal;
+  /* Saf5, Chrome */
+  -moz-animation: fadeInLeft 0.8s 0s eases both normal;
+  /* FF5+ */
+  -o-animation: fadeInLeft 0.8s 0s ease both normal;
+  /* Opera 12+ */
+}
+.slogan .imgOn .slogan-3-right {
+  -webkit-animation: fadeInRight 0.8s 0.2s ease both normal;
+  /* Saf5, Chrome */
+  -moz-animation: fadeInRight 0.8s 0.2s eases both normal;
+  /* FF5+ */
+  -o-animation: fadeInRight 0.8s 0.2s ease both normal;
+  /* Opera 12+ */
+}
+.fade .slogan-1-left {
+  -webkit-animation: fadeOutLeft 0.8s 0s ease both normal;
+  /* Saf5, Chrome */
+  -moz-animation: fadeOutLeft 0.8s 0s eases both normal;
+  /* FF5+ */
+  -o-animation: fadeOutLeft 0.8s 0s ease both normal;
+  /* Opera 12+ */
+}
+.fade .slogan-1-right {
+  -webkit-animation: fadeOutRight 0.8s 0.2s ease both normal;
+  /* Saf5, Chrome */
+  -moz-animation: fadeOutRight 0.8s 0.2s eases both normal;
+  /* FF5+ */
+  -o-animation: fadeOutRight 0.8s 0.2s ease both normal;
+  /* Opera 12+ */
+}
+.fade .slogan-2-left {
+  -webkit-animation: fadeOutLeft 0.8s 0s ease both normal;
+  /* Saf5, Chrome */
+  -moz-animation: fadeOutLeft 0.8s 0s eases both normal;
+  /* FF5+ */
+  -o-animation: fadeOutLeft 0.8s 0s ease both normal;
+  /* Opera 12+ */
+}
+.fade .slogan-2-right {
+  -webkit-animation: fadeOutRight 0.8s 0.2s ease both normal;
+  /* Saf5, Chrome */
+  -moz-animation: fadeOutRight 0.8s 0.2s eases both normal;
+  /* FF5+ */
+  -o-animation: fadeOutRight 0.8s 0.2s ease both normal;
+  /* Opera 12+ */
+}
+.fade .slogan-3-left {
+  -webkit-animation: fadeOutLeft 0.8s 0s ease both normal;
+  /* Saf5, Chrome */
+  -moz-animation: fadeOutLeft 0.8s 0s eases both normal;
+  /* FF5+ */
+  -o-animation: fadeOutLeft 0.8s 0s ease both normal;
+  /* Opera 12+ */
+}
+.fade .slogan-3-right {
+  -webkit-animation: fadeOutRight 0.8s 0.2s ease both normal;
+  /* Saf5, Chrome */
+  -moz-animation: fadeOutRight 0.8s 0.2s eases both normal;
+  /* FF5+ */
+  -o-animation: fadeOutRight 0.8s 0.2s ease both normal;
+  /* Opera 12+ */
 }
 .columns {
   width: 100%;
   background: url(../img/home-mask.png) repeat-x 0 0;
   background-size: 100% 100%;
-  height: 178px;
-  bottom: 95px;
+  height: 245px;
+  padding-top: 10px;
+  bottom: 60px;
   left: 0;
   position: absolute;
   color: #fff;
-  font-size: 12px;
+  font-size: 14px;
 }
 .columns h3 {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: normal;
   *zoom: 1;
 }
@@ -1117,7 +1182,7 @@ a:hover {
 .columns h3 span {
   color: #9B9B9B;
   margin-left: 5px;
-  font-size: 12px;
+  font-size: 14px;
 }
 .columns .more {
   float: right !important;
@@ -1133,6 +1198,7 @@ a:hover {
   margin-left: -15px;
 }
 .column-thumb img {
+  width: 95%;
   border: 4px solid #fff;
 }
 .column-links,
@@ -1142,6 +1208,9 @@ a:hover {
 }
 .column-links {
   width: 25%;
+}
+.column-links a {
+  color: #fff;
 }
 .column-news {
   width: 34%;
@@ -1164,10 +1233,10 @@ a:hover {
   padding: 0;
 }
 .column-news-list li {
-  margin: 10px 0;
+  margin: 15px 0;
   list-style: none;
   padding-left: 15px;
-  background: url(../img/i-square.png) no-repeat 0 3px;
+  background: url(../img/i-square.png) no-repeat 0 center;
 }
 .column-news-list li a {
   color: #fff;
@@ -1183,7 +1252,7 @@ a:hover {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 140px;
+  height: 120px;
   background: url(../img/bottom-bg.png) no-repeat 0 0;
   background-size: cover;
 }
@@ -1291,7 +1360,7 @@ a:hover {
   font-size: .8em;
   width: 100%;
   position: absolute;
-  bottom: 8px;
+  bottom: 20px;
   color: #98C3D9;
 }
 .footer .links p {
@@ -1302,7 +1371,7 @@ a:hover {
   margin: 0 15px;
 }
 .main {
-  margin: 30px 0;
+  margin: 30px 0 120px;
   padding: 20px;
   border: 1px solid #e7e7e7;
   border-top: 3px solid #0064B5;
@@ -1442,13 +1511,18 @@ a:hover {
   font-size: 14px;
   padding: 10px 0 5px;
 }
+.relate-post .hot-news {
+  margin-bottom: 15px;
+}
 .relate-post .hot-news-title {
   display: block;
   font-size: 14px;
-  margin: 10px 0;
+  margin: 10px 0 6px;
 }
 .relate-post .hot-news-content {
+  margin: 0;
   color: #7D869F;
+  line-height: 1.45;
 }
 .history-list ul {
   margin: 0;
@@ -1587,23 +1661,32 @@ a:hover {
 .slide-title {
   position: absolute;
   box-sizing: border-box;
-  top: 265px;
+  top: 256px;
   width: 600px;
-  height: 80px;
+  height: 90px;
   overflow: hidden;
   padding: 10px 15px;
-  background: #333;
   color: #fff;
-  zoom: 1;
-  opacity: 0.75;
-  filter: alpha(opacity=75);
+  z-index: 2;
 }
 .slide-title h4 {
   font-size: 18px;
-  margin: 8px 0 5px;
+  margin: 3px 0 5px;
 }
 .slide-title p {
   margin: 0;
+  color: #f0f0f0;
+}
+.slide-mask {
+  position: absolute;
+  top: 256px;
+  width: 600px;
+  height: 90px;
+  background: #000;
+  zoom: 1;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  z-index: 0;
 }
 .news-topic-main {
   margin-left: 630px;
@@ -1730,7 +1813,7 @@ a:hover {
 }
 .news-list .thumbnail {
   display: block;
-  height: 140px;
+  height: 138px;
   overflow: hidden;
   padding-left: 0;
   background: none;
@@ -1748,8 +1831,8 @@ a:hover {
   padding: 0;
 }
 .news-list .thumbnail .time {
-  margin-top: 10px;
-  float: left !important;
+  margin-top: 5px;
+  color: #ccc;
 }
 .news-list .thumbnail img {
   max-width: 100%;
@@ -1800,6 +1883,10 @@ a:hover {
 .col-news-right {
   width: 390px;
   float: right;
+}
+.col-news-column-right {
+  width: 650px;
+  float: left;
 }
 .imagearea {
   overflow: hidden;
@@ -2022,7 +2109,44 @@ a:hover {
   border-bottom: 1px dotted #ececec;
   background-position: left -265px;
 }
+.news-pic-list ul {
+  margin: 0;
+  padding: 0;
+}
+.news-pic-list li {
+  list-style: none;
+  display: block;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  padding: 8px;
+  border: 2px solid #ddd;
+  background: #fff;
+}
+.news-pic-list img {
+  max-width: 100%;
+}
 @media (max-width: 1440px) {
+  .slogan-1-left {
+    top: 40px;
+  }
+  .slogan-1-right {
+    top: 85px;
+  }
+  .slogan-2-left {
+    top: 50px;
+  }
+  .slogan-2-right {
+    top: 95px;
+  }
+  .slogan-3-left {
+    top: 50px;
+    left: 50%;
+  }
+  .slogan-3-right {
+    top: 90px;
+  }
   .container {
     width: 1024px;
   }
@@ -2059,10 +2183,47 @@ a:hover {
     overflow: hidden;
   }
   .columns {
-    bottom: 74px;
+    width: 100%;
+    background: url(../img/home-mask.png) repeat-x 0 0;
+    background-size: 100% 100%;
+    height: 178px;
+    bottom: 60px;
+    left: 0;
+    position: absolute;
+    color: #fff;
+    font-size: 12px;
+  }
+  .columns h3 {
+    font-size: 14px;
+    font-weight: normal;
+    *zoom: 1;
+  }
+  .columns h3:before,
+  .columns h3:after {
+    content: "";
+    display: table;
+  }
+  .columns h3:after {
+    clear: both;
+  }
+  .columns h3:before,
+  .columns h3:after {
+    content: " ";
+    display: table;
+  }
+  .columns h3:after {
+    clear: both;
+  }
+  .columns h3 span {
+    color: #9B9B9B;
+    margin-left: 5px;
+    font-size: 12px;
+  }
+  .column-news-list li {
+    margin: 12px 0;
   }
   .footer {
-    height: 110px;
+    height: 100px;
   }
   .footer ul {
     bottom: 40px;
