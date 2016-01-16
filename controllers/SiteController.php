@@ -10,6 +10,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use yii\db\Query;
 
 class SiteController extends Controller
 {
@@ -39,10 +40,25 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $this->layout = "//home";
-        $pages = Page::find()->all();
+        $news = Post::find()->where(['page_id'=>14])->orderBy(['create_date'=>SORT_DESC])->all();
 
         return $this->render('index',[
-            'pages'=>$pages
+            'news'=>$news
+        ]);
+    }
+
+    public function actionSearch($t)
+    {
+        $search = $t;
+        $model = Post::find()->where(['like','content', $search])->limit(8)->all();
+        // $pageQuery = new Query();
+        // $t = $pageQuery->select('id,name,content,update_date')->from('page')
+        //     ->where(['like','content', $search])
+        //     ->limit(10);
+        // $postQuery->union($pageQuery);  
+        return $this->render('search_result',[
+            'model'=>$model,
+            'search_key'=>$t
         ]);
     }
 
@@ -58,8 +74,16 @@ class SiteController extends Controller
 
         if($page->parent_id == 0){
             if($page->id == 13){
-                return $this->render($page->template,[
+                $group_news = Post::find()->where(['page_id'=>14])->orderBy(['create_date'=>SORT_DESC])->all();
+                $industry_news = Post::find()->where(['page_id'=>15])->orderBy(['create_date'=>SORT_DESC])->all();
+                $media_news = Post::find()->where(['page_id'=>16])->orderBy(['create_date'=>SORT_DESC])->all();
+                $headlines = Post::find()->where(['is_headline'=>1])->orderBy(['create_date'=>SORT_DESC])->all();
+                return $this->render('template/'.$page->template,[
                     'page'=>$page,
+                    'group_news'=>$group_news,
+                    'industry_news'=>$industry_news,
+                    'media_news'=>$media_news,
+                    'headlines'=>$headlines
                 ]);
             }
             $menu = Page::find()->where(['parent_id'=>$page->id])->all();
@@ -69,7 +93,7 @@ class SiteController extends Controller
             $menu = Page::find()->where(['parent_id'=>$page->parent_id])->all();
         }
    
-        return $this->render($page->template,[
+        return $this->render('template/'.$page->template,[
             'page'=>$page,
             'menu'=>$menu
         ]);
@@ -78,8 +102,16 @@ class SiteController extends Controller
     public function actionViewPost($id)
     {
         $this->layout = "//inner";
-        return $this->render('post', [
-            'post' => $this->findPostModel($id),
+        $post = $this->findPostModel($id);
+        $page = $post->page;
+        if($page->parent_id == 0){
+            $menu = Page::find()->where(['parent_id'=>$page->id])->all();
+        }else{
+            $menu = Page::find()->where(['parent_id'=>$page->parent_id])->all();
+        }
+        return $this->render('template/post', [
+            'post' => $post,
+            'menu'=>$menu
         ]);
     }
 

@@ -38,22 +38,21 @@ $url = Yii::$app->request->getUrl();
         <div class="news-header type-header">
           <h2>最新动态 <span>LATEST NEWS</span></h2>
         </div>
-        <div class="news-list">
-          <ul>
-            <?php foreach ($page->posts as $key => $post) {?>
-              <li class="thumbnail clearfix">
-                <?php if($post->thumb){?>
-                  <div class="thumb">
-                    <img src="<?= $post->thumb;?>" alt="">
-                  </div>
-                <?php }?>
-                <a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"><h3><?php echo $post->name;?><span class="time"><?php echo date("Y年m月d日",$post->update_date);?></span></h3></a>
-                <div class="desc">
-                  <?= $post->excerpt;?>
-                </div> 
-                 </li>
-            <?php }?>
-          </ul>
+        <div class="news-image-column">
+        <div class="row">
+          <?php foreach ($page->posts as $key => $post) {?>
+            <div class="col-xs-4">
+              <a href="<?php echo Url::to(['view-post','id'=>$post->id])?>" class="pic-thumbnail">
+              <?php if($post->thumb){?>
+              <img src="<?= $post->thumb;?>" alt="" >
+              <?php }?>
+              <div class="caption">
+              <b><?php echo $post->name;?></b>
+              </div>
+              </a>
+            </div>
+          <?php }?>
+        </div>
         </div>
       </div>
     </div>

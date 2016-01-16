@@ -17,6 +17,7 @@ HomeAsset::register($this);
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
@@ -53,31 +54,7 @@ for ($i = 0;$i < count($g_slug);$i++){
 <body <?php echo 'class="'.$inner.'"';?>>
 <?php $this->beginBody() ?>
 <div class="wrap">
-<div class="top-nav">
-  <div class="container">
-    <div class="row">
-      <div class="top-quick-link">
-        <a href="#">设为首页</a>
-        <a href="#">加入收藏</a>
-      </div>
-      <div class="top-nav-link">
-      <ul class="top-links">
-        <li>
-          <a href="">集团网站群</a>
-          <div class="links-level-two">
-            <dl>
-              <dd><a href="">某网站</a></dd>
-              <dd><a href="">某网站</a></dd>
-              <dd><a href="">某网站</a></dd>
-            </dl>
-          </div>
-        </li>
-      </ul>
-      <input type="text" placeholder="搜索.." class="top-search"/>
-      </div>
-    </div>
-  </div>
-</div>
+  <?= $this->render('_top-nav') ?>
 <div class="header">
   <div class="container">
     <a href="<?= Url::to(['site/index'])?>" class="logo">
@@ -89,22 +66,14 @@ for ($i = 0;$i < count($g_slug);$i++){
 <?= $content ?>
 <div class="footer">
   <div class="container">
-    <ul class="clearfix">
-      <li class="li_1"><a href=""><i class="icon-footer-symbol"></i>实业投资</a></li>
-      <li class="li_2"><a href=""><i class="icon-footer-symbol"></i>交运集团</a></li>
-      <li class="li_3"><a href=""><i class="icon-footer-symbol"></i>旅游景点开发</a></li>
-      <li class="li_4"><a href=""><i class="icon-footer-symbol"></i>旅游交通线路</a></li>
-      <li class="li_5"><a href=""><i class="icon-footer-symbol"></i>旅游规划设计</a></li>
-      <li class="li_6"><a href=""><i class="icon-footer-symbol"></i>宜昌酒店</a></li>
-      <li class="li_7"><a href=""><i class="icon-footer-symbol"></i>旅行社</a></li>
-    </ul>
     <div class="links">
-      <p class="pull-left" style="margin-left:3em;">&copy; 宜昌交通旅游集团 2015 ALL RIGHTS RESERVED</p>
-      <p class="pull-right" style="margin-right:3em;"><a href="">联系方式</a> | <a href="">隐私声明</a> | <a href="">使用条款</a> | <a href="">网站地图</a>  </p>
+      <p class="pull-left">&copy; 宜昌交通旅游集团 2015 ALL RIGHTS RESERVED</p>
+      <p class="pull-right"><a href="">联系方式</a> | <a href="">隐私声明</a> | <a href="">使用条款</a> | <a href="">网站地图</a>  </p>
     </div>
   </div>
 </div>
 </div>
+<?php $this->registerJsFile('@web/js/base.js',['depends' => [\yii\web\JqueryAsset::className()]]);?>
 <?php $this->endBody() ?>
 </body>
 </html>

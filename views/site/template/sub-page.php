@@ -47,7 +47,7 @@ $url = Yii::$app->request->getUrl();
                 </a>
               </li>
               <li>
-                <a class="sub-item-link" href="#">
+                <a class="sub-item-link" href="<?php echo Url::to(['site/page','slug'=>'ycgjjt'])?>">
                   <img src="<?php echo Yii::$app->request->baseUrl;?>/img/column/sub-jy2.png" alt="" class="pull-left">
                   <div class="sub-item-content">
                     <h4 class="sub-item-title">宜昌公交集团有限责任公司</h4>
@@ -57,7 +57,7 @@ $url = Yii::$app->request->getUrl();
                 </a>
               </li>
               <li>
-                <a class="sub-item-link" href="#">
+                <a class="sub-item-link" href="<?php echo Url::to(['site/page','slug'=>'ycsxlydjq'])?>">
                   <img src="<?php echo Yii::$app->request->baseUrl;?>/img/column/sub-jy3.png" alt="" class="pull-left">
                   <div class="sub-item-content">
                     <h4 class="sub-item-title">宜昌三峡旅游度假区开发有限公司</h4>
@@ -67,7 +67,7 @@ $url = Yii::$app->request->getUrl();
                 </a>
               </li>
               <li>
-                <a class="sub-item-link" href="#">
+                <a class="sub-item-link" href="<?php echo Url::to(['site/page','slug'=>'ycqczl'])?>">
                   <img src="<?php echo Yii::$app->request->baseUrl;?>/img/column/sub-jy4.png" alt="" class="pull-left">
                   <div class="sub-item-content">
                     <h4 class="sub-item-title">宜昌交旅集团汽车租赁有限公司</h4>

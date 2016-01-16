@@ -26,7 +26,7 @@ $url = Yii::$app->request->getUrl();
         <div class="news-list">
           <ul>
             <?php foreach ($page->posts as $key => $post) {?>
-              <li <?php if($key==0){echo 'class="first"';}?>><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"><?php echo $post->name;?></a> <span class="time"><?php echo $post->update_date;?></span></li>
+              <li <?php if($key==0){echo 'class="first"';}?>><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"><?php echo $post->name;?></a> <span class="time"><?php echo date("Y年m月d日",$post->update_date);?></span></li>
             <?php }?>
           </ul>
         </div>
@@ -34,6 +34,11 @@ $url = Yii::$app->request->getUrl();
       <div class="news-right">
         <div class="news-header">
           <h2>图片新闻 <span>PHOTO NEWS</span></h2>
+        </div>
+        <div class="news-pic-list">
+          <ul>
+            
+          </ul>
         </div>
       </div>
     </div>

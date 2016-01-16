@@ -13,6 +13,8 @@ use Yii;
  * @property integer $id
  * @property integer $page_id
  * @property integer $user_id
+ * @property integer $is_recommend
+ * @property integer $is_headline
  * @property string $name
  * @property string $content
  * @property integer $create_date
@@ -34,7 +36,7 @@ class Post extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['page_id', 'user_id', 'create_date', 'update_date'], 'integer'],
+            [['page_id', 'user_id', 'is_recommend','is_headline', 'create_date', 'update_date'], 'integer'],
             [['name', 'content'], 'string']
         ];
     }
@@ -48,6 +50,8 @@ class Post extends \yii\db\ActiveRecord
             'id' => Yii::t('app', 'ID'),
             'page_id' => Yii::t('app', 'Page ID'),
             'user_id' => Yii::t('app', 'User ID'),
+            'is_recommend' => Yii::t('app', '是否推荐'),
+            'is_recommend' => Yii::t('app', '是否头条'),
             'name' => Yii::t('app', 'Name'),
             'content' => Yii::t('app', 'Content'),
             'create_date' => Yii::t('app', 'Create Time'),
@@ -116,14 +120,22 @@ class Post extends \yii\db\ActiveRecord
 
     public function getThumb()
     {
-        preg_match('/<\s*img\s+[^>]*?src\s*=\s*(\'|\")(.*?)\\1[^>]*?\/?\s*>/i',$this->content,$match); 
-        return $match[0];
+      preg_match('/<img.+src=\"?(.+\.(jpg|gif|bmp|bnp|png))\"?.+>/i',$this->content,$match);
+      return $match?$match[1]:null;
     }
 
     public function getExcerpt()
     {
         $content =strip_tags($this->content);
-        return $this->cut_str($content,150);
+        $content = str_replace("&nbsp;","",$content);
+        return $this->cut_str(trim($content),150);
+    }
+
+    public function getShortExcerpt()
+    {
+        $content =strip_tags($this->content);
+        $content = str_replace("&nbsp;","",$content);
+        return $this->cut_str(trim($content),70);
     }
     
 

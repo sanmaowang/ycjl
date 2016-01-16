@@ -19,24 +19,23 @@ $url = Yii::$app->request->getUrl();
         <?php if(isset($menu) && count($menu)>0){?>
         <ul>
           <?php foreach ($menu as $key => $m) {
-            $current = strpos($url,$m->slug)?"class='current'":'';
+          $current = strpos($url,$m->slug)?"class='current'":'';
           ?>
-            <li><a href="<?php echo Url::to(['site/page','slug'=>$m->slug])?>" <?php echo $current?>><?php echo $m->name;?></a></li>
+          <li><a href="<?php echo Url::to(['site/page','slug'=>$m->slug])?>" <?php echo $current?>><?php echo $m->name;?></a></li>
           <?php }?>
         </ul>
         <?php }?>
       </div>
-    <div class="main-right">
-      <div class="page-header">
-        <div class="page-title">
-          <h1><?php echo $page->name;?></h1>
-          <h2><?php echo $page->english_name;?></h2>
+      <div class="main-right">
+        <div class="page-header">
+          <div class="page-title">
+            <h1><?php echo $page->name;?></h1>
+            <h2><?php echo $page->english_name;?></h2>
+          </div>
+          <?= Breadcrumb::widget();?>
         </div>
-        <?= Breadcrumb::widget();?>
-      </div>
-      <div class="news-main">
-        <div class="news-header type-header">
-          <h2>最新动态 <span>LATEST NEWS</span></h2>
+        <div class="news-header">
+          <h2>最新资讯 <span>LATEST NEWS</span></h2>
         </div>
         <div class="news-list">
           <ul>
@@ -51,12 +50,11 @@ $url = Yii::$app->request->getUrl();
                 <div class="desc">
                   <?= $post->excerpt;?>
                 </div> 
-                 </li>
+               </li>
             <?php }?>
           </ul>
         </div>
       </div>
-    </div>
     </div>
   </div>
 </div>
