@@ -693,7 +693,7 @@ body {
   width: 100%;
   height: 100%;
   font-family: 'Microsoft Yahei', sans-serif !important;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 body {
   margin: 0;
@@ -1456,7 +1456,11 @@ a:hover {
   line-height: 1.65;
   color: #333;
   margin-bottom: 30px;
+  padding: 0 2%;
   overflow: hidden;
+}
+.content p {
+  text-indent: 28px;
 }
 .content img {
   max-width: 100%;
