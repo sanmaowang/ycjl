@@ -46,6 +46,7 @@ class PostController extends Controller
      */
     public function actionIndex()
     {
+        
         $dataProvider = new ActiveDataProvider([
             'query' => Post::find(),
         ]);

@@ -38,9 +38,11 @@ HomeAsset::register($this);
 <?= $content ?>
 <div class="footer">
   <div class="container">
+    <div class="support">&copy; 宜昌交通旅游集团 2015 ALL RIGHTS RESERVED</div>
     <div class="row">
     <div class="links">
-      <p class="pull-left">&copy; 宜昌交通旅游集团 2015 ALL RIGHTS RESERVED</p>
+      <p class="pull-left">
+        <span class="light">技术支持: 湖北元速科技有限公司</span></p>
       <p class="pull-right"><?= Links::widget();?> </p>
     </div>
     </div>

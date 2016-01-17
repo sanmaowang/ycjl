@@ -32,6 +32,9 @@ $url = Yii::$app->request->getUrl();
           <div class="page-title">
             <h1><?php echo $page->name;?></h1>
             <h2><?php echo $page->english_name;?></h2>
+            <div class="time">
+              <span>发布时间：</span>
+            </div>
           </div>
           <?= Breadcrumb::widget();?>
         </div>
