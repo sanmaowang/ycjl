@@ -34,7 +34,6 @@ use yii\widgets\ActiveForm;
       <div class="col-lg-8"><div class="help-block"></div></div>
     </div>
 
-
     <?= $form->field($model, 'name')->textInput() ?>
 
     <div class="form-group field-post-content">

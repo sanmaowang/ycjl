@@ -5,9 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Post */
 
-$this->title = Yii::t('app', '更新 {modelClass}: ', [
-    'modelClass' => '文章',
-]) . ' ' . $model->name;
+$this->title = Yii::t('app', '更新文章：') ;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Posts'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
