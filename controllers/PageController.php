@@ -63,7 +63,7 @@ class PageController extends Controller
      */
     public function actionIndex()
     {
-        $model = Page::find()->all();
+        $model = Page::find()->orderBy('display_order asc')->all();
 
         $pages =  $this->tree($model,0);
 
