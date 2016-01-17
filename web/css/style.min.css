@@ -2346,6 +2346,15 @@ a.pic-thumbnail:hover {
     margin-left: 5px;
     font-size: 12px;
   }
+  .content {
+    padding: 0;
+  }
+  .news-list {
+    padding: 0;
+  }
+  .col-news-column-right {
+    width: 510px;
+  }
   .column-news-list li {
     margin: 12px 0;
   }
