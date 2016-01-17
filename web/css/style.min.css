@@ -1478,6 +1478,9 @@ a:hover {
 .content img {
   max-width: 100%;
 }
+.content .news-list {
+  padding: 0 2%;
+}
 .content-title {
   text-align: center;
 }
@@ -1818,7 +1821,6 @@ a:hover {
 }
 .news-list ul {
   margin: 20px 0 24px;
-  padding: 0 20px;
 }
 .news-list li {
   list-style: none;
@@ -2347,6 +2349,9 @@ a.pic-thumbnail:hover {
     font-size: 12px;
   }
   .content {
+    padding: 0;
+  }
+  .content .news-list {
     padding: 0;
   }
   .news-list {
