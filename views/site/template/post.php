@@ -37,6 +37,9 @@ $url = Yii::$app->request->getUrl();
             <h1><?= $post->name?></h1>
           </div>
           <?php echo $post->content;?>
+          <div class="time">
+            <span>发布时间：<?php echo date("Y年m月d日",$post->create_date);?></span>
+          </div>
         </div>
         <?= Hot::widget();?>
       </div>

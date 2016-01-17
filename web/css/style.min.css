@@ -1470,6 +1470,11 @@ a:hover {
   padding: 0 2%;
   overflow: hidden;
 }
+.content .time {
+  color: #999;
+  text-align: right;
+  font-size: 13px;
+}
 .content img {
   max-width: 100%;
 }
