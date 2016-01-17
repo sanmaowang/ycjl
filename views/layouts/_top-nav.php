@@ -17,10 +17,9 @@ use yii\widgets\ActiveForm;
           <a href="#" style="padding-bottom:30px;">集团网站群</a>
           <div class="links-level-two" style="display:none;">
             <dl>
-              <dd><a href="" target="_blank">宜昌交运集团</a></dd>
-              <dd><a href="" target="_blank">宜昌公交集团有限公司</a></dd>
-              <dd><a href="" target="_blank">宜昌三峡旅游度假区开发有限公司</a></dd>
-              <dd><a href="" target="_blank">宜昌交旅集团汽车租赁有限公司</a></dd>
+              <dd><a href="http://www.ycjyjt.com/" target="_blank">宜昌交运集团</a></dd>
+              <dd><a href="http://www.ycbus.com/" target="_blank">宜昌公交集团有限公司</a></dd>
+              <!-- <dd><a href="" target="_blank">宜昌三峡旅游度假区开发有限公司</a></dd> -->
             </dl>
           </div>
         </li>

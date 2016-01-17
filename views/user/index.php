@@ -20,10 +20,11 @@ $this->params['menu'] =[
 ?>
 <div class="admin-index">
     
+    <h2>用户管理</h2>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create Admin'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', '创建管理员'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <div class="box">
@@ -39,7 +40,6 @@ $this->params['menu'] =[
             // 'id',
             'username',
             'name',
-            'english_name',
             'email',
             'role',
             // 'status',

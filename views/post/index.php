@@ -35,8 +35,8 @@ $this->params['menu'] =[
             ['class' => 'yii\grid\SerialColumn'],
 
             // 'id',
-            'page_id',
-            'user_id',
+            // 'page_id',
+            // 'user_id',
             'name:ntext',
             // 'content:ntext',
             'create_date:datetime',

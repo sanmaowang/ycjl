@@ -20,7 +20,20 @@ use yii\widgets\ActiveForm;
       ]
     ]); ?>
 
-    <?= $form->field($model, 'page_id')->textInput() ?>
+    <div class="form-group field-page-id">
+      <label class="col-md-2 control-label" for="post-content">所属频道</label>
+      <div class="col-md-2">
+        <select id="post-page_id" name="Post[page_id]" class="form-control">
+          <?php foreach ($pages as $key => $page) {
+            if($page->type == 3){
+            echo '<option value="'.$page->id.'">'.$page->name.'</option>';
+          }}?>
+          
+        </select>
+      </div>
+      <div class="col-lg-8"><div class="help-block"></div></div>
+    </div>
+
 
     <?= $form->field($model, 'name')->textInput() ?>
 

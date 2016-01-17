@@ -76,14 +76,14 @@ class Admin extends \yii\db\ActiveRecord implements IdentityInterface
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'username' => Yii::t('app', 'Username'),
-            'new_password' => Yii::t('app', 'Password'),
-            'name' => Yii::t('app', 'Name'),
-            'english_name' => Yii::t('app', 'English Name'),
-            'role' => Yii::t('app', 'Role'),
-            'email'=> Yii::t('app', 'Email'),
-            'status' =>Yii::t('app','Status'),
-            'avatar' =>Yii::t('app', 'Avatar'),
+            'username' => Yii::t('app', '用户名'),
+            'new_password' => Yii::t('app', '密码'),
+            'name' => Yii::t('app', '姓名'),
+            'english_name' => Yii::t('app', '英文名'),
+            'role' => Yii::t('app', '角色'),
+            'email'=> Yii::t('app', '邮箱'),
+            'status' =>Yii::t('app','状态'),
+            'avatar' =>Yii::t('app', '头像'),
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),
         ];

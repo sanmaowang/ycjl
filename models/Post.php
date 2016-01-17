@@ -52,10 +52,10 @@ class Post extends \yii\db\ActiveRecord
             'user_id' => Yii::t('app', 'User ID'),
             'is_recommend' => Yii::t('app', '是否推荐'),
             'is_recommend' => Yii::t('app', '是否头条'),
-            'name' => Yii::t('app', 'Name'),
-            'content' => Yii::t('app', 'Content'),
-            'create_date' => Yii::t('app', 'Create Time'),
-            'update_date' => Yii::t('app', 'Update Time'),
+            'name' => Yii::t('app', '标题'),
+            'content' => Yii::t('app', '内容'),
+            'create_date' => Yii::t('app', '创建时间'),
+            'update_date' => Yii::t('app', '更新时间'),
         ];
     }
 
