@@ -66,7 +66,7 @@ $this->title = '宜昌交旅 | 首页';
           </div>
         </div>
         <div class="column-news">
-          <h3 class="column-news-title">集团新闻<span>GROUP NEWS</span><a href="" class="more">更多</a></h3>
+          <h3 class="column-news-title">集团新闻<span>GROUP NEWS</span><a href="<?= Url::to(['site/page','slug'=>'group-news'])?>" target="_blank" class="more">更多</a></h3>
           <ul class="column-news-list">
             <?php if(isset($news)){
               for($i = 0;$i < 4; $i++){?>
@@ -75,7 +75,7 @@ $this->title = '宜昌交旅 | 首页';
           </ul>
         </div>
         <div class="column-show">
-          <h3 class="column-show-title">员工风采<span>STAFF STYLE</span><a href="" class="more">更多</a></h3>
+          <h3 class="column-show-title">员工风采<span>STAFF STYLE</span><a href="<?= Url::to(['site/page','slug'=>'staff'])?>" target="_blank"  class="more">更多</a></h3>
           <div class="column-thumb">
             <a href="<?= Url::to(['site/view-post','id'=>$staff->id]);?>" class="thumb-img"><img src="<?= Yii::$app->request->baseUrl;?><?= $staff->thumb;?>" alt=""></a>
           </div>

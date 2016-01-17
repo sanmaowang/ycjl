@@ -1478,9 +1478,6 @@ a:hover {
 .content img {
   max-width: 100%;
 }
-.content .news-list {
-  padding: 0 2%;
-}
 .content-title {
   text-align: center;
 }
@@ -1821,6 +1818,7 @@ a:hover {
 }
 .news-list ul {
   margin: 20px 0 24px;
+  padding: 0;
 }
 .news-list li {
   list-style: none;
@@ -2256,6 +2254,9 @@ a.pic-thumbnail:hover {
   background-color: #fff;
   border-color: #ddd;
 }
+.content .news-list {
+  padding: 0 20px;
+}
 @media (max-width: 1440px) {
   .slogan-1-left {
     top: 40px;
@@ -2349,9 +2350,6 @@ a.pic-thumbnail:hover {
     font-size: 12px;
   }
   .content {
-    padding: 0;
-  }
-  .content .news-list {
     padding: 0;
   }
   .news-list {
