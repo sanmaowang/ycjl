@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use app\models\Page;
 use app\models\Post;
+use yii\filters\AccessControl;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -18,6 +19,18 @@ class PageController extends Controller
     public function behaviors()
     {
         return [
+            'access' =>[
+                'class' =>\yii\filters\AccessControl::className(),
+                'only' => ['create', 'update', 'index', 'view', 'delete'],
+                'rules' => [
+                    //allow only admin to modify backend users(Admin class)
+                    [
+                        'allow'=>true,
+                        'roles' => ['@'],
+                    ]
+                    //everything else is denied.
+                ]
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

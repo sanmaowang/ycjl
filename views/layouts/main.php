@@ -7,6 +7,7 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
+use yii\widgets\Menu;
 use app\assets\AppAsset;
 
 AppAsset::register($this);
@@ -30,7 +31,7 @@ AppAsset::register($this);
         'brandLabel' => '交旅集团网站后台管理系统',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
+            'class' => 'navbar-custom navbar-fixed-top',
         ],
     ]);
     echo Nav::widget([
@@ -46,35 +47,41 @@ AppAsset::register($this);
         'items' => [
             // ['label' => 'Contact', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ?
-                ['label' => 'Login', 'url' => ['/site/login']] :
+                ['label' => 'Login', 'url' => ['/admin/login']] :
                 [
                     'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-                    'url' => ['/site/logout'],
+                    'url' => ['/admin/logout'],
                     'linkOptions' => ['data-method' => 'post']
                 ],
         ],
     ]);
     NavBar::end();
     ?>
-
-  <div class="container">
+    <div class="main">
+  <div class="container-fluid">
     <div class="col-md-2">
-      
+        <?php 
+        echo Menu::widget([
+            'options'=>['class'=>'nav nav-sidebar menu-custom'],
+            'items' => isset($this->params['menu']) ? $this->params['menu'] : [],
+        ]);
+      ?>
     </div>
-    <div class="col-md-10">
+    <div class="col-md-10 action-main">
       <?= Breadcrumbs::widget([
           'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
       ]) ?>
       <?= $content ?>
     </div>
   </div>
+  </div>
 </div>
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+        <p class="pull-left">&copy; 宜昌交旅集团 <?= date('Y') ?></p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <p class="pull-right">Powered by 元速科技</p>
     </div>
 </footer>
 

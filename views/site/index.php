@@ -77,7 +77,7 @@ $this->title = '宜昌交旅 | 首页';
         <div class="column-show">
           <h3 class="column-show-title">员工风采<span>STAFF STYLE</span><a href="" class="more">更多</a></h3>
           <div class="column-thumb">
-            <a href="#" class="thumb-img"><img src="<?= Yii::$app->request->baseUrl;?>/img/topic1.jpg" alt=""></a>
+            <a href="<?= Url::to(['site/view-post','id'=>$staff->id]);?>" class="thumb-img"><img src="<?= Yii::$app->request->baseUrl;?><?= $staff->thumb;?>" alt=""></a>
           </div>
         </div>
       </div>

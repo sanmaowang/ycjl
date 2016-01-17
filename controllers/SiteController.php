@@ -5,12 +5,13 @@ namespace app\controllers;
 use Yii;
 use app\models\Page;
 use app\models\Post;
+use app\models\Menu;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
-use app\models\ContactForm;
 use yii\db\Query;
+use yii\data\Pagination;
 
 class SiteController extends Controller
 {
@@ -41,9 +42,11 @@ class SiteController extends Controller
     {
         $this->layout = "//home";
         $news = Post::find()->where(['page_id'=>14])->orderBy(['create_date'=>SORT_DESC])->all();
+        $staff = Post::find()->where(['page_id'=>12])->orderBy(['create_date'=>SORT_DESC])->one();
 
         return $this->render('index',[
-            'news'=>$news
+            'news'=>$news,
+            'staff'=>$staff
         ]);
     }
 
@@ -65,6 +68,7 @@ class SiteController extends Controller
     public function actionPage($slug)
     {   
         $page = Page::find()->where(['slug'=>$slug])->one();
+        
 
         if($slug == 'home'){
             return $this->goHome();
@@ -73,6 +77,8 @@ class SiteController extends Controller
         $this->layout = "//inner";
 
         if($page->parent_id == 0){
+            $menu = Menu::find()->where(['position'=>'bottom'])->one();
+            $links = explode(',',$menu->content);
             if($page->id == 13){
                 $group_news = Post::find()->where(['page_id'=>14])->orderBy(['create_date'=>SORT_DESC])->all();
                 $industry_news = Post::find()->where(['page_id'=>15])->orderBy(['create_date'=>SORT_DESC])->all();
@@ -85,17 +91,38 @@ class SiteController extends Controller
                     'media_news'=>$media_news,
                     'headlines'=>$headlines
                 ]);
+            }else if(in_array($page->id,$links)){
+                return $this->render('template/'.$page->template,[
+                    'page'=>$page,
+                    'menu'=>Page::find()->where(['id'=>$links])->all()
+                ]);
             }
             $menu = Page::find()->where(['parent_id'=>$page->id])->all();
-            $s = $menu[0]->slug;
+            $s = $menu?$menu[0]->slug:null;
             return $this->redirect(['page','slug'=>$s]);
         }else{
             $menu = Page::find()->where(['parent_id'=>$page->parent_id])->all();
         }
+
+
+        if($page->type == 3){
+            $query = Post::find()->where(['page_id' => $page->id]);
+            $countQuery = clone $query;
+            $pnation = new Pagination(['defaultPageSize' => 5,'totalCount' => $countQuery->count()]);
+            $posts = $query->orderBy(['create_date'=>SORT_DESC])->offset($pnation->offset)
+              ->limit($pnation->limit)
+              ->all();
+            return $this->render('template/'.$page->template,[
+                'page'=>$page,
+                'menu'=>$menu,
+                'pnation'=>$pnation,
+                'posts'=>$posts
+            ]);
+        }
    
         return $this->render('template/'.$page->template,[
             'page'=>$page,
-            'menu'=>$menu
+            'menu'=>$menu,
         ]);
     }
 
@@ -114,6 +141,7 @@ class SiteController extends Controller
             'menu'=>$menu
         ]);
     }
+
 
     protected function findPostModel($id)
     {

@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use Yii;
+use yii\filters\AccessControl;
 use app\models\Post;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
@@ -17,6 +18,18 @@ class PostController extends Controller
     public function behaviors()
     {
         return [
+            'access' =>[
+                'class' =>\yii\filters\AccessControl::className(),
+                'only' => ['create', 'update', 'index', 'view', 'delete'],
+                'rules' => [
+                    //allow only admin to modify backend users(Admin class)
+                    [
+                        'allow'=>true,
+                        'roles' => ['@'],
+                    ]
+                    //everything else is denied.
+                ]
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

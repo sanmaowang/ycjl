@@ -1,30 +1,32 @@
 <?php
-
 namespace app\controllers;
 
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
+use app\models\AdminLoginForm;
 use yii\filters\VerbFilter;
-use app\models\LoginForm;
-use app\models\ContactForm;
 
+/**
+ * Site controller
+ */
 class AdminController extends Controller
 {
-    public function goHome()
-    {
-        return Yii::$app->getResponse()->redirect(['admin/index']);
-    }
-
+    /**
+     * @inheritdoc
+     */
     public function behaviors()
     {
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout'],
                 'rules' => [
                     [
-                        'actions' => ['logout'],
+                        'actions' => ['login', 'error'],
+                        'allow' => true,
+                    ],
+                    [
+                        'actions' => ['logout', 'index'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -39,22 +41,24 @@ class AdminController extends Controller
         ];
     }
 
+    public function goHome(){
+        return $this->redirect(['page/index']);
+    }
+    /**
+     * @inheritdoc
+     */
     public function actions()
     {
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
             ],
-            'captcha' => [
-                'class' => 'yii\captcha\CaptchaAction',
-                'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
-            ],
         ];
     }
 
     public function actionIndex()
     {
-        return $this->render('index');
+        return $this->goHome();
     }
 
     public function actionLogin()
@@ -62,14 +66,14 @@ class AdminController extends Controller
         if (!\Yii::$app->user->isGuest) {
             return $this->goHome();
         }
-
-        $model = new LoginForm();
+        $model = new AdminLoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+            return $this->goHome();
+        } else {
+            return $this->render('login', [
+                'model' => $model,
+            ]);
         }
-        return $this->render('login', [
-            'model' => $model,
-        ]);
     }
 
     public function actionLogout()
@@ -77,23 +81,5 @@ class AdminController extends Controller
         Yii::$app->user->logout();
 
         return $this->goHome();
-    }
-
-    public function actionContact()
-    {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
-
-            return $this->refresh();
-        }
-        return $this->render('contact', [
-            'model' => $model,
-        ]);
-    }
-
-    public function actionAbout()
-    {
-        return $this->render('about');
     }
 }

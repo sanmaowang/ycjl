@@ -15,7 +15,8 @@ $config = [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
-            'identityClass' => 'app\models\User',
+            'identityClass' => 'app\models\Admin',
+            'loginUrl' => ['admin/login'], 
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [
@@ -49,10 +50,12 @@ if (YII_ENV_DEV) {
         'class' => 'yii\debug\Module',
     ];
 
-    $config['bootstrap'][] = 'gii';
+    
+}
+
+$config['bootstrap'][] = 'gii';
     $config['modules']['gii'] = [
         'class' => 'yii\gii\Module',
     ];
-}
 
 return $config;

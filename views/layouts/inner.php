@@ -6,7 +6,8 @@
 use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
 use app\assets\HomeAsset;
-use app\widgets\Menu;
+use app\widgets\Menus;
+use app\widgets\Links;
 use yii\helpers\Url;
 
 HomeAsset::register($this);
@@ -60,7 +61,7 @@ for ($i = 0;$i < count($g_slug);$i++){
     <a href="<?= Url::to(['site/index'])?>" class="logo">
       <h1>宜昌交旅</h1>
     </a>
-    <?= Menu::widget();?>
+    <?= Menus::widget();?>
   </div>
 </div>
 <?= $content ?>
@@ -68,7 +69,7 @@ for ($i = 0;$i < count($g_slug);$i++){
   <div class="container">
     <div class="links">
       <p class="pull-left">&copy; 宜昌交通旅游集团 2015 ALL RIGHTS RESERVED</p>
-      <p class="pull-right"><a href="">联系方式</a> | <a href="">隐私声明</a> | <a href="">使用条款</a> | <a href="">网站地图</a>  </p>
+      <p class="pull-right"><?= Links::widget();?></p>
     </div>
   </div>
 </div>

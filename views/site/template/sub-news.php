@@ -5,6 +5,7 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use app\widgets\Breadcrumb;
+use yii\widgets\LinkPager;
 
 $this->title = $page->name;
 $url = Yii::$app->request->getUrl();
@@ -40,7 +41,7 @@ $url = Yii::$app->request->getUrl();
         </div>
         <div class="news-list">
           <ul>
-            <?php foreach ($page->posts as $key => $post) {?>
+            <?php foreach ($posts as $key => $post) {?>
               <li class="thumbnail clearfix">
                 <?php if($post->thumb){?>
                   <div class="thumb">
@@ -54,6 +55,9 @@ $url = Yii::$app->request->getUrl();
                  </li>
             <?php }?>
           </ul>
+        </div>
+        <div class="clearfix">
+          <?= LinkPager::widget(['pagination' => $pnation]) ?>  
         </div>
       </div>
     </div>
