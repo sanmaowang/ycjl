@@ -42,7 +42,7 @@ HomeAsset::register($this);
     <div class="row">
     <div class="links">
       <p class="pull-left">
-        鄂ICP备08005844号 <span class="light">技术支持：湖北元速科技有限公司</span></p>
+        鄂ICP备XXXXXXX号 <span class="light">技术支持：湖北元速科技有限公司</span></p>
       <p class="pull-right"><?= Links::widget();?> </p>
     </div>
     </div>
