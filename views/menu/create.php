@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model app\models\Menu */
 
 $this->title = Yii::t('app', '创建菜单');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Menus'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', '菜单设置'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 $this->params['menu'] =[
                 // Important: you need to specify url as 'controller/action',

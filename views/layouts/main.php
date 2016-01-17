@@ -7,6 +7,7 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
+use yii\helpers\Url;
 use yii\widgets\Menu;
 use app\assets\AppAsset;
 
@@ -32,13 +33,14 @@ AppAsset::register($this);
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-custom navbar-fixed-top',
+        'containerOptions'=>'container-fluid'
         ],
     ]);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-left'],
         'items' => [
             ['label' => '内容管理', 'url' => ['/page/index']],
-            ['label' => '资源管理', 'url' => ['/source/index']],
+            // ['label' => '资源管理', 'url' => ['/source/index']],
             ['label' => '用户管理', 'url' => ['/user/index']],
         ],
     ]);
@@ -69,6 +71,10 @@ AppAsset::register($this);
     </div>
     <div class="col-md-10 action-main">
       <?= Breadcrumbs::widget([
+        'homeLink'=>[
+                    'label' => '后台主页',
+                    'url' => Url::to(['page/index'])
+                ],
           'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
       ]) ?>
       <?= $content ?>

@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\Post */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Posts'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', '文章管理'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 $this->params['menu'] =[
                 // Important: you need to specify url as 'controller/action',

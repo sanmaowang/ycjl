@@ -20,6 +20,29 @@ body {
 .navbar-custom a {
   color: #ccc;
 }
+.navbar-custom li {
+  float: left;
+  width: 150px;
+  margin: 0 2px;
+  text-align: center;
+  background: -moz-linear-gradient(#625c5b, #3c3332);
+  background: -webkit-linear-gradient(#625c5b, #3c3332);
+  background: -o-linear-gradient(#625c5b, #3c3332);
+  background: -ms-linear-gradient(#625c5b, #3c3332);
+  background: linear-gradient(#625c5b, #3c3332);
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.navbar-custom li a {
+  width: 100%;
+  color: #ccc;
+}
+.navbar-custom li.active {
+  background: #F1F1F2;
+}
+.navbar-custom li.active a {
+  color: #99999A;
+}
 .main {
   padding-top: 55px;
 }

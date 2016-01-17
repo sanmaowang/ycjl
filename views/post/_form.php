@@ -43,10 +43,12 @@ use yii\widgets\ActiveForm;
 	    </div>
 	    <div class="col-lg-8"><div class="help-block"></div></div>
 	  </div>
+    <?php echo $form->field($model, 'is_recommend')->radioList(['1'=>'是','0'=>'否']) ?>
+    <?php echo $form->field($model, 'is_headline')->radioList(['1'=>'是','0'=>'否']) ?>
 
     <div class="form-group">
       <div class="col-md-6 col-md-offset-2">
-        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', '创建') : Yii::t('app', '更新'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     	</div>
     </div>
 
