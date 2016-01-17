@@ -40,7 +40,7 @@ class Menus extends \yii\bootstrap\Widget
     {
         $menu = Menu::find()->where(['position'=>'top'])->one();
         $p = explode(',',$menu->content);
-        $model = Page::find()->all();
+        $model = Page::find()->orderBy('display_order asc')->all();
 
         $pages =  $this->tree($model,0,$p);
         if(strpos(\Yii::$app->request->url,"view-post")){
