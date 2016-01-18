@@ -846,9 +846,8 @@ a{
 
 .top-nav{
   height: 30px;
-  background: #333;
+  background: #0071BB;
   font-size: .85em;
-  .opacity(0.65);
   z-index: 10;
 }
 .top-nav-link{
@@ -1007,7 +1006,8 @@ a{
     background: #fff;
     border: 1px solid #eee;
     border-top: 0;
-    .rounded(0px);
+    .rounded(bottom,4px);
+    .box-shadow ("1px 1px 2px #999");
     width: 170px;
     font-size: 13px;
     li{
@@ -1023,8 +1023,8 @@ a{
     }
     a{
       display: block;
-      height: 48px;
-      line-height: 48px;
+      height: 56px;
+      line-height: 56px;
       padding-left: 30px;
       color: #4a4a4a;
       background: url(../img/icon-arrow.png) no-repeat 15px center;
@@ -1195,6 +1195,9 @@ a{
     padding: 3px;
     background: @bgColor;
     border-radius: 2px;
+    &:hover{
+      background: darken(@bgColor,10%);
+    }
   }
 }
 .row {
@@ -1224,7 +1227,7 @@ a{
   }
 }
 .column-news{
-  width: 34%;
+  width: 25%;
   margin-left: 8%;
   margin-right: 8%;
 }
