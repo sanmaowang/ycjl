@@ -142,6 +142,15 @@ class SiteController extends Controller
         ]);
     }
 
+    public function actionViewPage($id)
+    {
+        $page = Page::findOne($id);
+        
+        return $this->redirect(['site/page',
+            'slug' => $page->slug,
+        ]);
+    }
+
 
     protected function findPostModel($id)
     {

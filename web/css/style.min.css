@@ -2254,8 +2254,24 @@ a.pic-thumbnail:hover {
   background-color: #fff;
   border-color: #ddd;
 }
-.content .news-list {
-  padding: 0 20px;
+.main-right .news-list {
+  padding: 0 2%;
+}
+.sitemap p {
+  margin-bottom: 20px;
+}
+.sitemap h4 {
+  font-size: 16px;
+  margin-top: 20px;
+}
+.sitemap h4 a {
+  color: #17629B;
+}
+.sitemap a {
+  color: #666;
+}
+.sitemap a:hover {
+  color: #333;
 }
 @media (max-width: 1440px) {
   .slogan-1-left {
@@ -2349,10 +2365,7 @@ a.pic-thumbnail:hover {
     margin-left: 5px;
     font-size: 12px;
   }
-  .content {
-    padding: 0;
-  }
-  .news-list {
+  .content .news-list {
     padding: 0;
   }
   .col-news-column-right {
