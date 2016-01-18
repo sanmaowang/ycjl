@@ -42,7 +42,7 @@ $this->title = '宜昌交旅 | 首页';
     <div class="container">
       <div class="row">
         <div class="column-links">
-          <h3 class="column-links-title">快速链接<span>QUICK LINKS</span>
+          <h3 class="column-links-title"><i class="icon-link"></i>快速链接<span>QUICK LINKS</span>
           </h3>
           <div class="row">
             <div class="col-xs-4">
@@ -66,7 +66,7 @@ $this->title = '宜昌交旅 | 首页';
           </div>
         </div>
         <div class="column-news">
-          <h3 class="column-news-title">集团新闻<span>GROUP NEWS</span><a href="<?= Url::to(['site/page','slug'=>'group-news'])?>" target="_blank" class="more">更多</a></h3>
+          <h3 class="column-news-title"><i class="icon-news"></i>集团新闻<span>GROUP NEWS</span><a href="<?= Url::to(['site/page','slug'=>'group-news'])?>" target="_blank" class="more">更多</a></h3>
           <ul class="column-news-list">
             <?php if(isset($news)){
               for($i = 0;$i < 4; $i++){?>
@@ -75,7 +75,7 @@ $this->title = '宜昌交旅 | 首页';
           </ul>
         </div>
         <div class="column-board">
-          <h3 class="column-board-title">主营业务<span>MAJOR BUSINESS</span></h3>
+          <h3 class="column-board-title"><i class="icon-major"></i>主营业务<span>MAJOR BUSINESS</span></h3>
           <div class="column-board-img">
           <a href="<?= Url::to(['site/page','slug'=>'trafic']);?>">
             <img src="<?= Yii::$app->request->baseUrl;?>/img/btn-traffic.png" alt=""/>
@@ -88,7 +88,7 @@ $this->title = '宜昌交旅 | 首页';
           </div>
         </div>
         <div class="column-show">
-          <h3 class="column-show-title">员工风采<span>STAFF STYLE</span><a href="<?= Url::to(['site/page','slug'=>'staff'])?>" target="_blank"  class="more">更多</a></h3>
+          <h3 class="column-show-title"><i class="icon-show"></i>员工风采<span>STAFF STYLE</span><a href="<?= Url::to(['site/page','slug'=>'staff'])?>" target="_blank"  class="more">更多</a></h3>
           <div class="column-thumb">
             <a href="<?= Url::to(['site/view-post','id'=>$staff->id]);?>" class="thumb-img"><img src="<?= Yii::$app->request->baseUrl;?><?= $staff->thumb;?>" alt=""></a>
           </div>
