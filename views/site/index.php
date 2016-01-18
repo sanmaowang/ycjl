@@ -76,8 +76,16 @@ $this->title = '宜昌交旅 | 首页';
         </div>
         <div class="column-board">
           <h3 class="column-board-title">主营业务<span>MAJOR BUSINESS</span></h3>
-          <ul class="column-board-list">
-          </ul>
+          <div class="column-board-img">
+          <a href="<?= Url::to(['site/page','slug'=>'trafic']);?>">
+            <img src="<?= Yii::$app->request->baseUrl;?>/img/btn-traffic.png" alt=""/>
+          </a>
+          </div>
+          <div class="column-board-img">
+          <a href="<?= Url::to(['site/page','slug'=>'travel']);?>">
+            <img src="<?= Yii::$app->request->baseUrl;?>/img/btn-travel.png" alt=""/>
+          </a>
+          </div>
         </div>
         <div class="column-show">
           <h3 class="column-show-title">员工风采<span>STAFF STYLE</span><a href="<?= Url::to(['site/page','slug'=>'staff'])?>" target="_blank"  class="more">更多</a></h3>

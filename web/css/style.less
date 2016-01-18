@@ -1219,6 +1219,7 @@ a{
 
 .column-links,.column-news,.column-show,.column-board{
   float: left;
+  overflow: hidden;
 }
 .column-links{
   width: 20%;
@@ -1238,6 +1239,13 @@ a{
 }
 .column-show{
   width: 20%;
+}
+.column-board-img{
+  margin-bottom: 10px;
+  img{
+    max-width: 100%;
+    height: 90px;
+  }
 }
 .links-item{
   margin-top: 10px;
@@ -2341,6 +2349,12 @@ a.pic-thumbnail.active,a.pic-thumbnail:focus,a.pic-thumbnail:hover {
     img{
       width: 100%;
       min-height: 100px;
+    }
+  }
+  .column-board-img{
+    img{
+      max-width: 100%;
+      height: 50px;
     }
   }
   .footer{
