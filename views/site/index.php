@@ -74,13 +74,9 @@ $this->title = '宜昌交旅 | 首页';
             <?php }}?>
           </ul>
         </div>
-        <div class="column-news">
-          <h3 class="column-news-title">集团新闻<span>GROUP NEWS</span><a href="<?= Url::to(['site/page','slug'=>'group-news'])?>" target="_blank" class="more">更多</a></h3>
-          <ul class="column-news-list">
-            <?php if(isset($news)){
-              for($i = 0;$i < 4; $i++){?>
-            <li><a href="<?= Url::to(['site/view-post','id'=>$news[$i]->id]);?>"><?= $news[$i]->name;?></a><span><?php echo date("Y.m.d",$news[$i]->update_date);?></span></li>
-            <?php }}?>
+        <div class="column-board">
+          <h3 class="column-board-title">主营业务<span>MAJOR BUSINESS</span></h3>
+          <ul class="column-board-list">
           </ul>
         </div>
         <div class="column-show">
