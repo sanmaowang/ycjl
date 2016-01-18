@@ -26,7 +26,12 @@ use yii\widgets\ActiveForm;
         <select id="post-page_id" name="Post[page_id]" class="form-control">
           <?php foreach ($pages as $key => $page) {
             if($page->type == 3){
-            echo '<option value="'.$page->id.'">'.$page->name.'</option>';
+              $selected = '';
+              if((int)$page->id == $model->page_id)
+                {
+                  $selected = "selected = 'selected'";
+                }
+            echo '<option value="'.$page->id.'" '.$selected.' >'.$page->name.'</option>';
           }}?>
           
         </select>
@@ -43,9 +48,22 @@ use yii\widgets\ActiveForm;
 	    </div>
 	    <div class="col-lg-8"><div class="help-block"></div></div>
 	  </div>
-    <?php echo $form->field($model, 'is_recommend')->radioList(['1'=>'是','0'=>'否']) ?>
-    <?php echo $form->field($model, 'is_headline')->radioList(['1'=>'是','0'=>'否']) ?>
+    
+    <!-- <div class="form-group field-post-create_date">
+      <label class="col-md-2 control-label" for="post-create_date">发布时间</label>
+      <div class="col-md-6"><input type="text" id="post-create_date" class="form-control" name="Post[create_date]" value=""></div>
+      <div class="col-lg-8"><div class="help-block"></div></div>
+    </div>
 
+    <div class="form-group field-post-update_date">
+      <label class="col-md-2 control-label" for="post-update_date">修改时间</label>
+      <div class="col-md-6"><input type="text" id="post-update_date" class="form-control" name="Post[update_date]" value=""></div>
+      <div class="col-lg-8"><div class="help-block"></div></div>
+    </div> -->
+
+    <?php echo $form->field($model, 'is_recommend')->radioList([1=>'是',0=>'否']) ?>
+    <?php echo $form->field($model, 'is_headline')->radioList([1=>'是',0=>'否']) ?>
+  
     <div class="form-group">
       <div class="col-md-6 col-md-offset-2">
         <?= Html::submitButton($model->isNewRecord ? Yii::t('app', '创建') : Yii::t('app', '更新'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

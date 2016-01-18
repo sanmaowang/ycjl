@@ -91,9 +91,9 @@ $this->registerJs('
   var base_url = "'.Yii::$app->request->baseUrl.'";
   $(function(){
       $("body").backstretch([
-          base_url+"/img/home-slider-1.jpg",
-          base_url+"/img/home-slider-2.jpg",
-          base_url+"/img/home-slider-3.jpg",
+          base_url+"/img/home-slider-6.jpg",
+          base_url+"/img/home-slider-7.jpg",
+          base_url+"/img/home-slider-8.jpg",
         ], {fade:"normal",duration: 8000});
       $(window).on("backstretch.before", function (e, instance, index) {
         // Do something
