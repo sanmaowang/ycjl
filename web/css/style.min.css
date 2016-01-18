@@ -852,9 +852,9 @@ a:hover {
 .logo h1 {
   text-indent: -9999px;
   display: block;
-  width: 296px;
-  height: 80px;
-  background: url(../img/logo2.png) no-repeat 0 0;
+  width: 310px;
+  height: 85px;
+  background: url(../img/logo.png) no-repeat 0 0;
   background-size: 100% 100%;
   margin: 8px 0;
 }
@@ -934,8 +934,8 @@ a:hover {
   -webkit-border-bottom-left-radius: 4px;
   border-bottom-left-radius: 4px;
   /* for multi values */
-  -webkit-box-shadow: 1px 1px 2px #999;
-  box-shadow: 1px 1px 2px #999;
+  -webkit-box-shadow: 0px 2px 2px #a4a4a4;
+  box-shadow: 0px 2px 2px #a4a4a4;
   width: 170px;
   font-size: 13px;
 }
