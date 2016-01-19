@@ -59,7 +59,7 @@ $this->title = '宜昌交旅 | 首页';
             </div>
             <div class="col-xs-4">
               <a href="<?= Url::to(['site/page','slug'=>'party-construction'])?>">
-              <div class="links-item"><img src="<?= Yii::$app->request->baseUrl;?>/img/icon-cs.png" alt=""/ style="margin-left:8px;"></div>
+              <div class="links-item"><img src="<?= Yii::$app->request->baseUrl;?>/img/icon-cs.png" alt=""/></div>
               党群工作
               </a>
             </div>
@@ -74,19 +74,7 @@ $this->title = '宜昌交旅 | 首页';
             <?php }}?>
           </ul>
         </div>
-        <div class="column-board">
-          <h3 class="column-board-title"><i class="icon-major"></i>主营业务<span>MAJOR BUSINESS</span></h3>
-          <div class="column-board-img">
-          <a href="<?= Url::to(['site/page','slug'=>'trafic']);?>">
-            <img src="<?= Yii::$app->request->baseUrl;?>/img/btn-traffic.png" alt=""/>
-          </a>
-          </div>
-          <div class="column-board-img">
-          <a href="<?= Url::to(['site/page','slug'=>'travel']);?>">
-            <img src="<?= Yii::$app->request->baseUrl;?>/img/btn-travel.png" alt=""/>
-          </a>
-          </div>
-        </div>
+       
         <div class="column-show">
           <h3 class="column-show-title"><i class="icon-show"></i>员工风采<span>STAFF STYLE</span><a href="<?= Url::to(['site/page','slug'=>'staff'])?>" target="_blank"  class="more">更多</a></h3>
           <div class="column-thumb">
@@ -104,7 +92,7 @@ $this->registerJs('
   var base_url = "'.Yii::$app->request->baseUrl.'";
   $(function(){
       $("body").backstretch([
-          base_url+"/img/home-slider-6.jpg",
+          base_url+"/img/home-slider-1.jpg",
           base_url+"/img/home-slider-7.jpg",
           base_url+"/img/home-slider-8.jpg",
         ], {fade:"normal",duration: 8000});
