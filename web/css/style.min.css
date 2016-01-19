@@ -1224,23 +1224,18 @@ a:hover {
   overflow: hidden;
 }
 .column-links {
-  width: 24%;
+  width: 25%;
 }
 .column-links a {
   color: #fff;
 }
 .column-news {
-  width: 25%;
-  margin-left: 8%;
-  margin-right: 8%;
-}
-.column-board {
-  width: 26%;
+  width: 34%;
   margin-left: 8%;
   margin-right: 8%;
 }
 .column-show {
-  width: 24%;
+  width: 25%;
 }
 .column-board-img {
   margin-bottom: 10px;
