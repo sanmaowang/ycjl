@@ -59,7 +59,7 @@ $this->title = '宜昌交旅 | 首页';
             </div>
             <div class="col-xs-4">
               <a href="<?= Url::to(['site/page','slug'=>'party-construction'])?>">
-              <div class="links-item"><img src="<?= Yii::$app->request->baseUrl;?>/img/icon-cs.png" alt=""/></div>
+              <div class="links-item"><img src="<?= Yii::$app->request->baseUrl;?>/img/icon-cs.png" alt="" style="margin-left:8px;"/></div>
               党群工作
               </a>
             </div>
