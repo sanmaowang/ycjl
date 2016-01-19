@@ -1166,6 +1166,9 @@ a:hover {
 .columns h3 {
   font-size: 18px;
   font-weight: 800;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #9B9B9B;
+  padding-bottom: 15px;
   *zoom: 1;
 }
 .columns h3:before,

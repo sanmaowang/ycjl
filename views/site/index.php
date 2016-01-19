@@ -53,13 +53,13 @@ $this->title = '宜昌交旅 | 首页';
             </div>
             <div class="col-xs-4">
               <a href="<?= Url::to(['site/page','slug'=>'about'])?>">
-              <div class="links-item"><img src="<?= Yii::$app->request->baseUrl;?>/img/icon-building.png" alt=""/></div>
+              <div class="links-item"><img src="<?= Yii::$app->request->baseUrl;?>/img/icon-building.png" style="margin-left:5px;"alt=""/></div>
               集团简介
               </a>
             </div>
             <div class="col-xs-4">
               <a href="<?= Url::to(['site/page','slug'=>'party-construction'])?>">
-              <div class="links-item"><img src="<?= Yii::$app->request->baseUrl;?>/img/icon-cs.png" alt="" style="margin-left:8px;"/></div>
+              <div class="links-item"><img src="<?= Yii::$app->request->baseUrl;?>/img/icon-cs.png" alt="" style="margin-left:12px;"/></div>
               党群工作
               </a>
             </div>
