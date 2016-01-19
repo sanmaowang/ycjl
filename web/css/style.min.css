@@ -1277,9 +1277,9 @@ a:hover {
 .icon-show {
   display: inline-block;
   margin-right: 10px;
-  top: 2px;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
 }
 .column-news-list {
   margin: 0;
