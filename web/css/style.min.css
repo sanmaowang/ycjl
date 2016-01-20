@@ -1017,36 +1017,36 @@ a:hover {
   right: 200px;
 }
 .slogan-2-left {
-  width: 442px;
-  height: 40px;
+  width: 552.5px;
+  height: 50px;
   position: absolute;
-  top: 120px;
+  top: 150px;
   left: 50%;
   margin-left: -221px;
 }
 .slogan-2-right {
-  width: 444px;
-  height: 40px;
+  width: 555px;
+  height: 50px;
   position: absolute;
-  top: 175px;
+  top: 218.75px;
   left: 50%;
   margin-left: -222px;
 }
 .slogan-3-left {
-  width: 651px;
-  height: 34px;
+  width: 914px;
+  height: 36px;
   position: absolute;
   top: 120px;
   left: 50%;
-  margin-left: -325.5px;
+  margin-left: -457px;
 }
 .slogan-3-right {
-  width: 742px;
-  height: 40px;
+  width: 914px;
+  height: 46px;
   position: absolute;
-  top: 170px;
+  top: 190px;
   left: 50%;
-  margin-left: -371px;
+  margin-left: -457px;
 }
 .slogan {
   width: 100%;
