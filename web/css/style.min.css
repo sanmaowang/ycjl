@@ -979,23 +979,27 @@ a:hover {
   border-bottom-right-radius: 5px !important;
 }
 .nav .sub-bg-2 {
-  background: #ffffff url(../img/nav/1.png) no-repeat 0 bottom;
+  background: #ffffff url(../img/nav/1.png) no-repeat 0 top;
   background-size: 100% auto;
 }
 .nav .sub-bg-8 {
-  background: #ffffff url(../img/nav/2.png) no-repeat 0 bottom;
+  background: #ffffff url(../img/nav/2.png) no-repeat 0 top;
   background-size: 100% auto;
 }
 .nav .sub-bg-13 {
-  background: #ffffff url(../img/nav/3.png) no-repeat 0 bottom;
+  background: #ffffff url(../img/nav/3.png) no-repeat 0 top;
+  background-size: 100% auto;
+}
+.nav .sub-bg-17 {
+  background: #ffffff url(../img/nav/4.png) no-repeat 0 top;
   background-size: 100% auto;
 }
 .nav .sub-bg-20 {
-  background: #ffffff url(../img/nav/4.png) no-repeat 0 bottom;
+  background: #ffffff url(../img/nav/5.png) no-repeat 0 top;
   background-size: 100% auto;
 }
 .nav .sub-bg-26 {
-  background: #ffffff url(../img/nav/5.png) no-repeat 0 bottom;
+  background: #ffffff url(../img/nav/6.png) no-repeat 0 bottom;
   background-size: 100% auto;
 }
 .banner {
