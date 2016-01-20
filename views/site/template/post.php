@@ -43,7 +43,7 @@ $url = Yii::$app->request->getUrl();
               preg_match_all("|src=(.*) |U", $post->content, $result);
               $pics = $result[1];
                foreach ($pics as $key => $pic) {
-                $pic = str_replace('""', '', $pic);
+                $pic = str_replace('"', '', $pic);
                 $i = $key + 3;
                 if($i%3 == 0){
                   echo '<div class="row">';
