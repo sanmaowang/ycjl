@@ -927,7 +927,6 @@ a:hover {
   z-index: 1000;
   height: inherit;
   background: #fff;
-  border: 1px solid #eee;
   border-top: 0;
   -webkit-border-bottom-right-radius: 4px;
   border-bottom-right-radius: 4px;
@@ -942,7 +941,6 @@ a:hover {
   margin: 0;
   text-align: left;
   background: none;
-  border-bottom: 1px solid #eee;
 }
 .nav .sub-column li:last-child {
   border-bottom: none;
@@ -957,7 +955,7 @@ a:hover {
 }
 .nav .sub-column a:hover {
   color: #313131;
-  background: #e6e6e6 url(../img/icon-arrow.png) no-repeat 15px center;
+  background: rgba(0, 0, 0, 0.15) url(../img/icon-arrow.png) no-repeat 15px center;
 }
 .nav .div-hover {
   display: none;
@@ -979,6 +977,26 @@ a:hover {
   border-top-right-radius: 5px !important;
   -webkit-border-bottom-right-radius: 5px !important;
   border-bottom-right-radius: 5px !important;
+}
+.nav .sub-bg-2 {
+  background: #ffffff url(../img/nav/1.png) no-repeat 0 bottom;
+  background-size: 100% auto;
+}
+.nav .sub-bg-8 {
+  background: #ffffff url(../img/nav/2.png) no-repeat 0 bottom;
+  background-size: 100% auto;
+}
+.nav .sub-bg-13 {
+  background: #ffffff url(../img/nav/3.png) no-repeat 0 bottom;
+  background-size: 100% auto;
+}
+.nav .sub-bg-20 {
+  background: #ffffff url(../img/nav/4.png) no-repeat 0 bottom;
+  background-size: 100% auto;
+}
+.nav .sub-bg-26 {
+  background: #ffffff url(../img/nav/5.png) no-repeat 0 bottom;
+  background-size: 100% auto;
 }
 .banner {
   width: 100%;
@@ -1238,13 +1256,19 @@ a:hover {
   margin-right: 8%;
 }
 .column-news .more {
-  background: #86C166;
+  background: #2EA9DF;
 }
 .column-news .more:hover {
-  background: #6bae46;
+  background: #1d8cbd;
 }
 .column-show {
   width: 25%;
+}
+.column-show .more {
+  background: #FB966E;
+}
+.column-show .more:hover {
+  background: #fa723c;
 }
 .column-board-img {
   margin-bottom: 10px;
@@ -1258,15 +1282,15 @@ a:hover {
 }
 .column-links h3,
 .column-links h3 span {
-  color: #FB966E;
+  color: #86C166;
 }
 .column-news h3,
 .column-news h3 span {
-  color: #86C166;
+  color: #2EA9DF;
 }
 .column-show h3,
 .column-show h3 span {
-  color: #2EA9DF;
+  color: #FB966E;
 }
 .links-item {
   margin-top: 10px;

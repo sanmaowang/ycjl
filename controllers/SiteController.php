@@ -53,6 +53,7 @@ class SiteController extends Controller
     public function actionSearch($t)
     {
         $search = $t;
+        $this->layout = "//inner";
         $model = Post::find()->where(['like','content', $search])->limit(8)->all();
         // $pageQuery = new Query();
         // $t = $pageQuery->select('id,name,content,update_date')->from('page')

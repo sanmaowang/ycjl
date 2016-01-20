@@ -23,7 +23,7 @@ function display_pages($pages,$current_id,$level){
       }
       echo '<li '.$c.' data-index="'.$key.'"><a href="'.Url::to(['site/page','slug'=>$page->slug]).'" '.$d.'>'.$page['name'].'</a>';
       if($page['sub'] && $level == 1){
-        echo "<ul class='sub-column dropdown'>";
+        echo "<ul class='sub-column dropdown sub-bg-".$page->id."'>";
         display_pages($page['sub'],$current_id,$level);
         echo "</ul>";
       }
