@@ -29,10 +29,10 @@ $this->title = '宜昌交旅 | 首页';
         </li>
         <li>
           <div class="slogan-3-left">
-            <img src="<?= Yii::$app->request->baseUrl;?>/img/slogan-3-1.png" alt=""/>
+            <img src="<?= Yii::$app->request->baseUrl;?>/img/slogan/slogan-3-1.png" alt=""/>
           </div>
           <div class="slogan-3-right">
-            <img src="<?= Yii::$app->request->baseUrl;?>/img/slogan-3-2.png" alt=""/>
+            <img src="<?= Yii::$app->request->baseUrl;?>/img/slogan/slogan-3-2.png" alt=""/>
           </div>
         </li>
       </ul>
