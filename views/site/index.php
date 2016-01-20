@@ -45,21 +45,21 @@ $this->title = '宜昌交旅 | 首页';
           <h3 class="column-links-title"><i class="icon-link"></i>快速链接<span>QUICK LINKS</span>
           </h3>
           <div class="row">
-            <div class="col-xs-4">
+            <div class="col-xs-4 quick-link link-focus">
               <a href="<?= Url::to(['site/page','slug'=>'media-focus'])?>">
               <div class="links-item"><img src="<?= Yii::$app->request->baseUrl;?>/img/icon-newspaper.png" alt=""/></div>
               媒体聚焦
               </a>
             </div>
-            <div class="col-xs-4">
+            <div class="col-xs-4 quick-link link-group">
               <a href="<?= Url::to(['site/page','slug'=>'about'])?>">
-              <div class="links-item"><img src="<?= Yii::$app->request->baseUrl;?>/img/icon-building.png" style="margin-left:5px;"alt=""/></div>
+              <div class="links-item"><img src="<?= Yii::$app->request->baseUrl;?>/img/icon-building.png" alt=""/></div>
               集团简介
               </a>
             </div>
-            <div class="col-xs-4">
+            <div class="col-xs-4 quick-link link-party">
               <a href="<?= Url::to(['site/page','slug'=>'party-construction'])?>">
-              <div class="links-item"><img src="<?= Yii::$app->request->baseUrl;?>/img/icon-cs.png" alt="" style="margin-left:12px;"/></div>
+              <div class="links-item"><img src="<?= Yii::$app->request->baseUrl;?>/img/icon-cs.png" alt=""/></div>
               党群工作
               </a>
             </div>
