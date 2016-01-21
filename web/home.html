@@ -1,0 +1,201 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>宜昌交旅</title>
+<link rel="stylesheet" href="css/style.min.css">
+</head>
+<body class="home">
+<div class="wrap">
+  <div class="top-nav">
+    <div class="container">
+      <div class="row">
+        <div class="top-quick-link">
+          <a href="#" onclick="javascript:setHomepage();">设为首页</a>
+          <a href="javascript:addFavorite();">加入收藏</a>
+        </div>
+        <div class="top-nav-link">
+          <ul id="link_websites" class="top-links">
+            <li>
+            <a href="#" style="padding-bottom:30px;">集团网站群</a>
+            <div class="links-level-two" style="display:none;">
+              <dl>
+                <dd><a href="http://www.ycjyjt.com/" target="_blank">宜昌交运集团</a></dd>
+                <dd><a href="http://www.ycbus.com/" target="_blank">宜昌公交集团有限公司</a></dd>
+                <!-- <dd><a href="" target="_blank">宜昌三峡旅游度假区开发有限公司</a></dd> -->
+              </dl>
+            </div>
+            </li>
+          </ul>
+          <form id="search-form" action="/index.php" method="get">
+            <input type="hidden" name="r" value="site/search">
+            <input type="text" name="t" placeholder="搜索.." class="top-search"/>
+            <button type="submit" class="search-btn">搜索</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="header">
+      <div class="container">
+        <a href="/index.php?r=site%2Findex" class="logo">
+        <h1>宜昌交旅</h1>
+        </a>
+        <div class="nav">
+          <div id="hover_bg" class="div-hover" data-left="0" style="left: 0px;">
+          </div>
+          <ul id="navbar">
+            <li class='main-level' data-index="0"><a href="http://yc.local/index.php?r=site%2Fpage&slug=home" class='main-link active active-left'>首页</a></li>
+            <li class='main-level' data-index="1"><a href="http://yc.local/index.php?r=site%2Fpage&slug=introduction" class='main-link'>集团概况</a>
+            <ul class='sub-column dropdown sub-bg-2'>
+              <li data-index="0"><a href="http://yc.local/index.php?r=site%2Fpage&slug=about">集团简介</a></li>
+              <li data-index="1"><a href="http://yc.local/index.php?r=site%2Fpage&slug=chairman">董事长致辞</a></li>
+              <li data-index="2"><a href="http://yc.local/index.php?r=site%2Fpage&slug=struction">组织架构</a></li>
+              <li data-index="3"><a href="http://yc.local/index.php?r=site%2Fpage&slug=develop">发展历程</a></li>
+              <li data-index="4"><a href="http://yc.local/index.php?r=site%2Fpage&slug=subsidiary">子公司简介</a></li>
+            </ul>
+            </li>
+            <li class='main-level' data-index="2"><a href="http://yc.local/index.php?r=site%2Fpage&slug=culture" class='main-link'>集团文化</a>
+            <ul class='sub-column dropdown sub-bg-8'>
+              <li data-index="0"><a href="http://yc.local/index.php?r=site%2Fpage&slug=idea">集团理念</a></li>
+              <li data-index="1"><a href="http://yc.local/index.php?r=site%2Fpage&slug=group_vi">集团VI</a></li>
+              <li data-index="2"><a href="http://yc.local/index.php?r=site%2Fpage&slug=activity">交流活动</a></li>
+              <li data-index="3"><a href="http://yc.local/index.php?r=site%2Fpage&slug=staff">员工风采</a></li>
+            </ul>
+            </li>
+            <li class='main-level' data-index="3"><a href="http://yc.local/index.php?r=site%2Fpage&slug=news" class='main-link'>新闻中心</a>
+            <ul class='sub-column dropdown sub-bg-13'>
+              <li data-index="0"><a href="http://yc.local/index.php?r=site%2Fpage&slug=group_news">集团新闻</a></li>
+              <li data-index="1"><a href="http://yc.local/index.php?r=site%2Fpage&slug=industry_news">行业资讯</a></li>
+              <li data-index="2"><a href="http://yc.local/index.php?r=site%2Fpage&slug=media_focus">媒体聚焦</a></li>
+            </ul>
+            </li>
+            <li class='main-level' data-index="4"><a href="http://yc.local/index.php?r=site%2Fpage&slug=business" class='main-link'>主营业务</a>
+            <ul class='sub-column dropdown sub-bg-17'>
+              <li data-index="0"><a href="http://yc.local/index.php?r=site%2Fpage&slug=trafic">交通板块</a></li>
+              <li data-index="1"><a href="http://yc.local/index.php?r=site%2Fpage&slug=travel">旅游板块</a></li>
+            </ul>
+            </li>
+            <li class='main-level' data-index="5"><a href="http://yc.local/index.php?r=site%2Fpage&slug=party" class='main-link'>党群工作</a>
+            <ul class='sub-column dropdown sub-bg-20'>
+              <li data-index="0"><a href="http://yc.local/index.php?r=site%2Fpage&slug=party_construction">党建工作</a></li>
+              <li data-index="1"><a href="http://yc.local/index.php?r=site%2Fpage&slug=quntuan">群团工作</a></li>
+              <li data-index="2"><a href="http://yc.local/index.php?r=site%2Fpage&slug=board">公示公告</a></li>
+            </ul>
+            </li>
+            <li class='main-level' data-index="6"><a href="http://yc.local/index.php?r=site%2Fpage&slug=public" class='main-link'>公开信息</a>
+            <ul class='sub-column dropdown sub-bg-26'>
+              <li data-index="0"><a href="http://yc.local/index.php?r=site%2Fpage&slug=notice">通知公告</a></li>
+              <li data-index="1"><a href="http://yc.local/index.php?r=site%2Fpage&slug=job">人才招聘</a></li>
+            </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="banner">
+      <div class="container">
+        <div class="slogan">
+          <ul id="sloganlist">
+            <li class="imgOn">
+            <div class="slogan-1-left">
+              <img src="img/slogan-1-1.png" alt=""/>
+            </div>
+            <div class="slogan-1-right">
+              <img src="img/slogan-1-2.png" alt=""/>
+            </div>
+            </li>
+            <li>
+            <div class="slogan-2-left">
+              <img src="img/slogan-2-1.png" alt=""/>
+            </div>
+            <div class="slogan-2-right">
+              <img src="img/slogan-2-2.png" alt=""/>
+            </div>
+            </li>
+            <li>
+            <div class="slogan-3-left">
+              <img src="img/slogan/slogan-3-1.png" alt=""/>
+            </div>
+            <div class="slogan-3-right">
+              <img src="img/slogan/slogan-3-2.png" alt=""/>
+            </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="container">
+          <div class="row">
+            <div class="column-links">
+              <h3 class="column-links-title">快速链接<span>QUICK LINKS</span>
+              <a href="" class="more">more</a></h3>
+              <div class="row">
+                <div class="col-xs-4 quick-link link-focus">
+                  <a class="links-item"><img src="img/icon-newspaper.png" alt=""/></a>
+        媒体聚焦
+                </div>
+                <div class="col-xs-4 quick-link link-group">
+                  <a class="links-item"><img src="img/icon-building.png" alt=""/></a>
+        集团产业
+                </div>
+                <div class="col-xs-4 quick-link link-party">
+                  <a class="links-item"><img src="img/icon-cs.png" alt=""/></a>
+        在线留言
+                </div>
+              </div>
+            </div>
+            <div class="column-news">
+              <h3 class="column-news-title">集团新闻<span>GROUP NEWS</span><a href="" class="more">more</a></h3>
+              <ul class="column-news-list">
+                <li><a href="">湖北省宜昌市三峡人家旅游区..</a><span>2015.11.12</span></li>
+                <li><a href="">湖北省宜昌市三峡人家旅游区..</a><span>2015.11.12</span></li>
+                <li><a href="">湖北省宜昌市三峡人家旅游区..</a><span>2015.11.12</span></li>
+                <li><a href="">湖北省宜昌市三峡人家旅游区..</a><span>2015.11.12</span></li>
+              </ul>
+            </div>
+            <div class="column-show">
+              <h3 class="column-show-title">集团风采<span>GROUP SHOW</span><a href="" class="more">more</a></h3>
+              <div class="column-thumb">
+                <a href="#" class="thumb-img"><img src="img/topic1.jpg" alt=""></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container">
+        <div class="support">
+          &copy; 宜昌交通旅游集团 2016 ALL RIGHTS RESERVED
+        </div>
+        <div class="row">
+          <div class="links">
+            <p class="pull-left">
+        鄂ICP备XXXXXXX号 
+              <span class="light">技术支持：湖北元速科技有限公司</span>
+            </p>
+            <p class="pull-right">
+              <a href="/index.php?r=site%2Fpage&slug=contact">联系方式</a> |   <a href="/index.php?r=site%2Fpage&slug=privacy">隐私申明</a> |   <a href="/index.php?r=site%2Fpage&slug=agreement">使用条款</a> |   <a href="/index.php?r=site%2Fpage&slug=sitemap">网站地图</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/jquery.backstretch.min.js"></script>
+<script src="js/base.js"></script>
+<script type="text/javascript">
+  var base_url = "";
+  $(function(){
+      $("body").backstretch([
+          base_url+"img/home-slider-1.jpg",
+          base_url+"img/home-slider-7.jpg",
+          base_url+"img/home-slider-3.jpg",
+        ], {fade:"normal",duration: 8000});
+      $(window).on("backstretch.before", function (e, instance, index) {
+        // Do something
+        $("#sloganlist").find("li").removeClass("imgOn").eq(index).addClass("imgOn");
+      });
+  })
+</script>

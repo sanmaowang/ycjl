@@ -46,19 +46,19 @@ $this->title = '宜昌交旅 | 首页';
           </h3>
           <div class="row">
             <div class="col-xs-4 quick-link link-focus">
-              <a href="<?= Url::to(['site/page','slug'=>'media-focus'])?>">
+              <a href="<?= Url::to(['site/page','slug'=>'media-focus'])?>"  target="_blank">
               <div class="links-item"><img src="<?= Yii::$app->request->baseUrl;?>/img/icon-newspaper.png" alt=""/></div>
               媒体聚焦
               </a>
             </div>
             <div class="col-xs-4 quick-link link-group">
-              <a href="<?= Url::to(['site/page','slug'=>'about'])?>">
+              <a href="<?= Url::to(['site/page','slug'=>'about'])?>"  target="_blank">
               <div class="links-item"><img src="<?= Yii::$app->request->baseUrl;?>/img/icon-building.png" alt=""/></div>
               集团简介
               </a>
             </div>
             <div class="col-xs-4 quick-link link-party">
-              <a href="<?= Url::to(['site/page','slug'=>'party-construction'])?>">
+              <a href="<?= Url::to(['site/page','slug'=>'party-construction'])?>"  target="_blank">
               <div class="links-item"><img src="<?= Yii::$app->request->baseUrl;?>/img/icon-cs.png" alt=""/></div>
               党群工作
               </a>
@@ -70,7 +70,7 @@ $this->title = '宜昌交旅 | 首页';
           <ul class="column-news-list">
             <?php if(isset($news)){
               for($i = 0;$i < 4; $i++){?>
-            <li><a href="<?= Url::to(['site/view-post','id'=>$news[$i]->id]);?>"><?= $news[$i]->name;?></a><span><?php echo date("Y.m.d",$news[$i]->update_date);?></span></li>
+            <li><a href="<?= Url::to(['site/view-post','id'=>$news[$i]->id]);?>" target="_blank"><?= $news[$i]->name;?></a><span><?php echo date("Y.m.d",$news[$i]->update_date);?></span></li>
             <?php }}?>
           </ul>
         </div>
@@ -78,7 +78,7 @@ $this->title = '宜昌交旅 | 首页';
         <div class="column-show">
           <h3 class="column-show-title"><i class="icon-show"></i>员工风采<span>STAFF STYLE</span><a href="<?= Url::to(['site/page','slug'=>'staff'])?>" target="_blank"  class="more">更多</a></h3>
           <div class="column-thumb">
-            <a href="<?= Url::to(['site/view-post','id'=>$staff->id]);?>" class="thumb-img"><img src="<?= Yii::$app->request->baseUrl;?><?= $staff->thumb;?>" alt=""></a>
+            <a href="<?= Url::to(['site/view-post','id'=>$staff->id]);?>" class="thumb-img"  target="_blank"><img src="<?= Yii::$app->request->baseUrl;?><?= $staff->thumb;?>" alt=""></a>
           </div>
         </div>
       </div>
