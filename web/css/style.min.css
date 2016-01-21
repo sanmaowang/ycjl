@@ -2470,6 +2470,9 @@ a.pic-thumbnail:hover {
   .column-news-list li {
     margin: 12px 0;
   }
+  .column-news-list span {
+    font-size: 14px;
+  }
   .column-thumb {
     overflow: hidden;
     width: 90%;
