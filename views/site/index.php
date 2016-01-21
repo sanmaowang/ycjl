@@ -94,7 +94,7 @@ $this->registerJs('
       $("body").backstretch([
           base_url+"/img/home-slider-1.jpg",
           base_url+"/img/home-slider-7.jpg",
-          base_url+"/img/home-slider-8.jpg",
+          base_url+"/img/home-slider-3.jpg",
         ], {fade:"normal",duration: 8000});
       $(window).on("backstretch.before", function (e, instance, index) {
         // Do something
