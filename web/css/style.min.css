@@ -2470,7 +2470,7 @@ a.pic-thumbnail:hover {
   .column-news-list li {
     margin: 12px 0;
   }
-  .column-news-list span {
+  .column-news-list li span {
     font-size: 14px;
   }
   .column-thumb {
