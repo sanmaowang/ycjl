@@ -49,17 +49,17 @@ use yii\widgets\ActiveForm;
 	    <div class="col-lg-8"><div class="help-block"></div></div>
 	  </div>
     
-    <!-- <div class="form-group field-post-create_date">
+    <div class="form-group field-post-create_date">
       <label class="col-md-2 control-label" for="post-create_date">发布时间</label>
-      <div class="col-md-6"><input type="text" id="post-create_date" class="form-control" name="Post[create_date]" value=""></div>
+      <div class="col-md-6"><input type="text" id="post-create_date" class="form-control" name="Post[create_date]" value="<?= $model->create_date;?>"></div>
       <div class="col-lg-8"><div class="help-block"></div></div>
     </div>
 
     <div class="form-group field-post-update_date">
       <label class="col-md-2 control-label" for="post-update_date">修改时间</label>
-      <div class="col-md-6"><input type="text" id="post-update_date" class="form-control" name="Post[update_date]" value=""></div>
+      <div class="col-md-6"><input type="text" id="post-update_date" class="form-control" name="Post[update_date]" value="<?= $model->update_date;?>"></div>
       <div class="col-lg-8"><div class="help-block"></div></div>
-    </div> -->
+    </div>
 
     <?php echo $form->field($model, 'is_recommend')->radioList([1=>'是',0=>'否']) ?>
     <?php echo $form->field($model, 'is_headline')->radioList([1=>'是',0=>'否']) ?>

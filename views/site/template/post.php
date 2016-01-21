@@ -13,7 +13,7 @@ $url = Yii::$app->request->getUrl();
     <div class="main clearfix">
       <div class="main-left">
         <div class="column-img">
-          <img src="img/column/column-<?php echo $post->page->slug?>.png" alt="">
+          <img src="<?= Yii::$app->request->baseUrl;?>/img/column/column-<?php echo $post->page->slug?>.png" alt="">
         </div>
         <?php if(isset($menu) && count($menu)>0){?>
         <ul>

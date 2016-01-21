@@ -65,7 +65,7 @@ $this->params['menu'] =[
         <tr>
           <td><?= $i?></td>
           <td><?php $o = str_replace($path,"",$f);?>
-            <a href="<?= Yii::$app->request->baseUrl;?><?= "'/uploads/ueditor/image/'".$o;?>">
+            <a href="<?= Yii::$app->request->baseUrl;?><?= "/uploads/ueditor/image/".$o;?>">
               <img src="<?= Yii::$app->request->baseUrl;?><?= "/uploads/ueditor/image/".$o;?>" alt="" width="200">
             </a>
           </td>
