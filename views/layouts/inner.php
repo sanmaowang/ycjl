@@ -28,11 +28,11 @@ $url = \Yii::$app->request->url;
 $g1_slug = array('introduction','about','chairman','struction','develop','subsidiary','ycjyjt','ycgjjt','ycsxlydjq','ycqczl');
 $g2_slug = array('culture','idea','group_vi','activity','staff');
 $g3_slug=array('news','group_news','industry_news','media_focus');
-$g4_slug=array('business','trafic','travel');
+$g4_slug=array('business','traffic','travel');
 $g4_slug = array('party','party_construction','quntuan','board');
 $g5_slug= array('theme','sanyansanshi');
 $g6_slug = array('public','notice','job');
-$g_slug = array('home','introduction','about','chairman','struction','develop','subsidiary','culture','idea','group_vi','activity','staff','news','group_news','industry_news','media_focus','business','trafic','travel','party','party_construction','quntuan','board','theme','sanyansanshi','public','notice','job','ycjyjt','ycgjjt','ycsxlydjq','ycqczl');
+$g_slug = array('home','introduction','about','chairman','struction','develop','subsidiary','culture','idea','group_vi','activity','staff','news','group_news','industry_news','media_focus','business','traffic','travel','party','party_construction','quntuan','board','theme','sanyansanshi','public','notice','job','ycjyjt','ycgjjt','ycsxlydjq','ycqczl');
 $inner = '';
 for ($i = 0;$i < count($g_slug);$i++){
   if(strpos($url,$g_slug[$i])){
