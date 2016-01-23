@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\helpers\Url;
 use yii\widgets\LinkPager;
+use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
@@ -23,11 +24,25 @@ $this->params['menu'] =[
 ];
 ?>
 <div class="post-index">
+    <div class="row">
+        <div class="col-md-2">
+            <h2><?= Html::encode($this->title) ?></h2>
+        </div>
+        <div class="col-md-10 text-right">
+            <?php $form = ActiveForm::begin([
+                'id' => 'post-form',
+                'method'=>'get',
+              'options' => ['class' => 'form-inline'],
+            ]); ?>
+              <div class="form-group">
+                <label class="sr-only" for="search">搜索</label>
+                <input type="text" class="form-control" id="search" name="search" placeholder="搜索文章" value=""/>
+              </div>
+              <button type="submit" class="btn btn-default">搜索</button>
+            <?php ActiveForm::end(); ?>
+        </div>
+    </div>
 
-    <h2><?= Html::encode($this->title) ?></h2>
-
-    
-    
     <ul class="nav nav-tabs nav-justified">
         <li role="presentation" <?php if(!$page_id){?> class="active" <?php }?>><a href="<?php echo Url::to(['post/index']);?>"><b>全部</b></a></li>
       <?php if(isset($columns)){ foreach ($columns as $key => $col) {?>

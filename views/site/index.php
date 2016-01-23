@@ -13,26 +13,31 @@ $this->title = '宜昌交旅 | 首页';
       <ul id="sloganlist">
         <li class="imgOn">
           <div class="slogan-1-left">
-            <img src="<?= Yii::$app->request->baseUrl;?>/img/slogan-1-1.png" alt=""/>
+            <img src="<?= Yii::$app->request->baseUrl;?>/img/slogan/slogan-1-1.png" alt=""/>
           </div>
           <div class="slogan-1-right">
-            <img src="<?= Yii::$app->request->baseUrl;?>/img/slogan-1-2.png" alt=""/>
+            <img src="<?= Yii::$app->request->baseUrl;?>/img/slogan/slogan-1-2.png" alt=""/>
           </div>
         </li>
         <li>
           <div class="slogan-2-left">
-            <img src="<?= Yii::$app->request->baseUrl;?>/img/slogan-2-1.png" alt=""/>
+            <img src="<?= Yii::$app->request->baseUrl;?>/img/slogan/slogan-2-1.png" alt=""/>
           </div>
           <div class="slogan-2-right">
-            <img src="<?= Yii::$app->request->baseUrl;?>/img/slogan-2-2.png" alt=""/>
+            <img src="<?= Yii::$app->request->baseUrl;?>/img/slogan/slogan-2-2.png" alt=""/>
           </div>
         </li>
         <li>
           <div class="slogan-3-left">
-            <img src="<?= Yii::$app->request->baseUrl;?>/img/slogan/slogan-3-1.png" alt=""/>
+            <img src="<?= Yii::$app->request->baseUrl;?>/img/slogan/slogan-3-a.png" alt=""/>
           </div>
           <div class="slogan-3-right">
-            <img src="<?= Yii::$app->request->baseUrl;?>/img/slogan/slogan-3-2.png" alt=""/>
+            <img src="<?= Yii::$app->request->baseUrl;?>/img/slogan/slogan-3-b.png" alt=""/>
+          </div>
+        </li>
+        <li>
+          <div class="slogan-4">
+            <img src="<?= Yii::$app->request->baseUrl;?>/img/slogan/slogan-4.png" alt=""/>
           </div>
         </li>
       </ul>
@@ -46,7 +51,7 @@ $this->title = '宜昌交旅 | 首页';
           </h3>
           <div class="row">
             <div class="col-xs-4 quick-link link-focus">
-              <a href="<?= Url::to(['site/page','slug'=>'media-focus'])?>"  target="_blank">
+              <a href="<?= Url::to(['site/page','slug'=>'media_focus'])?>"  target="_blank">
               <div class="links-item"><img src="<?= Yii::$app->request->baseUrl;?>/img/icon-newspaper.png" alt=""/></div>
               媒体聚焦
               </a>
@@ -58,7 +63,7 @@ $this->title = '宜昌交旅 | 首页';
               </a>
             </div>
             <div class="col-xs-4 quick-link link-party">
-              <a href="<?= Url::to(['site/page','slug'=>'party-construction'])?>"  target="_blank">
+              <a href="<?= Url::to(['site/page','slug'=>'party_construction'])?>"  target="_blank">
               <div class="links-item"><img src="<?= Yii::$app->request->baseUrl;?>/img/icon-cs.png" alt=""/></div>
               党群工作
               </a>
@@ -76,11 +81,12 @@ $this->title = '宜昌交旅 | 首页';
         </div>
        
         <div class="column-show">
-          <h3 class="column-show-title"><i class="icon-show"></i>员工风采<span>STAFF STYLE</span><a href="<?= Url::to(['site/page','slug'=>'staff'])?>" target="_blank"  class="more">更多</a></h3>
+          <h3 class="column-show-title"><i class="icon-show"></i>图片新闻<span>IMAGE NEWS</span><a href="<?= Url::to(['site/page','slug'=>'staff'])?>" target="_blank"  class="more">更多</a></h3>
           <div class="column-thumb">
             <a href="<?= Url::to(['site/view-post','id'=>$staff->id]);?>" class="thumb-img"  target="_blank"><img src="<?= Yii::$app->request->baseUrl;?><?= $staff->thumb;?>" alt=""></a>
           </div>
         </div>
+
       </div>
     </div>
   </div>
@@ -95,12 +101,12 @@ $this->registerJs('
           base_url+"/img/home-slider-1.jpg",
           base_url+"/img/home-slider-7.jpg",
           base_url+"/img/home-slider-3.jpg",
-        ], {fade:"normal",duration: 8000});
+          base_url+"/img/home-slider-9.jpg",
+        ], {fade:"normal",duration: 6000});
       $(window).on("backstretch.before", function (e, instance, index) {
-        // Do something
         $("#sloganlist").find("li").removeClass("imgOn").eq(index).addClass("imgOn");
       });
   })
   ', View::POS_END, 'js-slide'
-  );
+);
 ?>
