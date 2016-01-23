@@ -204,9 +204,11 @@
                 }
             }
             this.$wrap.find('img').animate({
-                    width:"150%",
-                    height:"150%"
-                },100000);
+                    width:"2600%",
+                    height:"2600%",
+                    // marginLeft:"-1000px",
+                    // marginTop:"-1000px"
+                },333333);
             this.$wrap.css({width: rootWidth, height: rootHeight})
                       .find('img:not(.deleteable)').css({width: bgWidth, height: bgHeight}).css(bgCSS);
         } catch(err) {
