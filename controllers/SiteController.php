@@ -98,11 +98,11 @@ class SiteController extends Controller
                     'menu'=>Page::find()->where(['id'=>$links])->all()
                 ]);
             }
-            $menu = Page::find()->where(['parent_id'=>$page->id])->all();
+            $menu = Page::find()->where(['parent_id'=>$page->id])->orderBy(['display_order'=>SORT_ASC])->all();
             $s = $menu?$menu[0]->slug:null;
             return $this->redirect(['page','slug'=>$s]);
         }else{
-            $menu = Page::find()->where(['parent_id'=>$page->parent_id])->all();
+            $menu = Page::find()->where(['parent_id'=>$page->parent_id])->orderBy(['display_order'=>SORT_ASC])->all();
         }
 
 
