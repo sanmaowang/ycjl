@@ -552,6 +552,34 @@ th {
   -webkit-animation-name: slideInUp;
   animation-name: slideInUp;
 }
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
 @-webkit-keyframes fadeInRight {
   0% {
     opacity: 0;
@@ -698,7 +726,7 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-size: 0.75em;
+  font-size: 12px;
   background: #edf5fa url(../img/inner-bg.jpg) no-repeat 0 0;
   background-size-x: 100% !important;
 }
@@ -756,7 +784,7 @@ a:hover {
 .top-nav {
   height: 30px;
   background: #0071BB;
-  font-size: .85em;
+  font-size: 13px;
   z-index: 10;
 }
 .top-nav-link {
@@ -788,6 +816,7 @@ a:hover {
   margin: 1px 1px 4px 8px;
   border: none;
   padding: 4px 6px;
+  width: 128px;
   float: left;
   background: #fff;
   border-radius: 4px;
@@ -1022,36 +1051,44 @@ a:hover {
   right: 200px;
 }
 .slogan-2-left {
-  width: 552.5px;
-  height: 50px;
+  width: 563.55px;
+  height: 48.1px;
   position: absolute;
   top: 150px;
   left: 50%;
-  margin-left: -221px;
+  margin-left: -241px;
 }
 .slogan-2-right {
-  width: 555px;
-  height: 50px;
+  width: 565.5px;
+  height: 48.1px;
   position: absolute;
   top: 218.75px;
   left: 50%;
-  margin-left: -222px;
+  margin-left: -190px;
 }
 .slogan-3-left {
-  width: 914px;
-  height: 36px;
+  width: 395.25px;
+  height: 55.5px;
   position: absolute;
-  top: 120px;
+  top: 108px;
   left: 50%;
-  margin-left: -457px;
+  margin-left: -197.625px;
 }
 .slogan-3-right {
-  width: 914px;
-  height: 46px;
+  width: 592.5px;
+  height: 54.75px;
   position: absolute;
-  top: 190px;
+  top: 170px;
   left: 50%;
-  margin-left: -457px;
+  margin-left: -296.25px;
+}
+.slogan-4 {
+  position: absolute;
+  top: 112px;
+  width: 1017.45px;
+  height: 49.3px;
+  left: 50%;
+  margin-left: -508.725px;
 }
 .slogan {
   width: 100%;
@@ -1124,6 +1161,14 @@ a:hover {
   -moz-animation: fadeInRight 0.8s 0.2s eases both normal;
   /* FF5+ */
   -o-animation: fadeInRight 0.8s 0.2s ease both normal;
+  /* Opera 12+ */
+}
+.slogan .imgOn .slogan-4 {
+  -webkit-animation: fadeInUp 0.8s 0.2s ease both normal;
+  /* Saf5, Chrome */
+  -moz-animation: fadeInUp 0.8s 0.2s eases both normal;
+  /* FF5+ */
+  -o-animation: fadeInUp 0.8s 0.2s ease both normal;
   /* Opera 12+ */
 }
 .fade .slogan-1-left {
@@ -2385,7 +2430,7 @@ a.pic-thumbnail:hover {
     top: 40px;
   }
   .slogan-1-right {
-    top: 85px;
+    top: 100px;
   }
   .slogan-2-left {
     top: 50px;
@@ -2395,13 +2440,15 @@ a.pic-thumbnail:hover {
   }
   .slogan-3-left {
     top: 50px;
-    left: 50%;
   }
   .slogan-3-right {
-    top: 90px;
+    top: 110px;
   }
 }
 @media (max-width: 1440px) and (max-height: 900px) {
+  .top-nav {
+    font-size: 12px;
+  }
   .container {
     width: 1024px;
   }
@@ -2413,21 +2460,21 @@ a.pic-thumbnail:hover {
     width: 784px;
   }
   .nav {
-    font-size: 12px;
+    font-size: 14px;
   }
   .nav ul .main-level {
-    width: 72px;
+    width: 80px;
   }
   .nav .div-hover {
-    width: 72px;
+    width: 80px;
   }
   .nav .sub-column {
     width: 120px;
-    font-size: 12px;
+    font-size: 13px;
   }
   .nav .sub-column a {
-    height: 36px;
-    line-height: 36px;
+    height: 42px;
+    line-height: 42px;
   }
   .col-news-left {
     width: 435px;
