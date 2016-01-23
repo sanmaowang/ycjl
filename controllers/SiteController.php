@@ -42,7 +42,7 @@ class SiteController extends Controller
     {
         $this->layout = "//home";
         $news = Post::find()->where(['page_id'=>14])->orderBy(['create_date'=>SORT_DESC])->all();
-        $staff = Post::find()->where(['page_id'=>12])->orderBy(['create_date'=>SORT_DESC])->one();
+        $staff = Post::find()->where(['page_id'=>39])->orderBy(['create_date'=>SORT_DESC])->one();
 
         return $this->render('index',[
             'news'=>$news,
@@ -84,12 +84,14 @@ class SiteController extends Controller
                 $group_news = Post::find()->where(['page_id'=>14])->orderBy(['create_date'=>SORT_DESC])->all();
                 $industry_news = Post::find()->where(['page_id'=>15])->orderBy(['create_date'=>SORT_DESC])->all();
                 $media_news = Post::find()->where(['page_id'=>16])->orderBy(['create_date'=>SORT_DESC])->all();
+                $pic_news = Post::find()->where(['page_id'=>39])->orderBy(['create_date'=>SORT_DESC])->limit(6)->all();
                 $headlines = Post::find()->where(['is_headline'=>1])->orderBy(['create_date'=>SORT_DESC])->all();
                 return $this->render('template/'.$page->template,[
                     'page'=>$page,
                     'group_news'=>$group_news,
                     'industry_news'=>$industry_news,
                     'media_news'=>$media_news,
+                    'pic_news'=>$pic_news,
                     'headlines'=>$headlines
                 ]);
             }else if(in_array($page->id,$links)){
