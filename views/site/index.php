@@ -102,7 +102,7 @@ $this->registerJs('
           base_url+"/img/home-slider-7.jpg",
           base_url+"/img/home-slider-3.jpg",
           base_url+"/img/home-slider-9.jpg",
-        ], {fade:"normal",duration: 3000});
+        ], {fade:"normal",duration: 6000});
       $(window).on("backstretch.before", function (e, instance, index) {
         $("#sloganlist").find("li").removeClass("imgOn").eq(index).addClass("imgOn");
       });
