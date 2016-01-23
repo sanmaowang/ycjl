@@ -728,7 +728,7 @@ body {
   padding: 0;
   font-size: 12px;
   background: #edf5fa url(../img/inner-bg.jpg) no-repeat 0 0;
-  background-size-x: 100% !important;
+  background-size: 100% auto !important;
 }
 a {
   color: #0071BB;
@@ -1009,7 +1009,7 @@ a:hover {
   border-bottom-right-radius: 5px !important;
 }
 .nav .sub-bg-2 {
-  background: #ffffff url(../img/nav/1.png) no-repeat 0 top;
+  background: #ffffff url(../img/nav/1.png) no-repeat 0 bottom;
   background-size: 100% auto;
 }
 .nav .sub-bg-8 {
@@ -1610,10 +1610,14 @@ a:hover {
   padding: 0 2%;
   overflow: hidden;
 }
-.content .time {
+.content .meta {
   color: #999;
-  text-align: right;
+  text-align: center;
   font-size: 13px;
+  margin: 15px 0;
+}
+.content .meta span {
+  margin-right: 20px;
 }
 .content img {
   max-width: 100%;
@@ -2444,6 +2448,9 @@ a.pic-thumbnail:hover {
 @media (max-width: 1440px) and (max-height: 900px) {
   .top-nav {
     font-size: 12px;
+  }
+  .content {
+    padding: 0;
   }
   .container {
     width: 1024px;

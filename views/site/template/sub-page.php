@@ -75,10 +75,10 @@ $url = Yii::$app->request->getUrl();
               </li>
               <li>
                 <a class="sub-item-link" target="_blank" href="<?php echo Url::to(['site/page','slug'=>'xsjt'])?>">
-                  <img src="<?php echo Yii::$app->request->baseUrl;?>/img/column/sub-jy4.png" alt="" class="pull-left">
-                  <div class="sub-item-content">
-                    <h4 class="sub-item-title">宜昌交旅集团汽车租赁有限公司</h4>
-                    <p>宜昌交旅集团汽车租赁有限公司（以下简称“公司”）成立于2015年9月28日，位于宜昌高新区发展大道63-4号。公司主打中高端汽车租赁市场，是一家面向社会出行需求，提供汽车长租、短租、个性化定制及驾驶员代驾等业务的服务性公司。</p>
+                  <img src="<?php echo Yii::$app->request->baseUrl;?>/img/column/sub-jy5.png" alt="" class="pull-left">
+                  <div class="sub-item-content" style="min-height:100px;">
+                    <h4 class="sub-item-title">宜昌行胜建设投资有限公司</h4>
+                    <p>主营业务：房地产开发、物业管理、水力资源开发、旅游资源开发、停车服务。</p>
                   </div>
                 </a>
               </li>

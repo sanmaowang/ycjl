@@ -17,6 +17,7 @@ use Yii;
  * @property integer $is_headline
  * @property string $name
  * @property string $content
+ * @property string $source
  * @property integer $create_date
  * @property integer $update_date
  */
@@ -38,7 +39,7 @@ class Post extends \yii\db\ActiveRecord
         return [
             [['page_id', 'user_id', 'is_recommend','is_headline'], 'integer'],
             [['name', 'content'], 'string'],
-            [['create_date', 'update_date'], 'safe']
+            [['create_date', 'update_date','source'], 'safe']
         ];
     }
 
@@ -55,6 +56,7 @@ class Post extends \yii\db\ActiveRecord
             'is_headline' => Yii::t('app', '头条内容'),
             'name' => Yii::t('app', '标题'),
             'content' => Yii::t('app', '内容'),
+            'source' => Yii::t('app', '来源'),
             'create_date' => Yii::t('app', '创建时间'),
             'update_date' => Yii::t('app', '更新时间'),
         ];

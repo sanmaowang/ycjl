@@ -73,11 +73,12 @@ $url = Yii::$app->request->getUrl();
           <?php }else{?>
           <div class="content-title">
             <h1><?= $post->name?></h1>
+            <div class="meta">
+              <span>发布时间：<?php echo date("Y年m月d日",$post->create_date);?></span><span>来源：<?= $post->source;?></span>
+            </div>
           </div>
           <?php echo $post->content;?>
-          <div class="time">
-            <span>发布时间：<?php echo date("Y年m月d日",$post->create_date);?></span>
-          </div>
+          
           <?php }?>
         </div>
         <?= Hot::widget();?>
