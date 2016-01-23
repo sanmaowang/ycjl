@@ -29,8 +29,8 @@ use yii\widgets\ActiveForm;
     <div class="col-md-6">
       <select name="Page[type]" class="form-control" id="page-type">
         <option value="0">单页</option>
-        <option value="1">站内链接</option>
-        <option value="2">站外链接</option>
+        <!-- <option value="1">站内链接</option> -->
+        <!-- <option value="2">站外链接</option> -->
         <option value="3">新闻频道</option>
       </select>
     </div>

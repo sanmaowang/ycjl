@@ -41,7 +41,7 @@ $url = Yii::$app->request->getUrl();
             <div class="col-xs-4">
               <a href="<?php echo Url::to(['view-post','id'=>$post->id])?>" class="pic-thumbnail">
               <?php if($post->thumb){?>
-              <img src="<?= $post->thumb;?>" alt="" >
+              <div class="cover"><img src="<?= $post->thumb;?>" alt="" ></div>
               <?php }?>
               <div class="caption">
               <b><?php echo $post->name;?></b>

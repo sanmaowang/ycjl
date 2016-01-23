@@ -24,19 +24,20 @@ $this->params['menu'] =[
 function display_pages($pages){
   foreach ($pages as $key => $page) {
     if(isset($page)){
-      echo '<li><div class="row"><div class="col-md-6"><span style="margin-left:-10px;">';
-      if($page->type == 0){
-       echo '['.$page->typeLabel.'] <a href="'.Url::to(['page/view','id'=>$page->id]).'" class="link">'.$page['name'].'</a></span></div>';
-     }else if($page->type == 3){
-       echo '['.$page->typeLabel.'] <a href="'.Url::to(['page/view','id'=>$page->id]).'" class="link">'.$page['name'].'</a></span></div>';
-     }
-     else{
-       echo '['.$page->typeLabel.'] <a href="'.Url::to(['page/view','id'=>$page->id]).'" class="link">'.$page['name'].'</a></span></div>';
-     }
-       echo '<div class="col-md-6 text-right">
-            <a href="'.Url::to(['page/create','parent_id'=>$page->id]).'">新建子栏目</a>
-            <a href="'.Url::to(['page/update','id'=>$page->id]).'">修改本栏目</a>
-            <a href="'.Url::to(['page/delete','id'=>$page->id]).'">删除栏目</a>
+       echo '<li><div class="row"><div class="col-md-6"><span style="margin-left:-10px;">';
+       if($page->parent_id == 0){
+       echo '<span class="text-muted">['.$page->typeLabel.']</span> '.$page['name'].'</span></div>';
+       }else{
+       echo '<span class="text-muted">['.$page->typeLabel.']</span> <a href="'.Url::to(['page/view','id'=>$page->id]).'" class="link">'.$page['name'].'</a></span></div>';
+       }
+       echo '<div class="col-md-6 text-right">';
+       if($page->type == 3){
+         echo '<a href="'.Url::to(['post/create','page_id'=>$page->id]).'" class="btn btn-success btn-xs">新建内容</a>';
+       }else if($page->type == 0){
+         echo '<a href="'.Url::to(['page/create','page_id'=>$page->id]).'" class="btn btn-default btn-xs">新建子频道</a>';
+       }
+       echo '<a href="'.Url::to(['page/update','id'=>$page->id]).'" class="btn btn-primary btn-xs">修改本频道</a>
+            <a href="'.Url::to(['page/delete','id'=>$page->id]).'" class="btn btn-danger btn-xs">删除频道</a>
           </div>
         </div></li>';
     }

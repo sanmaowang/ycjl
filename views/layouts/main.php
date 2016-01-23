@@ -27,38 +27,37 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrap">
-    <?php
-    NavBar::begin([
-        'brandLabel' => '交旅集团网站后台管理系统',
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar-custom navbar-fixed-top',
-        'containerOptions'=>'container-fluid'
-        ],
-    ]);
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-left'],
-        'items' => [
-            ['label' => '内容管理', 'url' => ['/page/index']],
-            // ['label' => '资源管理', 'url' => ['/source/index']],
-            ['label' => '用户管理', 'url' => ['/user/index']],
-        ],
-    ]);
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => [
-            // ['label' => 'Contact', 'url' => ['/site/contact']],
-            Yii::$app->user->isGuest ?
-                ['label' => 'Login', 'url' => ['/admin/login']] :
-                [
-                    'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-                    'url' => ['/admin/logout'],
-                    'linkOptions' => ['data-method' => 'post']
-                ],
-        ],
-    ]);
-    NavBar::end();
-    ?>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">交旅集团网站后台管理系统</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <?php
+             $a = 0;
+             if(strpos(\Yii::$app->request->url,'user')){ $a = 1;}?>
+            <li <?php if($a == 0){?>class="active"<?php }?>><a href="<?= Url::to(['page/index'])?>">内容管理</a></li>
+            <li <?php if($a == 1){?>class="active"<?php }?>><a href="<?= Url::to(['user/index'])?>">用户管理</a></li>
+          </ul>
+          <div class="navbar-nav navbar-right nav">
+            <li>
+            <?php if(Yii::$app->user->isGuest){?>
+            <a href="<?= Url::to(['admin/login'])?>" data-method="post">登录</a></li>
+            <?php }else{?>
+            <a href="<?= Url::to(['admin/logout'])?>" data-method="post"><?php echo '登出 (' . Yii::$app->user->identity->username . ')';?></a>
+            <?php }?>
+            </li>
+          </div>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
     <div class="main">
   <div class="container-fluid">
     <div class="col-md-2">

@@ -78,7 +78,7 @@ class UserController extends Controller    //may extend "common/controllers/Main
         if ($model->load(Yii::$app->request->post())
             && $model->setPassword($model->new_password)
             && $model->save(true,array('id','name', 'username', 'email','password_hash', 'english_name', 'role','status','created_at','updated_at'))) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['user/index']);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -101,7 +101,7 @@ class UserController extends Controller    //may extend "common/controllers/Main
                 $model->setPassword($model->new_password);
             }
             $model->save();
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['user/index']);
         } else {
             return $this->render('update', [
                 'model' => $model,

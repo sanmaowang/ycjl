@@ -23,7 +23,20 @@ $url = Yii::$app->request->getUrl();
           <?php foreach ($menu as $key => $m) {
             $current = strpos($url,$m->slug)?"class='current'":'';
           ?>
-            <li><a href="<?php echo Url::to(['site/page','slug'=>$m->slug])?>" <?php echo $current?>><?php echo $m->name;?></a></li>
+            <li><a href="<?php echo Url::to(['site/page','slug'=>$m->slug])?>" <?php echo $current?>>
+              <?php 
+                if($m->slug == 'ycjyjt'){
+                 echo "交运集团";
+                }else if($m->slug == 'ycgjjt'){
+                  echo "公交集团";
+                }else if($m->slug == 'ycsxlydjq'){
+                  echo "度假区开发公司";
+                }else if($m->slug == 'ycqczl'){
+                  echo "汽车租赁公司";
+                }else if($m->slug == 'xsjt'){
+                  echo "行胜建投";
+                }else{ echo $m->name;}?>
+            </a></li>
           <?php }?>
         </ul>
         <?php }?>

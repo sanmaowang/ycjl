@@ -51,7 +51,7 @@ $url = Yii::$app->request->getUrl();
                 ?>
                 <div class="col-xs-4">
                   <a href=<?php echo $pic;?> class="pic-thumbnail swipebox">
-                    <img src=<?= Yii::$app->request->baseUrl;?><?php echo $pic;?> alt="">
+                    <div class="cover"><img src=<?= Yii::$app->request->baseUrl;?><?php echo $pic;?> alt=""></div>
                   </a>
                 </div>
               <?php

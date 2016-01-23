@@ -36,8 +36,9 @@ class Post extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['page_id', 'user_id', 'is_recommend','is_headline', 'create_date', 'update_date'], 'integer'],
-            [['name', 'content'], 'string']
+            [['page_id', 'user_id', 'is_recommend','is_headline'], 'integer'],
+            [['name', 'content'], 'string'],
+            [['create_date', 'update_date'], 'safe']
         ];
     }
 
@@ -50,26 +51,12 @@ class Post extends \yii\db\ActiveRecord
             'id' => Yii::t('app', 'ID'),
             'page_id' => Yii::t('app', 'Page ID'),
             'user_id' => Yii::t('app', 'User ID'),
-            'is_recommend' => Yii::t('app', '是否推荐'),
-            'is_recommend' => Yii::t('app', '是否头条'),
+            'is_recommend' => Yii::t('app', '热门推荐内容'),
+            'is_headline' => Yii::t('app', '头条内容'),
             'name' => Yii::t('app', '标题'),
             'content' => Yii::t('app', '内容'),
             'create_date' => Yii::t('app', '创建时间'),
             'update_date' => Yii::t('app', '更新时间'),
-        ];
-    }
-
-    public function behaviors()
-    {
-        return [
-            [
-                'class' => TimestampBehavior::className(),
-                'attributes' => [
-                    ActiveRecord::EVENT_BEFORE_INSERT => ['create_date', 'update_date'],
-                    ActiveRecord::EVENT_BEFORE_UPDATE => ['update_date'],
-                ],
-//                'value' => new Expression('NOW()'),
-            ],
         ];
     }
 

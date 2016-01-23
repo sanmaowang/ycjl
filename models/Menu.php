@@ -40,9 +40,9 @@ class Menu extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'name' => Yii::t('app', 'Name'),
-            'position' => Yii::t('app', 'Position'),
-            'content' => Yii::t('app', 'Content'),
+            'name' => Yii::t('app', '名称'),
+            'position' => Yii::t('app', '位置'),
+            'content' => Yii::t('app', '包含栏目'),
         ];
     }
 }
