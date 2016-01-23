@@ -62,7 +62,8 @@ use yii\widgets\ActiveForm;
 	    <div class="col-lg-8"><div class="help-block"></div></div>
 	  </div>
     
-    
+    <?= $form->field($model, 'source')->textInput() ?>
+
     <?php echo $form->field($model, 'is_recommend')->radioList([1=>'是',0=>'否']) ?>
     <?php echo $form->field($model, 'is_headline')->radioList([1=>'是',0=>'否']) ?>
   

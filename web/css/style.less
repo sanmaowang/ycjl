@@ -820,7 +820,7 @@ body{
   padding: 0;
   font-size: 12px;
   background: #EDF5FA url(../img/inner-bg.jpg) no-repeat 0 0;
-  background-size-x: 100% !important;
+  background-size: 100% auto !important;
 }
 
 a{
@@ -1085,7 +1085,7 @@ a{
 }
 
 .nav .sub-bg-2{
-  background: #fff url(../img/nav/1.png) no-repeat 0 top;
+  background: #fff url(../img/nav/1.png) no-repeat 0 bottom;
   background-size: 100% auto;
 }
 .nav .sub-bg-8{
@@ -1567,10 +1567,14 @@ a{
   margin-bottom: 30px;
   padding: 0 2%;
   overflow: hidden;
-  .time{
+  .meta{
     color: #999;
-    text-align: right;
+    text-align: center;
     font-size: 13px;
+    margin: 15px 0;
+    span{
+      margin-right: 20px;
+    }
   }
   img{
     max-width: 100%;
@@ -2413,6 +2417,9 @@ a.pic-thumbnail.active,a.pic-thumbnail:focus,a.pic-thumbnail:hover {
 @media (max-width: 1440px ) and (max-height:900px) {
   .top-nav{
     font-size: 12px;
+  }
+  .content{
+    padding: 0;
   }
   .container{
     width: 1024px;

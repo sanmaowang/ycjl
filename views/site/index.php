@@ -71,7 +71,7 @@ $this->title = '宜昌交旅 | 首页';
           </div>
         </div>
         <div class="column-news">
-          <h3 class="column-news-title"><i class="icon-news"></i>企业动态<span>ENTERPRISE NEWS</span><a href="<?= Url::to(['site/page','slug'=>'group-news'])?>" target="_blank" class="more">更多</a></h3>
+          <h3 class="column-news-title"><i class="icon-news"></i>企业动态<span>ENTERPRISE NEWS</span><a href="<?= Url::to(['site/page','slug'=>'group_news'])?>" target="_blank" class="more">更多</a></h3>
           <ul class="column-news-list">
             <?php if(isset($news)){
               for($i = 0;$i < 4; $i++){?>
@@ -81,7 +81,7 @@ $this->title = '宜昌交旅 | 首页';
         </div>
        
         <div class="column-show">
-          <h3 class="column-show-title"><i class="icon-show"></i>图片新闻<span>IMAGE NEWS</span><a href="<?= Url::to(['site/page','slug'=>'staff'])?>" target="_blank"  class="more">更多</a></h3>
+          <h3 class="column-show-title"><i class="icon-show"></i>图片新闻<span>IMAGE NEWS</span><a href="<?= Url::to(['site/page','slug'=>'picnews'])?>" target="_blank"  class="more">更多</a></h3>
           <div class="column-thumb">
             <?php if(isset($staff)){?>
             <a href="<?= Url::to(['site/view-post','id'=>$staff->id]);?>" class="thumb-img"  target="_blank"><img src="<?= Yii::$app->request->baseUrl;?><?= $staff->thumb;?>" alt=""></a>

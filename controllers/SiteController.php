@@ -40,11 +40,17 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        $this->layout = "//home";
+        if(Yii::$app->deviceDetect->isMobile()){
+            $this->layout = "//mobile";
+            $mobile = 'mobile/';
+        }else{
+            $this->layout = "//home";
+            $mobile = '';
+        }
         $news = Post::find()->where(['page_id'=>14])->orderBy(['create_date'=>SORT_DESC])->all();
         $staff = Post::find()->where(['page_id'=>39])->orderBy(['create_date'=>SORT_DESC])->one();
 
-        return $this->render('index',[
+        return $this->render($mobile.'index',[
             'news'=>$news,
             'staff'=>$staff
         ]);
@@ -53,7 +59,11 @@ class SiteController extends Controller
     public function actionSearch($t)
     {
         $search = $t;
-        $this->layout = "//inner";
+        if(Yii::$app->deviceDetect->isMobile()){
+            $this->layout = "//mobile";
+        }else{
+            $this->layout = "//inner";
+        }
         $model = Post::find()->where(['like','content', $search])->limit(8)->all();
         // $pageQuery = new Query();
         // $t = $pageQuery->select('id,name,content,update_date')->from('page')
@@ -75,7 +85,13 @@ class SiteController extends Controller
             return $this->goHome();
         }
         
-        $this->layout = "//inner";
+        if(Yii::$app->deviceDetect->isMobile()){
+            $this->layout = "//mobile";
+            $mobile = 'mobile/';
+        }else{
+            $this->layout = "//home";
+            $mobile = '';
+        }
 
         if($page->parent_id == 0){
             $menu = Menu::find()->where(['position'=>'bottom'])->one();
@@ -86,7 +102,7 @@ class SiteController extends Controller
                 $media_news = Post::find()->where(['page_id'=>16])->orderBy(['create_date'=>SORT_DESC])->all();
                 $pic_news = Post::find()->where(['page_id'=>39])->orderBy(['create_date'=>SORT_DESC])->limit(6)->all();
                 $headlines = Post::find()->where(['is_headline'=>1])->orderBy(['create_date'=>SORT_DESC])->all();
-                return $this->render('template/'.$page->template,[
+                return $this->render($mobile.'template/'.$page->template,[
                     'page'=>$page,
                     'group_news'=>$group_news,
                     'industry_news'=>$industry_news,
@@ -95,7 +111,7 @@ class SiteController extends Controller
                     'headlines'=>$headlines
                 ]);
             }else if(in_array($page->id,$links)){
-                return $this->render('template/'.$page->template,[
+                return $this->render($mobile.'template/'.$page->template,[
                     'page'=>$page,
                     'menu'=>Page::find()->where(['id'=>$links])->all()
                 ]);
@@ -115,7 +131,7 @@ class SiteController extends Controller
             $posts = $query->orderBy(['create_date'=>SORT_DESC])->offset($pnation->offset)
               ->limit($pnation->limit)
               ->all();
-            return $this->render('template/'.$page->template,[
+            return $this->render($mobile.'template/'.$page->template,[
                 'page'=>$page,
                 'menu'=>$menu,
                 'pnation'=>$pnation,
@@ -123,7 +139,7 @@ class SiteController extends Controller
             ]);
         }
    
-        return $this->render('template/'.$page->template,[
+        return $this->render($mobile.'template/'.$page->template,[
             'page'=>$page,
             'menu'=>$menu,
         ]);
@@ -131,7 +147,13 @@ class SiteController extends Controller
 
     public function actionViewPost($id)
     {
-        $this->layout = "//inner";
+        if(Yii::$app->deviceDetect->isMobile()){
+            $this->layout = "//mobile";
+            $mobile = 'mobile';
+        }else{
+            $this->layout = "//inner";
+            $mobile = '';
+        }
         $post = $this->findPostModel($id);
         $page = $post->page;
         if($page->parent_id == 0){
@@ -139,7 +161,7 @@ class SiteController extends Controller
         }else{
             $menu = Page::find()->where(['parent_id'=>$page->parent_id])->all();
         }
-        return $this->render('template/post', [
+        return $this->render($mobile.'template/post', [
             'post' => $post,
             'menu'=>$menu
         ]);
