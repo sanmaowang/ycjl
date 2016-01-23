@@ -22,7 +22,7 @@ $url = Yii::$app->request->getUrl();
           <?php foreach ($menu as $key => $m) {
           $current = strpos($url,$m->slug)?"class='current'":'';
           ?>
-          <li><a href="<?php echo Url::to(['site/page','slug'=>$m->slug])?>" <?php echo $current?> target="_blank"><?php echo $m->name;?></a></li>
+          <li><a href="<?php echo Url::to(['site/page','slug'=>$m->slug])?>" <?php echo $current?> ><?php echo $m->name;?></a></li>
           <?php }?>
         </ul>
         <?php }?>
