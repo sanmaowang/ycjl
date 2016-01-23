@@ -206,7 +206,7 @@
             this.$wrap.find('img').animate({
                     width:"200%",
                     height:"200%"
-                },50000);
+                },100000);
             this.$wrap.css({width: rootWidth, height: rootHeight})
                       .find('img:not(.deleteable)').css({width: bgWidth, height: bgHeight}).css(bgCSS);
         } catch(err) {
