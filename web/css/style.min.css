@@ -2075,10 +2075,6 @@ a:hover {
 }
 .image-list {
   overflow: hidden;
-  width: 390px;
-}
-.image-list .image-list-wrapper {
-  width: 400px;
 }
 .image-list-item {
   display: inline;
