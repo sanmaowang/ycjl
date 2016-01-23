@@ -50,22 +50,33 @@ class PostController extends Controller
         
         $request = Yii::$app->request;
         $page_id = $request->get('page_id');
-
-        
+        $search = $request->get('search');
 
         $columns = Page::find()->where(['type'=>3])->all();
 
-        
+        if($search){
+          $query = Post::find()->where(['like','name',$search])->orWhere(['like', 'content', $search]);
+
+          $countQuery = clone $query;
+          $pnation = new Pagination(['defaultPageSize' => 10,'totalCount' => $countQuery->count()]);
+          $post = $query->orderBy(['create_date'=>SORT_DESC])->offset($pnation->offset)
+            ->limit($pnation->limit)
+            ->all();
+          return $this->render('index', [
+              'page_id' => $page_id,
+              'pnation'=>$pnation,
+              'post'=>$post,
+              'columns'=>$columns
+          ]);
+        }
 
         if($page_id){
-
             $query = Post::find()->where(['page_id' => $page_id]);
             $countQuery = clone $query;
             $pnation = new Pagination(['defaultPageSize' => 10,'totalCount' => $countQuery->count()]);
             $post = $query->orderBy(['create_date'=>SORT_DESC])->offset($pnation->offset)
               ->limit($pnation->limit)
               ->all();
-
         }else{
             $query = Post::find();
             $countQuery = clone $query;

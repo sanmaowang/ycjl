@@ -712,7 +712,7 @@ a:hover {
 .home {
   width: 100%;
   background: #edf5fa url(../img/home-slider-1.jpg) no-repeat 0 0;
-  background-size: contain;
+  background-size: 100% 100%;
 }
 .home .wrap {
   z-index: 2;
@@ -1008,17 +1008,17 @@ a:hover {
   margin: 0 auto;
 }
 .slogan-1-left {
-  width: 249.6px;
-  height: 40.8px;
+  width: 304.85px;
+  height: 47.45px;
   position: absolute;
   top: 90px;
-  right: 300px;
+  right: 320px;
 }
 .slogan-1-right {
-  width: 298.8px;
-  height: 48px;
+  width: 304.2px;
+  height: 48.1px;
   position: absolute;
-  top: 162px;
+  top: 155.25px;
   right: 200px;
 }
 .slogan-2-left {

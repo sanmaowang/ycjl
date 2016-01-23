@@ -13,10 +13,10 @@ $this->title = '宜昌交旅 | 首页';
       <ul id="sloganlist">
         <li class="imgOn">
           <div class="slogan-1-left">
-            <img src="<?= Yii::$app->request->baseUrl;?>/img/slogan-1-1.png" alt=""/>
+            <img src="<?= Yii::$app->request->baseUrl;?>/img/slogan/slogan-1-1.png" alt=""/>
           </div>
           <div class="slogan-1-right">
-            <img src="<?= Yii::$app->request->baseUrl;?>/img/slogan-1-2.png" alt=""/>
+            <img src="<?= Yii::$app->request->baseUrl;?>/img/slogan/slogan-1-2.png" alt=""/>
           </div>
         </li>
         <li>
@@ -88,19 +88,19 @@ $this->title = '宜昌交旅 | 首页';
 </div>
 
 <?php 
-$this->registerJsFile('@web/js/jquery.backstretch.min.js',['depends' => [\yii\web\JqueryAsset::className()]]);
-$this->registerJs('
-  var base_url = "'.Yii::$app->request->baseUrl.'";
-  $(function(){
-      $("body").backstretch([
-          base_url+"/img/home-slider-1.jpg",
-          base_url+"/img/home-slider-7.jpg",
-          base_url+"/img/home-slider-3.jpg",
-        ], {fade:"normal",duration: 8000});
-      $(window).on("backstretch.before", function (e, instance, index) {
-        $("#sloganlist").find("li").removeClass("imgOn").eq(index).addClass("imgOn");
-      });
-  })
-  ', View::POS_END, 'js-slide'
-);
+// $this->registerJsFile('@web/js/jquery.backstretch.min.js',['depends' => [\yii\web\JqueryAsset::className()]]);
+// $this->registerJs('
+//   var base_url = "'.Yii::$app->request->baseUrl.'";
+//   $(function(){
+//       $("body").backstretch([
+//           base_url+"/img/home-slider-1.jpg",
+//           base_url+"/img/home-slider-7.jpg",
+//           base_url+"/img/home-slider-3.jpg",
+//         ], {fade:"normal",duration: 8000});
+//       $(window).on("backstretch.before", function (e, instance, index) {
+//         $("#sloganlist").find("li").removeClass("imgOn").eq(index).addClass("imgOn");
+//       });
+//   })
+//   ', View::POS_END, 'js-slide'
+// );
 ?>
