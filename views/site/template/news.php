@@ -47,7 +47,7 @@ $url = Yii::$app->request->getUrl();
                     <img src="<?= $post->thumb;?>" alt="">
                   </div>
                 <?php }?>
-                <a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"><h3><?php echo $post->name;?><span class="time"><?php echo date("Y年m月d日",$post->update_date);?></span></h3></a>
+                <a href="<?php echo Url::to(['view-post','id'=>$post->id])?>" target="_blank"><h3><?php echo $post->name;?><span class="time"><?php echo date("Y年m月d日",$post->update_date);?></span></h3></a>
                 <div class="desc">
                   <?= $post->excerpt;?>
                 </div> 

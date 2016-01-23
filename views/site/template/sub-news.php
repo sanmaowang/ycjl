@@ -22,7 +22,7 @@ $url = Yii::$app->request->getUrl();
           <?php foreach ($menu as $key => $m) {
             $current = strpos($url,$m->slug)?"class='current'":'';
           ?>
-            <li><a href="<?php echo Url::to(['site/page','slug'=>$m->slug])?>" <?php echo $current?>  target="_blank"><?php echo $m->name;?></a></li>
+            <li><a href="<?php echo Url::to(['site/page','slug'=>$m->slug])?>" <?php echo $current?> ><?php echo $m->name;?></a></li>
           <?php }?>
         </ul>
         <?php }?>
@@ -48,7 +48,7 @@ $url = Yii::$app->request->getUrl();
                     <img src="<?= $post->thumb;?>" alt="">
                   </div>
                 <?php }?>
-                <a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"><h3><?php echo $post->name;?><span class="time"><?php echo date("Y年m月d日",$post->update_date);?></span></h3></a>
+                <a href="<?php echo Url::to(['view-post','id'=>$post->id])?>" target="_blank"><h3><?php echo $post->name;?><span class="time"><?php echo date("Y年m月d日",$post->update_date);?></span></h3></a>
                 <div class="desc">
                   <?= $post->excerpt;?>
                 </div> 
