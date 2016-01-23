@@ -105,7 +105,6 @@ $url = Yii::$app->request->getUrl();
                   }
               ?>
                 <li <?php if($j == 0 || $j == 6){echo 'class="first"';}?>><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"><?php echo $post->name;?></a> <span class="time"><?php echo date("m-d",$post->update_date);?></li>
-                <li><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"><?php echo $post->name;?></a> <span class="time"><?php echo date("m-d",$post->update_date);?></li>
               <?php 
               if($j == 5){
                 echo "</ul>";
