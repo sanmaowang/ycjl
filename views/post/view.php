@@ -8,6 +8,7 @@ use yii\widgets\DetailView;
 
 $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', '文章管理'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $model->page->name, 'url' => ['post/index', 'page_id' => $model->page->id]];
 $this->params['breadcrumbs'][] = $this->title;
 $this->params['menu'] =[
                 // Important: you need to specify url as 'controller/action',

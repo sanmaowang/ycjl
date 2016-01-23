@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model app\models\Post */
 
 $this->title = Yii::t('app', '新建文章');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Posts'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', '文章管理'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 $this->params['menu'] =[
                 // Important: you need to specify url as 'controller/action',
