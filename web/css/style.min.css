@@ -711,7 +711,8 @@ a:hover {
 }
 .home {
   width: 100%;
-  background: #EDF5FA;
+  background: #edf5fa url(../img/home-slider-1.jpg) no-repeat 0 0;
+  background-size: contain;
 }
 .home .wrap {
   z-index: 2;
