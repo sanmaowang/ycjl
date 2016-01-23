@@ -27,33 +27,23 @@ $this->params['menu'] =[
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Update'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a(Yii::t('app', 'Delete'), ['delete', 'id' => $model->id], [
+        <?= Html::a(Yii::t('app', '修改'), ['update', 'id' => $model->id], ['class' => 'btn btn-info']) ?>
+        <?= Html::a(Yii::t('app', '删除'), ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => Yii::t('app', 'Are you sure you want to delete this item?'),
+                'confirm' => Yii::t('app', '您确定要删除这篇文章吗?'),
                 'method' => 'post',
             ],
         ]) ?>
     </p>
+    <div class="content">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <?php 
+                echo $model->content;
 
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            'id',
-            'parent_id',
-            'user_id',
-            'name',
-            'slug',
-            'url:url',
-            'excerpt:ntext',
-            'content:ntext',
-            'type',
-            'status',
-            'display_order',
-            'create_date',
-            'update_date',
-        ],
-    ]) ?>
-
+            ?>
+          </div>
+        </div>
+    </div>
 </div>

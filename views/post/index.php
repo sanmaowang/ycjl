@@ -2,7 +2,8 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
-
+use yii\helpers\Url;
+use yii\widgets\LinkPager;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
@@ -25,25 +26,56 @@ $this->params['menu'] =[
 
     <h2><?= Html::encode($this->title) ?></h2>
 
-    <p>
-        <?= Html::a(Yii::t('app', '创建文章'), ['create'], ['class' => 'btn btn-success']) ?>
+    
+    
+    <ul class="nav nav-tabs nav-justified">
+        <li role="presentation" <?php if(!$page_id){?> class="active" <?php }?>><a href="<?php echo Url::to(['post/index']);?>"><b>全部</b></a></li>
+      <?php if(isset($columns)){ foreach ($columns as $key => $col) {?>
+      <li role="presentation" <?php if($page_id == $col->id){?> class="active" <?php }?>><a href="<?php echo Url::to(['post/index','page_id'=>$col->id]);?>"><?= $col->name;?></a></li>
+      <?php }}?>  
+    </ul>
+    <p style="margin:20px 0;">
+        <?php if($page_id){?>
+        <?= Html::a(Yii::t('app', '创建新文章'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?php }else {?>
+        <?= Html::a(Yii::t('app', '创建新文章'), ['create','page_id'=>$page_id], ['class' => 'btn btn-success']) ?>
+        <?php }?>  
     </p>
-
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            // 'id',
-            // 'page_id',
-            // 'user_id',
-            'name:ntext',
-            // 'content:ntext',
-            'create_date:datetime',
-            'update_date:datetime',
-
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
-
+    <table class="table table-striped">
+        <tr>
+            <td>#</td>
+            <td>标题</td>
+            <td>所属栏目</td>
+            <td>头条</td>
+            <td>热门推荐</td>
+            <td>创建时间</td>
+            <td>最后更新时间</td>
+            <td>操作</td>
+        </tr>
+    <?php foreach ($post as $key => $p) {?>
+        <tr>
+            <td><?= $key+1?></td>
+            <td><b><?= $p->name;?></b></td>
+            <td><?= $p->page->name;?></td>
+            <td><?= $p->is_headline == 1?"√":"";?></td>
+            <td><?= $p->is_recommend == 1?"√":"";?></td>
+            <td><?php echo date("Y-m-d",$p->create_date);?></td>
+            <td><?php echo date("Y-m-d",$p->update_date);?></td>
+            <td>
+                <a href="<?= Url::to(['post/view','id'=>$p->id])?>" class="btn btn-xs btn-primary">查看</a>
+                <?= Html::a(Yii::t('app', '修改'), ['post/update', 'id' => $p->id], ['class' => 'btn btn-xs btn-info']) ?>
+                <?= Html::a(Yii::t('app', '删除'), ['post/delete', 'id' => $p->id], [
+                    'class' => 'btn btn-xs btn-danger',
+                    'data' => [
+                        'confirm' => Yii::t('app', '您确定要删除吗?'),
+                        'method' => 'post',
+                    ],
+                ]) ?>
+            </td>
+        </tr>
+    <?php }?>
+    </table>
+    <div class="clearfix">
+          <?= LinkPager::widget(['pagination' => $pnation]) ?>  
+        </div>
 </div>

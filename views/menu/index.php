@@ -23,7 +23,7 @@ $this->params['menu'] =[
 ?>
 <div class="menu-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h2><?= Html::encode($this->title) ?></h2>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

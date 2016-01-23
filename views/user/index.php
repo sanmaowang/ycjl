@@ -14,13 +14,13 @@ $this->params['menu'] =[
                 // not just as 'controller' even if default action is used.
                 // 'Products' menu item will be selected as long as the route is 'product/index'
                 ['label' => '用户管理', 'items' => [
-                    ['label' => '用户列表', 'url' => ['page/index']],
+                    ['label' => '管理员', 'url' => ['user/index']],
                 ]],
             ];
 ?>
 <div class="admin-index">
     
-    <h2>用户管理</h2>
+    <h2>管理员</h2>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>

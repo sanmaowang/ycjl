@@ -10,7 +10,8 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use yii\db\Query;
+use yii\data\Pagination;
 /**
  * PostController implements the CRUD actions for Post model.
  */
@@ -47,12 +48,39 @@ class PostController extends Controller
     public function actionIndex()
     {
         
-        $dataProvider = new ActiveDataProvider([
-            'query' => Post::find(),
-        ]);
+        $request = Yii::$app->request;
+        $page_id = $request->get('page_id');
+
+        
+
+        $columns = Page::find()->where(['type'=>3])->all();
+
+        
+
+        if($page_id){
+
+            $query = Post::find()->where(['page_id' => $page_id]);
+            $countQuery = clone $query;
+            $pnation = new Pagination(['defaultPageSize' => 10,'totalCount' => $countQuery->count()]);
+            $post = $query->orderBy(['create_date'=>SORT_DESC])->offset($pnation->offset)
+              ->limit($pnation->limit)
+              ->all();
+
+        }else{
+            $query = Post::find();
+            $countQuery = clone $query;
+            $pnation = new Pagination(['defaultPageSize' => 10,'totalCount' => $countQuery->count()]);
+            $post = $query->orderBy(['create_date'=>SORT_DESC])->offset($pnation->offset)
+              ->limit($pnation->limit)
+              ->all();
+        }
+
 
         return $this->render('index', [
-            'dataProvider' => $dataProvider,
+            'page_id' => $page_id,
+            'pnation'=>$pnation,
+            'post'=>$post,
+            'columns'=>$columns
         ]);
     }
 
@@ -77,9 +105,17 @@ class PostController extends Controller
     {
         $model = new Post();
         $pages = Page::find()->all();
+        $request = Yii::$app->request;
+        $model->page_id = $request->get('page_id');
+        $model->create_date =  mktime();
+        $model->update_date =  mktime();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+            $model->create_date = strtotime($model->create_date);
+            $model->update_date = strtotime($model->update_date);
+            if($model->save()){
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -99,8 +135,12 @@ class PostController extends Controller
         $model = $this->findModel($id);
         $pages = Page::find()->all();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+            $model->create_date = strtotime($model->create_date);
+            $model->update_date = strtotime($model->update_date);
+            if($model->save()){
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         } else {
             return $this->render('update', [
                 'model' => $model,

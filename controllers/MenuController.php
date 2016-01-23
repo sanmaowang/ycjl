@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use yii\filters\AccessControl;
 use app\models\Menu;
+use app\models\Page;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -75,11 +76,14 @@ class MenuController extends Controller
     {
         $model = new Menu();
 
+        $pages = Page::find()->all();
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
+                'pages' => $pages
             ]);
         }
     }
@@ -94,11 +98,17 @@ class MenuController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        $pages = Page::find()->all();
+
+        if ($model->load(Yii::$app->request->post())) {
+            $menu->content = implode(',',$menu->content);
+            if($model->save()){
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'pages' => $pages
             ]);
         }
     }

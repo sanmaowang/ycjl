@@ -39,6 +39,19 @@ use yii\widgets\ActiveForm;
       <div class="col-lg-8"><div class="help-block"></div></div>
     </div>
 
+    <div class="form-group field-post-create_date">
+      <label class="col-md-2 control-label" for="post-create_date">发布时间</label>
+      <div class="col-md-6"><input type="text" id="post-create_date" class="form-control datetime" name="Post[create_date]" value="<?php echo date("Y-m-d",$model->create_date);?>"></div>
+      <div class="col-lg-8"><div class="help-block"></div></div>
+    </div>
+
+    <div class="form-group field-post-update_date">
+      <label class="col-md-2 control-label" for="post-update_date">最后修改时间</label>
+      <div class="col-md-6"><input type="text" id="post-update_date" class="form-control datetime" name="Post[update_date]" value="<?php echo date("Y-m-d",$model->update_date);?>"></div>
+      <div class="col-lg-8"><div class="help-block"></div></div>
+    </div>
+
+
     <?= $form->field($model, 'name')->textInput() ?>
 
     <div class="form-group field-post-content">
@@ -49,18 +62,7 @@ use yii\widgets\ActiveForm;
 	    <div class="col-lg-8"><div class="help-block"></div></div>
 	  </div>
     
-    <div class="form-group field-post-create_date">
-      <label class="col-md-2 control-label" for="post-create_date">发布时间</label>
-      <div class="col-md-6"><input type="text" id="post-create_date" class="form-control" name="Post[create_date]" value="<?= $model->create_date;?>"></div>
-      <div class="col-lg-8"><div class="help-block"></div></div>
-    </div>
-
-    <div class="form-group field-post-update_date">
-      <label class="col-md-2 control-label" for="post-update_date">修改时间</label>
-      <div class="col-md-6"><input type="text" id="post-update_date" class="form-control" name="Post[update_date]" value="<?= $model->update_date;?>"></div>
-      <div class="col-lg-8"><div class="help-block"></div></div>
-    </div>
-
+    
     <?php echo $form->field($model, 'is_recommend')->radioList([1=>'是',0=>'否']) ?>
     <?php echo $form->field($model, 'is_headline')->radioList([1=>'是',0=>'否']) ?>
   
@@ -75,6 +77,9 @@ use yii\widgets\ActiveForm;
 </div>
 <?php 
 
+$this->registerCssFile('@web/js/datetimepicker/css/bootstrap-datetimepicker.css');//注册自定义js
+$this->registerJsFile('@web/js/datetimepicker/js/bootstrap-datetimepicker.js',['depends' => [\yii\web\JqueryAsset::className()]]);//注册自定义js
+$this->registerJsFile('@web/js/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js',['depends' => [\yii\web\JqueryAsset::className()]]);//注册自定义js
 $this->registerJsFile('@web/js/ueditor/ueditor.config.js');//注册自定义js
 $this->registerJsFile('@web/js/ueditor/ueditor.all.min.js');
 $this->registerJsFile('@web/js/ueditor/lang/zh-cn/zh-cn.js');
@@ -82,6 +87,14 @@ $this->registerJsFile('@web/js/ueditor/lang/zh-cn/zh-cn.js');
 $this->registerJs("
 $(function () {
   var editor = UE.getEditor('post-content');
+  $('.datetime').datetimepicker({
+    autoclose:true,
+    language:'zh-CN',
+    minView:2,
+    format: 'yyyy-mm-dd',
+    todayHighlight:true,
+    todayBtn:true,
+  });
 });
   ",View::POS_END,'show');
 ?>

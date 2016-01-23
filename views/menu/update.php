@@ -5,12 +5,12 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Menu */
 
-$this->title = Yii::t('app', '更新 {modelClass}: ', [
+$this->title = Yii::t('app', '更新{modelClass}: ', [
     'modelClass' => '菜单',
 ]) . ' ' . $model->name;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Menus'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', '菜单设置'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = Yii::t('app', 'Update');
+$this->params['breadcrumbs'][] = Yii::t('app', '更新');
 $this->params['menu'] =[
                 // Important: you need to specify url as 'controller/action',
                 // not just as 'controller' even if default action is used.
@@ -30,6 +30,7 @@ $this->params['menu'] =[
 
     <?= $this->render('_form', [
         'model' => $model,
+        'pages' => $pages,
     ]) ?>
 
 </div>

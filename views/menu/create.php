@@ -28,6 +28,7 @@ $this->params['menu'] =[
 
     <?= $this->render('_form', [
         'model' => $model,
+        'pages' => $pages,
     ]) ?>
 
 </div>
