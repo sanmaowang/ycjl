@@ -10,6 +10,7 @@ use yii\widgets\ActiveForm;
       <div class="top-quick-link">
         <a href="#" onclick="javascript:setHomepage();">设为首页</a>
         <a href="javascript:addFavorite();">加入收藏</a>
+        <a href="javascript:void(0);">集团OA</a>
       </div>
       <div class="top-nav-link">
       <ul id="link_websites" class="top-links">
