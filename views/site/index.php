@@ -86,6 +86,7 @@ $this->title = '宜昌交旅 | 首页';
             <?php if(isset($staff)){?>
             <a href="<?= Url::to(['site/view-post','id'=>$staff->id]);?>" class="thumb-img"  target="_blank"><img src="<?= Yii::$app->request->baseUrl;?><?= $staff->thumb;?>" alt=""></a>
             <?php }?>
+            <div class="column-title"><?php echo $staff->name;?></div>
           </div>
         </div>
 

@@ -111,7 +111,8 @@ class Post extends \yii\db\ActiveRecord
 
     public function getThumb()
     {
-      preg_match('/<img.+src=\"?(.+\.(jpg|gif|bmp|bnp|png))\"?.+>/i',$this->content,$match);
+      $pattern ='<img.*?src="(.*?)">';
+      preg_match($pattern,$this->content,$match);
       return $match?$match[1]:null;
     }
 
