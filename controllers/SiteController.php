@@ -115,6 +115,11 @@ class SiteController extends Controller
                     'page'=>$page,
                     'menu'=>Page::find()->where(['id'=>$links])->all()
                 ]);
+            }else if($slug == 'picnews'){
+                return $this->render($mobile.'template/'.$page->template,[
+                    'page'=>$page,
+                    'menu'=>Page::find()->where(['parent_id'=>13])->all(),
+                ]);
             }
             $menu = Page::find()->where(['parent_id'=>$page->id])->orderBy(['display_order'=>SORT_ASC])->all();
             $s = $menu?$menu[0]->slug:null;
@@ -127,7 +132,7 @@ class SiteController extends Controller
         if($page->type == 3){
             $query = Post::find()->where(['page_id' => $page->id]);
             $countQuery = clone $query;
-            $pnation = new Pagination(['defaultPageSize' => 5,'totalCount' => $countQuery->count()]);
+            $pnation = new Pagination(['defaultPageSize' => 10,'totalCount' => $countQuery->count()]);
             $posts = $query->orderBy(['create_date'=>SORT_DESC])->offset($pnation->offset)
               ->limit($pnation->limit)
               ->all();

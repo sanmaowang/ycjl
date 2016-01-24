@@ -38,6 +38,7 @@ $url = Yii::$app->request->getUrl();
           <div class="news-main">
             <h3><?php echo $post->name;?></h3>
             <div class="news-image-column">
+            
               <?php
               preg_match_all("|src=(.*) |U", $post->content, $result);
               $pics = $result[1];
@@ -72,7 +73,6 @@ $url = Yii::$app->request->getUrl();
           <?php }else{?>
           <div class="content-title">
             <h1><?= $post->name?></h1>
-            <?php if($post->subtitle){ ?><h3>——<?php echo $post->subtitle; ?></h3><?php }?>
             <div class="meta">
               <span>发布时间：<?php echo date("Y年m月d日",$post->create_date);?></span><span>来源：<?= $post->source;?></span>
             </div>

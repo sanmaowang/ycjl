@@ -1928,6 +1928,10 @@ a:hover {
   top: -2px;
   position: absolute;
 }
+.news-header h2 a,
+.type-header h2 a {
+  color: #2B4384;
+}
 .news-header span,
 .type-header span {
   color: #9B9B9B;
@@ -2281,6 +2285,11 @@ a:hover {
   font-size: 14px;
   border-bottom: 1px dotted #ececec;
   background-position: left -265px;
+}
+.mix-ulist li .time {
+  float: right;
+  font-size: 12px;
+  color: #999;
 }
 .news-pic-list ul {
   margin: 0;

@@ -41,7 +41,6 @@ $url = Yii::$app->request->getUrl();
         <div class="news-list">
           <ul>
             <?php foreach ($posts as $key => $post) {?>
-            <!--?php if($key == 0){?>
               <li class="thumbnail clearfix">
                 <?php if($post->thumb){?>
                   <div class="thumb">
@@ -53,12 +52,6 @@ $url = Yii::$app->request->getUrl();
                   <?= $post->excerpt;?>
                 </div> 
                </li>
-            <?php //}else{?>
-            -->
-            <li>
-              <a href="<?php echo Url::to(['view-post','id'=>$post->id])?>" target="_blank"><?php echo $post->name;?><span class="time"><?php echo date("Y年m月d日",$post->update_date);?></span></a>
-            </li>
-            <?php //}?>
             <?php }?>
           </ul>
         </div>

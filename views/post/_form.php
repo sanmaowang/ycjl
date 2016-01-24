@@ -53,6 +53,7 @@ use yii\widgets\ActiveForm;
 
 
     <?= $form->field($model, 'name')->textInput() ?>
+    <?= $form->field($model, 'subtitle')->textInput() ?>
 
     <div class="form-group field-post-content">
 	    <label class="col-md-2 control-label" for="post-content">内容</label>
