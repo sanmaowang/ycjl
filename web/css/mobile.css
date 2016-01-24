@@ -336,6 +336,8 @@ h2 code,h3 code,h4 code {
 .bs-docs-nav .navbar-brand,.bs-docs-nav .navbar-nav>li>a {
   font-weight: 500;
   color: #0071BB;
+}
+.navbar-brand{
   padding-left:50px;
   background: url(../img/mobile-logo.png) 10px 9px no-repeat;
   background-size: 32px 32px;
