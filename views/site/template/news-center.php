@@ -88,6 +88,7 @@ function cut_str($sourcestr,$cutlength)
             </ul>
           </div>
         </div>
+        
         <div class="news-topic-main">
           <div class="news-header news-topic-header">
             <h2><a href="<?= Url::to(['site/page','slug'=>'group_news'])?>">企业动态</a> <span>ENTERPRISE NEWS</span></h2>
@@ -107,6 +108,94 @@ function cut_str($sourcestr,$cutlength)
                 $i++;
               }}?>
             </ul>
+          </div>
+        </div>
+      </div>
+      <div class="pic-topic-main">
+        <div class="mod" id="huanqiu">
+          <div class="hd line"><h3><a href="<?= Url::to(['site/page','slug'=>'picnews'])?>">图片新闻</a></h3></div>
+          <div class="bd">
+            <div id="mar" class="image-list">
+              <div class="image-list-wrapper">
+              <?php 
+                $j = 0;
+              foreach ($pic_news as $key => $post) {
+              ?>
+              <div class="image-list-item">
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
+                    <img src="<?= $post->thumb;?>">
+                  </a>
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
+              </div>
+              <div class="image-list-item">
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
+                    <img src="<?= $post->thumb;?>">
+                  </a>
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
+              </div>
+              <div class="image-list-item">
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
+                    <img src="<?= $post->thumb;?>">
+                  </a>
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
+              </div>
+              <div class="image-list-item">
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
+                    <img src="<?= $post->thumb;?>">
+                  </a>
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
+              </div>
+              <div class="image-list-item">
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
+                    <img src="<?= $post->thumb;?>">
+                  </a>
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
+              </div>
+              <div class="image-list-item">
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
+                    <img src="<?= $post->thumb;?>">
+                  </a>
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
+              </div>
+              <div class="image-list-item">
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
+                    <img src="<?= $post->thumb;?>">
+                  </a>
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
+              </div>
+              <div class="image-list-item">
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
+                    <img src="<?= $post->thumb;?>">
+                  </a>
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
+              </div>
+              <div class="image-list-item">
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
+                    <img src="<?= $post->thumb;?>">
+                  </a>
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
+              </div>
+              <div class="image-list-item">
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
+                    <img src="<?= $post->thumb;?>">
+                  </a>
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
+              </div>
+              <div class="image-list-item">
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
+                    <img src="<?= $post->thumb;?>">
+                  </a>
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
+              </div>
+              <div class="image-list-item">
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
+                    <img src="<?= $post->thumb;?>">
+                  </a>
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
+              </div>
+              <?php $j++; if($j == 4){break;} }?>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -159,26 +248,7 @@ function cut_str($sourcestr,$cutlength)
               $j++;
               }?>
           </div>
-          <div class="mod" id="huanqiu">
-            <div class="hd line"><h3><a href="<?= Url::to(['site/page','slug'=>'picnews'])?>">图片新闻</a></h3></div>
-            <div class="bd">
-              <div class="image-list">
-                <div class="image-list-wrapper">
-                <?php 
-                  $j = 0;
-                foreach ($pic_news as $key => $post) {
-                ?>
-                <div class="image-list-item">
-                    <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
-                      <img src="<?= $post->thumb;?>">
-                    </a>
-                    <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
-                </div>
-                <?php $j++; if($j == 4){break;} }?>
-                </div>
-              </div>
-            </div>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -188,6 +258,7 @@ function cut_str($sourcestr,$cutlength)
 $this->registerCssFile('@web/js/unslider/css/unslider.css');//注册自定义js
 $this->registerCssFile('@web/js/unslider/css/unslider-dots.css');//注册自定义js
 $this->registerJsFile('@web/js/unslider/js/unslider-min.js',['depends' => [\yii\web\JqueryAsset::className()]]);
+$this->registerJsFile('@web/js/marquee.js',['depends' => [\yii\web\JqueryAsset::className()]]);
 $this->registerJs("
 $(function(){
   $('.slideshow').unslider({
@@ -196,6 +267,9 @@ $(function(){
     autoplay: true,
     nav: true,
     arrows: false,
+  });
+  $('#mar').marquee({
+    showNum: 10,
   });
   $(document).on('mouseover','.unslider-nav li',function(){
     var _val = $(this).data('slide');
