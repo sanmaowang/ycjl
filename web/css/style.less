@@ -1793,31 +1793,51 @@ a{
     margin: 0;
     padding:0;
   }
+  .unslider-nav{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+  }
+  .unslider-nav ol li{
+    cursor: hand;
+    cursor: pointer;
+  }
+  .unslider-nav ol li.unslider-active{
+    background: #D0021B;
+    border:2px solid #D0021B;
+  }
 }
 .slide-title{
   position: absolute;
   box-sizing: border-box; // 1
-  top: 256px;
-  width: 600px;
-  height: 90px;
+  top: 300px;
+  width: 500px;
+  height: 34px;
   overflow: hidden;
-  padding: 10px 15px;
+  padding: 5px 15px;
   color: #fff;
   z-index: 2;
   h4{
-    font-size: 18px;
-    margin: 3px 0 5px;
+    font-size: 14px;
+    width: 360px;
+    overflow: hidden;
+    display: block;
+    float: left;
+    padding: 0;
+    margin: 0;
   }
   p{
     margin: 0;
     color: #f0f0f0;
   }
+
 }
 .slide-mask{
   position: absolute;
-  top: 256px;
-  width: 600px;
-  height: 90px;
+  top: 300px;
+  width: 500px;
+  height: 34px;
   background: #000;
   .opacity(0.65);
   z-index: 0;
@@ -2287,6 +2307,19 @@ a{
   .cover{
     width: 100%;
     height: 136px;
+    overflow: hidden;
+    position: relative;
+  }
+  .cover-title{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    box-sizing: border-box;
+    padding: 5px 10px;
+    background: rgba(0,0,0,0.65);
+    color: #fff;
+    font-size: 14px;
     overflow: hidden;
   }
 }
