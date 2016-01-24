@@ -44,7 +44,7 @@ $url = Yii::$app->request->getUrl();
         </div>
         <div class="news-topic-main">
           <div class="news-header news-topic-header">
-            <h2><a href="<?= Url::to(['site/page','slug'=>'group_news'])?>">企业动态</a> <span>ENTERPRISE NEWS</span></h2>
+            <h2>企业动态 <span>ENTERPRISE NEWS</span></h2>
           </div>
           <div class="news-headline">
             <ul class="ulist mix-ulist">
@@ -67,7 +67,7 @@ $url = Yii::$app->request->getUrl();
       <div class="clearfix">
         <div class="col-news-left">
           <div class="news-header" style="padding-right:35px;">
-            <h2><a href="<?= Url::to(['site/page','slug'=>'industry_news'])?>">行业资讯</a> <span>INDUSTRY NEWS</span></h2>
+            <h2>行业资讯 <span>INDUSTRY NEWS</span></h2>
           </div>
             <div class="news-list">
             <?php 
@@ -94,7 +94,7 @@ $url = Yii::$app->request->getUrl();
         </div>
         <div class="col-news-column-right">
           <div class="news-header">
-            <h2><a href="<?= Url::to(['site/page','slug'=>'media_focus'])?>">媒体聚焦</a> <span>MEDIA FOCUS</span></h2>
+            <h2>媒体聚焦 <span>MEDIA FOCUS</span></h2>
           </div>
           <div class="news-list">
             <?php 
@@ -114,7 +114,7 @@ $url = Yii::$app->request->getUrl();
               }?>
           </div>
           <div class="mod" id="huanqiu">
-            <div class="hd line"><h3><a href="<?= Url::to(['site/page','slug'=>'picnews'])?>">图片新闻</a></h3></div>
+            <div class="hd line"><h3>图片新闻</h3></div>
             <div class="bd">
               <div class="image-list">
                 <div class="image-list-wrapper">

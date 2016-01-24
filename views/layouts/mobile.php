@@ -6,7 +6,7 @@
 use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
-use app\widgets\Menus;
+use app\widgets\Nav;
 use app\widgets\Links;
 use yii\helpers\Url;
 
@@ -20,28 +20,33 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
     <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
+    <title><?= Html::encode($this->title)?></title>
     <?php $this->head() ?>
+    <link rel="stylesheet" href="<?php echo Yii::$app->request->baseUrl?>/css/mobile.css">
 </head>
 <body>
 <?php $this->beginBody() ?>
-<div class="wrap">
-
-<?= $content ?>
-<div class="footer">
+<body>
+  <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
   <div class="container">
-    <div class="support">&copy; 宜昌交通旅游集团 2016 ALL RIGHTS RESERVED</div>
-    <div class="row">
-    <div class="links">
-      <p class="pull-left">
-        鄂ICP备XXXXXXX号 <span class="light">技术支持：湖北元速科技有限公司</span></p>
-      <p class="pull-right"><?= Links::widget();?> </p>
-    </div>
-    </div>
+    <?= Nav::widget();?>
   </div>
-</div>
-</div>
-<?php $this->registerJsFile('@web/js/base.js',['depends' => [\yii\web\JqueryAsset::className()]]);?>
+  </header>
+  <?= $content ?>
+  <footer class="bs-docs-footer" role="contentinfo">
+    <div class="container">
+    <p>鄂ICP备XXXXXXX号 &copy;2016 宜昌交通旅游集团</p>
+    <p><?= Links::widget();?></p>
+      <ul class="bs-docs-footer-links text-muted">
+        <li><a href="http://www.ycjyjt.com/" target="_blank">宜昌交运集团</a></li>
+        <li>·</li>
+        <li><a href="http://www.ycbus.com/" target="_blank">宜昌公交集团</a></li>
+        <li>·</li>
+        <li><a href="http://www.xlxia.com/" target="_blank">西陵峡风景区</a></li>
+      </ul>
+    </div>
+  </footer>
+<?php $this->registerJsFile('@web/js/bootstrap.min.js',['depends' => [\yii\web\JqueryAsset::className()]]);?>
 <?php $this->endBody() ?>
 </body>
 </html>
