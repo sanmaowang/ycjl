@@ -5,6 +5,7 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use app\widgets\Breadcrumb;
+use app\widgets\Hot;
 
 $this->title = $page->name;
 $url = Yii::$app->request->getUrl();
@@ -55,6 +56,7 @@ $url = Yii::$app->request->getUrl();
         </div>
         </div>
       </div>
+      <?= Hot::widget();?>
     </div>
     </div>
   </div>

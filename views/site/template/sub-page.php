@@ -5,6 +5,8 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use app\widgets\Breadcrumb;
+use app\widgets\Hot;
+
 
 $this->title = $page->name;
 $url = Yii::$app->request->getUrl();
@@ -51,7 +53,7 @@ $url = Yii::$app->request->getUrl();
                   <img src="<?php echo Yii::$app->request->baseUrl;?>/img/column/sub-jy2.png" alt="" class="pull-left">
                   <div class="sub-item-content">
                     <h4 class="sub-item-title">宜昌公交集团有限责任公司</h4>
-                    <p>宜昌公交集团有限责任公司始建于1972年5月，属城市公交国有中型一类客运企业。2001年，由原宜昌市公共汽车总公司更名为宜昌市公共交通总公司。2008年4月，经宜昌市人民政府批准，原宜昌市公共交通总公司与宜昌三峡运输集团有限责任公司组建成立宜昌公交集团有限责任公司。2002年3月前，隶属宜昌市建设部门管理。2002年4月始，隶属宜昌市交通运输局管理。2009年8月，隶属宜昌市国资委管理。2015年1月，宜昌市政府整合湖北宜昌交运集团股份有限公司、宜昌公交集团有限责任公司、宜昌三峡旅游度假区开发有限公司，组建宜昌交通旅游产业发展集团有限公司，划归三峡旅游新区管委会管理。</p>
+                    <p>宜昌公交集团有限责任公司始建于1972年5月，属城市公交国有中型一类客运企业。2001年，由原宜昌市公共汽车总公司更名为宜昌市公共交通总公司。2008年4月，经宜昌市人民政府批准，原宜昌市公共交通总公司与宜昌三峡运输集团有限责任公司组建成立宜昌公交集团有限责任公司。</p>
                   </div>
                 </a>
               </li>
@@ -84,7 +86,8 @@ $url = Yii::$app->request->getUrl();
               </li>
             </ul>
           </div>
-        </div><!-- about_info end -->
+        </div>
+        <?= Hot::widget();?>
       </div>
     </div>
   </div>

@@ -1819,7 +1819,7 @@ a:hover {
   clear: both;
 }
 .news-slide {
-  width: 600px;
+  width: 500px;
   height: 345px;
   float: left;
   margin-right: 20px;
@@ -1865,7 +1865,7 @@ a:hover {
   z-index: 0;
 }
 .news-topic-main {
-  margin-left: 630px;
+  margin-left: 530px;
 }
 .news-main {
   *zoom: 1;
