@@ -7,6 +7,21 @@ use app\widgets\Breadcrumb;
 use app\widgets\Hot;
 $this->title = $post->name;
 $url = Yii::$app->request->getUrl();
+
+function getExtinfo($str){
+  $ext = 'gif|jpg|jpeg|bmp|png';//罗列图片后缀从而实现多扩展名匹配 by http://www.k686.com 绿色软件
+
+  $list = array();  //这里存放结果map
+  $c1 = preg_match_all('/<img\s.*?>/', $str, $m1);  //先取出所有img标签文本
+  for($i=0; $i<$c1; $i++) { //对所有的img标签进行取属性
+    $c2 = preg_match_all('/(\w+)\s*=\s*(?:(?:(["\'])(.*?)(?=\2))|([^\/\s]*))/', $m1[0][$i], $m2); //匹配出所有的属性
+    for($j=0; $j<$c2; $j++) { //将匹配完的结果进行结构重组
+      $list[$i][$m2[1][$j]] = !empty($m2[4][$j]) ? $m2[4][$j] : $m2[3][$j];
+    }
+  }
+  return $list; //查看结果变量
+}
+
 ?>
 <div class="banner">
   <div class="container">
@@ -34,27 +49,31 @@ $url = Yii::$app->request->getUrl();
           <?= Breadcrumb::widget();?>
         </div>
         <div class="content">
-          <?php if($post->page->id == 12){?>
+          <?php if($post->page->id == 12 || $post->page->id == 39){?>
           <div class="news-main">
             <h3><?php echo $post->name;?></h3>
             <div class="news-image-column">
               <?php
-              preg_match_all("|src=(.*) |U", $post->content, $result);
-              $pics = $result[1];
-               foreach ($pics as $key => $pic) {
-                $pic = str_replace('"', '', $pic);
-                $i = $key + 3;
-                if($i%3 == 0){
+              $pics = getExtinfo($post->content); 
+              for($i = 0 ; $i < count($pics);$i++){
+                $pic = $pics[$i];
+                $j = $i + 3;
+                if($j%3 == 0){
                   echo '<div class="row">';
                 }
                 ?>
                 <div class="col-xs-4">
-                  <a href=<?php echo $pic;?> class="pic-thumbnail swipebox">
-                    <div class="cover"><img src=<?= Yii::$app->request->baseUrl;?><?php echo $pic;?> alt=""></div>
+                  <a href=<?php echo $pic['src'];?> class="pic-thumbnail swipebox" title="<?php echo $pic['title']?>">
+                    <div class="cover">
+                      <img src=<?= Yii::$app->request->baseUrl;?><?php echo $pic['src'];?> alt="" title="<?php echo $pic['title']?>">
+                    <div class="cover-title">
+                      <?php echo $pic['title'];?>
+                    </div>
+                    </div>
                   </a>
                 </div>
               <?php
-              if(($i+1)%3 == 0){
+              if(($j+1)%3 == 0){
                 echo '</div>';
               }
                }?>

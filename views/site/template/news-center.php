@@ -75,12 +75,11 @@ function cut_str($sourcestr,$cutlength)
               <li>
                 <a href="<?= Url::to(['view-post','id'=>$h->id])?>">
                   <img src="<?php echo $h->thumb;?>" alt="">
-                  <div class="slide-title">
-                    <h4><?php echo $h->name;?></h4>
-                    <p><?php echo $h->shortexcerpt;?></p>
-                  </div>
-                  <div class="slide-mask"></div>
                 </a>
+                <div class="slide-title">
+                  <h4><?php echo $h->name;?></h4>
+                </div>
+                <div class="slide-mask"></div>
               </li>
               <?php 
                $j++;
@@ -170,8 +169,11 @@ function cut_str($sourcestr,$cutlength)
                 foreach ($pic_news as $key => $post) {
                 ?>
                 <div class="image-list-item">
-                    <a href="<?= Url::to(['view-post','id'=>$post->id])?>" <?php echo cut_str($post->name,20);?>" target="_blank"><img src="<?= $post->thumb;?>"></a><a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_<?php echo cut_str($post->name,20);?></a>
-                  </div>
+                    <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
+                      <img src="<?= $post->thumb;?>">
+                    </a>
+                    <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
+                </div>
                 <?php $j++; if($j == 4){break;} }?>
                 </div>
               </div>
@@ -192,8 +194,14 @@ $(function(){
     speed: 800,       
     delay: 4000,  
     autoplay: true,
+    nav: true,
     arrows: false,
-
   });
+  $(document).on('mouseover','.unslider-nav li',function(){
+    var _val = $(this).data('slide');
+    $('.slideshow').unslider('animate:' + _val);
+    $('.unslider-nav li').removeClass('unslider-active');
+    $(this).addClass('unslider-active');
+  })
 })",View::POS_END,'show');
 ?>
