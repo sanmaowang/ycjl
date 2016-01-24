@@ -16,21 +16,29 @@ $this->title = '宜昌交旅 | 首页';
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12">
-      <h3>企业动态</h3>
-      <ul class="list-group">
-        <?php if(isset($news)){
-          for($i = 0;$i < 4; $i++){?>
-        <li class="list-group-item"><a href="<?= Url::to(['site/view-post','id'=>$news[$i]->id]);?>" target="_blank"><?= $news[$i]->name;?></a><span><?php echo date("Y.m.d",$news[$i]->update_date);?></span></li>
+      <div class="news-header" style="margin-top:0;">
+        <h2><a href="<?= Url::to(['site/page','slug'=>'group_news'])?>">企业动态</a> <span>ENTERPRISE NEWS</span></h2>
+      </div>
+      <?php if(isset($news)){
+        for($i = 0;$i < 4; $i++){
+          $post = $news[$i];?>
+      <ul class="media-list news-list">
+      <li class="media">
+        <a href="<?php echo Url::to(['view-post','id'=>$post->id])?>">
+        <div class="media-body">
+          <h4 class="media-heading"><?php echo $post->name;?></h4>
+          <?php echo $post->shortintro;?>
+          <div class="time"><?php echo date("Y-m-d",$post->update_date);?></div>
+        </div>
+        <div class="media-right">
+          <?php if($post->thumb){?>
+            <img class="media-object" src="<?= $post->thumb;?>" alt="<?= $post->name;?>" width="64" height="64">
+          <?php }?>
+        </div>
+        </a>
+      </li>
         <?php }}?>
       </ul>
    	</div>
-   	<div class="col-xs-12"> 
-      <h3>图片新闻</h3>
-      <div>
-      <?php if(isset($staff)){?>
-      <a href="<?= Url::to(['site/view-post','id'=>$staff->id]);?>" class="thumbnail"  target="_blank"><img src="<?= Yii::$app->request->baseUrl;?><?= $staff->thumb;?>" alt=""></a>
-      <?php }?>
-      </div>
-		</div>
 	</div>
 </div>

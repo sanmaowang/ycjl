@@ -9,7 +9,7 @@ use yii\helpers\Url;
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
   </button>
-  <a href="../" class="navbar-brand">Bootstrap</a>
+  <a href="../" class="navbar-brand">宜昌交旅</a>
 </div>
 <nav id="bs-navbar" class="collapse navbar-collapse">
   <ul class="nav navbar-nav">

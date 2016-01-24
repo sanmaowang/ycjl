@@ -5,12 +5,12 @@
 
 use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
-use app\assets\AppAsset;
+use app\assets\MobileAsset;
 use app\widgets\Nav;
 use app\widgets\Links;
 use yii\helpers\Url;
 
-AppAsset::register($this);
+MobileAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -22,7 +22,6 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title)?></title>
     <?php $this->head() ?>
-    <link rel="stylesheet" href="<?php echo Yii::$app->request->baseUrl?>/css/mobile.css">
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -46,7 +45,6 @@ AppAsset::register($this);
       </ul>
     </div>
   </footer>
-<?php $this->registerJsFile('@web/js/bootstrap.min.js',['depends' => [\yii\web\JqueryAsset::className()]]);?>
 <?php $this->endBody() ?>
 </body>
 </html>
