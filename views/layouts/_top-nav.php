@@ -10,7 +10,6 @@ use yii\widgets\ActiveForm;
       <div class="top-quick-link">
         <a href="#" onclick="javascript:setHomepage();">设为首页</a>
         <a href="javascript:addFavorite();">加入收藏</a>
-        <a href="javascript:void(0);">集团OA</a>
       </div>
       <div class="top-nav-link">
       <ul id="link_websites" class="top-links">
@@ -37,6 +36,7 @@ use yii\widgets\ActiveForm;
       <?= Html::submitButton('搜索', ['class' => 'search-btn']) ?>
       <?php ActiveForm::end();?>
       </div>
+      <a href="javascript:void(0);" class="pull-right" style="color:#fff;margin:5px 0;">集团OA</a>
     </div>
   </div>
 </div>
