@@ -51,7 +51,7 @@ $url = Yii::$app->request->getUrl();
       </div>
       <div id="content" class="content <?php echo $page->slug;?>">
         <?php if($page->id == 6){?>
-        <div id="develop_hype_container" style="position:relative;width:680px;height:600px;overflow:hidden;" aria-live="polite">
+        <div id="develop_hype_container" style="position:relative;width:800px;height:680px;overflow:hidden;" aria-live="polite">
           <script type="text/javascript" charset="utf-8" src="<?php echo \Yii::$app->request->baseUrl?>/js/develop.hyperesources/develop_hype_generated_script.js"></script>
         </div>
         <?php }elseif($page->id == 10){?>
