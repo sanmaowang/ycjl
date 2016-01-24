@@ -114,11 +114,6 @@ class SiteController extends Controller
                     'page'=>$page,
                     'menu'=>Page::find()->where(['id'=>$links])->all()
                 ]);
-            }else if($slug == 'picnews'){
-                return $this->render($mobile.'template/'.$page->template,[
-                    'page'=>$page,
-                    'menu'=>Page::find()->where(['parent_id'=>13])->all(),
-                ]);
             }
             $menu = Page::find()->where(['parent_id'=>$page->id])->orderBy(['display_order'=>SORT_ASC])->all();
             $s = $menu?$menu[0]->slug:null;

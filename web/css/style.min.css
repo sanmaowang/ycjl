@@ -2343,10 +2343,11 @@ a.pic-thumbnail:hover {
 }
 .pic-thumbnail .caption {
   width: 100%;
-  height: 24px;
+  height: 48px;
   overflow: hidden;
   padding: 9px;
-  color: #333333;
+  color: #333;
+  box-sizing: border-box;
 }
 .pagination {
   display: inline-block;
@@ -2550,10 +2551,24 @@ a.pic-thumbnail:hover {
     height: 100px;
     background: #fff;
     border: 4px solid #fff;
+    position: relative;
   }
   .column-thumb img {
     width: 100%;
     min-height: 100px;
+  }
+  .column-thumb .column-title {
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    bottom: 0;
+    height: 25px;
+    background: rgba(0, 0, 0, 0.65);
+    overflow: hidden;
+    /* white-space: nowrap; */
+    padding: 0 10px;
+    line-height: 2;
+    box-sizing: border-box;
   }
   .column-board-img img {
     max-width: 100%;
