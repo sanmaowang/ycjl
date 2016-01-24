@@ -102,7 +102,7 @@ function cut_str($sourcestr,$cutlength)
                     break;
                   }
               ?>
-                <li><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"><?php echo cut_str($post->name,18);?></a> <span class="time"><?php echo date("m-d",$post->update_date);?></li>
+                <li><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"><?php echo cut_str($post->name,18);?></a> <span class="time"><?php echo date("Y-m-d",$post->update_date);?></li>
               <?php 
                 $i++;
               }}?>
@@ -125,7 +125,7 @@ function cut_str($sourcestr,$cutlength)
                     echo "<ul>";
                   }
               ?>
-                <li <?php if($j == 0 || $j == 6){echo 'class="first"';}?>><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"><?php echo cut_str($post->name,20);?></a> <span class="time"><?php echo date("m-d",$post->update_date);?></li>
+                <li <?php if($j == 0 || $j == 6){echo 'class="first"';}?>><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"><?php echo cut_str($post->name,20);?></a> <span class="time"><?php echo date("Y-m-d",$post->update_date);?></li>
               <?php 
               if($j == 5){
                 echo "</ul><ul>";
@@ -150,7 +150,7 @@ function cut_str($sourcestr,$cutlength)
                     echo "<ul>";
                   }
               ?>
-                <li <?php if($j == 0 || $j == 6){echo 'class="first"';}?>><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"><?php echo cut_str($post->name,20);?></a> <span class="time"><?php echo date("m-d",$post->update_date);?></li>
+                <li <?php if($j == 0 || $j == 6){echo 'class="first"';}?>><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"><?php echo cut_str($post->name,20);?></a> <span class="time"><?php echo date("Y-m-d",$post->update_date);?></li>
               <?php 
               if($j == 5){
                 echo "</ul>";
