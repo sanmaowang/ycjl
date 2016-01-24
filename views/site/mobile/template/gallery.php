@@ -6,6 +6,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use app\widgets\Breadcrumb;
 use yii\widgets\LinkPager;
+use app\widgets\Hot;
 
 $this->title = $page->name;
 $url = Yii::$app->request->getUrl();
@@ -38,6 +39,7 @@ $url = Yii::$app->request->getUrl();
       <div class="clearfix">
         <?= LinkPager::widget(['pagination' => $pnation]) ?>  
       </div> 
+      <?= Hot::widget();?>
       </div>
     <?php if(isset($menu) && count($menu)>0){?>
       <div class="menu">

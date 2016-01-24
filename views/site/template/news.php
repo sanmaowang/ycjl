@@ -6,6 +6,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use app\widgets\Breadcrumb;
 use yii\widgets\LinkPager;
+use app\widgets\Hot;
 
 $this->title = $page->name;
 $url = Yii::$app->request->getUrl();
@@ -55,8 +56,8 @@ $url = Yii::$app->request->getUrl();
                </li>
             <?php //}else{?>
             -->
-            <li>
-              <a href="<?php echo Url::to(['view-post','id'=>$post->id])?>" target="_blank"><?php echo $post->name;?><span class="time"><?php echo date("Y年m月d日",$post->update_date);?></span></a>
+            <li style="margin-bottom:15px;">
+              <a href="<?php echo Url::to(['view-post','id'=>$post->id])?>" target="_blank" style="font-size:16px;"><?php echo $post->name;?><span class="time"><?php echo date("Y年m月d日",$post->update_date);?></span></a>
             </li>
             <?php //}?>
             <?php }?>
@@ -65,6 +66,7 @@ $url = Yii::$app->request->getUrl();
         <div class="clearfix">
           <?= LinkPager::widget(['pagination' => $pnation]) ?>  
         </div> 
+        <?= Hot::widget();?>
       </div>
     </div>
   </div>

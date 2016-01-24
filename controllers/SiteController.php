@@ -79,7 +79,6 @@ class SiteController extends Controller
     public function actionPage($slug)
     {   
         $page = Page::find()->where(['slug'=>$slug])->one();
-        
 
         if($slug == 'home'){
             return $this->goHome();
@@ -89,7 +88,7 @@ class SiteController extends Controller
             $this->layout = "//mobile";
             $mobile = 'mobile/';
         }else{
-            $this->layout = "//home";
+            $this->layout = "//inner";
             $mobile = '';
         }
 
