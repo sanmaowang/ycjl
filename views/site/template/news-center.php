@@ -242,6 +242,9 @@ function cut_str($sourcestr,$cutlength)
                 <li <?php if($j == 0 || $j == 6){echo 'class="first"';}?>><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"><?php echo cut_str($post->name,20);?></a> <span class="time"><?php echo date("Y-m-d",$post->update_date);?></li>
               <?php 
               if($j == 5){
+                echo "</ul><ul>";
+              }
+              if($j == 11){
                 echo "</ul>";
                 break;
               }
