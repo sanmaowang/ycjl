@@ -126,7 +126,7 @@ function cut_str($sourcestr,$cutlength)
                     echo "<ul>";
                   }
               ?>
-                <li <?php if($j == 0 || $j == 6){echo 'class="first"';}?>><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"><?php echo cut_str($post->name,22);?></a> <span class="time"><?php echo date("m-d",$post->update_date);?></li>
+                <li <?php if($j == 0 || $j == 6){echo 'class="first"';}?>><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"><?php echo cut_str($post->name,20);?></a> <span class="time"><?php echo date("m-d",$post->update_date);?></li>
               <?php 
               if($j == 5){
                 echo "</ul><ul>";
@@ -151,7 +151,7 @@ function cut_str($sourcestr,$cutlength)
                     echo "<ul>";
                   }
               ?>
-                <li <?php if($j == 0 || $j == 6){echo 'class="first"';}?>><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"><?php echo cut_str($post->name,22);?></a> <span class="time"><?php echo date("m-d",$post->update_date);?></li>
+                <li <?php if($j == 0 || $j == 6){echo 'class="first"';}?>><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"><?php echo cut_str($post->name,20);?></a> <span class="time"><?php echo date("m-d",$post->update_date);?></li>
               <?php 
               if($j == 5){
                 echo "</ul>";
@@ -170,7 +170,7 @@ function cut_str($sourcestr,$cutlength)
                 foreach ($pic_news as $key => $post) {
                 ?>
                 <div class="image-list-item">
-                    <a href="<?= Url::to(['view-post','id'=>$post->id])?>" <?php echo cut_str($post->name,22);?>" target="_blank"><img src="<?= $post->thumb;?>"></a><a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_<?php echo cut_str($post->name,22);?></a>
+                    <a href="<?= Url::to(['view-post','id'=>$post->id])?>" <?php echo cut_str($post->name,20);?>" target="_blank"><img src="<?= $post->thumb;?>"></a><a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_<?php echo cut_str($post->name,20);?></a>
                   </div>
                 <?php $j++; if($j == 4){break;} }?>
                 </div>

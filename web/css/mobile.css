@@ -24,10 +24,100 @@ h2 code,h3 code,h4 code {
     font-size: 16px;
     color: #999;
     margin: 0;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .main{
   padding: 0;
+}
+.menu{
+  margin: 20px 0;
+}
+.page-header{
+  margin-top: 20px;
+}
+.content{
+}
+.content img {
+  max-width: 100%;
+  width: 100%;
+}
+.news-slide{
+  width: 100%;
+  overflow: hidden;
+}
+.news-slide img{
+  width: 100%;
+  max-width: 100%;
+}
+.news-slide ul{
+  margin: 0;
+  padding:0;
+}
+.slide-pic{
+  position: relative;
+}
+.slide-title{
+  position: absolute;
+  top: 35px;
+  height: 90px;
+  overflow: hidden;
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+  z-index: 2;
+}
+.slide-title p{
+  margin: 0;
+  color: #f0f0f0;
+  padding: 0 10px;
+  font-size: 12px;
+}
+.slide-title h4{
+  font-size: 14px;
+  padding: 5px 10px;
+  margin: 3px 0 5px;
+}
+.news-list a{
+  color:#999;
+}
+.news-list a .media-heading{
+  color: #333;
+}
+.news-list .time{
+  font-size: 11px;
+  margin: 8px 0;
+}
+.news-list li{
+  border-bottom: 1px solid #e7e7e7;
+  margin-bottom: 8px;
+}
+.news-list li:last-child{
+  border-bottom: none;
+}
+.news-header{
+  padding: 25px 0;
+  margin: 25px 0 10px;
+  border-top: 1px solid #e7e7e7;
+}
+.news-header h2{
+  margin: 0;
+  padding-top: 0;
+  padding-left: 10px;
+  font-size: 18px;
+  border-left: 10px solid #0071BB;
+}
+.news-header span{
+  font-size: 14px;
+  color: #ccc;
+}
+.unslider-nav ol{
+  margin-bottom: 0 !important;
+}
+.meta{
+  margin: 15px 0;
+  color: #999;
+}
+.meta span{
+  margin-right: 5px;
 }
 .btn-outline {
   color: #563d7c;
@@ -268,7 +358,6 @@ h2 code,h3 code,h4 code {
 }
 
 .bs-docs-header {
-  margin-bottom: 40px;
   font-size: 20px
 }
 

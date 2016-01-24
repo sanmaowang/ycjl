@@ -154,7 +154,7 @@ class SiteController extends Controller
     {
         if(Yii::$app->deviceDetect->isMobile()){
             $this->layout = "//mobile";
-            $mobile = 'mobile';
+            $mobile = 'mobile/';
         }else{
             $this->layout = "//inner";
             $mobile = '';

@@ -129,5 +129,10 @@ class Post extends \yii\db\ActiveRecord
         return $this->cut_str(trim($content),70);
     }
     
-
+    public function getShortIntro()
+    {
+        $content =strip_tags($this->content);
+        $content = str_replace("&nbsp;","",$content);
+        return $this->cut_str(trim($content),36);
+    }
 }

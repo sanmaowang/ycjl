@@ -5,40 +5,50 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use app\widgets\Breadcrumb;
+use yii\widgets\LinkPager;
 
 $this->title = $page->name;
 $url = Yii::$app->request->getUrl();
 ?>
-<div class="banner">
   <div class="container">
-    <div class="main-right">
+    <div class="content">
       <div class="page-header">
         <div class="page-title">
           <h1><?php echo $page->name;?></h1>
           <h2><?php echo $page->english_name;?></h2>
         </div>
-        <?= Breadcrumb::widget();?>
       </div>
-      <div class="news-main">
-        <div class="news-image-column">
-        <div class="row">
-          <?php foreach ($page->posts as $key => $post) {?>
-            <div class="col-xs-4">
-              <a href="<?php echo Url::to(['view-post','id'=>$post->id])?>" class="pic-thumbnail">
+      
+      <div class="row">
+        <?php foreach ($posts as $key => $post) {?>
+          <div class="col-xs-12">
+            <div class="thumbnail clearfix">
               <?php if($post->thumb){?>
-              <div class="cover"><img src="<?= $post->thumb;?>" alt="" ></div>
+              <img src="<?= $post->thumb;?>" alt="">
               <?php }?>
               <div class="caption">
-              <b><?php echo $post->name;?></b>
-              </div>
-              </a>
+                <h3><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>" target="_blank"><?php echo $post->name;?></a></h3></a>
+                <p><?= $post->excerpt;?></p>
+                <p><span class="time"><?php echo date("Y年m月d日",$post->update_date);?></span></p>
+              </div> 
             </div>
-          <?php }?>
-        </div>
-        </div>
+          </div>
+        <?php }?>
       </div>
-    </div>
-    </div>
+      <div class="clearfix">
+        <?= LinkPager::widget(['pagination' => $pnation]) ?>  
+      </div> 
+      </div>
+    <?php if(isset($menu) && count($menu)>0){?>
+      <div class="menu">
+        <p>导航：</p>
+      <ul class="nav nav-pills nav-justified">
+        <?php foreach ($menu as $key => $m) {
+        $current = strpos($url,$m->slug)?"class='active'":'';
+        ?>
+        <li role="presentation" <?php echo $current?>><a href="<?php echo Url::to(['site/page','slug'=>$m->slug])?>"><?php echo $m->name;?></a></li>
+        <?php }?>
+      </ul>
+      </div>
+    <?php }?>
   </div>
-</div>
-
