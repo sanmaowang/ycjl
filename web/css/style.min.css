@@ -2353,12 +2353,13 @@ a:hover {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 30px;
+  height: 40px;
   box-sizing: border-box;
   padding: 5px 10px;
   background: rgba(0, 0, 0, 0.65);
   color: #fff;
-  font-size: 14px;
+  font-size: 12px;
+  line-height: 1.45;
   overflow: hidden;
 }
 .pic-thumbnail .cover > img,
