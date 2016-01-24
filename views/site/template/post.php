@@ -66,9 +66,9 @@ function getExtinfo($str){
                   <a href=<?php echo $pic['src'];?> class="pic-thumbnail swipebox" title="<?php echo $pic['title']?>">
                     <div class="cover">
                       <img src=<?= Yii::$app->request->baseUrl;?><?php echo $pic['src'];?> alt="" title="<?php echo $pic['title']?>">
-                    <div class="cover-title">
-                      <?php echo $pic['title'];?>
                     </div>
+                    <div class="caption">
+                      <?php echo $pic['title'];?>
                     </div>
                   </a>
                 </div>
