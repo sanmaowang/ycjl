@@ -1665,7 +1665,6 @@ a:hover {
 .column-img img {
   width: 100%;
   max-width: 100%;
-  margin-top: -20px;
 }
 .relate-post {
   border-top: 2px solid #265BB1;
@@ -2612,6 +2611,7 @@ a.pic-thumbnail:hover {
   .column-thumb img {
     width: 100%;
     min-height: 100px;
+    margin-top: -20px;
   }
   .column-thumb .column-title {
     position: absolute;
