@@ -36,7 +36,8 @@ h2 code,h3 code,h4 code {
 .page-header{
   margin-top: 20px;
 }
-.content{
+.postit{
+  margin: 20px 0 0;
 }
 .content img {
   max-width: 100%;
