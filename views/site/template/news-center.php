@@ -77,7 +77,7 @@ function cut_str($sourcestr,$cutlength)
                   <img src="<?php echo $h->thumb;?>" alt="">
                 </a>
                 <div class="slide-title">
-                  <h4><?php echo $h->name;?></h4>
+                  <h4 tilte="<?php echo $h->name;?>"><?php echo $h->name;?></h4>
                 </div>
                 <div class="slide-mask"></div>
               </li>
@@ -103,7 +103,7 @@ function cut_str($sourcestr,$cutlength)
                     break;
                   }
               ?>
-                <li><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"><?php echo cut_str($post->name,18);?></a> <span class="time"><?php echo date("Y-m-d",$post->update_date);?></li>
+                <li><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>" tilte="<?= $post->name;?>"><?= $post->name;?></a> <span class="time"><?php echo date("Y-m-d",$post->update_date);?></li>
               <?php 
                 $i++;
               }}?>
@@ -125,9 +125,9 @@ function cut_str($sourcestr,$cutlength)
                   <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
                     <img src="<?= $post->thumb;?>">
                   </a>
-                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank" tilte="<?= $post->name;?>"><?= $post->name;?></a>
               </div>
-              <?php $j++; if($j == 4){break;} }?>
+              <?php $j++; if($j == 8){break;} }?>
               </div>
             </div>
           </div>
@@ -148,15 +148,15 @@ function cut_str($sourcestr,$cutlength)
                     echo "<ul>";
                   }
               ?>
-                <li <?php if($j == 0 || $j == 6){echo 'class="first"';}?>><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"><?php echo cut_str($post->name,20);?></a> <span class="time"><?php echo date("Y-m-d",$post->update_date);?></li>
+                <li <?php if($j == 0){echo 'class="first"';}?>><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>" tilte="<?= $post->name;?>"><?php echo cut_str($post->name,20);?></a> <span class="time"><?php echo date("Y-m-d",$post->update_date);?></li>
               <?php 
-              if($j == 5){
-                echo "</ul><ul>";
-              }
-              if($j == 11){
-                echo "</ul>";
-                break;
-              }
+              // if($j == 5){
+              //   echo "</ul><ul>";
+              // }
+              // if($j == 11){
+              //   echo "</ul>";
+              //   break;
+              // }
               $j++;
             }}}?>
           </div>
@@ -173,15 +173,15 @@ function cut_str($sourcestr,$cutlength)
                     echo "<ul>";
                   }
               ?>
-                <li <?php if($j == 0 || $j == 6){echo 'class="first"';}?>><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"><?php echo cut_str($post->name,20);?></a> <span class="time"><?php echo date("Y-m-d",$post->update_date);?></li>
+                <li <?php if($j == 0){echo 'class="first"';}?>><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>" tilte="<?= $post->name;?>"><?php echo cut_str($post->name,25);?></a> <span class="time"><?php echo date("Y-m-d",$post->update_date);?></li>
               <?php 
-              if($j == 5){
-                echo "</ul><ul>";
-              }
-              if($j == 11){
-                echo "</ul>";
-                break;
-              }
+              // if($j == 5){
+              //   echo "</ul><ul>";
+              // }
+              // if($j == 11){
+              //   echo "</ul>";
+              //   break;
+              // }
               $j++;
               }?>
           </div>
