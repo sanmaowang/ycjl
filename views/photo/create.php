@@ -1,13 +1,13 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\DetailView;
+
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Page */
+/* @var $model app\models\Photo */
 
-$this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Pages'), 'url' => ['index']];
+$this->title = Yii::t('app', 'Create Photo');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', '相册管理'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 $this->params['menu'] =[
                 // Important: you need to specify url as 'controller/action',
@@ -23,28 +23,12 @@ $this->params['menu'] =[
                 ]],
             ];
 ?>
-<div class="page-view">
+<div class="photo-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        <?= Html::a(Yii::t('app', '修改'), ['update', 'id' => $model->id], ['class' => 'btn btn-info']) ?>
-        <?= Html::a(Yii::t('app', '删除'), ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => Yii::t('app', '您确定要删除这篇文章吗?'),
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
-    <div class="content">
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <?php 
-                echo $model->content;
+    <?= $this->render('_form', [
+        'model' => $model,
+    ]) ?>
 
-            ?>
-          </div>
-        </div>
-    </div>
 </div>

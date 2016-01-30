@@ -42,6 +42,14 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'rules' => [
+                '<slug:\w+>' => 'site/page',
+                'view-post/<id:\d+>' => 'site/view-post',
+            ],
+        ]
     ],
     'params' => $params,
 ];

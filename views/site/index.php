@@ -75,7 +75,7 @@ $this->title = '宜昌交旅 | 首页';
           <ul class="column-news-list">
             <?php if(isset($news)){
               for($i = 0;$i < 4; $i++){?>
-            <li><a href="<?= Url::to(['site/view-post','id'=>$news[$i]->id]);?>" target="_blank"><?= $news[$i]->name;?></a><span><?php echo date("Y.m.d",$news[$i]->update_date);?></span></li>
+            <li><a href="<?= Url::to(['site/view-post','id'=>$news[$i]->id]);?>" target="_blank" title="<?= $news[$i]->name;?>"><?= $news[$i]->name;?></a><span><?php echo date("Y.m.d",$news[$i]->update_date);?></span></li>
             <?php }}?>
           </ul>
         </div>

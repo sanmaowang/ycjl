@@ -18,6 +18,7 @@ $this->params['menu'] =[
                 ]],
                 ['label' => '新闻中心', 'items' => [
                     ['label' => '文章管理', 'url' => ['post/index']],
+                    ['label' => '相册管理', 'url' => ['photo/index']],
                 ]],
             ];
 ?>

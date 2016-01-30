@@ -203,12 +203,13 @@
                   bgCSS.left = '-' + bgOffset + 'px';
                 }
             }
-            this.$wrap.find('img').animate({
-                    width:"2600%",
-                    height:"2600%",
-                    // marginLeft:"-1000px",
-                    // marginTop:"-1000px"
-                },333333);
+            // this.$wrap.find('img').animate({
+            //         width:"2600%",
+            //         height:"2600%",
+            //         // marginLeft:"-1000px",
+            //         // marginTop:"-1000px"
+            //     },333333);
+            // this.$wrap.find('img').addClass('actived');
             this.$wrap.css({width: rootWidth, height: rootHeight})
                       .find('img:not(.deleteable)').css({width: bgWidth, height: bgHeight}).css(bgCSS);
         } catch(err) {
