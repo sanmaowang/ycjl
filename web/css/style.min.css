@@ -2490,6 +2490,23 @@ a.pic-thumbnail:hover {
 .sitemap a:hover {
   color: #333;
 }
+.image-list {
+  position: relative;
+}
+#mar-right {
+  position: absolute;
+  width: 23px;
+  height: 41px;
+  background: url(../img/index_part_right.png) no-repeat 0 0;
+  background-size: 100% 100%;
+}
+#mar-left {
+  position: absolute;
+  width: 23px;
+  height: 41px;
+  background: url(../img/index_part_left.png) no-repeat 0 0;
+  background-size: 100% 100%;
+}
 @media (max-height: 900px) {
   .slogan-1-left {
     top: 40px;

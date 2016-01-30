@@ -115,6 +115,7 @@ function cut_str($sourcestr,$cutlength)
         <div class="mod" id="huanqiu">
           <div class="hd line"><h3><a href="<?= Url::to(['site/page','slug'=>'picnews'])?>">图片新闻</a></h3></div>
           <div class="bd">
+            <a id="mar-left" href="#"></a>
             <div id="mar" class="image-list">
               <div class="image-list-wrapper">
               <?php 
@@ -127,9 +128,83 @@ function cut_str($sourcestr,$cutlength)
                   </a>
                   <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
               </div>
+              <div class="image-list-item">
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
+                    <img src="<?= $post->thumb;?>">
+                  </a>
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
+              </div>
+              <div class="image-list-item">
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
+                    <img src="<?= $post->thumb;?>">
+                  </a>
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
+              </div>
+              <div class="image-list-item">
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
+                    <img src="<?= $post->thumb;?>">
+                  </a>
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
+              </div>
+              <div class="image-list-item">
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
+                    <img src="<?= $post->thumb;?>">
+                  </a>
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
+              </div>
+              <div class="image-list-item">
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
+                    <img src="<?= $post->thumb;?>">
+                  </a>
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
+              </div>
+              <div class="image-list-item">
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
+                    <img src="<?= $post->thumb;?>">
+                  </a>
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
+              </div>
+              <div class="image-list-item">
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
+                    <img src="<?= $post->thumb;?>">
+                  </a>
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
+              </div>
+              <div class="image-list-item">
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
+                    <img src="<?= $post->thumb;?>">
+                  </a>
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
+              </div>
+              <div class="image-list-item">
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
+                    <img src="<?= $post->thumb;?>">
+                  </a>
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
+              </div>
+              <div class="image-list-item">
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
+                    <img src="<?= $post->thumb;?>">
+                  </a>
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
+              </div>
+              <div class="image-list-item">
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
+                    <img src="<?= $post->thumb;?>">
+                  </a>
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
+              </div>
+              <div class="image-list-item">
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
+                    <img src="<?= $post->thumb;?>">
+                  </a>
+                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
+              </div>
               <?php $j++; if($j == 4){break;} }?>
               </div>
             </div>
+            <a id="mar-right" href="#">
+            </a>
           </div>
         </div>
       </div>
@@ -151,11 +226,7 @@ function cut_str($sourcestr,$cutlength)
                 <li <?php if($j == 0 || $j == 6){echo 'class="first"';}?>><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"><?php echo cut_str($post->name,20);?></a> <span class="time"><?php echo date("Y-m-d",$post->update_date);?></li>
               <?php 
               if($j == 5){
-                echo "</ul><ul>";
-              }
-              if($j == 11){
                 echo "</ul>";
-                break;
               }
               $j++;
             }}}?>
@@ -176,11 +247,7 @@ function cut_str($sourcestr,$cutlength)
                 <li <?php if($j == 0 || $j == 6){echo 'class="first"';}?>><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"><?php echo cut_str($post->name,20);?></a> <span class="time"><?php echo date("Y-m-d",$post->update_date);?></li>
               <?php 
               if($j == 5){
-                echo "</ul><ul>";
-              }
-              if($j == 11){
                 echo "</ul>";
-                break;
               }
               $j++;
               }?>
@@ -207,6 +274,9 @@ $(function(){
   });
   $('#mar').marquee({
     showNum: 10,
+    auto: false,
+    prevElement: $('#mar-left'),
+    nextElement: $('#mar-right'),
   });
   $(document).on('mouseover','.unslider-nav li',function(){
     var _val = $(this).data('slide');
