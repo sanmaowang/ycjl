@@ -18,6 +18,7 @@ $url = Yii::$app->request->getUrl();
           <h1><?php echo $page->name;?></h1>
           <h2><?php echo $page->english_name;?></h2>
         </div>
+        <?= Breadcrumb::widget();?>
       </div>
       
       <div class="row">
@@ -39,7 +40,6 @@ $url = Yii::$app->request->getUrl();
       <div class="clearfix">
         <?= LinkPager::widget(['pagination' => $pnation]) ?>  
       </div> 
-      <?= Hot::widget();?>
       </div>
     <?php if(isset($menu) && count($menu)>0){?>
       <div class="menu">

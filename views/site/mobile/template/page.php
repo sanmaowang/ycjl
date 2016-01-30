@@ -17,6 +17,7 @@ $url = Yii::$app->request->getUrl();
           <h1><?php echo $page->name;?></h1>
           <h2><?php echo $page->english_name;?></h2>
         </div>
+    <?= Breadcrumb::widget();?>
       </div>
       <div id="content" class="content <?php echo $page->slug;?>">
         <?php if($page->id == 6){?>
