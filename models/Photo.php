@@ -69,4 +69,9 @@ class Photo extends \yii\db\ActiveRecord
         return $this->hasOne(Page::className(), ['id' => 'page_id']);
     }
 
+    public function getPhotos()
+    {
+        return $this->hasOne(Photo::className(), ['parent_id' => 'id']);
+    }
+
 }

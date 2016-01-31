@@ -37,14 +37,14 @@ $url = Yii::$app->request->getUrl();
       <div class="news-main">
         <div class="news-image-column">
         <div class="row">
-          <?php foreach ($page->posts as $key => $post) {?>
+          <?php foreach ($albums as $key => $album) {?>
             <div class="col-xs-4">
-              <a href="<?php echo Url::to(['view-post','id'=>$post->id])?>" class="pic-thumbnail">
-              <?php if($post->thumb){?>
-              <div class="cover"><img src="<?= $post->thumb;?>" alt="" ></div>
+              <a href="<?php echo Url::to(['view-album','id'=>$album->id])?>" class="pic-thumbnail">
+              <?php if($album->path){?>
+              <div class="cover"><img src="<?= $album->path;?>" alt="" ></div>
               <?php }?>
               <div class="caption">
-              <b><?php echo $post->name;?></b>
+              <b><?php echo $album->title;?></b>
               </div>
               </a>
             </div>

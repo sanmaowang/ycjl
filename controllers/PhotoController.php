@@ -35,6 +35,19 @@ class PhotoController extends Controller
      * Lists all Photo models.
      * @return mixed
      */
+    private function getExtinfo($str){
+      $ext = 'gif|jpg|jpeg|bmp|png';//罗列图片后缀从而实现多扩展名匹配 by http://www.k686.com 绿色软件
+
+      $list = array();  //这里存放结果map
+      $c1 = preg_match_all('/<img\s.*?>/', $str, $m1);  //先取出所有img标签文本
+      for($i=0; $i<$c1; $i++) { //对所有的img标签进行取属性
+        $c2 = preg_match_all('/(\w+)\s*=\s*(?:(?:(["\'])(.*?)(?=\2))|([^\/\s]*))/', $m1[0][$i], $m2); //匹配出所有的属性
+        for($j=0; $j<$c2; $j++) { //将匹配完的结果进行结构重组
+          $list[$i][$m2[1][$j]] = !empty($m2[4][$j]) ? $m2[4][$j] : $m2[3][$j];
+        }
+      }
+      return $list; //查看结果变量
+    }
     public function actionIndex()
     {
         $request = Yii::$app->request;
@@ -95,7 +108,7 @@ class PhotoController extends Controller
             if ($model->upload()) {
                 $date = date("Ymd",time());
                 foreach ($model->imageFiles as $key => $image) {
-                    $path = 'uploads/picnews/'.$date.'/';  
+                    $path = '/uploads/picnews/'.$date.'/';  
                     $photo = new Photo();
                     $photo->path = $path. $image->baseName . '.' . $image->extension;
                     $photo->page_id = $album->page_id;
@@ -163,7 +176,7 @@ class PhotoController extends Controller
             if ($model->upload()) {
                 $date = date("Ymd",time());
                 foreach ($model->imageFiles as $key => $image) {
-                    $path = 'uploads/picnews/'.$date.'/';  
+                    $path = '/uploads/picnews/'.$date.'/';  
                     $photo = new Photo();
                     $photo->path = $path. $image->baseName . '.' . $image->extension;
                     $photo->page_id = $page_id;

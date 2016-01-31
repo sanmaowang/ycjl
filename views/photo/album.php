@@ -37,7 +37,7 @@ $this->params['menu'] =[
         <b>封面图：</b>
         <div class="thumbnail" style="width:300px">
             <?php if($album->path){?>
-            <img src="<?php echo Yii::$app->request->baseUrl?>/<?php echo $album->path;?>" width="300"/>
+            <img src="<?php echo Yii::$app->request->baseUrl?><?php echo $album->path;?>" width="300"/>
             <?php }else{?>
             <img src="holder.js/300x180" style="height: 180px; width: 100%; display: block;">
             <?php }?>
@@ -77,7 +77,7 @@ $this->params['menu'] =[
           <div class="col-xs-6 col-md-3">
             <div href="#" class="thumbnail">
                 <?php if($p->path){?>
-                <img src="<?php echo Yii::$app->request->baseUrl?>/<?php echo $p->path;?>" style="height: 180px; width: 100%; display: block;">
+                <img src="<?php echo Yii::$app->request->baseUrl?><?php echo $p->path;?>" style="height: 180px; width: 100%; display: block;">
                 <?php }else{?>
                 <img src="holder.js/200x200" style="height: 180px; width: 100%; display: block;">
                 <?php }?>

@@ -106,7 +106,7 @@ class SiteController extends Controller
                 $group_news = Post::find()->where(['page_id'=>14])->orderBy(['create_date'=>SORT_DESC])->all();
                 $industry_news = Post::find()->where(['page_id'=>15])->orderBy(['create_date'=>SORT_DESC])->limit(6)->all();
                 $media_news = Post::find()->where(['page_id'=>16])->orderBy(['create_date'=>SORT_DESC])->limit(6)->all();
-                $pic_news = Post::find()->where(['page_id'=>39])->orderBy(['create_date'=>SORT_DESC])->limit(10)->all();
+                $pic_news = Photo::find()->where(['page_id'=>39,'parent_id'=>0])->orderBy(['create_date'=>SORT_DESC])->limit(10)->all();
                 $headlines = Post::find()->where(['is_headline'=>1])->orderBy(['create_date'=>SORT_DESC])->all();
                 return $this->render($mobile.'template/'.$page->template,[
                     'page'=>$page,
@@ -143,11 +143,42 @@ class SiteController extends Controller
                 'pnation'=>$pnation,
                 'posts'=>$posts
             ]);
+        }else if($page->type == 4){
+            $albums = PHoto::find()->where(['page_id'=>$page->id,'parent_id'=>0])->orderBy(['create_date'=>SORT_DESC])->all();
+            return $this->render($mobile.'template/'.$page->template,[
+                'page'=>$page,
+                'albums'=>$albums,
+                'menu'=>$menu,
+            ]);
         }
    
         return $this->render($mobile.'template/'.$page->template,[
             'page'=>$page,
             'menu'=>$menu,
+        ]);
+    }
+
+    public function actionViewAlbum($id)
+    {
+        if(Yii::$app->deviceDetect->isMobile()){
+            $this->layout = "//mobile";
+            $mobile = 'mobile/';
+        }else{
+            $this->layout = "//inner";
+            $mobile = '';
+        }
+        $album = Photo::findOne($id);
+        $page = $album->page;
+        if($page->parent_id == 0){
+            $menu = Page::find()->where(['parent_id'=>$page->id])->all();
+        }else{
+            $menu = Page::find()->where(['parent_id'=>$page->parent_id])->all();
+        }
+        $photos = Photo::find()->where(['parent_id'=>$id])->all();
+        return $this->render($mobile.'template/album', [
+            'menu'=>$menu,
+            'album'=>$album,
+            'photos'=>$photos
         ]);
     }
 

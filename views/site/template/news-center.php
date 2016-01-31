@@ -125,10 +125,10 @@ function cut_str($sourcestr,$cutlength)
               foreach ($pic_news as $key => $post) {
               ?>
               <div class="image-list-item">
-                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
-                    <img src="<?= $post->thumb;?>">
+                  <a href="<?= Url::to(['view-album','id'=>$post->id])?>" target="_blank">
+                    <img src="<?= Yii::$app->request->baseUrl;?><?= $post->path;?>">
                   </a>
-                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
+                  <a href="<?= Url::to(['view-album','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str(trim($post->title),20);?></a>
               </div>
               <?php $j++; if($j == 4){break;} }?>
               </div>
