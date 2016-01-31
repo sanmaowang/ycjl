@@ -13,48 +13,6 @@ function utf8_strlen($string = null) {
   preg_match_all("/./us", $string, $match);
   return count($match[0]);
 }
-
-
-function cut_str($sourcestr,$cutlength)
-{
-   $returnstr='';
-   $i=0;
-   $n=0;
-   $org_length = utf8_strlen($sourcestr);//字符串的字节数
-   $str_length = strlen($sourcestr);//字符串的字节数
-   while (($n<$cutlength) and ($i<=$str_length)){
-      $temp_str=substr($sourcestr,$i,1);
-      $ascnum=Ord($temp_str);//得到字符串中第$i位字符的ascii码
-      if ($ascnum>=224)    //如果ASCII位高与224，
-      {
-         $returnstr=$returnstr.substr($sourcestr,$i,3); //根据UTF-8编码规范，将3个连续的字符计为单个字符         
-         $i=$i+3;            //实际Byte计为3
-         $n++;            //字串长度计1
-      }
-       elseif ($ascnum>=192) //如果ASCII位高与192，
-      {
-         $returnstr=$returnstr.substr($sourcestr,$i,2); //根据UTF-8编码规范，将2个连续的字符计为单个字符
-         $i=$i+2;            //实际Byte计为2
-         $n++;            //字串长度计1
-      }
-       elseif ($ascnum>=65 && $ascnum<=90) //如果是大写字母，
-      {
-         $returnstr=$returnstr.substr($sourcestr,$i,1);
-         $i=$i+1;            //实际的Byte数仍计1个
-         $n++;            //但考虑整体美观，大写字母计成一个高位字符
-      }else                //其他情况下，包括小写字母和半角标点符号，
-      {
-         $returnstr=$returnstr.substr($sourcestr,$i,1);
-         $i=$i+1;            //实际的Byte数计1个
-         $n=$n+0.5;        //小写字母和半角标点等与半个高位字符宽...
-      }
-    }
-      if ($org_length>$cutlength){
-          $returnstr = $returnstr . "...";//超过长度时在尾处加上省略号
-      }
-     return $returnstr;
-} 
-
 ?>
 <div class="banner">
   <div class="container">
@@ -103,7 +61,7 @@ function cut_str($sourcestr,$cutlength)
                     break;
                   }
               ?>
-                <li><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>" title="<?= $post->name;?>" target="_blank"><?php echo cut_str($post->name,18);?></a> <span class="time"><?php echo date("Y-m-d",$post->update_date);?></li>
+                <li><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>" title="<?= $post->name;?>" target="_blank"><?php echo $post->name;?></a> <span class="time"><?php echo date("Y-m-d",$post->update_date);?></li>
               <?php 
                 $i++;
               }}?>
@@ -128,7 +86,7 @@ function cut_str($sourcestr,$cutlength)
                   <a href="<?= Url::to(['view-album','id'=>$post->id])?>"  title="<?= $post->title;?>" target="_blank">
                     <img src="<?= Yii::$app->request->baseUrl;?><?= $post->path;?>">
                   </a>
-                  <a href="<?= Url::to(['view-album','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str(trim($post->title),20);?></a>
+                  <a href="<?= Url::to(['view-album','id'=>$post->id])?>" class="txt" target="_blank"><?php echo $post->title;?></a>
               </div>
               <?php $j++; if($j == 10){break;} }?>
               </div>
@@ -152,7 +110,7 @@ function cut_str($sourcestr,$cutlength)
                 $post = $industry_news[$j];
                 if($post){
             ?>
-                <li <?php if($j == 0){echo 'class="first"';}?>><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"  title="<?= $post->name;?>" target="_blank"><?php echo cut_str($post->name,20);?></a> <span class="time"><?php echo date("Y-m-d",$post->update_date);?></li>
+                <li <?php if($j == 0){echo 'class="first"';}?>><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"  title="<?= $post->name;?>" target="_blank"><?php echo $post->name;?></a> <span class="time"><?php echo date("Y-m-d",$post->update_date);?></li>
               <?php }}?>
             </ul>
           </div>
@@ -168,7 +126,7 @@ function cut_str($sourcestr,$cutlength)
                 $post = $media_news[$j];
                 if($post){
             ?>
-                <li <?php if($j == 0){echo 'class="first"';}?>><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"  title="<?= $post->name;?>" target="_blank"><?php echo cut_str($post->name,20);?></a> <span class="time"><?php echo date("Y-m-d",$post->update_date);?></li>
+                <li <?php if($j == 0){echo 'class="first"';}?>><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"  title="<?= $post->name;?>" target="_blank"><?php echo $post->name;?></a> <span class="time"><?php echo date("Y-m-d",$post->update_date);?></li>
               <?php }}?>
             </ul>
           </div>
