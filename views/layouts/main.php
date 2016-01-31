@@ -48,7 +48,7 @@ AppAsset::register($this);
              ?>
             <li <?php if($a == 0){?>class="active"<?php }?>><a href="<?= Url::to(['page/index'])?>">内容管理</a></li>
             <li <?php if($a == 1){?>class="active"<?php }?>><a href="<?= Url::to(['user/index'])?>">用户管理</a></li>
-            <li <?php if($a == 2){?>class="active"<?php }?>><a href="<?= Url::to(['user/index'])?>">数据管理</a></li>
+            <li <?php if($a == 2){?>class="active"<?php }?>><a href="<?= Url::to(['backup/index'])?>">数据管理</a></li>
           </ul>
           <div class="navbar-nav navbar-right nav">
             <li>

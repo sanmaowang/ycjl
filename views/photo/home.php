@@ -29,7 +29,7 @@ $this->params['menu'] =[
     <h3>当前最新新闻图片：</h3>
     <div class="thumbnail" style="width:300px;">
         <?php if($photo){?>
-        <img src="<?php echo Yii::$app->request->baseUrl?>/<?php echo $photo->path;?>" width="300"/>
+        <img src="<?php echo Yii::$app->request->baseUrl?><?php echo $photo->path;?>" width="300"/>
         <?php }else{?>
         <img src="holder.js/300x200" style="height: 200px; width: 100%; display: block;">
         <?php }?>

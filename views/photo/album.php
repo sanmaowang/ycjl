@@ -27,8 +27,33 @@ $this->params['menu'] =[
                 ]],
             ];
 ?>
-<div class="photo-index clearfix">
-    <h3>上传图片</h3>
+<div class="photo-news-content">
+    <h2><?php echo $album->title;?></h2>
+    <p class="muted">
+        <span>创建日期：<?php echo date("Y.m.d",$album->create_date);?></span>
+        <span>最后更改日期：<?php echo date("Y.m.d",$album->update_date);?></span>
+    </p>
+    <p>
+        <b>封面图：</b>
+        <div class="thumbnail" style="width:300px">
+            <?php if($album->path){?>
+            <img src="<?php echo Yii::$app->request->baseUrl?><?php echo $album->path;?>" width="300"/>
+            <?php }else{?>
+            <img src="holder.js/300x180" style="height: 180px; width: 100%; display: block;">
+            <?php }?>
+        </div>
+    </p>
+    <p>
+        <b>描述信息：</b><br>
+        <?= $album->description;?>
+    </p>
+</div>
+<hr>
+<div class="panel panel-default" style="width:500px;">
+    <div class="panel-heading">
+        添加图片
+    </div>
+<div class="panel-body clearfix">
 <?php $form = ActiveForm::begin([
     'options' => [
     'id'=>'post-img',
@@ -37,13 +62,6 @@ $this->params['menu'] =[
 ]) ?>
 <input type="hidden" value="<?php echo $parent_id;?>" name="Photo[parent_id]">
 <input type="hidden" value="<?php echo $page_id;?>" name="Photo[page_id]">
-<div class="pull-left" style="margin-right:20px;">
-    <img src="<?php echo Yii::$app->request->baseUrl?>/<?php echo $album->path;?>" width="80"/>
-</div>
-<div class="pull-left" style="margin-right:20px;padding-right:20px;border-right:1px solid #ddd;">
-    <h4 style="margin-top:0;"><?= $album->title;?></h4>
-    <p><?= $album->description;?></p>
-</div>
 <div class="pull-left">
 <?= $form->field($model, 'imageFiles[]')->fileInput(['multiple' => true,'required'=>'required']) ?>
 </div>
@@ -52,13 +70,14 @@ $this->params['menu'] =[
 </div>
 <?php ActiveForm::end() ?>
 </div>
-<hr>
+</div>
+<h4>相册图片：</h4>
 <div class="row">
     <?php foreach ($photos as $key => $p) {?>
           <div class="col-xs-6 col-md-3">
             <div href="#" class="thumbnail">
                 <?php if($p->path){?>
-                <img src="<?php echo Yii::$app->request->baseUrl?>/<?php echo $p->path;?>" style="height: 180px; width: 100%; display: block;">
+                <img src="<?php echo Yii::$app->request->baseUrl?><?php echo $p->path;?>" style="height: 180px; width: 100%; display: block;">
                 <?php }else{?>
                 <img src="holder.js/200x200" style="height: 180px; width: 100%; display: block;">
                 <?php }?>

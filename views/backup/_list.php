@@ -9,7 +9,6 @@ echo GridView::widget([
 				'name',
 				'size:size',
 				'create_time',
-				'modified_time:relativeTime',
 				array(
 			  'header' => "操作",
 			  'class' => 'yii\grid\ActionColumn',

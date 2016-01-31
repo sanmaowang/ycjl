@@ -53,7 +53,7 @@ $this->params['menu'] =[
     </ul>
     <p style="margin:20px 0;">
     <?php if(isset($page_id)){?>
-        <?= Html::a(Yii::t('app', '创建图片新闻'), ['create-album','page_id'=>$page_id], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', '创建图片新闻'), ['create','page_id'=>$page_id], ['class' => 'btn btn-success']) ?>
     <?php }?>
     </p>
     <div class="row">

@@ -61,17 +61,4 @@ class Photo extends \yii\db\ActiveRecord
         ];
     }
 
-    public function behaviors()
-    {
-        return [
-            [
-                'class' => TimestampBehavior::className(),
-                'attributes' => [
-                    ActiveRecord::EVENT_BEFORE_INSERT => ['create_date', 'update_date'],
-                    ActiveRecord::EVENT_BEFORE_UPDATE => ['update_date'],
-                ],
-//                'value' => new Expression('NOW()'),
-            ],
-        ];
-    }
 }

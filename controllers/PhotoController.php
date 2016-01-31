@@ -100,6 +100,8 @@ class PhotoController extends Controller
                     $photo->path = $path. $image->baseName . '.' . $image->extension;
                     $photo->page_id = $album->page_id;
                     $photo->parent_id = $album->id;
+                    $photo->create_date =  mktime();
+                    $photo->update_date =  mktime();
                     $photo->save();
                 }
                 return $this->redirect(['view','id'=>$album->id]);
@@ -127,18 +129,24 @@ class PhotoController extends Controller
         $model = new Photo();
         $request = Yii::$app->request;
         $page_id = $request->get('page_id');
+        $model->create_date =  mktime();
+        $model->update_date =  mktime();
 
         if ($model->load(Yii::$app->request->post())) {
             $model->page_id = $page_id;
             $model->parent_id = 0;
+            $model->create_date = strtotime($model->create_date);
+            $model->update_date = strtotime($model->update_date);
             if($model->save()){
-                return $this->redirect(['view-album', 'id' => $model->id,'page_id'=>$page_id]);
+                return $this->redirect(['view', 'id' => $model->id,'page_id'=>$page_id]);
             }
         }
+        $page = Page::findOne($page_id);
 
         return $this->render('create', [
             'model' => $model,
-            'page_id' => $page_id
+            'page_id' => $page_id,
+            'page'=>$page
         ]);
     }
 
@@ -160,11 +168,12 @@ class PhotoController extends Controller
                     $photo->path = $path. $image->baseName . '.' . $image->extension;
                     $photo->page_id = $page_id;
                     $photo->parent_id = 0;
+                    $photo->create_date =  mktime();
+                    $photo->update_date =  mktime();
                     $photo->save();
                 }
                 return $this->redirect(['home','page_id'=>$page_id]);
             }
-            var_dump($model->getErrors());
         }else{
             return $this->render('home', [
                 'model' => $model,
@@ -185,7 +194,7 @@ class PhotoController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view-album', 'id' => $model->parent_id,'page_id'=>$model->page_id]);
+            return $this->redirect(['view', 'id' => $model->parent_id,'page_id'=>$model->page_id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
