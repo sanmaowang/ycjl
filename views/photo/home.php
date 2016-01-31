@@ -15,7 +15,6 @@ $this->params['menu'] =[
                 // 'Products' menu item will be selected as long as the route is 'product/index'
                 ['label' => '栏目管理', 'items' => [
                     ['label' => '频道管理', 'url' => ['page/index']],
-                    ['label' => '菜单设置', 'url' => ['menu/index']],
                 ]],
                 ['label' => '新闻中心', 'items' => [
                     ['label' => '文章管理', 'url' => ['post/index']],
@@ -31,7 +30,7 @@ $this->params['menu'] =[
         <?php if($photo){?>
         <img src="<?php echo Yii::$app->request->baseUrl?><?php echo $photo->path;?>" width="300"/>
         <?php }else{?>
-        <img src="holder.js/300x200" style="height: 200px; width: 100%; display: block;">
+        <img src="holder.js/320x148" style="height: 148px; width: 100%; display: block;">
         <?php }?>
     </div>
     <div class="photo-index clearfix" style="margin-bottom:40px;">

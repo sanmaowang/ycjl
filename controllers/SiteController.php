@@ -50,7 +50,7 @@ class SiteController extends Controller
         }
 
         $news = array();
-        $news[] = Post::find()->where(['page_id'=>23])->orderBy(['create_date'=>SORT_DESC])->one();
+        $news[] = Post::find()->where(['page_id'=>27])->orderBy(['create_date'=>SORT_DESC])->one();
         $news[] = Post::find()->where(['page_id'=>14])->orderBy(['create_date'=>SORT_DESC])->one();
         $news[] = Post::find()->where(['page_id'=>15])->orderBy(['create_date'=>SORT_DESC])->one();
         $news[] = Post::find()->where(['page_id'=>16])->orderBy(['create_date'=>SORT_DESC])->one();

@@ -75,16 +75,14 @@ $this->params['menu'] =[
 <div class="row">
     <?php foreach ($photos as $key => $p) {?>
           <div class="col-xs-6 col-md-3">
-            <div href="#" class="thumbnail">
+            <div href="#" class="thumbnail photo-thumb">
                 <?php if($p->path){?>
                 <img src="<?php echo Yii::$app->request->baseUrl?><?php echo $p->path;?>" style="height: 180px; width: 100%; display: block;">
                 <?php }else{?>
                 <img src="holder.js/200x200" style="height: 180px; width: 100%; display: block;">
                 <?php }?>
-                <div class="caption">
-                    <h3><?= $p->title;?></h3>
-                    <p><?= $p->description;?></p>
-                    <p>
+                <div class="mask">
+                    <div class="actions">
                         <?= Html::a(Yii::t('app', '编辑详情'), ['photo/update', 'id' => $p->id], ['class' => 'btn btn-default btn-update btn-xs']) ?>
                         <?= Html::a(Yii::t('app', '设为封面'), ['photo/setcover', 'id' => $p->id], [
                         'class' => 'btn btn-info btn-xs',
@@ -98,7 +96,7 @@ $this->params['menu'] =[
                         'confirm' => Yii::t('app', '您确定要删除吗?'),
                         'method' => 'post',
                     ],
-                    ]) ?></p>
+                    ]) ?></div>
                     <div class="edit" style="display:none;">
                         <?php $newform = ActiveForm::begin([
                             'action'=>['photo/update','id'=>$p->id],

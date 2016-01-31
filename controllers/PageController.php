@@ -94,9 +94,12 @@ class PageController extends Controller
     {
         $model = new Page();
         $request = Yii::$app->request;
-        $parent_id = $request->get('parent_id', 0);
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        $parent_id = $request->get('page_id', 0);
+        if ($model->load(Yii::$app->request->post())) {
+            $model->parent_id = $parent_id;
+            if($model->save()){
+                return $this->redirect(['index']);
+            }
         } else {
             return $this->render('create', [
                 'model' => $model,
