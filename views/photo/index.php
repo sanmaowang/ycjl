@@ -56,34 +56,36 @@ $this->params['menu'] =[
         <?= Html::a(Yii::t('app', '创建图片新闻'), ['create','page_id'=>$page_id], ['class' => 'btn btn-success']) ?>
     <?php }?>
     </p>
-    <div class="row">
-        <?php foreach ($photo as $key => $p) {?>
-              <div class="col-xs-6 col-md-3">
-                <div class="thumbnail">
-                    <?php if($p->path){?>
-                    <img src="<?php echo Yii::$app->request->baseUrl?>/<?php echo $p->path;?>" style="height: 180px; width: 100%; display: block;">
-                    <?php }else{?>
-                    <img src="holder.js/200x200" style="height: 180px; width: 100%; display: block;">
-                    <?php }?>
-                    <div class="caption">
-                        <h3><?= $p->title;?></h3>
-                        <p><?= $p->description;?></p>
-                        <p>
-                            <a href="<?= Url::to(['photo/view','id'=>$p->id])?>" class="btn btn-primary">查看</a>
-                            <?= Html::a(Yii::t('app', '修改'), ['photo/update', 'id' => $p->id], ['class' => 'btn btn-info']) ?>
-                            <?= Html::a(Yii::t('app', '删除'), ['photo/delete', 'id' => $p->id], [
-                                'class' => 'btn btn-danger',
-                                'data' => [
-                                    'confirm' => Yii::t('app', '您确定要删除吗?'),
-                                    'method' => 'post',
-                                ],
-                            ]) ?>
-                        </p>
-                    </div>
-                </div>
-              </div>
-        <?php }?>
-    </div>
+        <table class="table table-striped">
+        <tr>
+            <td>#</td>
+            <td>标题</td>
+            <td>所属栏目</td>
+            <td>创建时间</td>
+            <td>最后更新时间</td>
+            <td>操作</td>
+        </tr>
+    <?php foreach ($photo as $key => $p) {?>
+        <tr>
+            <td><?= $key+1?></td>
+            <td><b><?= $p->title;?></b></td>
+            <td><?= $p->page->name;?></td>
+            <td><?php echo date("Y-m-d",$p->create_date);?></td>
+            <td><?php echo date("Y-m-d",$p->update_date);?></td>
+            <td>
+                <a href="<?= Url::to(['photo/view','id'=>$p->id])?>" class="btn btn-xs btn-primary">查看</a>
+                <?= Html::a(Yii::t('app', '修改'), ['photo/update', 'id' => $p->id], ['class' => 'btn btn-xs btn-info']) ?>
+                <?= Html::a(Yii::t('app', '删除'), ['photo/delete', 'id' => $p->id], [
+                    'class' => 'btn btn-xs btn-danger',
+                    'data' => [
+                        'confirm' => Yii::t('app', '您确定要删除吗?'),
+                        'method' => 'post',
+                    ],
+                ]) ?>
+            </td>
+        </tr>
+    <?php }?>
+    </table>
     <div class="clearfix">
         <?= LinkPager::widget(['pagination' => $pnation]) ?>  
     </div>

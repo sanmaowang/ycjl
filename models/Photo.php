@@ -3,6 +3,7 @@
 namespace app\models;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
+use app\models\Page;
 
 use Yii;
 
@@ -16,6 +17,7 @@ use Yii;
  * @property string $path
  * @property string $description
  * @property integer $is_recommend
+ * @property integer $order
  * @property integer $create_date
  * @property integer $update_date
  */
@@ -36,7 +38,7 @@ class Photo extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['page_id', 'parent_id', 'is_recommend', 'create_date', 'update_date'], 'integer'],
+            [['page_id', 'parent_id', 'is_recommend','order', 'create_date', 'update_date'], 'integer'],
             [['description'], 'string'],
             [['title','path'], 'string', 'max' => 255],
         ];
@@ -54,11 +56,17 @@ class Photo extends \yii\db\ActiveRecord
             'title' => Yii::t('app', '标题'),
             'file' => Yii::t('app', '图片'),
             'path' => Yii::t('app', '图片'),
+            'order' => Yii::t('app', '顺序'),
             'description' => Yii::t('app', '描述'),
             'is_recommend' => Yii::t('app', 'Is Recommend'),
             'create_date' => Yii::t('app', 'Create Date'),
             'update_date' => Yii::t('app', 'Update Date'),
         ];
+    }
+
+    public function getPage()
+    {
+        return $this->hasOne(Page::className(), ['id' => 'page_id']);
     }
 
 }

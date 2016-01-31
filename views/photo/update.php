@@ -10,7 +10,7 @@ $this->title = Yii::t('app', '更新{modelClass}: ', [
 ]) . ' ' . $model->title;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', '相册管理'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->title, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = Yii::t('app', 'Update');
+$this->params['breadcrumbs'][] = Yii::t('app', '更新');
 $this->params['menu'] =[
                 // Important: you need to specify url as 'controller/action',
                 // not just as 'controller' even if default action is used.
@@ -29,8 +29,12 @@ $this->params['menu'] =[
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <?= $this->render('_form', [
-        'model' => $model,
-    ]) ?>
-
+    <div class="row">
+        <div class="col-lg-8">
+            <?= $this->render('_form', [
+                'model' => $model,
+                'page'=>$model->page
+            ]) ?>
+        </div>
+    </div>
 </div>
