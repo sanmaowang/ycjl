@@ -105,26 +105,30 @@ $this->params['menu'] =[
                     </div>
                 </div>
                 </div>
-            <div class="caption edit" style="display:none;">
-                <?php $newform = ActiveForm::begin([
-                    'action'=>['photo/update','id'=>$p->id],
-                    'options' => [
-                        'enctype' => 'multipart/form-data'
-                    ],  
-                ]); ?>
-                <?= $newform->field($p, 'title')->textarea(['maxlength' => true,'rows' => 3]) ?>
-                <div class="form-group field-photo-order">
-                <label class="control-label" for="photo-order">顺序</label>
-                <input type="text" id="photo-order" class="form-control" name="Photo[order]" value="<?php echo $i+1;?>">
-                <div class="help-block"></div>
+                <div class="caption">
+                    <p><?= $p->title;?></p>
+                    <div class="edit" style="display:none;">
+                        <?php $newform = ActiveForm::begin([
+                            'action'=>['photo/update','id'=>$p->id],
+                            'options' => [
+                                'enctype' => 'multipart/form-data'
+                            ],  
+                        ]); ?>
+                        <?= $newform->field($p, 'title')->textarea(['maxlength' => true,'rows' => 3]) ?>
+                        <div class="form-group field-photo-order">
+                        <label class="control-label" for="photo-order">顺序</label>
+                        <input type="text" id="photo-order" class="form-control" name="Photo[order]" value="<?php echo $i+1;?>">
+                        <div class="help-block"></div>
+                        </div>
+                        <input type="hidden" value="<?php echo $parent_id;?>" name="Photo[parent_id]">
+                        <input type="hidden" value="<?php echo $page_id;?>" name="Photo[page_id]">
+                        <div class="form-group">
+                            <?= Html::submitButton(Yii::t('app', '更新'), ['class' =>'btn btn-success']) ?>
+                            <a href="javascript:void(0);" class="btn btn-default btn-cancel">取消</a>
+                        </div>
+                        <?php ActiveForm::end(); ?>
+                    </div>
                 </div>
-                <input type="hidden" value="<?php echo $parent_id;?>" name="Photo[parent_id]">
-                <input type="hidden" value="<?php echo $page_id;?>" name="Photo[page_id]">
-                <div class="form-group">
-                    <?= Html::submitButton(Yii::t('app', '更新'), ['class' =>'btn btn-success']) ?>
-                </div>
-                <?php ActiveForm::end(); ?>
-            </div>
             </div>
           </div>
     <?php
@@ -142,15 +146,19 @@ $this->registerJs('
   $(function(){
       $(".btn-update").on("click",function(e){
         e.preventDefault();
-        $(this).parents(".photo-thumb").siblings(".edit").toggle();
+        $(this).parents(".photo-thumb").siblings(".caption").find(".edit").toggle();
       });
-$(".photo-thumb").on("mouseover",function(e){
-    e.preventDefault();
-    $(this).find(".mask").show();
-}).on("mouseleave",function(e){
-    e.preventDefault();
-    $(this).find(".mask").hide();
-})
+    $(".photo-thumb").on("mouseover",function(e){
+        e.preventDefault();
+        $(this).find(".mask").show();
+    }).on("mouseleave",function(e){
+        e.preventDefault();
+        $(this).find(".mask").hide();
+    });
+    $(".btn-cancel").on("click",function(e){
+        e.preventDefault();
+        $(this).parents(".edit").hide();
+    })
     })
   ', View::POS_END, 'js-edit'
 );

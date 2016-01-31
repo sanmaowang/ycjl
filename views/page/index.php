@@ -41,9 +41,15 @@ function display_pages($pages){
        }else if($page->type == 4){
          echo '<a href="'.Url::to(['photo/index','page_id'=>$page->id]).'" class="btn btn-info btn-xs">新建图片新闻</a>';
        }
-       echo '<a href="'.Url::to(['page/update','id'=>$page->id]).'" class="btn btn-primary btn-xs">修改本频道</a>
-            <a href="'.Url::to(['page/delete','id'=>$page->id]).'" class="btn btn-danger btn-xs">删除频道</a>
-          </div>
+       echo '<a href="'.Url::to(['page/update','id'=>$page->id]).'" class="btn btn-primary btn-xs">修改本频道</a>';
+       echo Html::a(Yii::t('app', '删除'), ['page/delete', 'id' => $page->id], [
+            'class' => 'btn btn-danger btn-xs',
+            'data' => [
+                'confirm' => Yii::t('app', '您确定要删除个栏目吗?'),
+                'method' => 'post',
+            ],
+        ]);
+      echo '</div>
         </div></li>';
     }
     if($page['sub']){
