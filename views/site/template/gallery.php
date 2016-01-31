@@ -39,14 +39,14 @@ $url = Yii::$app->request->getUrl();
         <div class="row">
           <?php foreach ($albums as $key => $album) {?>
             <div class="col-xs-4">
-              <a href="<?php echo Url::to(['view-album','id'=>$album->id])?>" class="pic-thumbnail" target="_blank">
+              <a href="<?php echo Url::to(['view-album','id'=>$album->id])?>" class="pic-thumbnail"  title="<?= $album->title;?>" target="_blank">
               <?php if($album->path){?>
               <div class="cover"><img src="<?= $album->path;?>" alt="" ></div>
               <?php }?>
               </a>
-              <div class="album-title">
+              <a class="album-title" title="<?= $album->title;?>" href="<?php echo Url::to(['view-album','id'=>$album->id])?>">
               <?php echo $album->title;?>
-                </div>
+              </a>
             </div>
           <?php }?>
         </div>
