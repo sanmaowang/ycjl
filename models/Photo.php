@@ -41,6 +41,7 @@ class Photo extends \yii\db\ActiveRecord
             [['page_id', 'parent_id', 'is_recommend','order', 'create_date', 'update_date'], 'integer'],
             [['description'], 'string'],
             [['title','path'], 'string', 'max' => 255],
+            [['order'],'safe']
         ];
     }
 

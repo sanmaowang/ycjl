@@ -117,7 +117,7 @@ $this->params['menu'] =[
                         <?= $newform->field($p, 'title')->textarea(['maxlength' => true,'rows' => 3]) ?>
                         <div class="form-group field-photo-order">
                         <label class="control-label" for="photo-order">顺序</label>
-                        <input type="text" id="photo-order" class="form-control" name="Photo[order]" value="<?php echo $i+1;?>">
+                        <input type="text" id="photo-order" class="form-control" name="Photo[order]" value="<?php if(!$p->order){ echo $i+1;}else{ echo $p->order;}?>">
                         <div class="help-block"></div>
                         </div>
                         <input type="hidden" value="<?php echo $parent_id;?>" name="Photo[parent_id]">

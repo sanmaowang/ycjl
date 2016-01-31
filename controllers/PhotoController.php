@@ -121,7 +121,7 @@ class PhotoController extends Controller
             }
         }
 
-        $photos = Photo::find()->where(['parent_id'=>$id])->all();
+        $photos = Photo::find()->where(['parent_id'=>$id])->orderBy('order asc')->all();
 
         return $this->render('album',[
             'photos' => $photos,
@@ -206,8 +206,11 @@ class PhotoController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+          var_dump($model->order);
+           if($model->save()){
             return $this->redirect(['view', 'id' => $model->parent_id,'page_id'=>$model->page_id]);
+            }
         } else {
             return $this->render('update', [
                 'model' => $model,

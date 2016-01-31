@@ -18,6 +18,10 @@ class UploadForm extends Model
             [['imageFiles'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg', 'maxFiles' => 4],
         ];
     }
+
+    private function get_basename($filename){    
+         return preg_replace('/^.+[\\\\\\/]/', '', $filename);    
+    } 
     
     public function upload()
     {
@@ -30,7 +34,7 @@ class UploadForm extends Model
                     mkdir($path );
                     chmod($path, '777');
                 }
-                $file->saveAs($path . $file->baseName . '.' . $file->extension);
+                $file->saveAs($path . $this->get_basename($file->name) . '.' . $file->extension);
             }
             return true;
         } else {
