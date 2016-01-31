@@ -12,7 +12,7 @@ $this->params['menu'] =[
                 // not just as 'controller' even if default action is used.
                 // 'Products' menu item will be selected as long as the route is 'product/index'
                 ['label' => '数据管理', 'items' => [
-                    ['label' => '数据备份', 'url' => ['admin/backup']],
+                    ['label' => '数据备份', 'url' => ['backup/index']],
                 ]],
             ];
 ?>

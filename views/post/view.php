@@ -16,7 +16,6 @@ $this->params['menu'] =[
                 // 'Products' menu item will be selected as long as the route is 'product/index'
                 ['label' => '栏目管理', 'items' => [
                     ['label' => '频道管理', 'url' => ['page/index']],
-                    ['label' => '菜单设置', 'url' => ['menu/index']],
                 ]],
                 ['label' => '新闻中心', 'items' => [
                     ['label' => '文章管理', 'url' => ['post/index']],

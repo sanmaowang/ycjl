@@ -15,7 +15,6 @@ $this->params['menu'] =[
                 // 'Products' menu item will be selected as long as the route is 'product/index'
                 ['label' => '栏目管理', 'items' => [
                     ['label' => '频道管理', 'url' => ['page/index']],
-                    ['label' => '菜单设置', 'url' => ['menu/index']],
                 ]],
                 ['label' => '新闻中心', 'items' => [
                     ['label' => '文章管理', 'url' => ['post/index']],
@@ -33,11 +32,11 @@ function display_pages($pages){
        }
        echo '<div class="col-md-6 text-right">';
        if($page->type == 3){
-         echo '<a href="'.Url::to(['post/create','page_id'=>$page->id]).'" class="btn btn-success btn-xs">新建内容</a>';
+         echo '<a href="'.Url::to(['post/create','page_id'=>$page->id]).'" class="btn btn-success btn-xs">新建文章</a>';
        }else if($page->type == 0){
         echo '<a href="'.Url::to(['page/create','page_id'=>$page->id]).'" class="btn btn-default btn-xs">新建子频道</a>';
         if($page->id == 1){
-         echo '<a href="'.Url::to(['photo/home','page_id'=>$page->id]).'" class="btn btn-warning btn-xs">设置最新图片新闻</a>';
+         echo '<a href="'.Url::to(['photo/home','page_id'=>$page->id]).'" class="btn btn-warning btn-xs">设置最新图片</a>';
         }
        }else if($page->type == 4){
          echo '<a href="'.Url::to(['photo/index','page_id'=>$page->id]).'" class="btn btn-info btn-xs">新建图片新闻</a>';

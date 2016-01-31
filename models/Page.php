@@ -62,6 +62,7 @@ class Page extends \yii\db\ActiveRecord
         return [
             [['parent_id', 'user_id', 'type', 'status', 'display_order', 'create_date', 'update_date'], 'integer'],
             [['excerpt', 'content','english_name','template'], 'string'],
+            [['name','slug'],'required'],
             [['name'], 'string', 'max' => 128],
             [['slug'], 'string', 'max' => 64],
             [['url'], 'string', 'max' => 255]

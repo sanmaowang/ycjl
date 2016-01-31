@@ -14,7 +14,7 @@ use yii\widgets\ActiveForm;
       'id' => 'page-form',
       'options' => ['class' => 'form-horizontal'],
       'fieldConfig' => [
-          'template' => "{label}\n<div class=\"col-md-6\">{input}</div>\n<div class=\"col-lg-8\">{error}</div>",
+          'template' => "{label}\n<div class=\"col-md-6\">{input}</div>\n<div class=\"col-lg-8 col-lg-offset-2\">{error}</div>",
           'labelOptions' => ['class' => 'col-md-2 control-label'],
       ],
   ]); ?>
@@ -34,7 +34,7 @@ use yii\widgets\ActiveForm;
         <option value="3">新闻频道</option>
       </select>
     </div>
-    <div class="col-lg-8"><div class="help-block"></div></div>
+    <div class="col-lg-8 col-lg-offset-2"><div class="help-block"></div></div>
   </div>
   <div id="url" style="display:none;">
   <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
@@ -45,7 +45,7 @@ use yii\widgets\ActiveForm;
     <div class="col-md-8">
       <script id="page-content" name="Page[content]" type="text/plain"><?php echo $model->content;?></script>
     </div>
-    <div class="col-lg-8"><div class="help-block"></div></div>
+    <div class="col-lg-8 col-lg-offset-2"><div class="help-block"></div></div>
   </div>
   </div>
 
