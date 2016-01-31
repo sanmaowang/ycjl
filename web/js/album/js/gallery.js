@@ -156,6 +156,7 @@
 				bg.animate({ left: (imgWidth*(i-(imgNum-5))+4)+ "px" }, 500);
 				ul.css({ left: -(smallImgListWidth-5*imgWidth)+ "px" });
 			}
+			ul.find('li').removeClass("thisimg").eq(i).addClass("thisimg");
 		}
 		
 		//模拟滚动条

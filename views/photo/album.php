@@ -19,7 +19,6 @@ $this->params['menu'] =[
                 // 'Products' menu item will be selected as long as the route is 'product/index'
                 ['label' => '栏目管理', 'items' => [
                     ['label' => '频道管理', 'url' => ['page/index']],
-                    ['label' => '菜单设置', 'url' => ['menu/index']],
                 ]],
                 ['label' => '新闻中心', 'items' => [
                     ['label' => '文章管理', 'url' => ['post/index']],
@@ -72,52 +71,68 @@ $this->params['menu'] =[
 </div>
 </div>
 <h4>相册图片：</h4>
-<div class="row">
-    <?php foreach ($photos as $key => $p) {?>
+
+    <?php $i=0; foreach ($photos as $key => $p) {
+        $j = $i+4;
+        if($j%4==0){
+            echo '<div class="row">';
+        }
+    ?>
           <div class="col-xs-6 col-md-3">
-            <div href="#" class="thumbnail photo-thumb">
+            <div class="thumbnail">
+                <div class="photo-thumb">
                 <?php if($p->path){?>
                 <img src="<?php echo Yii::$app->request->baseUrl?><?php echo $p->path;?>" style="height: 180px; width: 100%; display: block;">
                 <?php }else{?>
                 <img src="holder.js/200x200" style="height: 180px; width: 100%; display: block;">
                 <?php }?>
-                <div class="mask">
+                <div class="mask" style="display:none;">
                     <div class="actions">
-                        <?= Html::a(Yii::t('app', '编辑详情'), ['photo/update', 'id' => $p->id], ['class' => 'btn btn-default btn-update btn-xs']) ?>
+                        <?= Html::a(Yii::t('app', '编辑详情'), ['photo/update', 'id' => $p->id], ['class' => 'btn btn-default btn-update ']) ?>
                         <?= Html::a(Yii::t('app', '设为封面'), ['photo/setcover', 'id' => $p->id], [
-                        'class' => 'btn btn-info btn-xs',
+                        'class' => 'btn btn-info',
                         'data' => [
                             'method' => 'post',
                         ],
                         ]) ?>
                         <?= Html::a(Yii::t('app', '删除照片'), ['photo/delete', 'id' => $p->id], [
-                    'class' => 'btn btn-danger btn-xs',
+                    'class' => 'btn btn-danger',
                     'data' => [
                         'confirm' => Yii::t('app', '您确定要删除吗?'),
                         'method' => 'post',
                     ],
-                    ]) ?></div>
-                    <div class="edit" style="display:none;">
-                        <?php $newform = ActiveForm::begin([
-                            'action'=>['photo/update','id'=>$p->id],
-                            'options' => [
-                                'enctype' => 'multipart/form-data'
-                            ],  
-                        ]); ?>
-                        <?= $newform->field($p, 'title')->textarea(['maxlength' => true,'rows' => 3]) ?>
-                        <?= $form->field($p, 'description')->textarea(['rows' => 6]) ?>
-                        <?= $newform->field($p, 'order')->textInput(['maxlength' => true,'value'=>1]) ?>
-                        <input type="hidden" value="<?php echo $parent_id;?>" name="Photo[parent_id]">
-                        <input type="hidden" value="<?php echo $page_id;?>" name="Photo[page_id]">
-                        <div class="form-group">
-                            <?= Html::submitButton(Yii::t('app', '更新'), ['class' =>'btn btn-success']) ?>
-                        </div>
-                        <?php ActiveForm::end(); ?>
+                    ]) ?>
                     </div>
                 </div>
+                </div>
+            <div class="caption edit" style="display:none;">
+                <?php $newform = ActiveForm::begin([
+                    'action'=>['photo/update','id'=>$p->id],
+                    'options' => [
+                        'enctype' => 'multipart/form-data'
+                    ],  
+                ]); ?>
+                <?= $newform->field($p, 'title')->textarea(['maxlength' => true,'rows' => 3]) ?>
+                <div class="form-group field-photo-order">
+                <label class="control-label" for="photo-order">顺序</label>
+                <input type="text" id="photo-order" class="form-control" name="Photo[order]" value="<?php echo $i+1;?>">
+                <div class="help-block"></div>
+                </div>
+                <input type="hidden" value="<?php echo $parent_id;?>" name="Photo[parent_id]">
+                <input type="hidden" value="<?php echo $page_id;?>" name="Photo[page_id]">
+                <div class="form-group">
+                    <?= Html::submitButton(Yii::t('app', '更新'), ['class' =>'btn btn-success']) ?>
+                </div>
+                <?php ActiveForm::end(); ?>
+            </div>
             </div>
           </div>
-    <?php }?>
+    <?php
+        if(($j+1)%4==0){
+            echo '</div>';
+        }
+        $i++;
+     }?>
 </div>
 </div>
 
@@ -127,9 +142,16 @@ $this->registerJs('
   $(function(){
       $(".btn-update").on("click",function(e){
         e.preventDefault();
-        $(this).parents(".caption").find(".edit").toggle();
+        $(this).parents(".photo-thumb").siblings(".edit").toggle();
       });
-      })
+$(".photo-thumb").on("mouseover",function(e){
+    e.preventDefault();
+    $(this).find(".mask").show();
+}).on("mouseleave",function(e){
+    e.preventDefault();
+    $(this).find(".mask").hide();
+})
+    })
   ', View::POS_END, 'js-edit'
 );
 ?>

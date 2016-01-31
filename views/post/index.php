@@ -50,7 +50,7 @@ $this->params['menu'] =[
       <?php }}?>  
     </ul>
     <p style="margin:20px 0;">
-        <?php if($page_id){?>
+        <?php if(!$page_id){?>
         <?= Html::a(Yii::t('app', '创建新文章'), ['create'], ['class' => 'btn btn-success']) ?>
         <?php }else {?>
         <?= Html::a(Yii::t('app', '创建新文章'), ['create','page_id'=>$page_id], ['class' => 'btn btn-success']) ?>

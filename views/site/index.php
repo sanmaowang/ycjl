@@ -35,11 +35,6 @@ $this->title = '宜昌交旅 | 首页';
             <img src="<?= Yii::$app->request->baseUrl;?>/img/slogan/slogan-3-b.png" alt=""/>
           </div>
         </li>
-        <li>
-          <div class="slogan-4">
-            <img src="<?= Yii::$app->request->baseUrl;?>/img/slogan/slogan-4.png" alt=""/>
-          </div>
-        </li>
       </ul>
     </div>
   </div>
@@ -104,9 +99,8 @@ $this->registerJs('
   $(function(){
       $("body").backstretch([
           base_url+"/img/home-slider-1.jpg",
-          base_url+"/img/home-slider-7.jpg",
-          base_url+"/img/home-slider-3.jpg",
           base_url+"/img/home-slider-9.jpg",
+          base_url+"/img/home-slider-3.jpg",
         ], {fade:"normal",duration: 8000});
       $(window).on("backstretch.before", function (e, instance, index) {
         $("#sloganlist").find("li").removeClass("imgOn").eq(index).addClass("imgOn");
