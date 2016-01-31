@@ -39,7 +39,7 @@ $url = Yii::$app->request->getUrl();
         <div class="row">
           <?php foreach ($albums as $key => $album) {?>
             <div class="col-xs-4">
-              <a href="<?php echo Url::to(['view-album','id'=>$album->id])?>" class="pic-thumbnail">
+              <a href="<?php echo Url::to(['view-album','id'=>$album->id])?>" class="pic-thumbnail" target="_blank">
               <?php if($album->path){?>
               <div class="cover"><img src="<?= $album->path;?>" alt="" ></div>
               <?php }?>

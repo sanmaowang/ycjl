@@ -1,0 +1,341 @@
+.imgcontent{
+	border: 1px solid #ddd;
+	margin-top: 20px;
+	line-height: 1;
+	position: relative;
+}
+.img-main {
+	height: 750px;
+	padding: 10px 20px;
+}
+
+.imgTitles {
+	text-align: center;
+	line-height: 28px;
+	font-size: 22px;
+	font-weight: bold;
+}
+
+.imgTool {
+	line-height: 34px;
+	text-align: right;
+	color: #666
+}
+
+.bigImgContent {
+	width: 758px;
+	height: 504px;
+	text-align: center;
+	vertical-align: middle;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.bigImgContent span {
+	display: table-cell;
+	*display: inline-block;
+	vertical-align: middle;
+	*font-size: 504px;
+	width: 758px;
+	height: 504px;
+	overflow: hidden;
+}
+
+.bigImgContent span img {
+	vertical-align: middle;
+	max-height: 504px;
+	max-width: 758px;
+/*cursor:url("../img/zoom.cur"), pointer;*/
+}
+
+.imageDescription {
+	width: 100%;
+	clear: both;
+/*height:56px;*/
+	overflow: hidden;
+	text-indent: 2em;
+	padding: 10px 6px;
+	line-height: 175%;
+}
+
+#smallImgContent {
+	height: 112px;
+/*padding-left:33px;*/
+}
+
+#smallImgContent ul li{
+	*zoom:1;*vertical-align:bottom;
+	list-style: none;
+}
+
+.prevImgAtlas,.nextImgAtlas {
+	width: 110px;
+	height: 112px;
+	float: left;
+	text-align: center;
+	margin-top: 18px;
+}
+
+.nextImgAtlas {
+	float: right;
+}
+
+.prevImgAtlas img,.nextImgAtlas img {
+	width: 100px;
+	height: 75px;
+}
+
+.smallImgTab {
+/*width:600px;*/
+	height: 112px;
+/*float:left;padding:0 29px;*/
+	margin: 0 120px;
+}
+
+.prevPic,.nextPic {
+	width: 20px;
+	height: 65px;
+	display: block;
+	float: left;
+	text-indent: -9999px;
+	margin-top: 23px;
+}
+
+.prevPic {
+	background: url(../img/prev_next.gif) no-repeat right top;
+	border-right: #fff solid 4px;
+}
+
+.nextPic {
+	background: url(../img//prev_next.gif) no-repeat left top;
+	float: right;
+	border-left: #fff solid 4px;
+}
+
+.prevPic:hover {
+	background-position: left bottom;
+}
+
+.nextPic:hover {
+	background-position: right bottom;
+}
+
+#smallImgScroll {
+/*width:550px;float:left;*/
+	height: 120px;
+	position: relative;
+	overflow: hidden;
+	margin: 0 4px;
+}
+
+.smallImgList {
+	position: absolute;
+	height: 110px;
+	left: 0;
+	top: 0;
+	padding: 0;
+	margin: 0;
+	z-index: 2;
+	padding-top: 7px;
+	padding-bottom: 2px;
+}
+
+.smallPicBg {
+	width: 104px;
+	height: 82px;
+	position: absolute;
+	left: 4px;
+	top: 0;
+	z-index: 1;
+}
+
+.smallImgList li {
+	width: 110px;
+	height: 110px;
+	float: left;
+	padding: 0 6px;
+}
+
+.smallImgList li img {
+	width: 110px;
+	height: 82px;
+}
+
+.smallImglist li div {
+	height: 82px;
+}
+
+.smallImgList li a {
+	display: block;
+	width: 110px;
+	height: 82px;
+	position: relative;
+	top: 10px;
+	margin: 0 auto;
+}
+
+.smallImgList li span {
+	display: block;
+	position: absolute;
+	padding: 0 2px;
+	background: #000;
+	right: 2px;
+	bottom: 2px;
+	line-height: 16px;
+	color: #999;
+}
+
+.smallImgList li a:hover {
+	text-decoration: none;
+}
+
+.smallImgList li a:hover span {
+	background: #333;
+	color: #fff;
+}
+
+.scrollLine {
+	height: 7px;
+	position: relative;
+	margin: 0 26px;
+	display: none;
+}
+
+#scrollButton {
+	position: absolute;
+	width: 172px;
+	height: 13px;
+	left: 0;
+	top: 0;
+	cursor: e-resize;
+}
+
+#imgContent {
+	width: 100%;
+	_height: 504px;
+/*ie6需要定义宽高蛋疼中*/
+	position: relative;
+	text-align: center;
+	padding-bottom: 1px;
+	margin-bottom: 15px;
+	padding-top: 16px;
+}
+
+#imgLoading {
+	position: absolute;
+	width: 20px;
+	height: 21px;
+	left: 50%;
+	top: 240px;
+	margin-left: -10px;
+}
+
+#slideVideo {
+	cursor: pointer;
+}
+
+.popup-layer {
+	position: absolute;
+	z-index: 110;
+	width: 260px;
+	height: 109px;
+	left: 50%;
+	margin-left: -130px;
+	border: 1px solid #f3ece8;
+	top: 0;
+	color: #fff;
+	display: none;
+}
+
+.popup-layer-rel {
+	position: relative;
+	height: 109px;
+}
+
+.layer-bg {
+	width: 260px;
+	height: 109px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 5;
+	background: #000;
+	opacity: 0.7;
+	filter: Alpha(opacity=70);
+}
+
+.popup-msg {
+	position: relative;
+	z-index: 6;
+	text-align: center;
+	padding-top: 16px;
+}
+
+.popup-msg a {
+	color: #fff;
+	padding: 0 14px;
+	display: inline-block;
+	height: 27px;
+	line-height: 27px;
+	border: 1px solid #b7b3b0;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	background: #100d0a;
+	margin: 20px 0 0 3px;
+}
+
+.layer-close {
+	display: block;
+	position: absolute;
+	top: 7px;
+	right: 9px;
+	border: 1px solid #fff;
+	width: 9px;
+	height: 9px;
+	font-size: 13px;
+	text-align: center;
+	line-height: 9px;
+	cursor: pointer;
+	overflow: hidden;
+	z-index: 6;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.thisimg {
+	background-image: url(../img/thisimg.png);
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+
+a {
+	cursor: pointer;
+}
+
+.imgpn {
+	display: block;
+	width: 40%;
+	height: 100%;
+	text-indent: -9999px;
+	background-image: url(../img/blank.png);
+	position: absolute;
+	top: 0px;
+	z-index: 100;
+	overflow: hidden;
+	*zoom: 1
+}
+
+.img-prev {
+	left: 0px;
+	cursor: url("../img/left.cur"), pointer;
+}							/*如果ie下无法看到自定义鼠标把这个鼠标文件的路径改为绝对路径就OK了*/
+.img-next {
+	right: 0px;
+	cursor: url("../img/right.cur"), pointer;
+}						/*如果ie下无法看到自定义鼠标把这个鼠标文件的路径改为绝对路径就OK了*/
+.imgzoom {
+	width: 100%;
+	left: 0px;
+	cursor: url("../img/zoom.cur"), pointer;
+	z-index: 90;
+}	/*如果ie下无法看到自定义鼠标把这个鼠标文件的路径改为绝对路径就OK了*/

@@ -144,7 +144,7 @@ class SiteController extends Controller
                 'posts'=>$posts
             ]);
         }else if($page->type == 4){
-            $albums = PHoto::find()->where(['page_id'=>$page->id,'parent_id'=>0])->orderBy(['create_date'=>SORT_DESC])->all();
+            $albums = Photo::find()->where(['page_id'=>$page->id,'parent_id'=>0])->orderBy(['create_date'=>SORT_DESC])->all();
             return $this->render($mobile.'template/'.$page->template,[
                 'page'=>$page,
                 'albums'=>$albums,
@@ -168,6 +168,8 @@ class SiteController extends Controller
             $mobile = '';
         }
         $album = Photo::findOne($id);
+        $next_album = Photo::find()->where(['page_id'=>$album->page_id,'parent_id'=>0])->andWhere(['>','id',$album->id])->orderBy(['create_date'=>SORT_DESC])->one();
+        $prev_album = Photo::find()->where(['page_id'=>$album->page_id,'parent_id'=>0])->andWhere(['<','id',$album->id])->orderBy(['create_date'=>SORT_DESC])->one();
         $page = $album->page;
         if($page->parent_id == 0){
             $menu = Page::find()->where(['parent_id'=>$page->id])->all();
@@ -175,9 +177,13 @@ class SiteController extends Controller
             $menu = Page::find()->where(['parent_id'=>$page->parent_id])->all();
         }
         $photos = Photo::find()->where(['parent_id'=>$id])->all();
+
+
         return $this->render($mobile.'template/album', [
             'menu'=>$menu,
             'album'=>$album,
+            'next_album'=>$next_album,
+            'prev_album'=>$prev_album,
             'photos'=>$photos
         ]);
     }
