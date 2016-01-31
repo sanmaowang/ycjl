@@ -24,7 +24,10 @@ class UploadForm extends Model
         if ($this->validate()) { 
             foreach ($this->imageFiles as $file) {
                 $date = date("Ymd",time());
-                $path = 'uploads/picnews/'.$date.'/';  
+                $path = 'uploads/picnews/'.$date.'/';
+                if(!file_exists($path)){
+                    mkdir($path);
+                }
                 $file->saveAs($path . $file->baseName . '.' . $file->extension);
             }
             return true;
