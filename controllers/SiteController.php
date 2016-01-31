@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use app\models\Page;
 use app\models\Post;
+use app\models\Photo;
 use app\models\Menu;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
@@ -47,8 +48,14 @@ class SiteController extends Controller
             $this->layout = "//home";
             $mobile = '';
         }
-        $news = Post::find()->where(['page_id'=>14])->orderBy(['create_date'=>SORT_DESC])->all();
-        $staff = Post::find()->where(['page_id'=>39])->orderBy(['create_date'=>SORT_DESC])->one();
+
+        $news = array();
+        $news[] = Post::find()->where(['page_id'=>23])->orderBy(['create_date'=>SORT_DESC])->one();
+        $news[] = Post::find()->where(['page_id'=>14])->orderBy(['create_date'=>SORT_DESC])->one();
+        $news[] = Post::find()->where(['page_id'=>15])->orderBy(['create_date'=>SORT_DESC])->one();
+        $news[] = Post::find()->where(['page_id'=>16])->orderBy(['create_date'=>SORT_DESC])->one();
+
+        $staff = Photo::find()->where(['page_id'=>1])->orderBy(['create_date'=>SORT_DESC])->one();
 
         return $this->render($mobile.'index',[
             'news'=>$news,

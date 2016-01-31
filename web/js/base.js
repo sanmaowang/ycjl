@@ -5,7 +5,13 @@ $(function(){
 	}).on("mouseleave",function(){
 		$(this).find(".links-level-two").stop(true,true).slideUp("fast");
 	});
-
+  $("#wechat").on("mousemove",function(e){
+    e.preventDefault();
+    $(this).find(".wechat-qrcode").slideDown();
+  }).on("mouseleave",function(){
+    $(this).find(".wechat-qrcode").stop(true,true).slideUp("fast");
+  });
+  
 });
 
 function addFavorite(){

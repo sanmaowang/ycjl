@@ -37,6 +37,14 @@ use yii\widgets\ActiveForm;
       <?php ActiveForm::end();?>
       </div>
       <a href="javascript:void(0);" class="pull-right" style="color:#fff;margin:5px 0;">集团OA</a>
+      <a id="wechat" href="javascript:void(0);" class="pull-right" style="color:#fff;margin:5px 0;margin-right:20px;">
+        微信公众号
+        <div class="wechat-qrcode" style="display:none;">
+          <img src="<?php echo Yii::$app->request->baseUrl;?>/img/qrcode.jpg" width="120"/>
+          <span>扫一扫 关注交旅</span>
+        </div>
+      </a>
+      
     </div>
   </div>
 </div>

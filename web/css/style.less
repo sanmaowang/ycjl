@@ -917,6 +917,23 @@ a{
   background:#fff;
   border-radius:4px;
 }
+.wechat-qrcode{
+  position: absolute;
+  top: 30px;
+  margin-left: -25px;
+  width: 120px;
+  height: 140px;
+  background: #fff;
+  font-size: 12px;
+  text-align: center;
+  line-height: 1;
+  z-index: 1000;
+  span{
+    display: inline-block;
+    color: #333;
+    font-size: 12px;
+  }
+}
 .search-btn{
   position: absolute;
   right: 34px;
@@ -1069,7 +1086,7 @@ a{
   .div-hover
   {
     display: none;
-    background-color: #c00;
+    background-color: #ED4A4A;
     position: absolute;
     height: 48px;
     left: 0px;
@@ -1394,6 +1411,11 @@ a{
     a{
       color: #fff;
       text-decoration: none;
+           display: inline-block;
+    width: 70%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
     }
     span{
       color:#9B9B9B;
@@ -2461,25 +2483,41 @@ a.pic-thumbnail.active,a.pic-thumbnail:focus,a.pic-thumbnail:hover {
     }
   }
 }
+.mar-left{
+  background: #fff;
+  width: 36px;
+  height: 150px;
+  position: absolute;
+  left: 53px;
+  top: 0;
+}
+.mar-right{
+  background: #fff;
+  width: 42px;
+  height: 150px;
+  position: absolute;
+  right: 0px;
+  top: 0;
+}
 #mar-right{
   display: block;
   position: absolute;
-  width: 23px;
-  height: 41px;
+  width: 23*0.6px;
+  height: 41*0.6px;
   background: url(../img/index_part_right.png) no-repeat 0 0;
   background-size: 100% 100%;
-  top: 50px;
-  right: 15px;
+  top: 58px;
+  right: 12px;
 }
 #mar-left{
   display: block;
   position: absolute;
-  width: 23px;
-  height: 41px;
+  width: 23*0.6px;
+  height: 41*0.6px;
   background: url(../img/index_part_left.png) no-repeat 0 0;
   background-size: 100% 100%;
-  left: 62px;
-  top: 50px;
+  left: 10px;
+  top: 58px;
 }
 
 @media(max-height:900px){

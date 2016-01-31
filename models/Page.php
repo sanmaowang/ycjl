@@ -31,6 +31,7 @@ class Page extends \yii\db\ActiveRecord
     const TYPE_LINK = 1;
     const TYPE_SITELINK = 2;
     const TYPE_NEWS = 3;
+    const TYPE_GALLERY = 4;
 
 
     const STATUS_SHOW = 0;
@@ -42,7 +43,7 @@ class Page extends \yii\db\ActiveRecord
 
     public function getTypeLabel()
     {
-        $types = ['页面','外部链接','内部链接','新闻频道'];
+        $types = ['页面','外部链接','内部链接','新闻频道','相册'];
         return $types[$this->type];
     }
     /**

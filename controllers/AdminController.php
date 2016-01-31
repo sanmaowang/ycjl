@@ -6,7 +6,7 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use app\models\AdminLoginForm;
 use yii\filters\VerbFilter;
-
+use yii\web\DbManage;
 /**
  * Site controller
  */
@@ -26,7 +26,7 @@ class AdminController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['logout', 'index','backup'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -59,6 +59,16 @@ class AdminController extends Controller
     public function actionIndex()
     {
         return $this->goHome();
+    }
+
+    public function actionBackup()
+    {
+        if(Yii::$app->request->isPost){
+            $db = new DBManage ( '127.0.0.1', 'root', '', 'db_yc', 'utf8' );
+            $db->backup("","","");
+        }
+        return $this->render('backup', [
+        ]);
     }
 
     public function actionLogin()

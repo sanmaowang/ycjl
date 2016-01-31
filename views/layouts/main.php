@@ -19,6 +19,7 @@ AppAsset::register($this);
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
@@ -42,9 +43,12 @@ AppAsset::register($this);
           <ul class="nav navbar-nav">
             <?php
              $a = 0;
-             if(strpos(\Yii::$app->request->url,'user')){ $a = 1;}?>
+             if(strpos(\Yii::$app->request->url,'user')){ $a = 1;}
+             if(strpos(\Yii::$app->request->url,'backup')){ $a = 2;}
+             ?>
             <li <?php if($a == 0){?>class="active"<?php }?>><a href="<?= Url::to(['page/index'])?>">内容管理</a></li>
             <li <?php if($a == 1){?>class="active"<?php }?>><a href="<?= Url::to(['user/index'])?>">用户管理</a></li>
+            <li <?php if($a == 2){?>class="active"<?php }?>><a href="<?= Url::to(['user/index'])?>">数据管理</a></li>
           </ul>
           <div class="navbar-nav navbar-right nav">
             <li>

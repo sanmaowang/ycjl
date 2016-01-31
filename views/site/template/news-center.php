@@ -115,7 +115,9 @@ function cut_str($sourcestr,$cutlength)
         <div class="mod" id="huanqiu">
           <div class="hd line"><h3><a href="<?= Url::to(['site/page','slug'=>'picnews'])?>">图片新闻</a></h3></div>
           <div class="bd">
+            <div class="mar-left">
             <a id="mar-left" href="#"></a>
+            </div>
             <div id="mar" class="image-list">
               <div class="image-list-wrapper">
               <?php 
@@ -128,83 +130,13 @@ function cut_str($sourcestr,$cutlength)
                   </a>
                   <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
               </div>
-              <div class="image-list-item">
-                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
-                    <img src="<?= $post->thumb;?>">
-                  </a>
-                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
-              </div>
-              <div class="image-list-item">
-                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
-                    <img src="<?= $post->thumb;?>">
-                  </a>
-                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
-              </div>
-              <div class="image-list-item">
-                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
-                    <img src="<?= $post->thumb;?>">
-                  </a>
-                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
-              </div>
-              <div class="image-list-item">
-                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
-                    <img src="<?= $post->thumb;?>">
-                  </a>
-                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
-              </div>
-              <div class="image-list-item">
-                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
-                    <img src="<?= $post->thumb;?>">
-                  </a>
-                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
-              </div>
-              <div class="image-list-item">
-                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
-                    <img src="<?= $post->thumb;?>">
-                  </a>
-                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
-              </div>
-              <div class="image-list-item">
-                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
-                    <img src="<?= $post->thumb;?>">
-                  </a>
-                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
-              </div>
-              <div class="image-list-item">
-                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
-                    <img src="<?= $post->thumb;?>">
-                  </a>
-                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
-              </div>
-              <div class="image-list-item">
-                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
-                    <img src="<?= $post->thumb;?>">
-                  </a>
-                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
-              </div>
-              <div class="image-list-item">
-                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
-                    <img src="<?= $post->thumb;?>">
-                  </a>
-                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
-              </div>
-              <div class="image-list-item">
-                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
-                    <img src="<?= $post->thumb;?>">
-                  </a>
-                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
-              </div>
-              <div class="image-list-item">
-                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" target="_blank">
-                    <img src="<?= $post->thumb;?>">
-                  </a>
-                  <a href="<?= Url::to(['view-post','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str($post->name,20);?></a>
-              </div>
               <?php $j++; if($j == 4){break;} }?>
               </div>
             </div>
-            <a id="mar-right" href="#">
-            </a>
+            <div class="mar-right">
+              <a id="mar-right" href="#">
+              </a>
+            </div>
           </div>
         </div>
       </div>

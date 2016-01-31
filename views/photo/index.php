@@ -53,39 +53,42 @@ $this->params['menu'] =[
     </ul>
     <p style="margin:20px 0;">
     <?php if(isset($page_id)){?>
-        <?= Html::a(Yii::t('app', '创建相册'), ['create','page_id'=>$page_id], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', '创建图片新闻'), ['create-album','page_id'=>$page_id], ['class' => 'btn btn-success']) ?>
     <?php }?>
     </p>
-    
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <td>#</td>
-            <td>相册标题</td>
-            <td>操作</td>
-        </tr>
-        </thead>
-        <tbody>
-    <?php foreach ($photo as $key => $p) {?>
-        <tr>
-            <td><?= $key+1?></td>
-            <td><b><?= $p->name;?></b></td>
-            <td>
-                <a href="<?= Url::to(['post/view','id'=>$p->id])?>" class="btn btn-xs btn-primary">查看</a>
-                <?= Html::a(Yii::t('app', '修改'), ['post/update', 'id' => $p->id], ['class' => 'btn btn-xs btn-info']) ?>
-                <?= Html::a(Yii::t('app', '删除'), ['post/delete', 'id' => $p->id], [
-                    'class' => 'btn btn-xs btn-danger',
-                    'data' => [
-                        'confirm' => Yii::t('app', '您确定要删除吗?'),
-                        'method' => 'post',
-                    ],
-                ]) ?>
-            </td>
-        </tr>
-    <?php }?>
-    </tbody>
-    </table>
+    <div class="row">
+        <?php foreach ($photo as $key => $p) {?>
+              <div class="col-xs-6 col-md-3">
+                <div class="thumbnail">
+                    <?php if($p->path){?>
+                    <img src="<?php echo Yii::$app->request->baseUrl?>/<?php echo $p->path;?>" style="height: 180px; width: 100%; display: block;">
+                    <?php }else{?>
+                    <img src="holder.js/200x200" style="height: 180px; width: 100%; display: block;">
+                    <?php }?>
+                    <div class="caption">
+                        <h3><?= $p->title;?></h3>
+                        <p><?= $p->description;?></p>
+                        <p>
+                            <a href="<?= Url::to(['photo/view','id'=>$p->id])?>" class="btn btn-primary">查看</a>
+                            <?= Html::a(Yii::t('app', '修改'), ['photo/update', 'id' => $p->id], ['class' => 'btn btn-info']) ?>
+                            <?= Html::a(Yii::t('app', '删除'), ['photo/delete', 'id' => $p->id], [
+                                'class' => 'btn btn-danger',
+                                'data' => [
+                                    'confirm' => Yii::t('app', '您确定要删除吗?'),
+                                    'method' => 'post',
+                                ],
+                            ]) ?>
+                        </p>
+                    </div>
+                </div>
+              </div>
+        <?php }?>
+    </div>
     <div class="clearfix">
-          <?= LinkPager::widget(['pagination' => $pnation]) ?>  
-        </div>
+        <?= LinkPager::widget(['pagination' => $pnation]) ?>  
+    </div>
 </div>
+
+<?php 
+$this->registerJsFile('//cdn.bootcss.com/holder/2.9.1/holder.min.js',['depends' => [\yii\web\JqueryAsset::className()]]);
+?>

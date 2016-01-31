@@ -71,12 +71,14 @@ $this->title = '宜昌交旅 | 首页';
           </div>
         </div>
         <div class="column-news">
-          <h3 class="column-news-title"><i class="icon-news"></i>企业动态<span>ENTERPRISE NEWS</span><a href="<?= Url::to(['site/page','slug'=>'group_news'])?>" target="_blank" class="more">更多</a></h3>
+          <h3 class="column-news-title"><i class="icon-news"></i>最新动态<span>LATEST NEWS</span><a href="<?= Url::to(['site/page','slug'=>'group_news'])?>" target="_blank" class="more">更多</a></h3>
           <ul class="column-news-list">
             <?php if(isset($news)){
-              for($i = 0;$i < 4; $i++){?>
+              for($i = 0;$i < count($news); $i++){
+                if($news[$i]){
+            ?>
             <li><a href="<?= Url::to(['site/view-post','id'=>$news[$i]->id]);?>" target="_blank" title="<?= $news[$i]->name;?>"><?= $news[$i]->name;?></a><span><?php echo date("Y.m.d",$news[$i]->update_date);?></span></li>
-            <?php }}?>
+            <?php }}}?>
           </ul>
         </div>
        
@@ -84,9 +86,9 @@ $this->title = '宜昌交旅 | 首页';
           <h3 class="column-show-title"><i class="icon-show"></i>图片新闻<span>IMAGE NEWS</span><a href="<?= Url::to(['site/page','slug'=>'picnews'])?>" target="_blank"  class="more">更多</a></h3>
           <div class="column-thumb">
             <?php if(isset($staff)){?>
-            <a href="<?= Url::to(['site/view-post','id'=>$staff->id]);?>" class="thumb-img"  target="_blank"><img src="<?= Yii::$app->request->baseUrl;?><?= $staff->thumb;?>" alt=""></a>
+            <a href="<?= Url::to(['site/page','slug'=>'picnews'])?>" target="_blank"  class="thumb-img"><img src="<?= Yii::$app->request->baseUrl;?><?= $staff->path;?>" alt=""></a>
             <?php }?>
-            <div class="column-title"><?php echo $staff->name;?></div>
+            <!--<div class="column-title"><?php echo $staff->title;?></div>-->
           </div>
         </div>
 
