@@ -12,7 +12,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\data\Pagination;
 use yii\web\UploadedFile;
-
+setlocale(LC_ALL, 'zh_CN.GBK'); 
 /**
  * PhotoController implements the CRUD actions for Photo model.
  */

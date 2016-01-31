@@ -4,7 +4,7 @@ namespace app\models;
 use yii;
 use yii\base\Model;
 use yii\web\UploadedFile;
-
+setlocale(LC_ALL, 'zh_CN.GBK'); 
 class UploadForm extends Model
 {
     /**
@@ -34,7 +34,7 @@ class UploadForm extends Model
                     mkdir($path );
                     chmod($path, '777');
                 }
-                $file->saveAs($path . $this->get_basename($file->name) . '.' . $file->extension);
+                $file->saveAs($path . $file->baseName . '.' . $file->extension);
             }
             return true;
         } else {
