@@ -1,7 +1,7 @@
 <?php 
 
 namespace app\models;
-
+use yii;
 use yii\base\Model;
 use yii\web\UploadedFile;
 
@@ -24,9 +24,11 @@ class UploadForm extends Model
         if ($this->validate()) { 
             foreach ($this->imageFiles as $file) {
                 $date = date("Ymd",time());
-                $path = 'uploads/picnews/'.$date.'/';
-                if(!file_exists($path)){
-                    mkdir($path);
+                $path = Yii::$app->basePath.'/web/uploads/picnews/'.$date.'/';
+                if ( !file_exists($path ))
+                {
+                    mkdir($path );
+                    chmod($path, '777');
                 }
                 $file->saveAs($path . $file->baseName . '.' . $file->extension);
             }
