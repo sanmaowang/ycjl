@@ -61,11 +61,11 @@ $this->params['menu'] =[
 ]) ?>
 <input type="hidden" value="<?php echo $parent_id;?>" name="Photo[parent_id]">
 <input type="hidden" value="<?php echo $page_id;?>" name="Photo[page_id]">
-<div class="pull-left">
+<div class="pull-left" style="margin-right:20px;">
 <?= $form->field($model, 'imageFiles[]')->fileInput(['multiple' => true,'required'=>'required']) ?>
 </div>
 <div class="pull-left">
-<button id="add" class="btn btn-default">上传</button>
+<button id="add" class="btn btn-default" style="margin-top:20px">上传</button>
 </div>
 <?php ActiveForm::end() ?>
 </div>

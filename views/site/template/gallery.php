@@ -43,10 +43,10 @@ $url = Yii::$app->request->getUrl();
               <?php if($album->path){?>
               <div class="cover"><img src="<?= $album->path;?>" alt="" ></div>
               <?php }?>
-              <div class="caption">
-              <b><?php echo $album->title;?></b>
-              </div>
               </a>
+              <div class="album-title">
+              <?php echo $album->title;?>
+                </div>
             </div>
           <?php }?>
         </div>
