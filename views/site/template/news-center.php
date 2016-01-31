@@ -73,7 +73,7 @@ function cut_str($sourcestr,$cutlength)
               <?php $j=0; foreach($headlines as $key=>$h){?>
               <?php if($h->thumb){?>
               <li>
-                <a href="<?= Url::to(['view-post','id'=>$h->id])?>">
+                <a href="<?= Url::to(['view-post','id'=>$h->id])?>"  title="<?= $h->name;?>" target="_blank">
                   <img src="<?php echo $h->thumb;?>" alt="">
                 </a>
                 <div class="slide-title">
@@ -103,7 +103,7 @@ function cut_str($sourcestr,$cutlength)
                     break;
                   }
               ?>
-                <li><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"><?php echo cut_str($post->name,18);?></a> <span class="time"><?php echo date("Y-m-d",$post->update_date);?></li>
+                <li><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>" title="<?= $post->name;?>" target="_blank"><?php echo cut_str($post->name,18);?></a> <span class="time"><?php echo date("Y-m-d",$post->update_date);?></li>
               <?php 
                 $i++;
               }}?>
@@ -125,12 +125,12 @@ function cut_str($sourcestr,$cutlength)
               foreach ($pic_news as $key => $post) {
               ?>
               <div class="image-list-item">
-                  <a href="<?= Url::to(['view-album','id'=>$post->id])?>" target="_blank">
+                  <a href="<?= Url::to(['view-album','id'=>$post->id])?>"  title="<?= $post->title;?>" target="_blank">
                     <img src="<?= Yii::$app->request->baseUrl;?><?= $post->path;?>">
                   </a>
                   <a href="<?= Url::to(['view-album','id'=>$post->id])?>" class="txt" target="_blank"><?php echo cut_str(trim($post->title),20);?></a>
               </div>
-              <?php $j++; if($j == 4){break;} }?>
+              <?php $j++; if($j == 10){break;} }?>
               </div>
             </div>
             <div class="mar-right">
@@ -152,7 +152,7 @@ function cut_str($sourcestr,$cutlength)
                 $post = $industry_news[$j];
                 if($post){
             ?>
-                <li <?php if($j == 0){echo 'class="first"';}?>><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"><?php echo cut_str($post->name,20);?></a> <span class="time"><?php echo date("Y-m-d",$post->update_date);?></li>
+                <li <?php if($j == 0){echo 'class="first"';}?>><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"  title="<?= $post->name;?>" target="_blank"><?php echo cut_str($post->name,20);?></a> <span class="time"><?php echo date("Y-m-d",$post->update_date);?></li>
               <?php }}?>
             </ul>
           </div>
@@ -168,7 +168,7 @@ function cut_str($sourcestr,$cutlength)
                 $post = $media_news[$j];
                 if($post){
             ?>
-                <li <?php if($j == 0){echo 'class="first"';}?>><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"><?php echo cut_str($post->name,20);?></a> <span class="time"><?php echo date("Y-m-d",$post->update_date);?></li>
+                <li <?php if($j == 0){echo 'class="first"';}?>><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"  title="<?= $post->name;?>" target="_blank"><?php echo cut_str($post->name,20);?></a> <span class="time"><?php echo date("Y-m-d",$post->update_date);?></li>
               <?php }}?>
             </ul>
           </div>

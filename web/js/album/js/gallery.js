@@ -29,7 +29,7 @@
 			popupLayer.hideLayer();
 		});
 		//预加载第一张图片
-		var f_picSrc=$(".smallImgList li").eq(0).find("a").attr("rel");
+		var f_picSrc=$(".smallImgList li").eq(0).addClass("thisimg").find("a").attr("rel");
 		var f_img="<img src="+f_picSrc+"  alt=\"\" />";
 		$("#aimgcon").html(f_img);
 		aimgzoom.attr("href",f_picSrc);
