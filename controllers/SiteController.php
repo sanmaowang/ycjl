@@ -104,9 +104,9 @@ class SiteController extends Controller
             $links = explode(',',$menu->content);
             if($page->id == 13){
                 $group_news = Post::find()->where(['page_id'=>14])->orderBy(['create_date'=>SORT_DESC])->all();
-                $industry_news = Post::find()->where(['page_id'=>15])->orderBy(['create_date'=>SORT_DESC])->all();
-                $media_news = Post::find()->where(['page_id'=>16])->orderBy(['create_date'=>SORT_DESC])->all();
-                $pic_news = Post::find()->where(['page_id'=>39])->orderBy(['create_date'=>SORT_DESC])->limit(6)->all();
+                $industry_news = Post::find()->where(['page_id'=>15])->orderBy(['create_date'=>SORT_DESC])->limit(6)->all();
+                $media_news = Post::find()->where(['page_id'=>16])->orderBy(['create_date'=>SORT_DESC])->limit(6)->all();
+                $pic_news = Post::find()->where(['page_id'=>39])->orderBy(['create_date'=>SORT_DESC])->limit(10)->all();
                 $headlines = Post::find()->where(['is_headline'=>1])->orderBy(['create_date'=>SORT_DESC])->all();
                 return $this->render($mobile.'template/'.$page->template,[
                     'page'=>$page,

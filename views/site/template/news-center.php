@@ -146,22 +146,15 @@ function cut_str($sourcestr,$cutlength)
             <h2><a href="<?= Url::to(['site/page','slug'=>'industry_news'])?>">行业资讯</a> <span>INDUSTRY NEWS</span></h2>
           </div>
             <div class="news-list">
+              <ul>
             <?php 
-              $j = 0;
-              foreach ($industry_news as $key => $post) {
-                if($post->is_recommend == 0){
-                if($post->page_id == 15){
-                  if($j == 0){
-                    echo "<ul>";
-                  }
-              ?>
-                <li <?php if($j == 0 || $j == 6){echo 'class="first"';}?>><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"><?php echo cut_str($post->name,20);?></a> <span class="time"><?php echo date("Y-m-d",$post->update_date);?></li>
-              <?php 
-              if($j == 5){
-                echo "</ul>";
-              }
-              $j++;
-            }}}?>
+              for($j = 0; $j < count($industry_news); $j++){
+                $post = $industry_news[$j];
+                if($post){
+            ?>
+                <li <?php if($j == 0){echo 'class="first"';}?>><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"><?php echo cut_str($post->name,20);?></a> <span class="time"><?php echo date("Y-m-d",$post->update_date);?></li>
+              <?php }}?>
+            </ul>
           </div>
         </div>
         <div class="col-news-column-right">
@@ -169,20 +162,15 @@ function cut_str($sourcestr,$cutlength)
             <h2><a href="<?= Url::to(['site/page','slug'=>'media_focus'])?>">媒体聚焦</a> <span>MEDIA FOCUS</span></h2>
           </div>
           <div class="news-list">
+            <ul>
             <?php 
-              $j = 0;
-              foreach ($media_news as $key => $post) {
-                  if($j == 0){
-                    echo "<ul>";
-                  }
-              ?>
-                <li <?php if($j == 0 || $j == 6){echo 'class="first"';}?>><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"><?php echo cut_str($post->name,20);?></a> <span class="time"><?php echo date("Y-m-d",$post->update_date);?></li>
-              <?php 
-              if($j == 5){
-                echo "</ul>";
-              }
-              $j++;
-              }?>
+              for($j = 0; $j < count($media_news); $j++){
+                $post = $media_news[$j];
+                if($post){
+            ?>
+                <li <?php if($j == 0){echo 'class="first"';}?>><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>"><?php echo cut_str($post->name,20);?></a> <span class="time"><?php echo date("Y-m-d",$post->update_date);?></li>
+              <?php }}?>
+            </ul>
           </div>
           
         </div>
