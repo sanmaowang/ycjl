@@ -88,7 +88,7 @@ $this->title = '宜昌交旅 | 首页';
             <?php if(isset($staff)){?>
             <a href="<?= Url::to(['site/page','slug'=>'picnews'])?>" target="_blank"  class="thumb-img"><img src="<?= Yii::$app->request->baseUrl;?><?= $staff->path;?>" alt=""></a>
             <?php }?>
-            <!--<div class="column-title"><?php echo $staff->title;?></div>-->
+            <!--<div class="column-title"><?php //echo $staff->title;?></div>-->
           </div>
         </div>
 
