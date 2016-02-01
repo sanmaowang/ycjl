@@ -31,7 +31,7 @@ $url = Yii::$app->request->getUrl();
                     <a class="imgpn img-next">下一张</a>
                     <a target="_blank" class="imgpn imgzoom" id="imgzoom">放大</a>
                     <div class="bigImgContent" id="bigImgContent"><a id="aimgcon"><img src="<?= $album->path;?>"/></a></div>
-                    <div class="imageDescription"></div>
+                    <div class="imageDescription"><?= $album->title;?></div>
                  </div>
                 <!--缩略图-->
                 <div id="smallImgContent">
