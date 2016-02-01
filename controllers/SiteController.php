@@ -176,7 +176,7 @@ class SiteController extends Controller
         }else{
             $menu = Page::find()->where(['parent_id'=>$page->parent_id])->all();
         }
-        $photos = Photo::find()->where(['parent_id'=>$id])->all();
+        $photos = Photo::find()->where(['parent_id'=>$id])->orderBy(['order'=>SORT_ASC])->all();
 
 
         return $this->render($mobile.'template/album', [
