@@ -18,10 +18,12 @@ $url = Yii::$app->request->getUrl();
           <?= Breadcrumb::widget();?>
         </div>
         <div class="content">
+          <div class="text-center" style="text-align:center;">
           <h3><?php echo $album->title;?></h3>
           <span class="time">
             <?php echo date("Y年m月d日",$album->update_date);?>
           </span>
+          </div>
           <div class="brdddd imgcontent">
           <div class="img-main">
                <div class="imgTool">可以使用 ← 左 右→ 键来翻页</div>
