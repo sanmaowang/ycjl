@@ -39,10 +39,12 @@ $this->title = '宜昌交旅 | 首页';
       <div class="news-header" style="margin-top:0;">
         <h2><a href="<?= Url::to(['site/page','slug'=>'group_news'])?>">企业动态</a> <span>ENTERPRISE NEWS</span></h2>
       </div>
-      <?php if(isset($news)){
-        foreach ($news as $key => $post) {
-      ?>
       <ul class="media-list news-list">
+        <?php if(isset($news)){
+          for($i = 0;$i < count($news); $i++){
+            if($news[$i]){
+              $post = $news[$i];
+        ?>
       <li class="media">
         <a href="<?php echo Url::to(['view-post','id'=>$post->id])?>">
         <div class="media-body">
@@ -57,7 +59,7 @@ $this->title = '宜昌交旅 | 首页';
         </div>
         </a>
       </li>
-        <?php }}?>
+      <?php }}}?>
       </ul>
    	</div>
 	</div>
