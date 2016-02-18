@@ -78,7 +78,7 @@ class Page extends \yii\db\ActiveRecord
             'id' => Yii::t('app', 'ID'),
             'parent_id' => Yii::t('app', '上级栏目'),
             'user_id' => Yii::t('app', 'User ID'),
-            'name' => Yii::t('app', '名称'),
+            'name' => Yii::t('app', '栏目名称'),
             'english_name' => Yii::t('app', '英文名称'),
             'slug' => Yii::t('app', 'Seo简称'),
             'url' => Yii::t('app', '链接地址'),
@@ -113,4 +113,8 @@ class Page extends \yii\db\ActiveRecord
         return $this->hasMany( Post::className(), ['page_id' => 'id']);
     }
 
+    public function getParent()
+    {
+        return Page::findOne(['id' => $this->parent_id]);
+    }    
 }

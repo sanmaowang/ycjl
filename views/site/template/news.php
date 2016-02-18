@@ -40,6 +40,7 @@ $url = Yii::$app->request->getUrl();
           <h2>最新资讯 <span>LATEST NEWS</span></h2>
         </div>
         <div class="news-list">
+          <?php if(isset($posts) && count($posts)>0){?>
           <ul>
             <?php foreach ($posts as $key => $post) {?>
             <!--?php if($key == 0){?>
@@ -62,6 +63,9 @@ $url = Yii::$app->request->getUrl();
             <?php //}?>
             <?php }?>
           </ul>
+          <?php }else {?>
+          <p><br></p><p class="be-late">内容待更新</p><p><br></p>
+          <?php }?>
         </div>
         <div class="clearfix">
           <?= LinkPager::widget(['pagination' => $pnation]) ?>  

@@ -37,6 +37,7 @@ $url = Yii::$app->request->getUrl();
         <?= Breadcrumb::widget();?>
       </div>
       <div class="news-main">
+        <?php if(isset($posts) && count($posts)>0){?>
         <div class="news-header type-header">
           <h2>最新动态 <span>LATEST NEWS</span></h2>
         </div>
@@ -57,6 +58,9 @@ $url = Yii::$app->request->getUrl();
             <?php }?>
           </ul>
         </div>
+        <?php }else{?>
+          <p><br></p><p class="be-late">内容待更新</p><p><br></p>
+        <?php }?>
         <div class="clearfix">
           <?= LinkPager::widget(['pagination' => $pnation]) ?>  
         </div>

@@ -18,20 +18,33 @@ use yii\widgets\ActiveForm;
           'labelOptions' => ['class' => 'col-md-2 control-label'],
       ],
   ]); ?>
-  
-  <input type="hidden" id="page-parent_id" class="form-control" name="Page[parent_id]" value="<?php echo $parent_id;?>"/>
+  <?php if($parent_id != 0){?>
+  <div class="form-group field-page-parent_id">
+    <label class="col-md-2 control-label" for="page-type">上级栏目</label>
+    <div class="col-md-6">
+      <select name="Page[parent_id]" class="form-control" id="page-type" <?php if($model->isNewRecord){ echo "readonly='true'";}?>>
+        <?php 
+         foreach ($pages as $key => $p) {?>
+          <option value="<?= $p->id?>" <?php if($parent_id == $p->id){ echo "selected = 'selected'";}?>><?= $p->name;?></option>
+        <?php }?>
+      </select>
+    </div>
+    <div class="col-lg-8 col-lg-offset-2"><div class="help-block"></div></div>
+  </div>
+  <?php }?>
+  <!-- <input type="hidden" id="page-parent_id" class="form-control" name="Page[parent_id]" value="<?php // echo $parent_id;?>"/> -->
   <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-  <?= $form->field($model, 'slug')->textInput(['maxlength' => true]) ?>
+  <?= $form->field($model, 'slug')->textInput(['maxlength' => true,'placeholder'=>'栏目的英文链接简称']) ?>
 
   <div class="form-group field-page-type">
     <label class="col-md-2 control-label" for="page-type">类型</label>
     <div class="col-md-6">
       <select name="Page[type]" class="form-control" id="page-type">
-        <option value="0">单页</option>
+        <option value="0" <?php if($model->type == '0'){ echo "selected = 'selected'";}?>>单页</option>
         <!-- <option value="1">站内链接</option> -->
         <!-- <option value="2">站外链接</option> -->
-        <option value="3">新闻频道</option>
+        <option value="3" <?php if($model->type == '3'){ echo "selected = 'selected'";}?>>新闻频道</option>
       </select>
     </div>
     <div class="col-lg-8 col-lg-offset-2"><div class="help-block"></div></div>

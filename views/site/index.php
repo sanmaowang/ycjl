@@ -78,7 +78,7 @@ $this->title = '宜昌交旅 | 首页';
         </div>
        
         <div class="column-show">
-          <h3 class="column-show-title"><i class="icon-show"></i>图片新闻<span>IMAGE NEWS</span><a href="<?= Url::to(['site/page','slug'=>'picnews'])?>" target="_blank"  class="more">更多</a></h3>
+          <h3 class="column-show-title"><i class="icon-show"></i>图片新闻<span>IMAGE NEWS</span><a href="<?= Url::to(['site/page','slug'=>'news'])?>" target="_blank"  class="more">更多</a></h3>
           <div class="column-thumb">
             <?php if(isset($staff)){?>
             <a href="<?= Url::to(['site/page','slug'=>'picnews'])?>" target="_blank"  class="thumb-img"><img src="<?= Yii::$app->request->baseUrl;?><?= $staff->path;?>" alt=""></a>
