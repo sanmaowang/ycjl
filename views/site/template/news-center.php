@@ -152,7 +152,7 @@ $(function(){
   });
   $('#mar').marquee({
     showNum: 10,
-    auto: false,
+    auto: true,
     prevElement: $('#mar-left'),
     nextElement: $('#mar-right'),
   });
