@@ -93,16 +93,29 @@ class PageController extends Controller
     public function actionCreate()
     {
         $model = new Page();
+        $pages = Page::find()->all();
         $request = Yii::$app->request;
         $parent_id = $request->get('page_id', 0);
         if ($model->load(Yii::$app->request->post())) {
             $model->parent_id = $parent_id;
+            if($model->type == 4){
+                $model->template = 'gallery';
+            }else if($model->type == 3){
+                if($parent_id == 13){
+                    $model->template = 'news';
+                }else{
+                    $model->template = 'sub-news';
+                }
+            }else if($model->type == 1){
+                $model->template = "links";
+            }
             if($model->save()){
                 return $this->redirect(['index']);
             }
         } else {
             return $this->render('create', [
                 'model' => $model,
+                'pages'=>$pages,
                 'parent_id'=>$parent_id
             ]);
         }
@@ -117,12 +130,29 @@ class PageController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        $pages = Page::find()->all();
+        if ($model->load(Yii::$app->request->post())) {
+            if($model->type == 4){
+                $model->template = 'gallery';
+            }else if($model->type == 3){
+                if($model->parent->id == 13){
+                    $model->template = 'news';
+                }else{
+                    $model->template = "sub-news";
+                }
+            }else if($model->type == 1){
+                $model->template = "links";
+            }
+            else{
+                $model->template = 'page';
+            }
+            if($model->save()){
+                return $this->redirect(['index']);
+            }
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'pages'=>$pages,
                 'parent_id'=>$model->parent_id
             ]);
         }

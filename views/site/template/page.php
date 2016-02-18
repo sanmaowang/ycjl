@@ -238,6 +238,7 @@ $url = Yii::$app->request->getUrl();
   </div>
 </div>
         <?php }elseif($page->id == 10){?>
+        <?php if(isset($filesnames) && count($filesnames)>0){?>
         <ul id="myGallery">
           <?php 
            $path = \Yii::getAlias('@webroot').DIRECTORY_SEPARATOR.'vi-source'.DIRECTORY_SEPARATOR;
@@ -249,6 +250,9 @@ $url = Yii::$app->request->getUrl();
            }
           ?>
         </ul>
+        <?php }else{?>
+          <p><br></p><p class="be-late">内容待更新</p><p><br></p>
+        <?php }?>
         <?php 
           $this->registerCssFile('@web/js/gallery/css/jquery.galleryview-3.0-dev.css');//注册自定义js
           $this->registerJsFile('@web/js/gallery/js/jquery.timers-1.2.js',['depends' => [\yii\web\JqueryAsset::className()]]);
@@ -264,7 +268,13 @@ $url = Yii::$app->request->getUrl();
           })",View::POS_END,'show');
         ?>
         <?php }else{?>
-        <?php echo $page->content;?>
+        <?php
+        if(isset($page->content) && $page->content !=""){
+         echo $page->content;
+        }else{?>
+          <p><br></p><p class="be-late">内容待更新</p><p><br></p>
+        <?php }
+        ?>
         <?php }?>
       </div>
       <?= Hot::widget();?>

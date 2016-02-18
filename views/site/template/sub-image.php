@@ -41,6 +41,7 @@ $url = Yii::$app->request->getUrl();
         </div>
         <div class="news-image-column">
         <div class="row">
+          <?php if(isset($posts) && count($posts)>0){?>
           <?php foreach ($page->posts as $key => $post) {?>
             <div class="col-xs-4">
               <a href="<?php echo Url::to(['view-post','id'=>$post->id])?>" class="pic-thumbnail">
@@ -52,6 +53,8 @@ $url = Yii::$app->request->getUrl();
               </div>
               </a>
             </div>
+          <?php }else{?>
+          <p><br></p><p class="be-late">内容待更新</p><p><br></p>
           <?php }?>
         </div>
         </div>

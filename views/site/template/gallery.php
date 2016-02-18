@@ -37,6 +37,7 @@ $url = Yii::$app->request->getUrl();
       <div class="news-main">
         <div class="news-image-column">
         <div class="row">
+          <?php if(isset($albums) && count($albums) > 0){?>
           <?php foreach ($albums as $key => $album) {?>
             <div class="col-xs-4">
               <a href="<?php echo Url::to(['view-album','id'=>$album->id])?>" class="pic-thumbnail"  title="<?= $album->title;?>" target="_blank">
@@ -48,6 +49,9 @@ $url = Yii::$app->request->getUrl();
               <?php echo $album->title;?>
               </a>
             </div>
+          <?php }?>
+          <?php }else{?>
+          <p><br></p><p class="be-late">内容待更新</p><p><br></p>
           <?php }?>
         </div>
         </div>

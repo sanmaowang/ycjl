@@ -49,12 +49,12 @@ class SiteController extends Controller
             $mobile = '';
         }
 
-        $news = array();
-        $news[] = Post::find()->where(['page_id'=>27])->orderBy(['create_date'=>SORT_DESC])->one();
-        $news[] = Post::find()->where(['page_id'=>14])->orderBy(['create_date'=>SORT_DESC])->one();
-        $news[] = Post::find()->where(['page_id'=>15])->orderBy(['create_date'=>SORT_DESC])->one();
-        $news[] = Post::find()->where(['page_id'=>16])->orderBy(['create_date'=>SORT_DESC])->one();
-
+        // $news = array();
+        // $news[] = Post::find()->where(['page_id'=>27])->orderBy(['create_date'=>SORT_DESC])->one();
+        // $news[] = Post::find()->where(['page_id'=>14])->orderBy(['create_date'=>SORT_DESC])->one();
+        // $news[] = Post::find()->where(['page_id'=>15])->orderBy(['create_date'=>SORT_DESC])->one();
+        // $news[] = Post::find()->where(['page_id'=>16])->orderBy(['create_date'=>SORT_DESC])->one();
+        $news = Post::find()->orderBy(['create_date'=>SORT_DESC])->limit(4)->all();
         $staff = Photo::find()->where(['page_id'=>1])->orderBy(['create_date'=>SORT_DESC])->one();
 
         return $this->render($mobile.'index',[

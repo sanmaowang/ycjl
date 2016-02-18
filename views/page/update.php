@@ -31,6 +31,7 @@ $this->params['menu'] =[
 	</div>
     <?= $this->render('_form', [
         'model' => $model,
+        'pages' => $pages,
         'parent_id'=>$parent_id
     ]) ?>
 
