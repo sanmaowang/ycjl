@@ -20,12 +20,15 @@ $this->title = '宜昌交旅 | 首页';
           </div>
         </li>
         <li>
-          <div class="slogan-2-left">
+          <div class="slogan-4 ">
+            <img src="<?= Yii::$app->request->baseUrl;?>/img/slogan/slogan-4.png" alt=""/>
+          </div>
+          <!-- <div class="slogan-2-left">
             <img src="<?= Yii::$app->request->baseUrl;?>/img/slogan/slogan-2-1.png" alt=""/>
           </div>
           <div class="slogan-2-right">
             <img src="<?= Yii::$app->request->baseUrl;?>/img/slogan/slogan-2-2.png" alt=""/>
-          </div>
+          </div> -->
         </li>
         <li>
           <div class="slogan-3-left">
