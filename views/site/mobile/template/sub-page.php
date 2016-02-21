@@ -56,9 +56,9 @@ $url = Yii::$app->request->getUrl();
       </div>
       <div class="col-xs-12">
         <div class="thumbnail clearfix">
-          <img src="<?php echo Yii::$app->request->baseUrl;?>/img/column/sub-jy4.png" alt="" width="100%">
+          <img src="<?php echo Yii::$app->request->baseUrl;?>/img/column/sub-jy5.png" alt="" width="100%">
           <div class="caption">
-            <h3><a href="<?php echo Url::to(['site/page','slug'=>'ycqczl'])?>" target="_blank">宜昌行胜建设投资有限公司</a></h3></a>
+            <h3><a href="<?php echo Url::to(['site/page','slug'=>'xsjt'])?>" target="_blank">宜昌行胜建设投资有限公司</a></h3></a>
             <p>主营业务：房地产开发、物业管理、水力资源开发、旅游资源开发、停车服务。</p>
           </div> 
         </div>
