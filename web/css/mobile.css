@@ -40,8 +40,11 @@ h2 code,h3 code,h4 code {
 .postit{
   margin: 20px 0 0;
 }
+.content{
+  overflow-x: hidden;
+}
 .content img {
-  max-width: 100%;
+  max-width: 100% !important;
   width: 100%;
 }
 .news-slide{
