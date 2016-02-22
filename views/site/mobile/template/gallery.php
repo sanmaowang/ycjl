@@ -22,24 +22,21 @@ $url = Yii::$app->request->getUrl();
       </div>
       
       <div class="row">
-        <?php foreach ($posts as $key => $post) {?>
+        <?php foreach ($albums as $key => $album) {?>
           <div class="col-xs-12">
             <div class="thumbnail clearfix">
-              <?php if($post->thumb){?>
-              <img src="<?= $post->thumb;?>" alt="">
-              <?php }?>
+              <a href="<?php echo Url::to(['view-album','id'=>$album->id])?>" class="pic-thumbnail"  title="<?= $album->title;?>" target="_blank">
+                <?php if($album->path){?>
+                <div class="cover"><img src="<?= $album->path;?>" alt="" ></div>
+                <?php }?>
+                </a>
               <div class="caption">
-                <h3><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>" target="_blank"><?php echo $post->name;?></a></h3></a>
-                <p><?= $post->excerpt;?></p>
-                <p><span class="time"><?php echo date("Y年m月d日",$post->update_date);?></span></p>
+                <h3><a href="<?php echo Url::to(['view-album','id'=>$album->id])?>" target="_blank"><?php echo $album->title?></a></h3></a>
               </div> 
             </div>
           </div>
         <?php }?>
       </div>
-      <div class="clearfix">
-        <?= LinkPager::widget(['pagination' => $pnation]) ?>  
-      </div> 
       </div>
     <?php if(isset($menu) && count($menu)>0){?>
       <div class="menu">

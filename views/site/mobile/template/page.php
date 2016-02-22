@@ -20,11 +20,7 @@ $url = Yii::$app->request->getUrl();
     <?= Breadcrumb::widget();?>
       </div>
       <div id="content" class="content <?php echo $page->slug;?>">
-        <?php if($page->id == 6){?>
-        <div id="develop_hype_container" style="position:relative;width:320px;height:680px;overflow:hidden;" aria-live="polite">
-          <script type="text/javascript" charset="utf-8" src="<?php echo \Yii::$app->request->baseUrl?>/js/mobile.hyperesources/mobile_hype_generated_script.js"></script>
-        </div>
-        <?php }elseif($page->id == 10){?>
+        <?php if($page->id == 10){?>
         <ul id="myGallery">
           <?php 
            $path = \Yii::getAlias('@webroot').DIRECTORY_SEPARATOR.'vi-source'.DIRECTORY_SEPARATOR;
