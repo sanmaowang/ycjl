@@ -8,7 +8,7 @@ use app\widgets\Breadcrumb;
 use yii\widgets\LinkPager;
 use app\widgets\Hot;
 
-$this->title = $page->name;
+$this->title = $album->title;
 $url = Yii::$app->request->getUrl();
 ?>
   <div class="container">
