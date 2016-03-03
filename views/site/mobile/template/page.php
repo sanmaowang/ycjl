@@ -21,31 +21,72 @@ $url = Yii::$app->request->getUrl();
       </div>
       <div id="content" class="content <?php echo $page->slug;?>">
         <?php if($page->id == 10){?>
-        <ul id="myGallery">
+
+
           <?php 
            $path = \Yii::getAlias('@webroot').DIRECTORY_SEPARATOR.'vi-source'.DIRECTORY_SEPARATOR;
            $filesnames = scandir($path);
+           $arr = [];
            foreach ($filesnames as $key => $img) {
             if(strpos($img,'jpg')){
-              echo '<li><img src="'.\Yii::$app->request->baseUrl."/vi-source/".$img.'" alt="VI" />';
+              array_push($arr,$img);
             }
            }
+           $cover = $arr[0];
           ?>
-        </ul>
-        <?php 
-          $this->registerCssFile('@web/js/gallery/css/jquery.galleryview-3.0-dev.css');//注册自定义js
-          $this->registerJsFile('@web/js/gallery/js/jquery.timers-1.2.js',['depends' => [\yii\web\JqueryAsset::className()]]);
-          $this->registerJsFile('@web/js/gallery/js/jquery.easing.1.3.js',['depends' => [\yii\web\JqueryAsset::className()]]);
-          $this->registerJsFile('@web/js/gallery/js/jquery.galleryview-3.0-dev.js',['depends' => [\yii\web\JqueryAsset::className()]]);
-          $this->registerJs("
-          $(function(){
-            var _width = parseInt($('.main-right').css('width'))- 20;
-            $('#myGallery').galleryView({
-              panel_width:_width,
-              panel_height:_width*0.71
-            });
-          })",View::POS_END,'show');
-        ?>
+          <!-- <div class="text-center" style="text-align:center;">
+            <h3>集团VI</h3>
+          </div> -->
+            
+            <div class="brdddd imgcontent">
+            <div class="img-main">
+                 <div class="imgTool">可以使用 ← 左 右→ 键来翻页</div>
+                 <!--内容展示区域-->
+                  <div id="imgContent">
+                      <a class="imgpn img-prev">上一张</a>
+                      <a class="imgpn img-next">下一张</a>
+                      <a target="_blank" class="imgpn imgzoom" id="imgzoom">放大</a>
+                      <div class="bigImgContent" id="bigImgContent"><a id="aimgcon">
+                        <?php echo '<img src="'.\Yii::$app->request->baseUrl."/vi-source/".$cover.'" />'?>
+                      </a></div>
+                      <div class="imageDescription">集团VI</div>
+                   </div>
+                  <!--缩略图-->
+                  <div id="smallImgContent">
+                   <div class="smallImgTab">
+                       <a class="prevPic">上一张</a>
+                       <a class="nextPic">下一张</a>
+                       <div id="smallImgScroll">
+                         <ul class="smallImgList">
+                          <?php 
+                          foreach ($filesnames as $key => $img) {
+                            if(strpos($img,'jpg')){
+                              echo '<li><div><a href="javascript:void(0)" rel="'.\Yii::$app->request->baseUrl."/vi-source/".$img.'"><img src="'.\Yii::$app->request->baseUrl."/vi-source/".$img.'" alt="VI" width="100" height="75" /></div></li>';
+                            }
+                           }
+                          ?>
+                         </ul>
+                       </div>
+                    </div>
+                  </div>
+                  <!--//缩略图-->
+                </div>
+            </div>
+            <div class="popup-layer">
+               <div class="popup-layer-rel">
+                   <div class="layer-bg"></div>
+                   <div class="popup-msg">您已经浏览完所有图片<br />
+                  <a href="<?= Url::to(['site/page','slug'=>$page->slug]);?>" target="_self">返回</a></div>
+                   <span class="layer-close" title="关闭">×</span>
+               </div>
+            </div>
+          <?php 
+            $this->registerCssFile('@web/js/album/css/gallery.css');//注册自定义js
+            $this->registerCssFile('@web/js/album/css/gallery.mobile.css');//注册自定义js
+            $this->registerJsFile('@web/js/album/js/gallery.vi.js',['depends' => [\yii\web\JqueryAsset::className()]]);
+          ?>
+
+
         <?php }else{?>
         <?php echo $page->content;?>
         <?php }?>
