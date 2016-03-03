@@ -22,7 +22,7 @@ $url = Yii::$app->request->getUrl();
       </div>
       
       <div class="row">
-        <?php if(isset($albums)){ 
+        <?php if(isset($albums) && count($albums) > 0){ 
           foreach ($albums as $key => $album) {?>
           <div class="col-xs-12">
             <div class="thumbnail clearfix">

@@ -88,7 +88,13 @@ $url = Yii::$app->request->getUrl();
 
 
         <?php }else{?>
-        <?php echo $page->content;?>
+        <?php
+        if(isset($page->content) && $page->content !=""){
+         echo $page->content;
+        }else{?>
+          <p><br></p><p class="be-late">内容待更新</p><p><br></p>
+        <?php }
+        ?>
         <?php }?>
       </div>
   <?php if(isset($menu) && count($menu)>0){?>
