@@ -46,7 +46,7 @@ $url = Yii::$app->request->getUrl();
           </div>
         <?php }?>
         <?php }else {?>
-          <p><br></p><p class="be-late">内容待更新</p><p><br></p>
+          <p><br></p><p class="be-late text-center">内容待更新</p><p><br></p>
           <?php }?>
       </div>
       <div class="clearfix">

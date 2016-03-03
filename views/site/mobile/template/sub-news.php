@@ -20,6 +20,7 @@ $url = Yii::$app->request->getUrl();
     <?= Breadcrumb::widget();?>
       </div>
       <div class="row">
+        <?php if(isset($posts) && count($posts)>0){?>
         <?php foreach ($posts as $key => $post) {?>
           <div class="col-xs-12">
             <div class="thumbnail clearfix">
@@ -33,6 +34,9 @@ $url = Yii::$app->request->getUrl();
               </div> 
             </div>
           </div>
+        <?php }?>
+        <?php }else{?>
+          <p><br></p><p class="be-late text-center">内容待更新</p><p><br></p>
         <?php }?>
       </div>
       <div class="clearfix">
