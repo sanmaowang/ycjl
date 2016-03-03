@@ -238,7 +238,6 @@ $url = Yii::$app->request->getUrl();
   </div>
 </div>
         <?php }elseif($page->id == 10){?>
-        <?php if($page->id == 10){?>
         <?php if(isset($filesnames) && count($filesnames)>0){?>
         <ul id="myGallery">
           <?php 
