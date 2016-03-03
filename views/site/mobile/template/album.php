@@ -81,5 +81,6 @@ $url = Yii::$app->request->getUrl();
   </div>
 <?php 
   $this->registerCssFile('@web/js/album/css/gallery.css');//注册自定义js
-  $this->registerJsFile('@web/js/album/js/gallery.js',['depends' => [\yii\web\JqueryAsset::className()]]);
+  $this->registerCssFile('@web/js/album/css/gallery.mobile.css');//注册自定义js
+  $this->registerJsFile('@web/js/album/js/gallery.mobile.js',['depends' => [\yii\web\JqueryAsset::className()]]);
 ?>
