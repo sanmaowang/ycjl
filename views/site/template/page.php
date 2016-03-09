@@ -264,7 +264,7 @@ $url = Yii::$app->request->getUrl();
             });
           })",View::POS_END,'show');
         ?>
-        <?php }else{?>
+        <?php }}else{?>
         <?php
         if(isset($page->content) && $page->content !=""){
          echo $page->content;
