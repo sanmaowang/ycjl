@@ -250,9 +250,6 @@ $url = Yii::$app->request->getUrl();
            }
           ?>
         </ul>
-        <?php }else{?>
-          <p><br></p><p class="be-late">内容待更新</p><p><br></p>
-        <?php }?>
         <?php 
           $this->registerCssFile('@web/js/gallery/css/jquery.galleryview-3.0-dev.css');//注册自定义js
           $this->registerJsFile('@web/js/gallery/js/jquery.timers-1.2.js',['depends' => [\yii\web\JqueryAsset::className()]]);
