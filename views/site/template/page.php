@@ -238,7 +238,6 @@ $url = Yii::$app->request->getUrl();
   </div>
 </div>
         <?php }elseif($page->id == 10){?>
-        <?php if(isset($filesnames) && count($filesnames)>0){?>
         <ul id="myGallery">
           <?php 
            $path = \Yii::getAlias('@webroot').DIRECTORY_SEPARATOR.'vi-source'.DIRECTORY_SEPARATOR;
@@ -264,7 +263,7 @@ $url = Yii::$app->request->getUrl();
             });
           })",View::POS_END,'show');
         ?>
-        <?php }}else{?>
+        <?php }else{?>
         <?php
         if(isset($page->content) && $page->content !=""){
          echo $page->content;
