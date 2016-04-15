@@ -108,7 +108,7 @@ $url = Yii::$app->request->getUrl();
           <div class="point"><b></b></div>
           
           <div class="liright">
-            <div class="histt"><a href="#">宜昌行胜建设投资有限公司登记成立。</a></div>
+            <div class="histt"><a href="#">宜昌行胜建设投资有限公司登记成立</a></div>
             <div class="hisct"></div>
           </div>
         </div>
@@ -125,7 +125,7 @@ $url = Yii::$app->request->getUrl();
           <div class="point"><b></b></div>
           
           <div class="liright">
-            <div class="histt"><a href="#">宜昌交旅集团汽车租赁有限公司正式挂牌成立。</a></div>
+            <div class="histt"><a href="#">宜昌交旅集团汽车租赁有限公司正式挂牌成立</a></div>
             <div class="hisct">宜昌交旅集团汽车租赁有限公司是宜昌交旅集团旗下的全资子公司。公司主打中高端汽车租赁市场，面向社会出行需求，提供汽车长租、短租、个性化定制及驾驶员代驾等服务。</div>
           </div>
         </div>
@@ -143,7 +143,7 @@ $url = Yii::$app->request->getUrl();
           <div class="point"><b></b></div>
           
           <div class="liright">
-            <div class="histt"><a href="#">交运集团国有股权无偿划转至宜昌交旅集团。</a></div>
+            <div class="histt"><a href="#">交运集团国有股权无偿划转至宜昌交旅集团</a></div>
             <div class="hisct">宜昌市国资委将其持有的交运集团47,604,636股股份（占交运公司总股本的35.66%）无偿划转给宜昌交旅集团，此次股权划转于2015年7月21日完成股份过户登记手续。</div>
           </div>
         </div>
@@ -212,7 +212,7 @@ $url = Yii::$app->request->getUrl();
           <div class="point"><b></b></div>
           
           <div class="liright">
-            <div class="histt"><a href="#">公交集团、三峡旅游公司国有股权至宜昌交旅游产业发展集团有限公司。</a></div>
+            <div class="histt"><a href="#">公交集团、三峡旅游公司国有股权至宜昌交旅游产业发展集团有限公司</a></div>
             <div class="hisct">根据宜市国资产权[2015]9号文件，市国资委划转公交集团、三峡旅游公司国有股权至宜昌交旅游产业发展集团有限公司。</div>
           </div>
         </div>
