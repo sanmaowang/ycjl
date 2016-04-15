@@ -113,8 +113,8 @@ class PhotoController extends Controller
                     $photo->path = $path. $image->baseName . '.' . $image->extension;
                     $photo->page_id = $album->page_id;
                     $photo->parent_id = $album->id;
-                    $photo->create_date =  mktime();
-                    $photo->update_date =  mktime();
+                    $photo->create_date =  time();
+                    $photo->update_date =  time();
                     $photo->save();
                 }
                 return $this->redirect(['view','id'=>$album->id]);
@@ -142,8 +142,8 @@ class PhotoController extends Controller
         $model = new Photo();
         $request = Yii::$app->request;
         $page_id = $request->get('page_id');
-        $model->create_date =  mktime();
-        $model->update_date =  mktime();
+        $model->create_date =  time();
+        $model->update_date =  time();
 
         if ($model->load(Yii::$app->request->post())) {
             $model->page_id = $page_id;
@@ -181,8 +181,8 @@ class PhotoController extends Controller
                     $photo->path = $path. $image->baseName . '.' . $image->extension;
                     $photo->page_id = $page_id;
                     $photo->parent_id = 0;
-                    $photo->create_date =  mktime();
-                    $photo->update_date =  mktime();
+                    $photo->create_date =  time();
+                    $photo->update_date =  time();
                     $photo->save();
                 }
                 return $this->redirect(['home','page_id'=>$page_id]);

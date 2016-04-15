@@ -37,7 +37,7 @@ $url = Yii::$app->request->getUrl();
         <?= Breadcrumb::widget();?>
       </div>
       <div id="content" class="content <?php echo $page->slug;?>">
-        <?php if(isset($page->content) && $page->content != "")?>
+        <?php if(isset($page->content) && $page->content != ""){?>
         <?php echo $page->content;?>
         <?php }else{?>
           <p><br></p><p class="be-late">内容待更新</p><p><br></p>
