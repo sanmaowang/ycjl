@@ -205,11 +205,11 @@ class PhotoController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
         if ($model->load(Yii::$app->request->post())) {
-          var_dump($model->order);
+          $model->create_date = strtotime($model->create_date);
+          $model->update_date = strtotime($model->update_date);
            if($model->save()){
-            return $this->redirect(['view', 'id' => $model->parent_id,'page_id'=>$model->page_id]);
+              return $this->redirect(['update','id'=>$id]);
             }
         } else {
             return $this->render('update', [

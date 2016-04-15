@@ -90,6 +90,3 @@ $this->params['menu'] =[
     </div>
 </div>
 
-<?php 
-$this->registerJsFile('//cdn.bootcss.com/holder/2.9.1/holder.min.js',['depends' => [\yii\web\JqueryAsset::className()]]);
-?>

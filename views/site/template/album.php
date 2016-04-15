@@ -65,8 +65,9 @@ $url = Yii::$app->request->getUrl();
                 播放上一图集</a><?php }?>
                 <?php if($next_album){?><a href="<?= Url::to(['view-album','id'=>$next_album->id])?>" target="_self">
                 播放下一图集</a><?php }else{?>
-                <a href="<?= Url::to(['site/page','slug'=>$album->page->slug]);?>" target="_self">返回</a></div>
+                <a href="<?= Url::to(['site/page','slug'=>$album->page->slug]);?>" target="_self">返回</a>
                 <?php }?>
+                </div>
                  <span class="layer-close" title="关闭">×</span>
              </div>
           </div>

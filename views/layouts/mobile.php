@@ -34,7 +34,7 @@ MobileAsset::register($this);
   <?= $content ?>
   <footer class="bs-docs-footer" role="contentinfo">
     <div class="container">
-    <p>鄂ICP备XXXXXXX号 &copy;2016 宜昌交通旅游集团</p>
+    <p>鄂ICP备16001924号-1 &copy;2016 宜昌交通旅游集团</p>
     <p><?= Links::widget();?></p>
       <ul class="bs-docs-footer-links text-muted">
         <li><a href="http://www.ycjyjt.com/" target="_blank">宜昌交运集团</a></li>
