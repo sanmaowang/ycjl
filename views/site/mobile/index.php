@@ -15,21 +15,17 @@ $this->title = '宜昌交旅 | 首页';
             <h1>城市旅行先行者<br>美好空间开发商</h1>
           </div>
         </li>
-        <li style="background-image: url('<?php echo Yii::$app->request->baseUrl;?>img/mobile-slider-2.png'); background-size:cover;">
-          <div class="inner" style="padding-top:30px;">
-            <h3>城市旅游先行<br>休闲度假主创</h3><h3>旅游新区担纲<br>千亿产业头羊</h3>
+        <li style="background-image: url('<?php echo Yii::$app->request->baseUrl;?>img/mobile-slider-4.png'); background-size:cover;">
+          <div class="inner">
+            <h1>旅游交通整体方案与特色旅游产品<br>专业整合服务提供商</h1>
           </div>
         </li>
-        <li style="background-image: url('<?php echo Yii::$app->request->baseUrl;?>img/mobile-slider-3.png'); background-size:cover;">
+        <li style="background-image: url('<?php echo Yii::$app->request->baseUrl;?>img/mobile-slider-2.png'); background-size:cover;">
           <div class="inner">
             <h1>担纲旅游新区建设<br>引领文化旅游千亿产业发展</h1>
           </div>
         </li>
-        <li style="background-image: url('<?php echo Yii::$app->request->baseUrl;?>img/mobile-slider-4.png'); background-size:cover;">
-          <div class="inner">
-            <h1>旅游交通整体方案与特色旅游产品专业整合服务提供商</h1>
-          </div>
-        </li>
+
       </ul>
     </div>
 </div>
