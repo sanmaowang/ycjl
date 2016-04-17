@@ -50,6 +50,9 @@ h2 code,h3 code,h4 code {
 .content img {
   max-width: 100% !important;
   width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  height: auto;
 }
 .news-slide{
   width: 100%;
@@ -1715,10 +1718,4 @@ h1[id] {
   outline: 0;
   -webkit-box-shadow: 0 0 8px rgba(82,168,236,.6);
   box-shadow: 0 0 8px rgba(82,168,236,.6)
-}
-.mobileImgRow img{
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 100%;
-  height: auto;
 }
