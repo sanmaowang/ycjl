@@ -89,6 +89,9 @@ h2 code,h3 code,h4 code {
 .news-list a{
   color:#999;
 }
+.news-list p{
+  text-indent: 2em;
+}
 .news-list a .media-heading{
   color: #333;
 }

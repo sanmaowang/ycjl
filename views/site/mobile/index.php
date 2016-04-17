@@ -49,7 +49,7 @@ $this->title = '宜昌交旅 | 首页';
         <a href="<?php echo Url::to(['view-post','id'=>$post->id])?>">
         <div class="media-body">
           <h4 class="media-heading"><?php echo $post->name;?></h4>
-          <?php echo $post->shortintro;?>
+          <p><?php echo $post->shortintro;?></p>
           <div class="time"><?php echo date("Y-m-d",$post->update_date);?></div>
         </div>
         <div class="media-right">

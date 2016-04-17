@@ -92,7 +92,7 @@ $url = Yii::$app->request->getUrl();
           
           <div class="liright">
             <div class="histt"><a href="#">五峰城际公交正式开通</a></div>
-            <div class="hisct">宜昌—五峰城际公交正式开通。此次五峰城际公交的开通，将进一步拉近五峰、宜昌两地的距离，加快城乡客运一体化发展，助推五峰交通实现跨越发展。</div>
+            <div class="hisct">宜昌—五峰城际公交正式开通。此次五峰城际公交的开通，将进一步拉近五峰、宜昌两地的距离，加快城乡客运一体化发展，助推五峰交通实现跨越发展</div>
           </div>
         </div>
       </li>
@@ -126,7 +126,7 @@ $url = Yii::$app->request->getUrl();
           
           <div class="liright">
             <div class="histt"><a href="#">宜昌交旅集团汽车租赁有限公司正式挂牌成立</a></div>
-            <div class="hisct">宜昌交旅集团汽车租赁有限公司是宜昌交旅集团旗下的全资子公司。公司主打中高端汽车租赁市场，面向社会出行需求，提供汽车长租、短租、个性化定制及驾驶员代驾等服务。</div>
+            <div class="hisct">宜昌交旅集团汽车租赁有限公司是宜昌交旅集团旗下的全资子公司。公司主打中高端汽车租赁市场，面向社会出行需求，提供汽车长租、短租、个性化定制及驾驶员代驾等服务</div>
           </div>
         </div>
       </li>
@@ -144,7 +144,7 @@ $url = Yii::$app->request->getUrl();
           
           <div class="liright">
             <div class="histt"><a href="#">交运集团国有股权无偿划转至宜昌交旅集团</a></div>
-            <div class="hisct">宜昌市国资委将其持有的交运集团47,604,636股股份（占交运公司总股本的35.66%）无偿划转给宜昌交旅集团，此次股权划转于2015年7月21日完成股份过户登记手续。</div>
+            <div class="hisct">宜昌市国资委将其持有的交运集团47,604,636股股份（占交运公司总股本的35.66%）无偿划转给宜昌交旅集团，此次股权划转于2015年7月21日完成股份过户登记手续</div>
           </div>
         </div>
       </li>
@@ -161,7 +161,7 @@ $url = Yii::$app->request->getUrl();
           
           <div class="liright">
             <div class="histt"><a href="#">BRT快速公交投入运行</a></div>
-            <div class="hisct">宜昌BRT快速公交正式投入运行，成功打造了宜昌最美的城市流动风景线。</div>
+            <div class="hisct">宜昌BRT快速公交正式投入运行，成功打造了宜昌最美的城市流动风景线</div>
           </div>
         </div>
       </li>
@@ -178,7 +178,7 @@ $url = Yii::$app->request->getUrl();
           
           <div class="liright">
             <div class="histt"><a href="#">宜长城际公交正式开通</a></div>
-            <div class="hisct">宜昌—长阳城际公交正式开通，将工作在宜昌居住在长阳“一小时交通圈”的大城生活模式变为现实。</div>
+            <div class="hisct">宜昌—长阳城际公交正式开通，将工作在宜昌居住在长阳“一小时交通圈”的大城生活模式变为现实</div>
           </div>
         </div>
       </li>
@@ -196,7 +196,7 @@ $url = Yii::$app->request->getUrl();
           
           <div class="liright">
             <div class="histt"><a href="#">“交运*长江三峡”产品上市</a></div>
-            <div class="hisct">“交运*长江三峡”产品首航仪式在“长江三峡8号”游轮上举行。</div>
+            <div class="hisct">“交运*长江三峡”产品首航仪式在“长江三峡8号”游轮上举行</div>
           </div>
         </div>
       </li>
@@ -213,7 +213,7 @@ $url = Yii::$app->request->getUrl();
           
           <div class="liright">
             <div class="histt"><a href="#">公交集团、三峡旅游公司国有股权至宜昌交旅游产业发展集团有限公司</a></div>
-            <div class="hisct">根据宜市国资产权[2015]9号文件，市国资委划转公交集团、三峡旅游公司国有股权至宜昌交旅游产业发展集团有限公司。</div>
+            <div class="hisct">根据宜市国资产权[2015]9号文件，市国资委划转公交集团、三峡旅游公司国有股权至宜昌交旅游产业发展集团有限公司</div>
           </div>
         </div>
       </li>
@@ -230,7 +230,7 @@ $url = Yii::$app->request->getUrl();
           
           <div class="liright">
             <div class="histt"><a href="#">宜昌交通旅游产业发展集团有限公司成立</a></div>
-            <div class="hisct">根据宜昌市政府《市人民政府关于宜昌市级国有投融资公司改革重组方案的批复》文件，宜昌交通旅游产业发展集团有限公司正式成立。</div>
+            <div class="hisct">根据宜昌市政府《市人民政府关于宜昌市级国有投融资公司改革重组方案的批复》文件，宜昌交通旅游产业发展集团有限公司正式成立</div>
           </div>
         </div>
       </li>
