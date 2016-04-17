@@ -29,7 +29,7 @@ $url = Yii::$app->request->getUrl();
         </div>
       </div>
       
-      <div class="row">
+      <div class="mobileImgRow row">
         <?php if(isset($posts) && count($posts)>0){?>
         <?php foreach ($posts as $key => $post) {?>
           <div class="col-xs-12">

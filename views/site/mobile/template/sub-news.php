@@ -19,7 +19,7 @@ $url = Yii::$app->request->getUrl();
         </div>
     <?= Breadcrumb::widget();?>
       </div>
-      <div class="mobileImgRow row">
+      <div class="row">
         <?php if(isset($posts) && count($posts)>0){?>
         <?php foreach ($posts as $key => $post) {?>
           <div class="col-xs-12">
