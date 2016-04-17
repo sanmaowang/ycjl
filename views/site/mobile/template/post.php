@@ -66,7 +66,7 @@ $url = Yii::$app->request->getUrl();
     $this->registerJs("
             $(function(){
               var width = $('.content img').width();
-              $('.content img').height(width*9/16);
+              $('.content img').height(width*3/4.2);
             })",View::POS_END,'show');
     ?>
 </div>
