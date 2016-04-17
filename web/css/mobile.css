@@ -50,9 +50,6 @@ h2 code,h3 code,h4 code {
 .content img {
   max-width: 100% !important;
   width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  height: auto;
 }
 .news-slide{
   width: 100%;

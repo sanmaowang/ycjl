@@ -56,11 +56,3 @@ $url = Yii::$app->request->getUrl();
       </div>
     <?php }?>
   </div>
-
-<?php
-
-$this->registerJs("
-$(function(){
-  $
-})",View::POS_END,'show');
-?>
