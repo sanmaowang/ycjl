@@ -47,8 +47,6 @@ $url = Yii::$app->request->getUrl();
             $this->registerJs("
             $(function(){
               $( '.swipebox' ).swipebox();
-              var a = $('.content img').css('width');
-              console.log(a);
             })",View::POS_END,'show');
           ?>
         </div>
@@ -64,4 +62,11 @@ $url = Yii::$app->request->getUrl();
       <?php echo $post->content;?>
       
       <?php }?>
+    <?php
+    $this->registerJs("
+            $(function(){
+              var a = $('.content img').css('width');
+              console.log(a);
+            })",View::POS_END,'show');
+    ?>
 </div>
