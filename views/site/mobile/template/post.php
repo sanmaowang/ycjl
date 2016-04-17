@@ -48,7 +48,7 @@ $url = Yii::$app->request->getUrl();
             $(function(){
               $( '.swipebox' ).swipebox();
               var a = $('.content img').css('width');
-              alert(a);
+              console.log(a);
             })",View::POS_END,'show');
           ?>
         </div>
