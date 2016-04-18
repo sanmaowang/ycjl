@@ -49,15 +49,15 @@ $this->title = '宜昌交旅 | 首页';
           </h3>
           <div class="row">
             <div class="col-xs-4 quick-link link-focus">
-              <a href="<?= Url::to(['site/page','slug'=>'media_focus'])?>"  target="_blank">
-              <div class="links-item"><img src="<?= Yii::$app->request->baseUrl;?>/img/icon-newspaper.png" alt=""/></div>
-              媒体聚焦
+              <a href="<?= Url::to(['site/page','slug'=>'about'])?>"  target="_blank">
+              <div class="links-item"><img src="<?= Yii::$app->request->baseUrl;?>/img/icon-building.png" alt=""/></div>
+              企业简介
               </a>
             </div>
             <div class="col-xs-4 quick-link link-group">
-              <a href="<?= Url::to(['site/page','slug'=>'about'])?>"  target="_blank">
-              <div class="links-item"><img src="<?= Yii::$app->request->baseUrl;?>/img/icon-building.png" alt=""/></div>
-              集团简介
+              <a href="<?= Url::to(['site/page','slug'=>'struction'])?>"  target="_blank">
+              <div class="links-item"><img src="<?= Yii::$app->request->baseUrl;?>/img/icon-building2.png" alt=""/></div>
+              组织架构
               </a>
             </div>
             <div class="col-xs-4 quick-link link-party">
