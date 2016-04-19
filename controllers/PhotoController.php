@@ -176,7 +176,7 @@ class PhotoController extends Controller
             if ($model->upload()) {
                 $date = date("Ymd",time());
                 foreach ($model->imageFiles as $key => $image) {
-                    $path = '/uploads/picnews/'.$date.'/';  
+                    $path = '/uploads/piscnews/'.$date.'/';  
                     $photo = new Photo();
                     $photo->path = $path. $image->baseName . '.' . $image->extension;
                     $photo->page_id = $page_id;
@@ -211,6 +211,22 @@ class PhotoController extends Controller
            if($model->save()){
               return $this->redirect(['update','id'=>$id]);
             }
+        } else {
+            return $this->render('update', [
+                'model' => $model,
+            ]);
+        }
+    }
+
+    public function actionUpdatephoto($id)
+    {
+        $model = $this->findModel($id);
+        if ($model->load(Yii::$app->request->post())) {
+         if($model->save()){
+            return $this->redirect(['view','id'=>$model->parent_id]);
+          }else{
+            var_dump($model->getErrors());
+          }
         } else {
             return $this->render('update', [
                 'model' => $model,

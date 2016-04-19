@@ -88,7 +88,7 @@ $this->params['menu'] =[
                 <?php }?>
                 <div class="mask" style="display:none;">
                     <div class="actions">
-                        <?= Html::a(Yii::t('app', '编辑详情'), ['photo/update', 'id' => $p->id], ['class' => 'btn btn-default btn-update ']) ?>
+                        <?= Html::a(Yii::t('app', '编辑详情'), ['photo/update_photo', 'id' => $p->id], ['class' => 'btn btn-default btn-update ']) ?>
                         <?= Html::a(Yii::t('app', '设为封面'), ['photo/setcover', 'id' => $p->id], [
                         'class' => 'btn btn-info',
                         'data' => [
@@ -109,7 +109,7 @@ $this->params['menu'] =[
                     <p><?= $p->title;?></p>
                     <div class="edit" style="display:none;">
                         <?php $newform = ActiveForm::begin([
-                            'action'=>['photo/update','id'=>$p->id],
+                            'action'=>['photo/updatephoto','id'=>$p->id],
                             'options' => [
                                 'enctype' => 'multipart/form-data'
                             ],  
