@@ -5,7 +5,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 /* @var $this yii\web\View */
 
-$this->title = '宜昌交旅 | 首页';
+$this->title = ' 宜昌交通旅游产业发展集团有限公司 | 首页';
 ?>
 <div class="banner">
   <div class="container">
