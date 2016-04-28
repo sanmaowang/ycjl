@@ -31,7 +31,7 @@ class UploadForm extends Model
                 $path = Yii::$app->basePath.'/web/uploads/picnews/'.$date.'/';
                 if ( !file_exists($path ))
                 {
-                    mkdir($path，0777);
+                    mkdir($path);
                     chmod($path,0777);
                 }
                 $file->saveAs($path . $file->baseName . '.' . $file->extension);
