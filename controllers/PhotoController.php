@@ -22,6 +22,18 @@ class PhotoController extends Controller
     public function behaviors()
     {
         return [
+            'access' =>[
+                'class' =>\yii\filters\AccessControl::className(),
+                'only' => ['create', 'update', 'index', 'view', 'delete'],
+                'rules' => [
+                    //allow only admin to modify backend users(Admin class)
+                    [
+                        'allow'=>true,
+                        'roles' => ['@'],
+                    ]
+                    //everything else is denied.
+                ]
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -224,8 +236,6 @@ class PhotoController extends Controller
         if ($model->load(Yii::$app->request->post())) {
          if($model->save()){
             return $this->redirect(['view','id'=>$model->parent_id]);
-          }else{
-            var_dump($model->getErrors());
           }
         } else {
             return $this->render('update', [
@@ -235,17 +245,22 @@ class PhotoController extends Controller
     }
 
     /**
-     * Deletes an existing Photo model.
+     * Deletes an existing Post model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
      */
     public function actionDelete($id)
-    {
+    {   
         $model = $this->findModel($id);
-        $album = $this->findModel($model->parent_id);
+        $parent_id = $model->parent_id;
         if($model->delete()){
+          if(isset($parent_id) && $parent_id >0){
+            $album = $this->findModel($parent_id);
             return $this->redirect(['view','id'=>$album->id]);
+          }else{
+            return $this->redirect(['index']);
+          }
         }
     }
 
