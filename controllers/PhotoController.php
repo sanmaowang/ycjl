@@ -188,7 +188,7 @@ class PhotoController extends Controller
             if ($model->upload()) {
                 $date = date("Ymd",time());
                 foreach ($model->imageFiles as $key => $image) {
-                    $path = '/uploads/piscnews/'.$date.'/';  
+                    $path = '/uploads/picnews/'.$date.'/';  
                     $photo = new Photo();
                     $photo->path = $path. $image->baseName . '.' . $image->extension;
                     $photo->page_id = $page_id;
