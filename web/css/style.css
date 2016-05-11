@@ -2058,9 +2058,14 @@ a:hover {
   background: url(../img/highlight-list-item.png) no-repeat 1px center;
 }
 .news-list .first a {
+  display:inline-block;
   font-size: 16px;
   font-weight: 600;
-  margin-bottom: 14px;
+  margin-bottom: -2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width:330px;
 }
 .news-list .thumbnail {
   display: block;
