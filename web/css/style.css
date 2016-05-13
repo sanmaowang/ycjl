@@ -1084,12 +1084,12 @@ a:hover {
   margin-left: -190px;
 }
 .slogan-3-left {
-  width: 395.25px;
-  height: 55.5px;
+  width: 490.25px;
+  height: 65.5px;
   position: absolute;
   top: 108px;
   left: 50%;
-  margin-left: -197.625px;
+  margin-left: -248.625px;
 }
 .slogan-3-right {
   width: 592.5px;
@@ -2052,6 +2052,7 @@ a:hover {
   color: #222;
   overflow: hidden;
   text-overflow: ellipsis;
+
   white-space: nowrap;
   width: 370px;
 }
