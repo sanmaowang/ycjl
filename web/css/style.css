@@ -2048,7 +2048,12 @@ a:hover {
 }
 .news-list a {
   font-size: 14px;
+  display: inline-block;
   color: #222;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 370px;
 }
 .news-list a:hover {
   text-decoration: underline;
