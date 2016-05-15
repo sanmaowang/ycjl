@@ -2049,7 +2049,6 @@ a:hover {
 .news-list a {
   font-size: 14px;
   color: #222;
-
 }
 .col-news-left .news-list a {
   display: inline-block;
@@ -2151,6 +2150,13 @@ a:hover {
 .col-news-column-right {
   width: 650px;
   float: left;
+}
+.col-news-column-right .news-list a {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 420px;
 }
 .imagearea {
   overflow: hidden;
