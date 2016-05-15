@@ -2063,6 +2063,7 @@ a:hover {
 .news-list .first {
   padding-left: 12px;
   background: url(../img/highlight-list-item.png) no-repeat 1px center;
+  margin-bottom: 14px;
 }
 .news-list .first a {
   display:inline-block;
