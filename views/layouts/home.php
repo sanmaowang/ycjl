@@ -43,7 +43,7 @@ HomeAsset::register($this);
     <div class="links">
       <p class="pull-left">
         鄂ICP备16001924号-1 <span class="light">技术支持：湖北元速科技有限公司</span></p>
-      <p class="pull-right"><?= Links::widget();?><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42050202000049" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="<?= Yii::$app->request->baseUrl;?>/img/police.png" alt="" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#98C3D9;">鄂公网安备 42050202000049号</p></a> </p>
+      <p class="pull-right"><?= Links::widget();?><a class="beian" target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42050202000049"><img src="<?= Yii::$app->request->baseUrl;?>/img/police.png" alt="" />鄂公网安备 42050202000049号</a> </p>
     </div>
     </div>
   </div>

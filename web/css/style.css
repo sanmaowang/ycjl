@@ -2745,3 +2745,10 @@ a.pic-thumbnail:hover {
   text-align: center;
   font-size: 14px;
 }
+.beian{
+  display:inline-block;
+  text-decoration:none;
+  height:20px;
+  line-height:20px;
+  color:#98C3D9;
+}
