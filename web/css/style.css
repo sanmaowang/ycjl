@@ -2754,3 +2754,7 @@ a.pic-thumbnail:hover {
   /*line-height:20px;*/
   color:#98C3D9;
 }
+.beian img {
+  position: relative;
+  top:5px;
+}
