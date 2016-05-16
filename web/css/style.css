@@ -2746,6 +2746,7 @@ a.pic-thumbnail:hover {
   font-size: 14px;
 }
 .beian{
+  display: inline-block;
   text-decoration:none;
   /*height:20px;*/
   /*line-height:20px;*/
