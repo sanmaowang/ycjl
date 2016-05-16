@@ -38,14 +38,12 @@ HomeAsset::register($this);
 <?= $content ?>
 <div class="footer">
   <div class="container">
-      <div style="width:300px;margin:60px auto; padding:20px 0;color:#98C3D9;">
-          <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42050202000049" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="<?= Yii::$app->request->baseUrl;?>/img/police.png" alt="" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">鄂公网安备 42050202000049号</p></a>
-      </div>
     <div class="support">&copy; 2016 宜昌交通旅游产业发展集团有限公司</div>
     <div class="row">
     <div class="links">
       <p class="pull-left">
         鄂ICP备16001924号-1 <span class="light">技术支持：湖北元速科技有限公司</span></p>
+        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42050202000049" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="<?= Yii::$app->request->baseUrl;?>/img/police.png" alt="" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#98C3D9;">鄂公网安备 42050202000049号</p></a>
       <p class="pull-right"><?= Links::widget();?> </p>
     </div>
     </div>
