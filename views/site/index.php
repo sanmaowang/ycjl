@@ -75,7 +75,7 @@ $this->title = ' 宜昌交通旅游产业发展集团有限公司 | 首页';
               for($i = 0;$i < count($news); $i++){
                 if($news[$i]){
             ?>
-            <li><a href="<?= Url::to(['site/view-post','id'=>$news[$i]->id]);?>" target="_blank" title="<?= $news[$i]->name;?>"><?= $news[$i]->name;?></a><span><?php echo date("Y.m.d",$news[$i]->update_date);?></span></li>
+            <li><a href="<?= Url::to(['site/view-post','id'=>$news[$i]->id]);?>" target="_blank" title="<?= $news[$i]->name;?>"><?= $news[$i]->name;?></a><span><?php echo date("Y.m.d",$news[$i]->update_date);?><input type="hidden" value="<?php echo $news[$i]->update_date;?>"></span></li>
             <?php }}}?>
           </ul>
         </div>
