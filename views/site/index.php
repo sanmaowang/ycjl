@@ -76,6 +76,7 @@ $this->title = ' 宜昌交通旅游产业发展集团有限公司 | 首页';
                 if($news[$i]){
             ?>
             <li><a href="<?= Url::to(['site/view-post','id'=>$news[$i]->id]);?>" target="_blank" title="<?= $news[$i]->name;?>"><?= $news[$i]->name;?></a><span><?php echo date("Y.m.d",$news[$i]->update_date);?></span></li>
+            <?php }}}?>
           </ul>
         </div>
        
