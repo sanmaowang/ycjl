@@ -1612,6 +1612,9 @@ a:hover {
   color: #4A4A4A;
   background: url(../img/icon-arrow.png) no-repeat 15px center;
 }
+.main-left ul li a.lxyz {
+  background: url(../img/icon-star.png) no-repeat 15px center;
+}
 .main-left ul li a:hover {
   color: #1E246F;
   font-weight: 500;

@@ -20,10 +20,10 @@ $url = Yii::$app->request->getUrl();
         </div>
         <?php if(isset($menu) && count($menu)>0){?>
         <ul>
-          <?php foreach ($menu as $key => $m) {
+          <?php $i=0;foreach ($menu as $key => $m) {
             $current = strpos($url,$m->slug)?"class='current'":'';
           ?>
-            <li><a href="<?php echo Url::to(['site/page','slug'=>$m->slug])?>" <?php echo $current?>>
+            <li><a <?php if($m->slug=="lxyz")echo "class='lxyz'"?> href="<?php echo Url::to(['site/page','slug'=>$m->slug])?>" <?php echo $current?>>
               <?php 
                 if($m->slug == 'ycjyjt'){
                  echo "交运集团";
@@ -37,7 +37,7 @@ $url = Yii::$app->request->getUrl();
                   echo "行胜建投";
                 }else{ echo $m->name;}?>
             </a></li>
-          <?php }?>
+          <?php $i++; }?>
         </ul>
         <?php }?>
       </div>
