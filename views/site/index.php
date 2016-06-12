@@ -61,9 +61,9 @@ $this->title = ' 宜昌交通旅游产业发展集团有限公司 | 首页';
               </a>
             </div>
             <div class="col-xs-4 quick-link link-party">
-              <a href="<?= Url::to(['site/page','slug'=>'party_construction'])?>"  target="_blank">
+              <a href="<?= Url::to(['site/page','slug'=>'lxyz'])?>"  target="_blank">
               <div class="links-item"><img src="<?= Yii::$app->request->baseUrl;?>/img/icon-cs.png" alt=""/></div>
-              党群工作
+              两学一做
               </a>
             </div>
           </div>
