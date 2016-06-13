@@ -16,12 +16,21 @@ $url = Yii::$app->request->getUrl();
         <div class="column-img">
           <img src="<?= Yii::$app->request->baseUrl;?>/img/column/column-<?php echo $post->page->slug?>.png" alt="">
         </div>
+        <?php
+          function my_sort($a,$b)
+          {
+            if ($a->display_order==$b->display_order) return 0;
+            return ($a->display_order<$b->display_order)?-1:1;
+          }
+
+        ?>
         <?php if(isset($menu) && count($menu)>0){?>
         <ul>
-          <?php foreach ($menu as $key => $m) {
+          <?php usort($menu,"my_sort");$i=0;foreach ($menu as $key => $m) {
           $current = strpos($url,$m->slug)?"class='current'":'';
+            $current2 = strpos($url,$m->slug)?"current":'';
           ?>
-          <li><a href="<?php echo Url::to(['site/page','slug'=>$m->slug])?>" <?php echo $current?>><?php echo $m->name;?></a></li>
+          <li><a <?php if($m->slug=="lxyz")echo "class='lxyz $current2'"?> href="<?php echo Url::to(['site/page','slug'=>$m->slug])?>" <?php echo $current?>><?php echo $m->name;?></a></li>
           <?php }?>
         </ul>
         <?php }?>
