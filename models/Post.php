@@ -119,7 +119,7 @@ class Post extends \yii\db\ActiveRecord
         $startStr = 'text-align: center;">';
         $endStr = '</p>';
         $pos1 = strpos($content, $startStr);
-        if($pos1&&$pos1<200){
+        if($pos1&&$pos1<500){
             $content = substr($content,$pos1+strlen($startStr));
             $pos2 = strpos($content,$endStr);
             $content = substr($content,$pos2+strlen($endStr));
@@ -130,11 +130,9 @@ class Post extends \yii\db\ActiveRecord
     {
         $content = $this->strHandle($this->content);
         $pos1 = strpos($content, 'text-align: center;">');
-        if($pos1<200){
-            $count = substr_count($content,'text-align: center;">');
-            for($i=0;$i<$count;$i++){
-                $content = $this->strHandle($content);
-            }
+        $count = substr_count($content,'text-align: center;">');
+        for($i=0;$i<$count;$i++){
+            $content = $this->strHandle($content);
         }
         $content = strip_tags($content);
 //        $content =strip_tags($this->content);
