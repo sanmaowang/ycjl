@@ -119,7 +119,7 @@ class Post extends \yii\db\ActiveRecord
         $startStr = 'text-align: center;">';
         $endStr = '</p>';
         $pos1 = strpos($content, $startStr);
-        if($pos1){
+        if($pos1&&$pos1<80){
             $content = substr($content,$pos1+strlen($startStr));
             $pos2 = strpos($content,$endStr);
             $content = substr($content,$pos2+strlen($endStr));
@@ -129,9 +129,12 @@ class Post extends \yii\db\ActiveRecord
     public function getExcerpt()
     {
         $content = $this->strHandle($this->content);
-        $count = substr_count($content,'text-align: center;">');
-        for($i=0;$i<$count;$i++){
-            $content = $this->strHandle($content);
+        $pos1 = strpos($content, 'text-align: center;">');
+        if($pos1<80){
+            $count = substr_count($content,'text-align: center;">');
+            for($i=0;$i<$count;$i++){
+                $content = $this->strHandle($content);
+            }
         }
         $content = strip_tags($content);
 //        $content =strip_tags($this->content);
