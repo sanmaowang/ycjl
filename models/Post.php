@@ -129,7 +129,7 @@ class Post extends \yii\db\ActiveRecord
     public function getExcerpt()
     {
         $content = $this->strHandle($this->content);
-        $count = substr_count($content,'text-align: center;">',0,2000);
+        $count = substr_count($content,'text-align: center;">');
         for($i=0;$i<$count;$i++){
             $content = $this->strHandle($content);
         }
