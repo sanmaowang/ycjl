@@ -115,26 +115,26 @@ class Post extends \yii\db\ActiveRecord
       preg_match($pattern,$this->content,$match);
       return $match?$match[1]:null;
     }
-    public function getExcerpt()
-    {
-        $content = $this->content;
+    function strHandle($content) {
         $startStr = 'text-align: center;">';
         $endStr = '</p>';
-        $pos1 = strpos($content,$startStr);
+        $pos1 = strpos($content, $startStr);
         if($pos1){
             $content = substr($content,$pos1+strlen($startStr));
             $pos2 = strpos($content,$endStr);
             $content = substr($content,$pos2+strlen($endStr));
-            $pos1 = strpos($content,$startStr);
-            if($pos1){
-                $content = substr($content,$pos1+strlen($startStr));
-                $pos2 = strpos($content,$endStr);
-                $content = substr($content,$pos2+strlen($endStr));
-            }
         }
-        $content =strip_tags($content);
+        return $content;
+    }
+    public function getExcerpt()
+    {
+        $content = $this->strHandle($this->content);
+        $count = substr_count($content,'text-align: center;">',0,2000);
+        for($i=0;$i<$count;$i++){
+            $content = $this->strHandle($content);
+        }
+        $content = strip_tags($content);
 //        $content =strip_tags($this->content);
-        $content =strip_tags($content);
         $content = str_replace("&nbsp;","",$content);
         return $this->cut_str(trim($content),150);
     }
