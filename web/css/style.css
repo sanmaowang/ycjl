@@ -2769,4 +2769,6 @@ a.pic-thumbnail:hover {
 }
 .imageDescription{
   text-align: left;
+  width:80%;
+  margin-left:100px;
 }
