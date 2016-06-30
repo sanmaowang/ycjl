@@ -130,10 +130,10 @@ class SiteController extends Controller
         }
 
 
-        if($page->type == 3){
+        if($page->type == 3){//新闻列表
             $query = Post::find()->where(['page_id' => $page->id]);
             $countQuery = clone $query;
-            $pnation = new Pagination(['defaultPageSize' => 10,'totalCount' => $countQuery->count()]);
+            $pnation = new Pagination(['defaultPageSize' => 12,'totalCount' => $countQuery->count()]);
             $posts = $query->orderBy(['create_date'=>SORT_DESC])->offset($pnation->offset)
               ->limit($pnation->limit)
               ->all();
@@ -143,11 +143,18 @@ class SiteController extends Controller
                 'pnation'=>$pnation,
                 'posts'=>$posts
             ]);
-        }else if($page->type == 4){
-            $albums = Photo::find()->where(['page_id'=>$page->id,'parent_id'=>0])->orderBy(['create_date'=>SORT_DESC])->all();
+        }else if($page->type == 4){//相册列表
+            $query = Photo::find()->where(['page_id' => $page->id,'parent_id'=>0]);
+            $countQuery = clone $query;
+            $pnation = new Pagination(['defaultPageSize' => 9,'totalCount' => $countQuery->count()]);
+            $albums = $query->orderBy(['create_date'=>SORT_DESC])->offset($pnation->offset)
+                ->limit($pnation->limit)
+                ->all();
+//            $albums = Photo::find()->where(['page_id'=>$page->id,'parent_id'=>0])->orderBy(['create_date'=>SORT_DESC])->all();
             return $this->render($mobile.'template/'.$page->template,[
                 'page'=>$page,
                 'albums'=>$albums,
+                'pnation'=>$pnation,
                 'menu'=>$menu,
             ]);
         }

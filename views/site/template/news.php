@@ -68,8 +68,8 @@ $url = Yii::$app->request->getUrl();
           <?php }?>
         </div>
         <div class="clearfix">
-          <?= LinkPager::widget(['pagination' => $pnation]) ?>  
-        </div> 
+          <?= LinkPager::widget(['pagination' => $pnation]) ?>
+        </div>
         <?= Hot::widget();?>
       </div>
     </div>

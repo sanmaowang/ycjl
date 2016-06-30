@@ -5,6 +5,7 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use app\widgets\Breadcrumb;
+use yii\widgets\LinkPager;
 
 $this->title = $page->name;
 $url = Yii::$app->request->getUrl();
@@ -49,11 +50,15 @@ $url = Yii::$app->request->getUrl();
               <?php echo $album->title;?>
               </a>
             </div>
+
           <?php }?>
           <?php }else{?>
           <p><br></p><p class="be-late">内容待更新</p><p><br></p>
           <?php }?>
         </div>
+          <div class="clearfix">
+            <?= LinkPager::widget(['pagination' => $pnation]) ?>
+          </div>
         </div>
       </div>
     </div>

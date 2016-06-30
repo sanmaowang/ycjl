@@ -35,6 +35,8 @@ $url = Yii::$app->request->getUrl();
                   echo "汽车租赁公司";
                 }else if($m->slug == 'xsjt'){
                   echo "行胜建投";
+                }else if($m->slug == 'xyly'){
+                  echo "交旅行营";
                 }else{ echo $m->name;}?>
             </a></li>
           <?php $i++; }?>
