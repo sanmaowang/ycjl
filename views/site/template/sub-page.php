@@ -89,7 +89,7 @@ $url = Yii::$app->request->getUrl();
                   <img src="<?php echo Yii::$app->request->baseUrl;?>/img/column/sub-jy6.png" alt="" class="pull-left">
                   <div class="sub-item-content" style="min-height:100px;">
                     <h4 class="sub-item-title">湖北行营露营地酒店投资管理有限公司</h4>
-                    <p>主营业务：房地产开发、物业管理、水力资源开发、旅游资源开发、停车服务。</p>
+                    <p>主营业务： 露营地策划、投资、运营及管理；酒店策划、投资、运营及管理；房车租赁、零部件销售及配套服务；旅游及户外用品销售。</p>
                   </div>
                 </a>
               </li>
