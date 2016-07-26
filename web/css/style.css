@@ -2768,7 +2768,7 @@ a.pic-thumbnail:hover {
   left:3px;
 }
 .imageDescription{
-  text-align: left;
+  text-align: middle;
   width:80%;
   margin-left:100px;
 }
