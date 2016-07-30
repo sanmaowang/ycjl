@@ -63,6 +63,16 @@ $url = Yii::$app->request->getUrl();
           </div> 
         </div>
       </div>
+    <div class="col-xs-12">
+      <div class="thumbnail clearfix">
+        <img src="<?php echo Yii::$app->request->baseUrl;?>/img/column/sub-jy6.png" alt="" width="100%">
+        <div class="caption">
+          <h3><a href="<?php echo Url::to(['site/page','slug'=>'xyly'])?>" target="_blank">湖北行营露营地酒店投资管理有限公司</a></h3></a>
+          <p>主营业务： 露营地策划、投资、运营及管理；酒店策划、投资、运营及管理；房车租赁、零部件销售及配套服务；旅游及户外用品销售。</p>
+        </div>
+      </div>
+    </div>
+
   </div>
     <?php if(isset($menu) && count($menu)>0){?>
     <div class="menu">
