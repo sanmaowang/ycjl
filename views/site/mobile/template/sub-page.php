@@ -49,7 +49,7 @@ $url = Yii::$app->request->getUrl();
         <div class="thumbnail clearfix">
           <img src="<?php echo Yii::$app->request->baseUrl;?>/img/column/sub-jy4.png" alt="" width="100%">
           <div class="caption">
-            <h3><a href="<?php echo Url::to(['site/page','slug'=>'ycqczl'])?>" target="_blank">宜昌交旅集团汽车租赁有限公司</a></h3></a>
+            <h3><a href="<?php echo Url::to(['site/page','slug'=>'ycqczl'])?>" target="_blank">宜昌交旅集团汽车运输服务有限公司</a></h3></a>
                 <p>宜昌交旅集团汽车租赁有限公司（以下简称“公司”）成立于2015年9月28日，位于宜昌高新区发展大道63-4号。公司主打中高端汽车租赁市场，是一家面向社会出行需求，提供汽车长租、短租、个性化定制及驾驶员代驾等业务的服务性公司。</p>
           </div> 
         </div>
