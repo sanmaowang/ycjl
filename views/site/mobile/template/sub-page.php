@@ -77,7 +77,7 @@ $url = Yii::$app->request->getUrl();
         <img src="<?php echo Yii::$app->request->baseUrl;?>/img/column/sub-jy7.png" alt="" width="100%">
         <div class="caption">
           <h3><a href="<?php echo Url::to(['site/page','slug'=>'xyly'])?>" target="_blank">宜昌行运旅游开发有限公司</a></h3></a>
-          <p></p>
+          <p>主营业务：旅游资源开发；房地产开发、经营；停车服务。</p>
         </div>
       </div>
     </div>

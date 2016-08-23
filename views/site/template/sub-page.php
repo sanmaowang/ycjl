@@ -98,7 +98,7 @@ $url = Yii::$app->request->getUrl();
                   <img src="<?php echo Yii::$app->request->baseUrl;?>/img/column/sub-jy7.png" alt="" class="pull-left">
                   <div class="sub-item-content" style="min-height:100px;">
                     <h4 class="sub-item-title">宜昌行运旅游开发有限公司</h4>
-                    <p></p>
+                    <p>主营业务：旅游资源开发；房地产开发、经营；停车服务。</p>
                   </div>
                 </a>
               </li>
