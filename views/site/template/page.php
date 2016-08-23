@@ -37,6 +37,8 @@ $url = Yii::$app->request->getUrl();
                   echo "行胜建投";
                 }else if($m->slug == 'xyly'){
                   echo "交旅行营";
+                }else if($m->slug == 'xylx'){
+                  echo "交旅行运";
                 }else{ echo $m->name;}?>
             </a></li>
           <?php $i++; }?>

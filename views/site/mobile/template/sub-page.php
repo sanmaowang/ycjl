@@ -72,7 +72,15 @@ $url = Yii::$app->request->getUrl();
         </div>
       </div>
     </div>
-
+    <div class="col-xs-12">
+      <div class="thumbnail clearfix">
+        <img src="<?php echo Yii::$app->request->baseUrl;?>/img/column/sub-jy7.png" alt="" width="100%">
+        <div class="caption">
+          <h3><a href="<?php echo Url::to(['site/page','slug'=>'xyly'])?>" target="_blank">宜昌行运旅游开发有限公司</a></h3></a>
+          <p></p>
+        </div>
+      </div>
+    </div>
   </div>
     <?php if(isset($menu) && count($menu)>0){?>
     <div class="menu">

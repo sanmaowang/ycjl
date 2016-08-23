@@ -93,6 +93,15 @@ $url = Yii::$app->request->getUrl();
                   </div>
                 </a>
               </li>
+              <li>
+                <a class="sub-item-link" target="_blank" href="<?php echo Url::to(['site/page','slug'=>'xylx'])?>">
+                  <img src="<?php echo Yii::$app->request->baseUrl;?>/img/column/sub-jy7.png" alt="" class="pull-left">
+                  <div class="sub-item-content" style="min-height:100px;">
+                    <h4 class="sub-item-title">宜昌行运旅游开发有限公司</h4>
+                    <p></p>
+                  </div>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
