@@ -32,9 +32,9 @@ $url = Yii::$app->request->getUrl();
                 }else if($m->slug == 'ycsxlydjq'){
                   echo "度假区开发公司";
                 }else if($m->slug == 'ycqczl'){
-                  echo "汽车租赁公司";
+                  echo "交旅租车";
                 }else if($m->slug == 'xsjt'){
-                  echo "行胜建投";
+                  echo "交旅行胜";
                 }else if($m->slug == 'xyly'){
                   echo "交旅行营";
                 }else if($m->slug == 'xylx'){
