@@ -2767,6 +2767,11 @@ a.pic-thumbnail:hover {
   top:-3px;
   left:3px;
 }
+.newest-icon2{
+  position:relative;
+  top:2px;
+  left:3px;
+}
 .imageDescription{
   text-align: middle;
   width:80%;

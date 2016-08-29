@@ -53,7 +53,7 @@ function utf8_strlen($string = null) {
           </div>
           <div class="news-headline">
             <ul class="ulist mix-ulist">
-              <?php 
+              <?php
               $i = 0;
               foreach ($group_news as $key => $post) {
                 if($post->page_id == 14){
@@ -61,7 +61,7 @@ function utf8_strlen($string = null) {
                     break;
                   }
               ?>
-                <li><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>" title="<?= $post->name;?>" target="_blank"><?php echo $post->name;?></a> <span class="time"><?php echo date("Y-m-d",$post->update_date);?></li>
+                <li><a href="<?php echo Url::to(['view-post','id'=>$post->id])?>" title="<?= $post->name;?>" target="_blank"><?php echo $post->name;?><?php $days = (strtotime(date("Y-m-d")) -  $post->update_date)/86400; if($days <= 4){?><img class="newest-icon2" src="<?= Yii::$app->request->baseUrl;?>/img/newest.png" alt=""/><?php } else{ }  ?></a> <span class="time"><?php echo date("Y-m-d",$post->update_date);?></li>
               <?php 
                 $i++;
               }}?>
