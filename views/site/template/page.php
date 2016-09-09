@@ -216,8 +216,8 @@ $url = Yii::$app->request->getUrl();
           <div class="point"><b></b></div>
           
           <div class="liright">
-            <div class="histt"><a href="#">公交集团、三峡旅游公司国有股权至宜昌交旅游产业发展集团有限公司</a></div>
-            <div class="hisct">根据宜市国资产权[2015]9号文件，市国资委划转公交集团、三峡旅游公司国有股权至宜昌交旅游产业发展集团有限公司</div>
+            <div class="histt"><a href="#">公交集团、三峡旅游公司国有股权至宜昌交通旅游产业发展集团有限公司</a></div>
+            <div class="hisct">根据宜市国资产权[2015]9号文件，市国资委划转公交集团、三峡旅游公司国有股权至宜昌交通旅游产业发展集团有限公司</div>
           </div>
         </div>
       </li>
