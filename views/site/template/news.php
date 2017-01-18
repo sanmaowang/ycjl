@@ -58,7 +58,10 @@ $url = Yii::$app->request->getUrl();
             <?php //}else{?>
             -->
             <li style="margin-bottom:15px;">
-              <a href="<?php echo Url::to(['view-post','id'=>$post->id])?>" target="_blank" style="font-size:16px;"><?php echo $post->name;?><span class="time"><?php echo date("Y年m月d日",$post->update_date);?></span></a>
+              <a href="<?php echo Url::to(['view-post','id'=>$post->id])?>" target="_blank" style="font-size:16px;"><?php echo $post->name;?>
+                <?php if($post->subtitle){?>—— <span class="news_subTit"><?php echo $post->subtitle;?></span>
+                <?php }?>
+                <span class="time"><?php echo date("Y年m月d日",$post->update_date);?></span></a>
             </li>
             <?php //}?>
             <?php }?>

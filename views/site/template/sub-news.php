@@ -46,11 +46,14 @@ $url = Yii::$app->request->getUrl();
           <ul>
             <?php foreach ($posts as $key => $post) {?>
               <li class="thumbnail clearfix">
-                <?php if($post->thumb){?>
+                <?php if($post->thumb){
+                  $str = 'icon_doc';
+                  $pos=strpos(($post->thumb),$str);
+                  if(!$pos){?>
                   <div class="thumb">
                     <img src="<?= $post->thumb;?>" alt="">
                   </div>
-                <?php }?>
+                <?php }}?>
                 <a href="<?php echo Url::to(['view-post','id'=>$post->id])?>" target="_blank"><h3><?php echo $post->name;?><span class="time"><?php echo date("Y年m月d日",$post->update_date);?></span></h3></a>
                 <div class="desc">
                   <?= $post->excerpt;?>

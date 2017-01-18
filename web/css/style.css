@@ -2782,3 +2782,7 @@ a.pic-thumbnail:hover {
   width:80%;
   margin-left:100px;
 }
+.news_subTit{
+  font-size: 14px;
+  font-weight: 600;
+}
