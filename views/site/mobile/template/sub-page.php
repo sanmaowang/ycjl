@@ -76,8 +76,26 @@ $url = Yii::$app->request->getUrl();
       <div class="thumbnail clearfix">
         <img src="<?php echo Yii::$app->request->baseUrl;?>/img/column/sub-jy7.png" alt="" width="100%">
         <div class="caption">
-          <h3><a href="<?php echo Url::to(['site/page','slug'=>'xyly'])?>" target="_blank">宜昌行运旅游开发有限公司</a></h3></a>
+          <h3><a href="<?php echo Url::to(['site/page','slug'=>'ycxyly'])?>" target="_blank">宜昌行运旅游开发有限公司</a></h3></a>
           <p>主营业务：旅游资源开发；房地产开发、经营；停车服务。</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12">
+      <div class="thumbnail clearfix">
+        <img src="<?php echo Yii::$app->request->baseUrl;?>/img/column/sub-jy8.png" alt="" width="100%">
+        <div class="caption">
+          <h3><a href="<?php echo Url::to(['site/page','slug'=>'jlxyuan'])?>" target="_blank">宜昌行远旅游开发有限公司</a></h3></a>
+          <p>主营业务：旅游资源开发；房地产开发、经营；停车服务。</p>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="thumbnail clearfix">
+          <img src="<?php echo Yii::$app->request->baseUrl;?>/img/column/sub-jy9.png" alt="" width="100%">
+          <div class="caption">
+            <h3><a href="<?php echo Url::to(['site/page','slug'=>'ycloxwl'])?>" target="_blank"> 宜昌龙行文旅开发有限公司</a></h3></a>
+            <p>主营业务：文化旅游资源开发；主题公园投资、运营；房地产开发、经营；食品零售；营业性演出；书报刊、音像制品零售；承接国内外演出经营、经纪；动漫形象及相关衍生产品的设计、研发、制造、销售；电影放映；摄影服务；策划、举办各类节庆活动；展览展示服务；设计、制作、代理发布各类广告业务。</p>
+          </div>
         </div>
       </div>
     </div>
