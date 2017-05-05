@@ -1,3 +1,7 @@
+document.writeln("<div style=\'width:87px;height:550px;position: fixed;top:36px;right:0;z-index: 9999999;padding:0;overflow: hidden;\'>");
+document.writeln("<img src=\'http://www.yichang.gov.cn/script/161/ad_xmt.png\' usemap=\'#sjxmt\'></div>");
+document.writeln("<map id=\'sjxmt\' name=\'sjxmt\'><area shape=\'rect\' target=\'_blank\' coords=\'2,69,86,101\' href=\'http://www.cn3x.com.cn/\'>");
+document.writeln("<area shape=\'rect\' target=\'_blank\' coords=\'2,105,86,137\' href=\'http://www.yichang.gov.cn/\'></map>");
 $(function(){
 	$("#link_websites").on("mousemove",function(e){
 		e.preventDefault();
@@ -11,7 +15,7 @@ $(function(){
   }).on("mouseleave",function(){
     $(this).find(".wechat-qrcode").stop(true,true).slideUp("fast");
   });
-  
+
 });
 
 function addFavorite(){
