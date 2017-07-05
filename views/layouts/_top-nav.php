@@ -38,7 +38,7 @@ use yii\widgets\ActiveForm;
       <?= Html::submitButton('搜索', ['class' => 'search-btn']) ?>
       <?php ActiveForm::end();?>
       </div>
-      <a href="http://oa.ycjljt.com/" class="pull-right" style="color:#fff;margin:5px 0;" target="_blank">集团OA</a>
+      <a href="http://219.139.150.4:88" class="pull-right" style="color:#fff;margin:5px 0;" target="_blank">集团OA</a>
       <a id="wechat" href="javascript:void(0);" class="pull-right" style="color:#fff;margin:5px 0;margin-right:20px;">
         微信公众号
         <div class="wechat-qrcode" style="display:none;">
