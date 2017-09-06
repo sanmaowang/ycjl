@@ -39,12 +39,6 @@ $url = Yii::$app->request->getUrl();
                   echo "交旅行营";
                 }else if($m->slug == 'ycxyly'){
                   echo "交旅行运";
-                }else if($m->slug == 'jlxyuan'){
-                echo "交旅行远";
-                }else if($m->slug == 'ycloxwl'){
-                echo "交旅龙行文旅";
-                }else if($m->slug == 'bywz'){
-                  echo "白云望洲旅游投资";
                 }
                 else{ echo $m->name;}?>
             </a></li>
