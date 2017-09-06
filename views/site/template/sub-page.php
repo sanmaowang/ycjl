@@ -120,6 +120,15 @@ $url = Yii::$app->request->getUrl();
                   </div>
                 </a>
               </li>
+              <li>
+                <a class="sub-item-link" target="_blank" href="<?php echo Url::to(['site/page','slug'=>'bywz'])?>">
+                  <img src="<?php echo Yii::$app->request->baseUrl;?>/img/column/sub-jy10.png" alt="" class="pull-left">
+                  <div class="sub-item-content" style="min-height:100px;">
+                    <h4 class="sub-item-title">湖北白云望洲旅游投资有限公司</h4>
+                    <p>湖北白云望洲旅游投资有限公司是宜昌交通旅游产业发展集团有限公司控股子公司，注册资本7000万元，是一家专注于生态旅游、度假产品开发的专业化企业。</p>
+                  </div>
+                </a>
+              </li>
             </ul>
           </div>
         </div>

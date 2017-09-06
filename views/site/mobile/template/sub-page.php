@@ -98,6 +98,15 @@ $url = Yii::$app->request->getUrl();
           </div>
         </div>
       </div>
+      <div class="col-xs-12">
+        <div class="thumbnail clearfix">
+          <img src="<?php echo Yii::$app->request->baseUrl;?>/img/column/sub-jy10.png" alt="" width="100%">
+          <div class="caption">
+            <h3><a href="<?php echo Url::to(['site/page','slug'=>'bywz'])?>" target="_blank"> 湖北白云望洲旅游投资有限公司</a></h3></a>
+            <p>湖北白云望洲旅游投资有限公司是宜昌交通旅游产业发展集团有限公司控股子公司，注册资本7000万元，是一家专注于生态旅游、度假产品开发的专业化企业。</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
     <?php if(isset($menu) && count($menu)>0){?>
